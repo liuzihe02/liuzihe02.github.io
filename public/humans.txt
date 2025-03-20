@@ -1,0 +1,17 @@
+
+    /* TEAM */
+
+    Author: Serghei Iakovlev
+    Contact: contact@serghei.pl
+    GitHub: @sergeyklay
+    Twitter: @egreps
+    From: Wrocław, Poland
+
+    /* SITE */
+
+    Last update: 2025/03/20
+    Language: English
+    Doctype: HTML5
+    Standards: HTML5, CSS3, Open Graph protocol, Schema.org
+    Components: Hugo, Ed Theme, Lunr.js
+    Hugo version: 0.127.0

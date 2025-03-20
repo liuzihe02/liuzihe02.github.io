@@ -1,0 +1,3 @@
+# robots.txt file for "Ed." website, localhost:1313
+User-agent: *
+Disallow: /

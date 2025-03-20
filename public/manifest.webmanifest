@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest",
+  "id": "9a1c77bb-43ff-58da-c909-160252f79a83",
+  "name": "Ed.",
+  "short_name": "a Hugo theme for minimal editions",
+  "description": "Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/index.html?source=pwa",
+  "display": "fullscreen",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "orientation": "natural",
+  "shortcuts": [  
+    {
+      "name": "Home",
+      "short_name" : "home",
+      "url": "/"
+    } ,
+    {
+      "name": "About",
+      "short_name" : "about",
+      "url": ""
+    } ,
+    {
+      "name": "Credits",
+      "short_name" : "credits",
+      "url": ""
+    } ,
+    {
+      "name": "Documentation",
+      "short_name" : "documentation",
+      "url": ""
+    } ,
+    {
+      "name": "Search",
+      "short_name" : "search",
+      "url": ""
+    } ,
+    {
+      "name": "Contact",
+      "short_name" : "contact",
+      "url": ""
+    } ,
+    {
+      "name": "GitHub Project",
+      "short_name" : "github",
+      "url": "https://github.com/sergeyklay/gohugo-theme-ed/"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
+
