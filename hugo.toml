@@ -10,7 +10,7 @@ copyright = '© 2019-2024 Serghei Iakovlev'
 #
 # NB: Final title of shareable pages will be this plus the
 #     title of the page. E.g. "Posts | Ed."
-title = "Ed."
+title = "Liu Zihe"
 
 enableRobotsTXT = true
 
@@ -27,13 +27,14 @@ refLinksErrorLevel = 'WARNING'
   keywords = ['hugo', 'ed', 'hugo theme', 'minimal', 'responsive', 'clean']
 
   # Used in site header
-  tagline = 'a Hugo theme for minimal editions'
+  tagline = 'Dancing in the Moonlight'
 
   # Custom footer text on left sidebar. Use HTMl if needed.
   # "&copy;" and "{year}" will be replaced by © and the current year.
   footer = 'Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.'
 
   # Colour scheme. Options: red, orange, magenta, cyan, blue, brown
+  # default color scheme is a deep shade of red
   colorScheme = ''
 
   # Sections to be displayed in:
@@ -71,13 +72,13 @@ refLinksErrorLevel = 'WARNING'
     favicon = ''
 
     # A single SVG icon with a light/dark version for modern browsers
-    svgicon = ''
+    svgicon = 'red_sinc.svg'
 
     # 180×180 PNG image for Apple devices
     apple_touch_icon = ''
 
     # Logo image, relative to ./assets
-    logo = '/img/open-graph-logo.png'
+    logo = '/img/red_sinc.png'
     disable_fingerprinting = false
 
   [params.seo]

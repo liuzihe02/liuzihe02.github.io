@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
-    <title>Ed.</title>
+    <title>Liu Zihe</title>
     <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
     <link href="/" rel="alternate" type="text/html" title="html" />
     <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
@@ -9,8 +9,8 @@
     <link href="/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
     <link href="/index.json" rel="alternate" type="application/json" title="json" />
     <link href="/humans.txt" rel="alternate" type="text/plain" title="humanstxt" />
-    <icon>https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</icon>
-    <logo>https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</logo>
+    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>

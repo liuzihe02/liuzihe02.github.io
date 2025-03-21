@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "Dramas - Ed.",
+  "title": "Dramas - Liu Zihe",
   "home_page_url": "https://liuzihe02.github.io/?utm_source=json_feed",
   
   "description": "Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.",
-  "icon": "https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png",
-  "favicon": "https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png",
+  "icon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "favicon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
   "authors": [
     {
       "name": "Serghei Iakovlev",
