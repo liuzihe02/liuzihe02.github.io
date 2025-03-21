@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Poems on Ed.</title>
-    <link>http://localhost:1313/poems/</link>
+    <link>https://liuzihe02.github.io/poems/</link>
     <description>Recent content in Poems on Ed.</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -10,40 +10,40 @@
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
     <lastBuildDate>Sun, 01 May 2022 14:56:58 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/poems/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://liuzihe02.github.io/poems/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My poem</title>
-      <link>http://localhost:1313/poems/mypoem/</link>
+      <link>https://liuzihe02.github.io/poems/mypoem/</link>
       <pubDate>Wed, 02 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/poems/mypoem/</guid>
+      <guid>https://liuzihe02.github.io/poems/mypoem/</guid>
       <description> The library is pretty And so are books Deep </description>
     </item>
     <item>
       <title>Dreams</title>
-      <link>http://localhost:1313/poems/dreams/</link>
+      <link>https://liuzihe02.github.io/poems/dreams/</link>
       <pubDate>Tue, 01 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/poems/dreams/</guid>
+      <guid>https://liuzihe02.github.io/poems/dreams/</guid>
       <description> Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. </description>
     </item>
     <item>
       <title>Delayed till she had ceased to know</title>
-      <link>http://localhost:1313/poems/delayed/</link>
+      <link>https://liuzihe02.github.io/poems/delayed/</link>
       <pubDate>Sun, 30 Jan 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/poems/delayed/</guid>
+      <guid>https://liuzihe02.github.io/poems/delayed/</guid>
       <description>DELAYED till she had ceased to know, Delayed till in its vest of snow Her loving bosom lay. An hour behind the fleeting breath, Later by just an hour than death,— Oh, lagging yesterday! Could she have guessed that it would be; Could but a crier of the glee Have climbed the distant hill; Had not the bliss so slow a pace,— Who knows but this surrendered face Were undefeated still?</description>
     </item>
     <item>
       <title>A Julia de Burgos</title>
-      <link>http://localhost:1313/poems/a-julia/</link>
+      <link>https://liuzihe02.github.io/poems/a-julia/</link>
       <pubDate>Sat, 01 Jan 2022 14:57:10 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/poems/a-julia/</guid>
+      <guid>https://liuzihe02.github.io/poems/a-julia/</guid>
       <description>Ya las gentes murmuran que yo soy tu enemiga porque dicen que en verso doy al mundo mi yo. Mienten, Julia de Burgos. Mienten, Julia de Burgos. La que se alza en mis versos no es tu voz: es mi voz porque tú eres ropaje y la esencia soy yo; y el más profundo abismo se tiende entre las dos. Tú eres fria muñeca de mentira social, y yo, viril destello de la humana verdad.</description>
     </item>
     <item>
       <title>O Captain! My Captain!</title>
-      <link>http://localhost:1313/poems/o-captain/</link>
+      <link>https://liuzihe02.github.io/poems/o-captain/</link>
       <pubDate>Tue, 02 Feb 2021 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/poems/o-captain/</guid>
+      <guid>https://liuzihe02.github.io/poems/o-captain/</guid>
       <description>O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!</description>
     </item>
   </channel>

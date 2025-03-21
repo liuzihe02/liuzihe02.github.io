@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
     <title>Narratives - Ed.</title>
     <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
     <link href="/narratives/" rel="alternate" type="text/html" title="html" />
     <link href="/narratives/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/narratives/atom.xml" rel="self" type="text/xml" title="atom" />
     <link href="/narratives/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <icon>http://localhost:1313/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</icon>
-    <logo>http://localhost:1313/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</logo>
+    <icon>https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</icon>
+    <logo>https://liuzihe02.github.io/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2022-05-01T14:56:58+02:00</updated>
-    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
+    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
     <entry>
         
         <category term="narratives" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/narratives/narrative/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/narratives/narrative/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Narrative of the Life of Frederick Douglass]]></title>
         
         
         
         <published>2016-01-18T00:00:00Z</published>
         <updated>2016-01-18T00:00:00Z</updated>
-        <id>urn:uuid:357c0eec-b603-53fa-d997-6bd5d0f67a7b</id>
+        <id>urn:uuid:bd4a0bf7-97f0-56a4-7958-33be233af286</id>
         
                 <author>
                     <name>Frederick Douglass</name>

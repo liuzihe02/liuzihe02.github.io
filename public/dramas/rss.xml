@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dramas on Ed.</title>
-    <link>http://localhost:1313/dramas/</link>
+    <link>https://liuzihe02.github.io/dramas/</link>
     <description>Recent content in Dramas on Ed.</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -10,12 +10,12 @@
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
     <lastBuildDate>Thu, 03 Feb 2022 14:56:58 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/dramas/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://liuzihe02.github.io/dramas/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Raisin in the Sun</title>
-      <link>http://localhost:1313/dramas/raisin/</link>
+      <link>https://liuzihe02.github.io/dramas/raisin/</link>
       <pubDate>Thu, 03 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/dramas/raisin/</guid>
+      <guid>https://liuzihe02.github.io/dramas/raisin/</guid>
       <description>(excerpt)&#xA;MAMA: Son—how come you talk so much &amp;lsquo;bout money?&#xA;WALTER (with immense passion): Because it is life, Mama!&#xA;MAMA: Oh—So now it’s life. Money is life. Once upon a time freedom used to be life—now it’s money. I guess the world really do change &amp;hellip;&#xA;WALTER: No—it was always money, Mama. We just didn’t know about it.&#xA;MAMA: No &amp;hellip; something has changed. (She looks at him) You something new, boy.</description>
     </item>
   </channel>
