@@ -339,3 +339,9 @@ refLinksErrorLevel = 'WARNING'
     disableIDs = false
     disableTags = false
     enable = true
+
+# change the location of where we store images in the cache
+# default is in the reosurce directory, not the cache directory
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
