@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
-    <title>Ed.</title>
+    <title>Poems - Ed.</title>
     <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
-    <link href="/" rel="alternate" type="text/html" title="html" />
-    <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
-    <link href="/manifest.webmanifest" rel="alternate" type="application/manifest+json" title="manifest" />
-    <link href="/atom.xml" rel="self" type="text/xml" title="atom" />
-    <link href="/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <link href="/index.json" rel="alternate" type="application/json" title="json" />
-    <link href="/humans.txt" rel="alternate" type="text/plain" title="humanstxt" />
+    <link href="/poems/" rel="alternate" type="text/html" title="html" />
+    <link href="/poems/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
+    <link href="/poems/atom.xml" rel="self" type="text/xml" title="atom" />
+    <link href="/poems/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
     <icon>http://localhost:1313/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</icon>
     <logo>http://localhost:1313/img/open-graph-logo_hu649006a96c7f6a02c0a48e2d90a9a7b0_5229_96x96_resize_box_3.png</logo>
     <author>
@@ -18,30 +15,6 @@
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2022-05-01T14:56:58+02:00</updated>
     <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
-    <entry>
-        
-        <category term="dramas" />
-        
-        <link rel="alternate" type="type/html" href="http://localhost:1313/dramas/raisin/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[A Raisin in the Sun]]></title>
-        
-        
-        
-        <published>2022-02-03T14:56:58+02:00</published>
-        <updated>2022-02-03T14:56:58+02:00</updated>
-        <id>urn:uuid:1ef7472b-99a9-5693-e9ae-c65ebed53eb3</id>
-        
-                <author>
-                    <name>Lorraine Hansberry</name>
-                </author>
-        
-        <summary type="html"><![CDATA[(excerpt)
-MAMA: Son—how come you talk so much &lsquo;bout money?
-WALTER (with immense passion): Because it is life, Mama!
-MAMA: Oh—So now it’s life. Money is life. Once upon a time freedom used to be life—now it’s money. I guess the world really do change &hellip;
-WALTER: No—it was always money, Mama. We just didn’t know about it.
-MAMA: No &hellip; something has changed. (She looks at him) You something new, boy.]]></summary>
-    </entry>
     <entry>
         
         <category term="poems" />
@@ -136,24 +109,5 @@ MAMA: No &hellip; something has changed. (She looks at him) You something new, b
                 </author>
         
         <summary type="html"><![CDATA[O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="narratives" />
-        
-        <link rel="alternate" type="type/html" href="http://localhost:1313/narratives/narrative/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[Narrative of the Life of Frederick Douglass]]></title>
-        
-        
-        
-        <published>2016-01-18T00:00:00Z</published>
-        <updated>2016-01-18T00:00:00Z</updated>
-        <id>urn:uuid:357c0eec-b603-53fa-d997-6bd5d0f67a7b</id>
-        
-                <author>
-                    <name>Frederick Douglass</name>
-                </author>
-        
-        <summary type="html"><![CDATA[Editor&rsquo;s note This version of Narrative of the Life of Frederick Douglass was adapted from The Project Gutenberg EBook of The Narrative of the Life of Frederick Douglass, by Frederick Douglass. The Guttenberg file does not tell us which witness was used in making their digital edition. The edition below is only a slightly modified version of the Guttenberg text, and therefore should not be taken too seriously as an edition.]]></summary>
     </entry>
 </feed>

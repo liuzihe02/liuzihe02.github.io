@@ -20,27 +20,27 @@
     {
       "name": "About",
       "short_name" : "about",
-      "url": ""
+      "url": "/about/"
     } ,
     {
       "name": "Credits",
       "short_name" : "credits",
-      "url": ""
+      "url": "/credits/"
     } ,
     {
       "name": "Documentation",
       "short_name" : "documentation",
-      "url": ""
+      "url": "/documentation/"
     } ,
     {
       "name": "Search",
       "short_name" : "search",
-      "url": ""
+      "url": "/search/"
     } ,
     {
       "name": "Contact",
       "short_name" : "contact",
-      "url": ""
+      "url": "/contact/"
     } ,
     {
       "name": "GitHub Project",
