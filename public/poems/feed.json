@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Poems - Liu Zihe",
-  "home_page_url": "http://localhost:1313/?utm_source=json_feed",
+  "home_page_url": "https://liuzihe02.github.io/?utm_source=json_feed",
   
   "description": "Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.",
-  "icon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
-  "favicon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "icon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "favicon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
   "authors": [
     {
       "name": "Serghei Iakovlev",
@@ -15,37 +15,37 @@
   "language" : "en",
   "items": [
     {
-      "id": "b1ed01bf-8099-573d-5958-c4a5c6e36699",
-      "url": "http://localhost:1313/poems/mypoem/?utm_source=json_feed",
+      "id": "9364c51c-0b2f-582e-b92c-85aa1cc15148",
+      "url": "https://liuzihe02.github.io/poems/mypoem/?utm_source=json_feed",
       "title": "My poem",
       "summary": " The library is pretty And so are books Deep ",
       "date_published": "2022-02-02T14:56:58+02:00"
     },
     {
-      "id": "ddf925e6-415f-5781-09eb-78335eab3d9b",
-      "url": "http://localhost:1313/poems/dreams/?utm_source=json_feed",
+      "id": "f93b0ffc-51ad-58d6-e9f8-edd839757724",
+      "url": "https://liuzihe02.github.io/poems/dreams/?utm_source=json_feed",
       "title": "Dreams",
       "summary": " Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. ",
       "date_published": "2022-02-01T14:56:58+02:00",
       "date_modified" : "2022-05-01T14:56:58+02:00"
     },
     {
-      "id": "dc4b27d0-c755-52c5-599e-a78f78365447",
-      "url": "http://localhost:1313/poems/delayed/?utm_source=json_feed",
+      "id": "bba0dbc5-43a3-516b-29d7-de40ba0efe8f",
+      "url": "https://liuzihe02.github.io/poems/delayed/?utm_source=json_feed",
       "title": "Delayed till she had ceased to know",
       "summary": "DELAYED till she had ceased to know, Delayed till in its vest of snow Her loving bosom lay. An hour behind the fleeting breath, Later by just an hour than death,— Oh, lagging yesterday! Could she have guessed that it would be; Could but a crier of the glee Have climbed the distant hill; Had not the bliss so slow a pace,— Who knows but this surrendered face Were undefeated still?",
       "date_published": "2022-01-30T14:56:58+02:00"
     },
     {
-      "id": "fdb8a85f-ee68-5bfc-a95c-224361b3f4c4",
-      "url": "http://localhost:1313/poems/a-julia/?utm_source=json_feed",
+      "id": "314f2fff-198c-52d9-592e-27f5c287be0d",
+      "url": "https://liuzihe02.github.io/poems/a-julia/?utm_source=json_feed",
       "title": "A Julia de Burgos",
       "summary": "Ya las gentes murmuran que yo soy tu enemiga porque dicen que en verso doy al mundo mi yo. Mienten, Julia de Burgos. Mienten, Julia de Burgos. La que se alza en mis versos no es tu voz: es mi voz porque tú eres ropaje y la esencia soy yo; y el más profundo abismo se tiende entre las dos. Tú eres fria muñeca de mentira social, y yo, viril destello de la humana verdad.",
       "date_published": "2022-01-01T14:57:10+02:00"
     },
     {
-      "id": "534e965d-457d-5392-29b7-8b370e872e6b",
-      "url": "http://localhost:1313/poems/o-captain/?utm_source=json_feed",
+      "id": "2e3dda18-ade1-5342-494a-ea8de0bc837d",
+      "url": "https://liuzihe02.github.io/poems/o-captain/?utm_source=json_feed",
       "title": "O Captain! My Captain!",
       "summary": "O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!",
       "date_published": "2021-02-02T23:56:58+02:00"

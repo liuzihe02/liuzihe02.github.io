@@ -1,0 +1,43 @@
+{{/* Target for toggling the sidebar `.sidebar-checkbox` is for regular styles,
+    `#sidebar-checkbox` for behavior. */}}
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+{{/* Toggleable sidebar */}}
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+        <p>{{ site.Params.Description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+        {{- $current := . -}}
+        {{- range site.Menus.main -}}
+            {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+            {{- $active = or $active (eq .URL $current.RelPermalink) -}}
+            {{- $active = or $active (eq .Name $current.Title) }}
+            <a class="sidebar-nav-item{{ if $active }} active{{ end }}"
+                href="{{ .URL }}"
+                id="menu-main-{{ .Identifier }}"
+                {{- if eq .Params.external true }} target="_blank" rel="noopener noreferrer"{{ end }}>
+                {{- print .Name | safeHTML -}}
+            </a>
+        {{- end }}
+        
+        <!-- remove the annotations for all pages -->
+        <!-- {{- if ne .Params.annotations false }}
+        {{ partial "hypothesis.html" . }}
+        {{- end }} -->
+
+        {{- with site.Menus.feeds }}
+            <div class="sidebar-nav-item">
+                {{- range $i, $ := site.Menus.feeds }}
+                    {{ if $i }}<span aria-hidden="true">|</span>{{ end }}
+                    <a href="{{ .URL }}" id="menu-feeds-{{ .Identifier }}" class="menu-feeds-item" data-feed-type="{{ .Identifier }}">
+                        {{-  print .Name | safeHTML -}}
+                    </a>
+                {{ end }}
+            </div>
+        {{ end }}
+    </nav>
+
+    {{ partial "footer" . }}
+</aside>

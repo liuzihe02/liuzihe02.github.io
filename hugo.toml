@@ -56,8 +56,6 @@ refLinksErrorLevel = 'WARNING'
 
   recentPostsSize = 5
 
-  annotations = false
-
   [params.contact]
     # Forms Backend URL, used in contacts form
     formAction = 'https://submit-form.com/example'
@@ -325,6 +323,11 @@ refLinksErrorLevel = 'WARNING'
 [frontmatter]
   lastmod = ['lastmod', ':git', 'modified', 'date', 'publishdate', 'pubdate', 'published']
 
+[[frontmatter.defaults]]
+  where = {}  # Applies to all content pages
+  [frontmatter.defaults.values]
+    [frontmatter.defaults.values.params]
+      annotations = false
 
 [module]
   [module.hugoVersion]

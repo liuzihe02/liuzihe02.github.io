@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
     <title>Poems - Liu Zihe</title>
     <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
     <link href="/poems/" rel="alternate" type="text/html" title="html" />
     <link href="/poems/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/poems/atom.xml" rel="self" type="text/xml" title="atom" />
     <link href="/poems/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <icon>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
-    <logo>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2022-05-01T14:56:58+02:00</updated>
-    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
+    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
     <entry>
         
         <category term="poems" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/poems/mypoem/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/mypoem/?utm_source=atom_feed" />
         <title type="html"><![CDATA[My poem]]></title>
         
         
         
         <published>2022-02-02T14:56:58+02:00</published>
         <updated>2022-02-02T14:56:58+02:00</updated>
-        <id>urn:uuid:b1ed01bf-8099-573d-5958-c4a5c6e36699</id>
+        <id>urn:uuid:9364c51c-0b2f-582e-b92c-85aa1cc15148</id>
         
                 <author>
                     <name>Alex Gil</name>
@@ -38,14 +38,14 @@
         
         <category term="poems" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/poems/dreams/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/dreams/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Dreams]]></title>
         
         
         
         <published>2022-02-01T14:56:58+02:00</published>
         <updated>2022-05-01T14:56:58+02:00</updated>
-        <id>urn:uuid:ddf925e6-415f-5781-09eb-78335eab3d9b</id>
+        <id>urn:uuid:f93b0ffc-51ad-58d6-e9f8-edd839757724</id>
         
                 <author>
                     <name>Langston Hughes</name>
@@ -57,14 +57,14 @@
         
         <category term="poems" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/poems/delayed/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/delayed/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Delayed till she had ceased to know]]></title>
         
         
         
         <published>2022-01-30T14:56:58+02:00</published>
         <updated>2022-01-30T14:56:58+02:00</updated>
-        <id>urn:uuid:dc4b27d0-c755-52c5-599e-a78f78365447</id>
+        <id>urn:uuid:bba0dbc5-43a3-516b-29d7-de40ba0efe8f</id>
         
                 <author>
                     <name>Emily Dickinson</name>
@@ -76,14 +76,14 @@
         
         <category term="poems" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/poems/a-julia/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/a-julia/?utm_source=atom_feed" />
         <title type="html"><![CDATA[A Julia de Burgos]]></title>
         
         
         
         <published>2022-01-01T14:57:10+02:00</published>
         <updated>2022-01-01T14:57:10+02:00</updated>
-        <id>urn:uuid:fdb8a85f-ee68-5bfc-a95c-224361b3f4c4</id>
+        <id>urn:uuid:314f2fff-198c-52d9-592e-27f5c287be0d</id>
         
                 <author>
                     <name>Julia de Burgos</name>
@@ -95,14 +95,14 @@
         
         <category term="poems" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/poems/o-captain/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/o-captain/?utm_source=atom_feed" />
         <title type="html"><![CDATA[O Captain! My Captain!]]></title>
         
         
         
         <published>2021-02-02T23:56:58+02:00</published>
         <updated>2021-02-02T23:56:58+02:00</updated>
-        <id>urn:uuid:534e965d-457d-5392-29b7-8b370e872e6b</id>
+        <id>urn:uuid:2e3dda18-ade1-5342-494a-ea8de0bc837d</id>
         
                 <author>
                     <name>Walt Whitman</name>
