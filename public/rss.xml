@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ed. on Liu Zihe</title>
-    <link>https://liuzihe02.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Ed. on Liu Zihe</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -10,96 +10,96 @@
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
     <lastBuildDate>Sun, 01 May 2022 14:56:58 +0200</lastBuildDate>
-    <atom:link href="https://liuzihe02.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A Raisin in the Sun</title>
-      <link>https://liuzihe02.github.io/dramas/raisin/</link>
+      <link>http://localhost:1313/dramas/raisin/</link>
       <pubDate>Thu, 03 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/dramas/raisin/</guid>
+      <guid>http://localhost:1313/dramas/raisin/</guid>
       <description>(excerpt)&#xA;MAMA: Son—how come you talk so much &amp;lsquo;bout money?&#xA;WALTER (with immense passion): Because it is life, Mama!&#xA;MAMA: Oh—So now it’s life. Money is life. Once upon a time freedom used to be life—now it’s money. I guess the world really do change &amp;hellip;&#xA;WALTER: No—it was always money, Mama. We just didn’t know about it.&#xA;MAMA: No &amp;hellip; something has changed. (She looks at him) You something new, boy.</description>
     </item>
     <item>
       <title>My poem</title>
-      <link>https://liuzihe02.github.io/poems/mypoem/</link>
+      <link>http://localhost:1313/poems/mypoem/</link>
       <pubDate>Wed, 02 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/mypoem/</guid>
+      <guid>http://localhost:1313/poems/mypoem/</guid>
       <description> The library is pretty And so are books Deep </description>
     </item>
     <item>
       <title>Dreams</title>
-      <link>https://liuzihe02.github.io/poems/dreams/</link>
+      <link>http://localhost:1313/poems/dreams/</link>
       <pubDate>Tue, 01 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/dreams/</guid>
+      <guid>http://localhost:1313/poems/dreams/</guid>
       <description> Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. </description>
     </item>
     <item>
       <title>Delayed till she had ceased to know</title>
-      <link>https://liuzihe02.github.io/poems/delayed/</link>
+      <link>http://localhost:1313/poems/delayed/</link>
       <pubDate>Sun, 30 Jan 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/delayed/</guid>
+      <guid>http://localhost:1313/poems/delayed/</guid>
       <description>DELAYED till she had ceased to know, Delayed till in its vest of snow Her loving bosom lay. An hour behind the fleeting breath, Later by just an hour than death,— Oh, lagging yesterday! Could she have guessed that it would be; Could but a crier of the glee Have climbed the distant hill; Had not the bliss so slow a pace,— Who knows but this surrendered face Were undefeated still?</description>
     </item>
     <item>
       <title>A Julia de Burgos</title>
-      <link>https://liuzihe02.github.io/poems/a-julia/</link>
+      <link>http://localhost:1313/poems/a-julia/</link>
       <pubDate>Sat, 01 Jan 2022 14:57:10 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/a-julia/</guid>
+      <guid>http://localhost:1313/poems/a-julia/</guid>
       <description>Ya las gentes murmuran que yo soy tu enemiga porque dicen que en verso doy al mundo mi yo. Mienten, Julia de Burgos. Mienten, Julia de Burgos. La que se alza en mis versos no es tu voz: es mi voz porque tú eres ropaje y la esencia soy yo; y el más profundo abismo se tiende entre las dos. Tú eres fria muñeca de mentira social, y yo, viril destello de la humana verdad.</description>
     </item>
     <item>
       <title>O Captain! My Captain!</title>
-      <link>https://liuzihe02.github.io/poems/o-captain/</link>
+      <link>http://localhost:1313/poems/o-captain/</link>
       <pubDate>Tue, 02 Feb 2021 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/o-captain/</guid>
+      <guid>http://localhost:1313/poems/o-captain/</guid>
       <description>O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!</description>
     </item>
     <item>
       <title>Narrative of the Life of Frederick Douglass</title>
-      <link>https://liuzihe02.github.io/narratives/narrative/</link>
+      <link>http://localhost:1313/narratives/narrative/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/narratives/narrative/</guid>
+      <guid>http://localhost:1313/narratives/narrative/</guid>
       <description>Editor&amp;rsquo;s note This version of Narrative of the Life of Frederick Douglass was adapted from The Project Gutenberg EBook of The Narrative of the Life of Frederick Douglass, by Frederick Douglass. The Guttenberg file does not tell us which witness was used in making their digital edition. The edition below is only a slightly modified version of the Guttenberg text, and therefore should not be taken too seriously as an edition.</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://liuzihe02.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>One of our most pressing and ever-evolving needs as scholars is to pass on our textual artifacts from one generation to another. The art of textual editing, among other practices, has helped many cultures to remember and interpret for centuries. Alas, that art is practiced and encouraged in its highest form by a dwindling number of scholars. In a digital environment the problem is compounded by the difficulties of the medium.</description>
     </item>
     <item>
       <title>Contact</title>
-      <link>https://liuzihe02.github.io/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>This is an example of a custom shortcode that you can put right into your content. You will need to add a form action to the the shortcode to make it work. Check out Formspark for a simple, free form service.&#xA;Ed theme is not strictly tied to any forms backend. You can easily use any backend like Formspark, Formspree, FabForm and so on just by changing the formAction parameter in the site configuration file.</description>
     </item>
     <item>
       <title>Credits</title>
-      <link>https://liuzihe02.github.io/credits/</link>
+      <link>http://localhost:1313/credits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/credits/</guid>
+      <guid>http://localhost:1313/credits/</guid>
       <description>Serghei Iakovlev | Software Engineer Serghei Iakovlev is a software engineer with 20 years of experience in IT who enjoys finding elegant solutions to non-trivial problems. Serghei focused on the goal and driven by visual sophistication and laser-sharp precision, he takes pride in every finished project, and never stop learning along the way. Serghei work as the Head Of Development with 20 teams of 90+ engineers to develop airSlate &amp;mdash; better nocode workflow automation platform.</description>
     </item>
     <item>
       <title>Documentation</title>
-      <link>https://liuzihe02.github.io/documentation/</link>
+      <link>http://localhost:1313/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/documentation/</guid>
+      <guid>http://localhost:1313/documentation/</guid>
       <description>Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote Pages Tables of Content Styling Theme Comments Comment Configuration for Content Types Styling Comments Localization Integrating Analytics with Ed Setting Up Google Analytics Configuring Google Tag Manager Important Considerations Making the Choice Getting help Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers.</description>
     </item>
     <item>
       <title>Search</title>
-      <link>https://liuzihe02.github.io/search/</link>
+      <link>http://localhost:1313/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/search/</guid>
+      <guid>http://localhost:1313/search/</guid>
       <description> To search the site, enter a search term.&#xA;Found results: </description>
     </item>
     <item>
       <title>Thank you</title>
-      <link>https://liuzihe02.github.io/thanks/</link>
+      <link>http://localhost:1313/thanks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/thanks/</guid>
+      <guid>http://localhost:1313/thanks/</guid>
       <description>Your message will be sent within a short time. We&amp;rsquo;ll answer as soon as possible.&#xA;← Back to Home.</description>
     </item>
   </channel>

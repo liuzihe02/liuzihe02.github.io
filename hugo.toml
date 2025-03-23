@@ -56,6 +56,8 @@ refLinksErrorLevel = 'WARNING'
 
   recentPostsSize = 5
 
+  annotations = false
+
   [params.contact]
     # Forms Backend URL, used in contacts form
     formAction = 'https://submit-form.com/example'
@@ -154,6 +156,7 @@ refLinksErrorLevel = 'WARNING'
     languageName = 'English'
     weight = 1
 
+# use this to managet the sidebar easily
 # For more see https://gohugo.io/content-management/menus/
 [menus]
   [[menus.main]]        # sections in the website sidebar
@@ -186,6 +189,12 @@ refLinksErrorLevel = 'WARNING'
     name = 'Contact'
     pageRef = '/contact'
     weight = 6
+  # test the narrative section
+  [[menus.main]]
+    identifier = 'poems'
+    name = 'Poems'
+    pageRef = '/poems'
+    weight = 7
   [[menus.main]]
     identifier = 'github'
     name = 'GitHub Project'
@@ -193,6 +202,7 @@ refLinksErrorLevel = 'WARNING'
     weight = 20
     params = {external = true}
 
+  # we remove the menu feed here
   [[menus.feeds]]
     identifier = 'rss'
     name = 'RSS 2.0'
@@ -314,6 +324,7 @@ refLinksErrorLevel = 'WARNING'
 # this value in the front matter.
 [frontmatter]
   lastmod = ['lastmod', ':git', 'modified', 'date', 'publishdate', 'pubdate', 'published']
+
 
 [module]
   [module.hugoVersion]
