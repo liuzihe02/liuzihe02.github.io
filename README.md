@@ -1,4 +1,5 @@
 # liuzihe02.github.io
+
 Zihe's personal website using the Hugo [Ed](https://themes.gohugo.io/themes/gohugo-theme-ed/) theme.
 
 ## Ed
@@ -27,9 +28,7 @@ Use ISO 8601 for the datetime added to the frontmatter of the markdown page.
 
 ### Modifying Styles
 
-> **Important**
-
-You will see that alot of `scss` files are stored in the `resources/_gen/assets/` directory. Do not modify this file. Hugo will modify this stuff automatically whenever you build your project, so your changes will be lost.
+> **Important:** Do not modify the `public` folder or `resources` folder. You will see that alot of `scss` files are stored in the `resources/_gen/assets/` directory. Hugo will modify this stuff automatically whenever you build your project, so any modifications you make will be lost.
 
 Instead, use the `assets/`, `layouts/`,`static/` direcotry in the project root. Copy the relevant file from the github repo theme and modify it there. Hugo will use the file locally before using the online theme for files not found locally. Keep the folder structure as similar to Ed's structure as you can, and make minimum modifications.
 
@@ -53,7 +52,6 @@ We use a `img` shortcode
 
 Put your images under `/static`, and when using the path immediately use the image name without the `/static/profile.jpeg`
 
-
 ##### Hyperlinks
 
 We use a custom `link` shortcode
@@ -75,11 +73,12 @@ The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of 
 ## Deployment
 
 - The `yaml` file is a GitHub actions workflow that automates the build and deployment process to GitHub Pages
-- The `hugo.yaml` is a `CI/CD` workflow where a push to GitHUb automatically triggers building and deployment
+- The `hugo.yaml` is a `CI/CD` workflow where a push to GitHub automatically triggers building and deployment
 
 ## Guides
 
 The follow tutorials were used to learn Hugo and Github Pages:
+
 - [Ed theme](https://gohugo-theme-ed.netlify.app/documentation/)
 - [Hugo Quickstart](https://gohugo.io/getting-started/quick-start/)
 - [Deploying Hugo on Github Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/)

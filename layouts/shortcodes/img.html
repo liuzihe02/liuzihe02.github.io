@@ -1,5 +1,7 @@
-<img src="{{ .Get "src" }}"
-     {{- with .Get "alt" }} alt="{{ . }}"{{ end }}
-     {{- with .Get "width" }} width="{{ . }}"{{ end }}
-     {{- with .Get "height" }} height="{{ . }}"{{ end }}
-     {{- with .Get "class" }} class="{{ . }}"{{ end }}>
+<!-- the margin auto here makes the image automatically centred -->
+<div style="display: block; width: 100%">
+  <img src="{{ .Get "src" }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{
+  with .Get "width" }}width="{{ . }}"{{ end }} {{ with .Get "height"
+  }}height="{{ . }}"{{ end }} {{ with .Get "class" }}class="{{ . }}"{{ end }}
+  style="display: block; margin: 0 auto;">
+</div>
