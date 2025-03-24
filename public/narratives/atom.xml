@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
     <title>Narratives - Liu Zihe</title>
-    <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
+    
     <link href="/narratives/" rel="alternate" type="text/html" title="html" />
     <link href="/narratives/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/narratives/atom.xml" rel="self" type="text/xml" title="atom" />

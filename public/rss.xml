@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ed. on Liu Zihe</title>
+    <title>Home on Liu Zihe</title>
     <link>https://liuzihe02.github.io/</link>
-    <description>Recent content in Ed. on Liu Zihe</description>
+    <description>Recent content in Home on Liu Zihe</description>
     <generator>Hugo</generator>
     <language>en</language>
     <managingEditor>contact@serghei.pl (Serghei Iakovlev)</managingEditor>
@@ -65,7 +65,7 @@
       <link>https://liuzihe02.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/about/</guid>
-      <description>One of our most pressing and ever-evolving needs as scholars is to pass on our textual artifacts from one generation to another. The art of textual editing, among other practices, has helped many cultures to remember and interpret for centuries. Alas, that art is practiced and encouraged in its highest form by a dwindling number of scholars. In a digital environment the problem is compounded by the difficulties of the medium.</description>
+      <description>I&amp;rsquo;m a second year computer engineering undergrad at the University of Cambridge, focusing on machine learning and signal processing.&#xA;I&amp;rsquo;m really curious about why reinforcement learning works at all, and how the overoptimization problem could cause model outputs to become unintelligible to humans. Currently, I&amp;rsquo;m working on sample-efficient Reinforcement Learning from Human Feedback (RLHF). Previously, I did some research on developmental interpretability, where we investigated the high level learning dynamics of Natural Gradient Descent.</description>
     </item>
     <item>
       <title>Contact</title>

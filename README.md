@@ -23,11 +23,39 @@ The Hugo [content management](https://gohugo.io/content-management/) sites espec
 
 Only use the `content/` folder to add new content
 
+Use ISO 8601 for the datetime added to the frontmatter of the markdown page.
+
 ### Modifying Styles
+
+> **Important**
 
 You will see that alot of `scss` files are stored in the `resources/_gen/assets/` directory. Do not modify this file. Hugo will modify this stuff automatically whenever you build your project, so your changes will be lost.
 
-Instead, use the `assets/`, `layouts/`,`static/` direcotry in the project root. Copy the relevant file from the github repo theme and modify it there. Hugo will use the file locally before using the version online. I've tried to keep the folder structure as similar to Ed's structure as I can.
+Instead, use the `assets/`, `layouts/`,`static/` direcotry in the project root. Copy the relevant file from the github repo theme and modify it there. Hugo will use the file locally before using the online theme for files not found locally. Keep the folder structure as similar to Ed's structure as you can, and make minimum modifications.
+
+> For `layouts/`, we usually modify the stuff in `layouts/partials/`
+
+The `poems/` folder especially `o-captain` contains some very interesting footnotes and stylizations for the `poems` layout
+
+The `narratives/` also contain some very interesting stylizations
+
+#### Hyperlinks
+
+Different from conventional markdown, Hugo uses some custom link syntax
+
+```
+{{< link src="http://gohugo.io" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}
+```
+
+This creates a hyperlink to "http://gohugo.io" with the visible text "University of Cambridge" and several important attributes:
+
+1. `class="external"` - Adds a CSS class to style links that go to external sites
+2. `target="_blank"` - Opens the link in a new browser tab/window
+3. `rel="noopener noreferrer"` - Security attributes that:
+   - `noopener`: Prevents the new page from accessing the window.opener property (security best practice)
+   - `noreferrer`: Prevents passing the referrer information to the linked website
+
+The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of creating reusable components within your content. This particular shortcode is called "link" and is likely defined in your Hugo theme or site configuration.
 
 ## Deployment
 

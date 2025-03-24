@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
     <title>Liu Zihe</title>
-    <subtitle type="html"><![CDATA[Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.]]></subtitle>
+    
     <link href="/" rel="alternate" type="text/html" title="html" />
     <link href="/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/manifest.webmanifest" rel="alternate" type="application/manifest+json" title="manifest" />

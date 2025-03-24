@@ -20,7 +20,8 @@ refLinksErrorLevel = 'WARNING'
 
 [params]
   # Site description. Used in meta description
-  description = 'Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.'
+  # will be displayed at the top of navigation bar
+  description = ''
 
   # SEO keywords. Used in 'meta name="keywords"' tag.
   # May be overridden by .Keywords or .Tags in front matter.
@@ -167,55 +168,77 @@ refLinksErrorLevel = 'WARNING'
     name = 'About'
     pageRef = '/about'
     weight = 2
+
+  #ignore these sections
+  #some of these could be useful in the future, do check back
+
+  # [[menus.main]]
+  #   identifier = 'credits'
+  #   name = 'Credits'
+  #   pageRef = '/credits'
+  #   weight = 3
+
+  # [[menus.main]]
+  #   identifier = 'documentation'
+  #   name = 'Documentation'
+  #   pageRef = '/documentation'
+  #   weight = 4
+
+  # [[menus.main]]
+  #   identifier = 'dramas'
+  #   name = 'Dramas'
+  #   pageRef = '/dramas'
+  #   weight = 5
+
+  # [[menus.main]]
+  #   identifier = 'narratives'
+  #   name = 'Narratives'
+  #   pageRef = '/narratives'
+  #   weight = 5
+
+  # [[menus.main]]
+  #   identifier = 'poems'
+  #   name = 'Poems'
+  #   pageRef = '/poems'
+  #   weight = 5
+
+  # [[menus.main]]
+  #   identifier = 'contact'
+  #   name = 'Contact'
+  #   pageRef = '/contact'
+  #   weight = 6
+  
+  #link to external site
   [[menus.main]]
-    identifier = 'credits'
-    name = 'Credits'
-    pageRef = '/credits'
-    weight = 3
-  [[menus.main]]
-    identifier = 'documentation'
-    name = 'Documentation'
-    pageRef = '/documentation'
-    weight = 4
-  [[menus.main]]
-    identifier = 'search'
-    name = 'Search'
-    pageRef = '/search'
-    weight = 5
-  [[menus.main]]
-    identifier = 'contact'
-    name = 'Contact'
-    pageRef = '/contact'
-    weight = 6
-  # test the narrative section
-  [[menus.main]]
-    identifier = 'poems'
-    name = 'Poems'
-    pageRef = '/poems'
-    weight = 7
-  [[menus.main]]
-    identifier = 'github'
-    name = 'GitHub Project'
-    url = 'https://github.com/sergeyklay/gohugo-theme-ed/'
-    weight = 20
+    identifier = 'resume'
+    name = 'Resume'
+    url = 'https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing'
+    weight = 10
     params = {external = true}
 
-  # we remove the menu feed here
-  [[menus.feeds]]
-    identifier = 'rss'
-    name = 'RSS 2.0'
-    url = '/rss.xml'
-    weight = 1
-  [[menus.feeds]]
-    identifier = 'atom'
-    name = 'Atom'
-    url = '/atom.xml'
-    weight = 2
-  [[menus.feeds]]
-    identifier = 'json'
-    name = 'Json Feed'
-    url = '/feed.json'
-    weight = 3
+  # # cool search functionality but unsure if itll ever be useful
+  # [[menus.main]]
+  #   identifier = 'search'
+  #   name = 'Search'
+  #   pageRef = '/search'
+  #   weight = 20
+
+  # # we remove the menu feed here
+  # [[menus.feeds]]
+  #   identifier = 'rss'
+  #   name = 'RSS 2.0'
+  #   url = '/rss.xml'
+  #   weight = 1
+  # [[menus.feeds]]
+  #   identifier = 'atom'
+  #   name = 'Atom'
+  #   url = '/atom.xml'
+  #   weight = 2
+  # [[menus.feeds]]
+  #   identifier = 'json'
+  #   name = 'Json Feed'
+  #   url = '/feed.json'
+  #   weight = 3
 
 [pagination]
   pagerSize = 10

@@ -3,7 +3,7 @@
   "id": "2652ef4a-97b2-5eb4-39c4-ce4ccae7fb52",
   "name": "Liu Zihe",
   "short_name": "Dancing in the Moonlight",
-  "description": "Ed is a Hugo theme designed for textual editors based on minimal computing principles, and focused on legibility and flexibility.",
+  
   "lang": "en",
   "dir": "ltr",
   "start_url": "/index.html?source=pwa",
@@ -23,34 +23,9 @@
       "url": "/about/"
     } ,
     {
-      "name": "Credits",
-      "short_name" : "credits",
-      "url": "/credits/"
-    } ,
-    {
-      "name": "Documentation",
-      "short_name" : "documentation",
-      "url": "/documentation/"
-    } ,
-    {
-      "name": "Search",
-      "short_name" : "search",
-      "url": "/search/"
-    } ,
-    {
-      "name": "Contact",
-      "short_name" : "contact",
-      "url": "/contact/"
-    } ,
-    {
-      "name": "Poems",
-      "short_name" : "poems",
-      "url": "/poems/"
-    } ,
-    {
-      "name": "GitHub Project",
-      "short_name" : "github",
-      "url": "https://github.com/sergeyklay/gohugo-theme-ed/"
+      "name": "Resume",
+      "short_name" : "resume",
+      "url": "https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing"
     }
   ],
   "icons": [

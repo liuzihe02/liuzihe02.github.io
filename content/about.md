@@ -1,62 +1,13 @@
 ---
 title: About
-pageTitle: Hello!
+pageTitle: About Me
 semanticType: about
 ---
 
-One of our most pressing and ever-evolving needs as scholars is to pass on our textual artifacts
-from one generation to another. The art of textual editing, among other practices, has helped many
-cultures to remember and interpret for centuries. Alas, that art is practiced and encouraged in its
-highest form by a dwindling number of scholars. In a digital environment the problem is compounded
-by the difficulties of the medium. While vast repositories and "e-publications" appear on the
-online scene yearly, very few manifest a textual scholar's disciplined attention to detail. In
-contrast, most textual scholars who have made the leap to a rigorous digital practice have focused
-on markup, relying on technical teams to deploy and maintain their work. This makes your average
-scholarly digital edition a very costly and therefore limited affair.
+I'm a second year computer engineering undergrad at the {{< link src="https://www.eng.cam.ac.uk/research/academic-divisions/information-engineering" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}, focusing on machine learning and signal processing.
 
+I'm really curious about why reinforcement learning works at all, and how the {{< link src="https://arxiv.org/abs/2210.10760" class="external" target="_blank" rel="noopener noreferrer" >}}overoptimization{{< /link >}} problem could cause model outputs to become {{< link src="https://www.lesswrong.com/posts/HQyWGE2BummDCc2Cx/the-case-for-cot-unfaithfulness-is-overstated" class="external" target="_blank" rel="noopener noreferrer" >}}unintelligible to humans{{< /link >}}. Currently, I'm working on sample-efficient Reinforcement Learning from Human Feedback (RLHF). Previously, I did {{< link src="https://arxiv.org/abs/2409.04913" class="external" target="_blank" rel="noopener noreferrer" >}}some research{{< /link >}} on {{< link src="https://www.matsprogram.org/developmental" class="external" target="_blank" rel="noopener noreferrer" >}}developmental interpretability{{< /link >}}, where we investigated the high level learning dynamics of Natural Gradient Descent.
 
-As we see it, a minimal edition is one that aims to reduce the size and complexity of the back and
-front end while flattening the learning curves for the user and the producer. Out of the box, the Ed
-theme can help you build a simple reading edition, or a traditional scholarly edition with footnotes
-and a bibliography, without breaking the bank. In our estimate, these are the two most immediately
-useful type of editions for editors and readers. An edition produced with Ed consists of static
-pages whose rate of decay is substantially lower than database-driven systems. As an added bonus,
-these static pages require less bandwidth. Our hope is that our approach can help beginners and
-veterans deploy beautiful editions with less effort, and that it can help us teach a 'full stack'
-{{< link src="https://github.com/susannalles/MinimalEditions/blob/master/README.md" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}in one academic semester{{< /link >}},
-while allowing us to care for our projects at less cost, and perhaps, just perhaps, to generate
-high-quality editions on github.io in large quantities based on the
-{{< link src="http://jonreeve.com/2015/09/introducing-git-lit/" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}git-lit{{< /link >}} model by Jonathan Reeve. We're coming
-for you, Kindle!
+I recently interned at {{< link src="https://aiverifyfoundation.sg/" class="external" target="_blank" rel="noopener noreferrer" >}}Singapore's AI Safety Institute{{< /link >}}, where I {{< link src="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing" class="external" target="_blank" rel="noopener noreferrer" >}}researched{{< /link >}} and {{< link src="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing" class="external" target="_blank" rel="noopener noreferrer" >}}benchmarked{{< /link >}} various hallucination detection methods. Last summer, I did the {{< link src="https://www.arena.education/" class="external" target="_blank" rel="noopener noreferrer" >}}ARENA 4.0{{< /link >}} program in London, where we built GPT-2 from scratch and implemented Proximal Policy Optimization to do RLHF. Before that, I deployed computer vision models for object detection and used topic modelling analysis to automate categorization of web feedback at the {{< link src="https://www.changiairport.com/" class="external" target="_blank" rel="noopener noreferrer" >}}Changi Airport Group{{< /link >}} ML team.
 
-## Sample Ed editions.
-
-
-- [Our sample site]({{< ref "/" >}}) is the first edition built with Ed.
-
-## Current Features
-
-- Templates for narrative, drama and poetry
-- Responsive design for mobile phones, tablets and PCs
-- Relatively easy to learn and teach
-- Works well in high- or low- bandwidth scenarios
-- Easier for digital archives and libraries to preserve
-- Open source, open access
-- Unobtrusive footnotes
-- Metadata in OpenGraph to play nice with social media and search engines
-- Automatic table of content generation
-- Simple search functionality
-- Annotations via {{< link src="https://hypothes.is/" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}hypothes.is{{< /link >}}
-- Contact form
-- Custom `robots.txt` (changes values based on environment)
-- RSS/Atom/Json Feeds Discovery
-
-
-## Installing and using Ed
-
-To learn how to install and begin using Ed, please visit our
-[documentation page]({{< relref "/documentation" >}} "Visit the documentation").
-
----
-
-{{< mini-toc >}}
+Singapore is where I call home, and before university I served 2 years in the {{< link src="https://www.mindef.gov.sg/rsaf" class="external" target="_blank" rel="noopener noreferrer" >}}Republic of Singapore Air Force{{< /link >}} as a security trooper. Outside work, you'll probably find me {{< link src="https://www.instagram.com/reel/DHhsk8tIxKO/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="external" target="_blank" rel="noopener noreferrer" >}}dancing{{< /link >}} to hip-hop and R&B music, or rewatching old {{< link src="https://www.criterionchannel.com/world-of-wong-kar-wai" target="_blank" rel="noopener noreferrer" >}}Wong Kar Wai{{< /link >}} films.
