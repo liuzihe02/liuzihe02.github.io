@@ -163,11 +163,12 @@ refLinksErrorLevel = 'WARNING'
     name = 'Home'       # menu item display title
     pageRef = '/'       # path to the page
     weight = 1          # order of the menu item
-  [[menus.main]]
-    identifier = 'about'
-    name = 'About'
-    pageRef = '/about'
-    weight = 2
+  
+  # [[menus.main]]
+  #   identifier = 'about'
+  #   name = 'About'
+  #   pageRef = '/about'
+  #   weight = 2
 
   #ignore these sections
   #some of these could be useful in the future, do check back
