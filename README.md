@@ -39,9 +39,24 @@ The `poems/` folder especially `o-captain` contains some very interesting footno
 
 The `narratives/` also contain some very interesting stylizations
 
-#### Hyperlinks
+#### Shortcodes
 
-Different from conventional markdown, Hugo uses some custom link syntax
+The Ed Github `layouts/shortcodes/` contains a bunch of Hugo shortcuts to add a bunch of components like table of contents etc.
+
+##### Images
+
+We use a `img` shortcode
+
+```
+{{< img src="/profile.jpeg" alt="A description" width="400" height="400" class="test">}}
+```
+
+Put your images under `/static`, and when using the path immediately use the image name without the `/static/profile.jpeg`
+
+
+##### Hyperlinks
+
+We use a custom `link` shortcode
 
 ```
 {{< link src="http://gohugo.io" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}

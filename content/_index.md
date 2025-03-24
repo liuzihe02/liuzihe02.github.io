@@ -2,7 +2,12 @@
 title: "Home"
 ---
 
+
+
 # hey!
+
+{{< img src="/profile.jpeg" alt="A description" width="400" height="400" class="test">}}
+
 
 <!-- previous decription -->
 
