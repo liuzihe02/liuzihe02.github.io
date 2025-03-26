@@ -57,6 +57,9 @@ refLinksErrorLevel = 'WARNING'
 
   recentPostsSize = 5
 
+  #default is enable math unless the frontmatter says math = false
+  math = true
+
   [params.contact]
     # Forms Backend URL, used in contacts form
     formAction = 'https://submit-form.com/example'
@@ -170,6 +173,11 @@ refLinksErrorLevel = 'WARNING'
     pageRef = '/projects'
     weight = 2
 
+  [[menus.main]]
+    identifier = 'posts'
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 3
   
   # [[menus.main]]
   #   identifier = 'about'
@@ -186,11 +194,11 @@ refLinksErrorLevel = 'WARNING'
   #   pageRef = '/credits'
   #   weight = 3
 
-  # [[menus.main]]
-  #   identifier = 'documentation'
-  #   name = 'Documentation'
-  #   pageRef = '/documentation'
-  #   weight = 4
+  [[menus.main]]
+    identifier = 'documentation'
+    name = 'Documentation'
+    pageRef = '/documentation'
+    weight = 4
 
   # [[menus.main]]
   #   identifier = 'dramas'
@@ -204,11 +212,11 @@ refLinksErrorLevel = 'WARNING'
   #   pageRef = '/narratives'
   #   weight = 5
 
-  # [[menus.main]]
-  #   identifier = 'poems'
-  #   name = 'Poems'
-  #   pageRef = '/poems'
-  #   weight = 5
+  [[menus.main]]
+    identifier = 'poems'
+    name = 'Poems'
+    pageRef = '/poems'
+    weight = 5
 
   # [[menus.main]]
   #   identifier = 'contact'
@@ -347,6 +355,15 @@ refLinksErrorLevel = 'WARNING'
       [markup.goldmark.parser.attribute]
         # Enable custom attribute support for blocks
         block = true
+
+    #we add this for math rendering
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        #use this to display inline
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['$', '$']]
 
 # If enableGitInfo is true, it will override any lastmod dates in our
 # front matter. We should at least allow ourselves to manually override

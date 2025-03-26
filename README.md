@@ -70,6 +70,12 @@ This creates a hyperlink to "http://gohugo.io" with the visible text "University
 
 The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of creating reusable components within your content. This particular shortcode is called "link" and is likely defined in your Hugo theme or site configuration.
 
+### Math Content
+
+See [here](https://gohugo.io/content-management/mathematics/)
+
+We have used the `$` delimiter for inline equations. However, to avoid confusion, to use the regular $ sign, we will need to add a double escape `A \\$5 bill is a awesome`
+
 ## Deployment
 
 - The `yaml` file is a GitHub actions workflow that automates the build and deployment process to GitHub Pages

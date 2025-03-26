@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
+    <title>Tests - Liu Zihe</title>
+    
+    <link href="/test/" rel="alternate" type="text/html" title="html" />
+    <link href="/test/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
+    <link href="/test/atom.xml" rel="self" type="text/xml" title="atom" />
+    <link href="/test/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
+    <icon>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <author>
+        <name>Serghei Iakovlev</name>
+        <email>contact@serghei.pl</email>
+    </author>
+    <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
+    <updated>2022-05-01T14:56:58+02:00</updated>
+    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
+    <entry>
+        
+        <category term="test" />
+        
+        <link rel="alternate" type="type/html" href="http://localhost:1313/test/test2/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[My poem 2]]></title>
+        
+        
+        
+        <published>0001-01-01T00:00:00Z</published>
+        <updated>0001-01-01T00:00:00Z</updated>
+        <id>urn:uuid:c45f41e0-c7f0-5221-198c-6dbd3e585e7c</id>
+        
+        <summary type="html"><![CDATA[ The library is pretty And so are books Deep ]]></summary>
+    </entry>
+    <entry>
+        
+        <category term="test" />
+        
+        <link rel="alternate" type="type/html" href="http://localhost:1313/test/test1/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[My poem]]></title>
+        
+        
+        
+        <published>0001-01-01T00:00:00Z</published>
+        <updated>0001-01-01T00:00:00Z</updated>
+        <id>urn:uuid:fb221d71-35af-5767-c948-735b5be38bf0</id>
+        
+        <summary type="html"><![CDATA[ The library is pretty And so are books Deep ]]></summary>
+    </entry>
+</feed>

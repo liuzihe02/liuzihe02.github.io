@@ -16,8 +16,26 @@
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
-    <updated>2022-05-01T14:56:58+02:00</updated>
+    <updated>2022-10-17T22:45:36+11:00</updated>
     <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/math/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[My First Post]]></title>
+        
+        
+        
+        <published>2022-10-17T22:45:36+11:00</published>
+        <updated>2022-10-17T22:45:36+11:00</updated>
+        <id>urn:uuid:ca59884e-df81-5fa1-892b-a33b753f7d52</id>
+        
+        <summary type="html"><![CDATA[This is a post about latex.
+An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace:
+$${a}^{b} - \overbrace{c}^{d}$$ Two overbraces: $$\underbrace{a}_{b} - \underbrace{c}_{d}$$ None of these below works properly:
+$$ \begin{aligned} equation &= 16 \\ other &= 26 + 13 \end{aligned} $$ $$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$ ]]></summary>
+    </entry>
     <entry>
         
         <category term="dramas" />
