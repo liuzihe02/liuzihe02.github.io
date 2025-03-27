@@ -1,4 +1,4 @@
-<!-- the margin auto here makes the image automatically centred -->
+<!-- the margin auto here makes the image automatically centred. we use a custom shortcode here to centre the image -->
 <div style="display: block; width: 100%">
   <img src="{{ .Get "src" }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{
   with .Get "width" }}width="{{ . }}"{{ end }} {{ with .Get "height"

@@ -36,7 +36,7 @@ Instead, use the `assets/`, `layouts/`,`static/` direcotry in the project root. 
 
 The `poems/` folder especially `o-captain` contains some very interesting footnotes and stylizations for the `poems` layout
 
-The `narratives/` also contain some very interesting stylizations
+The `narratives/` also contain some very interesting stylizations.
 
 #### Shortcodes
 
@@ -72,11 +72,11 @@ The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of 
 
 ### Overleaf Documents
 
-Most of my documents are written in overleaf. We will go through the procedure of converting an overleaf zipped package into GitHub Flavored Markdown. Make sure you have an updated version of `pandoc`
+Most of my documents are written in overleaf. We will go through the procedure of converting an overleaf zipped package into `pandoc` files. Make sure you have a `downloads/` working directory stored in the root directory where we will download our zip files, extract them to the relevant `pandoc` files.
 
 **Step 1: Extract Overleaf ZIP source file**
 
-> This is assuming we have downloaded the directory to the root directory
+> This is assuming we have downloaded the directory to `downloads/`
 
 Go to the zip file and extract contents to a directory
 
@@ -88,28 +88,40 @@ unzip DFT-FFT.zip -d dft-fft
 
 ```bash
 cd dft-fft
-pandoc main.tex -o ../content/posts/dft-fft.pdc \
+pandoc main.tex -o ../../content/posts/dft-fft.pdc \
   --from=latex \
   --to=markdown \
-  --extract-media=../static \
+  --extract-media=../../static \
   --citeproc \
   --bibliography=references.bib \
   --standalone \
   --mathjax
 ```
 
+There might be some issues
+
 #### Math Content
 
-See [here](https://gohugo.io/content-management/mathematics/) on how to render `$` and `$$` in Hugo markdown.
+See [here](https://gohugo.io/content-management/mathematics/) on how to render `$` and `$$` in Hugo markdown, with **Goldmark** markdown handler. However, Goldmark, despite being much faster, has limited math support hence we shall be using Pandoc instead as our default markdown handler.
 
 We have used the `$` delimiter for inline equations. However, to avoid confusion, to use the regular `$` sign, we will need to add a double escape `A \\$5 bill is a awesome`
 
-```html
+```
 <!-- add math rendering. will check frontmater, then section parameters, then site config in hugo.toml -->
-{{ if .Param "math" }} {{ partialCached "math.html" . }} {{ end }}
+<head>
+  ...
+  {{ if .Param "math" }}
+    {{ partialCached "math.html" . }}
+  {{ end }}
+  ...
+</head>
 ```
 
-We have also used `{{ if .Param "math" }}` instead of the reccomended `{{ if .Params.math }}` in step 3 of the guide. The reccomended version only checks the page configuration in `frontmatter`, but our version checks the site settings too. We have set default math rendering for everything.
+> The author Sergey has very kindly included `layouts/partials/custom-head.html` for us, so we don't have to modify the `head.html` which causes a bunch of other problems, but rather just add more code to `custom-head.html`. This extra stuff will automatically be included in `head.html`. This is where we put the conditional partial template in step 3 of the guide.
+
+Please use `{{ if .Param "math" }}` instead of `{{ if .Params.math }}` in step 3 of the guide. The latter only checks the page configuration in `frontmatter`, but the former checks the site config too for the `math` setting
+
+> Remember that this stuff must be in between the `<head>...</head>` tags!
 
 > If you find that this makes loading the page much slower, you can simply set `math` to be `false` in the site config and selectively apply `math` to be `true` in the page frontmatter
 

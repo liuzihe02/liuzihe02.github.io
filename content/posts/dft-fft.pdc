@@ -1,9 +1,10 @@
 ---
-author: "Zihe"
-bibliography: "references.bib"
-date: "7 March 2025"
-nocite: "\\nocite{*}"
-title: "Investigating the Discrete Fourier Transform and Fast Fourier Transform"
+author: "Zihe Liu"
+bibliography: references.bib
+date: 7 March 2025
+nocite: "`\\nocite{*}`{=latex}"
+title: Investigating the Discrete Fourier Transform and Fast Fourier
+  Transform
 ---
 
 # Outline
@@ -48,11 +49,11 @@ $$X[k] = \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\p
     \end{bmatrix}$$
 
 By varying $k$ from $0$ to $N-1$, we can collate all outputs ${X[k]}$
-into a vector $\bm{X}$, collate all inputs $x[n]$ into a vector
-$\bm{x}$, to get:
+into a vector $\mathbf{X}$, collate all inputs $x[n]$ into a vector
+$\mathbf{x}$, to get:
 
-$$\bm{X}=\bm{W}\bm{x}, \quad
-\bm{W} = 
+$$\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
+\mathbf{W} = 
 \begin{bmatrix}
 1 & 1 & 1 & \cdots & 1 \\
 1 & W_N & W_N^2 & \cdots & W_N^{N-1} \\
@@ -61,23 +62,24 @@ $$\bm{X}=\bm{W}\bm{x}, \quad
 1 & W_N^{N-1} & W_N^{2(N-1)} & \cdots & W_N^{(N-1)(N-1)}
 \end{bmatrix}$$
 
-where $\bm{W}$ is the DFT matrix.
+where $\mathbf{W}$ is the DFT matrix.
 
 ## Complexity
 
 :::: algorithm
 ::: algorithmic
-$N \gets \text{length}(\bm{x})$ $\bm{W} \gets \text{zeros}(N, N)$
+$N \gets \text{length}(\mathbf{x})$
+$\mathbf{W} \gets \text{zeros}(N, N)$
 
-$\bm{W}[k,n] \gets e^{-j2\pi kn/N}$
+$\mathbf{W}[k,n] \gets e^{-j2\pi kn/N}$
 
-$\bm{X} \gets \bm{W} \cdot \bm{x}$ $\bm{X}$
+$\mathbf{X} \gets \mathbf{W} \cdot \mathbf{x}$ $\mathbf{X}$
 :::
 
 []{#alg:dft label="alg:dft"}
 ::::
 
-Direct computation of $\bm{X}$ requires $(N-1)^2$ complex
+Direct computation of $\mathbf{X}$ requires $(N-1)^2$ complex
 multiplications and $N(N-1)$ complex additions, as in Algorithm
 [\[alg:dft\]](#alg:dft){reference-type="ref+label" reference="alg:dft"}.
 Since multiplication is more compute-intensive than addition, the
@@ -104,30 +106,31 @@ X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k 
 \end{aligned}$$
 
 The first computation with $+W_N^k$ give us the first half of the full
-DFT vector $\bm{X}$, while the second computation with $-W_N^k$ give us
-the second half of $\bm{X}$. The proof is laid out in the Appendix.
+DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give
+us the second half of $\mathbf{X}$. The proof is laid out in the
+Appendix.
 
 ## Complexity
 
 :::: algorithm
 ::: algorithmic
-$N \gets \text{length}(\bm{x})$
+$N \gets \text{length}(\mathbf{x})$
 
-$\bm{x}$
+$\mathbf{x}$
 
-$\bm{x}_{even} \gets \bm{x}[0:2:N-1]$
-$\bm{x}_{odd} \gets \bm{x}[1:2:N-1]$
+$\mathbf{x}_{even} \gets \mathbf{x}[0:2:N-1]$
+$\mathbf{x}_{odd} \gets \mathbf{x}[1:2:N-1]$
 
-$\bm{X}_{even} \gets \text{FFT}(\bm{x}_{even})$
-$\bm{X}_{odd} \gets \text{FFT}(\bm{x}_{odd})$
+$\mathbf{X}_{even} \gets \text{FFT}(\mathbf{x}_{even})$
+$\mathbf{X}_{odd} \gets \text{FFT}(\mathbf{x}_{odd})$
 
-$\bm{X} \gets \text{zeros}(N)$
+$\mathbf{X} \gets \text{zeros}(N)$
 
 $W_N^k \gets e^{-j2\pi k/N}$
-$\bm{X}[k] \gets \bm{X}_{even}[k] + W_N^k \cdot \bm{X}_{odd}[k]$
-$\bm{X}[k+N/2] \gets \bm{X}_{even}[k] - W_N^k \cdot \bm{X}_{odd}[k]$
+$\mathbf{X}[k] \gets \mathbf{X}_{even}[k] + W_N^k \cdot \mathbf{X}_{odd}[k]$
+$\mathbf{X}[k+N/2] \gets \mathbf{X}_{even}[k] - W_N^k \cdot \mathbf{X}_{odd}[k]$
 
-$\bm{X}$
+$\mathbf{X}$
 :::
 ::::
 
@@ -156,7 +159,8 @@ Our overall complexity is $O(N\log N)$.
 ## Complexity
 
 ![Execution time versus signal length $N$ for various implementations of
-DFT and FFT](../static/figures/complex.jpg){#fig:complexity width="40%"}
+DFT and FFT](../../static/figures/complex.jpg){#fig:complexity
+width="40%"}
 
 ::: {#tab:R2}
   Algorithm      O(N)    O(N²)    O(N³)    O(log N)   O(N log N)
@@ -190,8 +194,8 @@ $O(N)$ and $O(N\log N)$ models.
 ## Numerical Error
 
 ![Reconstruction error versus signal length $N$ for various
-implementations of DFT and FFT](../static/figures/recon.jpg){#fig:recon
-width="40%"}
+implementations of DFT and
+FFT](../../static/figures/recon.jpg){#fig:recon width="40%"}
 
 We evaluate numerical accuracy of both algorithms in
 [2](#fig:recon){reference-type="ref+label" reference="fig:recon"} by
@@ -219,10 +223,10 @@ transducer data (Channel 1):
 
 <figure id="fig:windowing">
 <div class="minipage">
-<img src="../static/figures/sin5_window.png" style="width:70.0%" />
+<img src="../../static/figures/sin5_window.png" style="width:70.0%" />
 </div>
 <div class="minipage">
-<img src="../static/figures/sin5_window_zoomed.png"
+<img src="../../static/figures/sin5_window_zoomed.png"
 style="width:70.0%" />
 </div>
 <figcaption>Effect of windowing on amplitude and side lobe
@@ -319,8 +323,8 @@ X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k 
 
 The multipliers $W_N^k$ are known as *twiddle factors*. The first
 computation with $+W_N^k$ give us the first half of the full DFT vector
-$\bm{X}$, while the second computation with $-W_N^k$ give us the second
-half of $\bm{X}$.
+$\mathbf{X}$, while the second computation with $-W_N^k$ give us the
+second half of $\mathbf{X}$.
 
 ::::::: {#refs .references .csl-bib-body .hanging-indent entry-spacing="0"}
 ::: {#ref-csr_fft .csl-entry}

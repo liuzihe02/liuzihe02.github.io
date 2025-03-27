@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
     <title>Posts - Liu Zihe</title>
     
     <link href="/posts/" rel="alternate" type="text/html" title="html" />
     <link href="/posts/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/posts/atom.xml" rel="self" type="text/xml" title="atom" />
     <link href="/posts/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
-    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <icon>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2022-10-17T22:45:36+11:00</updated>
-    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
     <entry>
         
         <category term="posts" />
         
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/math/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="http://localhost:1313/posts/math/?utm_source=atom_feed" />
         <title type="html"><![CDATA[My First Post]]></title>
         
         
         
         <published>2022-10-17T22:45:36+11:00</published>
         <updated>2022-10-17T22:45:36+11:00</updated>
-        <id>urn:uuid:ca59884e-df81-5fa1-892b-a33b753f7d52</id>
+        <id>urn:uuid:d1eab331-475b-555a-79c7-331f74a70fcb</id>
         
         <summary type="html"><![CDATA[This is a post about latex.
 An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace:
@@ -38,17 +38,17 @@ An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i 
         
         <category term="posts" />
         
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/dft-fft/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="http://localhost:1313/posts/dft-fft/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Investigating the Discrete Fourier Transform and Fast Fourier Transform]]></title>
         
         
         
         <published>0001-01-01T00:00:00Z</published>
         <updated>0001-01-01T00:00:00Z</updated>
-        <id>urn:uuid:8ae2474a-d471-5d23-1921-3ac30bad0906</id>
+        <id>urn:uuid:406114f9-c07f-5eab-0935-1f2aad68e3c4</id>
         
                 <author>
-                    <name>Zihe</name>
+                    <name>Zihe Liu</name>
                 </author>
         
         <summary type="html"><![CDATA[Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.]]></summary>

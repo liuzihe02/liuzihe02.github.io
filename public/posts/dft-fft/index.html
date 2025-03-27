@@ -1,21 +1,16 @@
-<!doctype html>
-<html lang="en"
-      dir="ltr"
-      prefix="og: https://ogp.me/ns#"
-      itemscope
-      itemtype="https://schema.org/WebPage"
-      id="top-of-site">
-    <head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 
-    <link rel="canonical" href="https://liuzihe02.github.io/posts/dft-fft/">
+    <link rel="canonical" href="http://localhost:1313/posts/dft-fft/">
 
     <title>Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe</title>
     <meta name="description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
 
-    <meta name="author" content="Zihe">
+    <meta name="author" content="Zihe Liu">
     <meta name="generator" content="Hugo 0.127.0">
 
     
@@ -28,64 +23,10 @@
     <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
     <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
-<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/dft-fft/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dft-fft/">
 
-    <meta name="theme-color" content="#ffffff">    
-    <meta property="og:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
-    <meta property="og:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://liuzihe02.github.io/posts/dft-fft/">
-    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
-    <meta property="og:image:width" content="100">
-    <meta property="og:image:height" content="100">
-    
-    <meta name="twitter:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
-    <meta name="twitter:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
-    <meta name="twitter:site" content="@egreps">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
-    
-
-<script type="application/ld+json" id="schema-data">
-    {
-        "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://liuzihe02.github.io/posts/dft-fft/"
-        },
-        "url": "https://liuzihe02.github.io/posts/dft-fft/",
-        "headline": "Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
-        "description": "Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
-        "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
-        "datePublished": "0001-01-01T00:00:00Z",
-        "dateModified": "0001-01-01T00:00:00Z",
-            "author": {
-                "@type": "Person",
-                "name": "Zihe"
-            },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Serghei Iakovlev",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
-                "width": "96",
-                "height": "96"
-            }
-        }
-    }
-</script>
-
-
-
-    <script src="/js/common.js"></script>
-</head>
-
-
-    
-    
-        <script
+    <meta name="theme-color" content="#ffffff">
+    <script
   id="MathJax-script"
   async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
@@ -106,6 +47,56 @@
 </script>
 
     
+    <meta property="og:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
+    <meta property="og:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/posts/dft-fft/">
+    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    
+    <meta name="twitter:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
+    <meta name="twitter:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
+    <meta name="twitter:site" content="@egreps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
+    
+
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://localhost:1313/posts/dft-fft/"
+        },
+        "url": "http://localhost:1313/posts/dft-fft/",
+        "headline": "Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
+        "description": "Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
+        "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
+        "datePublished": "0001-01-01T00:00:00Z",
+        "dateModified": "0001-01-01T00:00:00Z",
+            "author": {
+                "@type": "Person",
+                "name": "Zihe Liu"
+            },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Serghei Iakovlev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "width": "96",
+                "height": "96"
+            }
+        }
+    }
+</script>
+
+
+
+    <script src="/js/common.js"></script>
+</head>
 
     <body class="theme-base-">
         <div id="top-of-site-anchor"></div>
@@ -230,11 +221,11 @@ k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
 class="math inline">\(0\)</span> to <span
 class="math inline">\(N-1\)</span>, we can collate all outputs <span
 class="math inline">\({X[k]}\)</span> into a vector <span
-class="math inline">\(\bm{X}\)</span>, collate all inputs <span
+class="math inline">\(\mathbf{X}\)</span>, collate all inputs <span
 class="math inline">\(x[n]\)</span> into a vector <span
-class="math inline">\(\bm{x}\)</span>, to get:</p>
-<p><span class="math display">\[\bm{X}=\bm{W}\bm{x}, \quad
-\bm{W} =
+class="math inline">\(\mathbf{x}\)</span>, to get:</p>
+<p><span class="math display">\[\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
+\mathbf{W} =
 \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
 1 &amp; W_N &amp; W_N^2 &amp; \cdots &amp; W_N^{N-1} \\
@@ -242,21 +233,22 @@ class="math inline">\(\bm{x}\)</span>, to get:</p>
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; W_N^{N-1} &amp; W_N^{2(N-1)} &amp; \cdots &amp; W_N^{(N-1)(N-1)}
 \end{bmatrix}\]</span></p>
-<p>where <span class="math inline">\(\bm{W}\)</span> is the DFT
+<p>where <span class="math inline">\(\mathbf{W}\)</span> is the DFT
 matrix.</p>
 <h2 id="complexity">Complexity</h2>
 <div class="algorithm">
 <div class="algorithmic">
-<p><span class="math inline">\(N \gets \text{length}(\bm{x})\)</span>
-<span class="math inline">\(\bm{W} \gets \text{zeros}(N, N)\)</span></p>
-<p><span class="math inline">\(\bm{W}[k,n] \gets e^{-j2\pi
+<p><span class="math inline">\(N \gets
+\text{length}(\mathbf{x})\)</span> <span
+class="math inline">\(\mathbf{W} \gets \text{zeros}(N, N)\)</span></p>
+<p><span class="math inline">\(\mathbf{W}[k,n] \gets e^{-j2\pi
 kn/N}\)</span></p>
-<p><span class="math inline">\(\bm{X} \gets \bm{W} \cdot \bm{x}\)</span>
-<span class="math inline">\(\bm{X}\)</span></p>
+<p><span class="math inline">\(\mathbf{X} \gets \mathbf{W} \cdot
+\mathbf{x}\)</span> <span class="math inline">\(\mathbf{X}\)</span></p>
 </div>
 <p><span id="alg:dft" data-label="alg:dft"></span></p>
 </div>
-<p>Direct computation of <span class="math inline">\(\bm{X}\)</span>
+<p>Direct computation of <span class="math inline">\(\mathbf{X}\)</span>
 requires <span class="math inline">\((N-1)^2\)</span> complex
 multiplications and <span class="math inline">\(N(N-1)\)</span> complex
 additions, as in Algorithm <a href="#alg:dft"
@@ -288,29 +280,32 @@ X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
 \end{aligned}\]</span></p>
 <p>The first computation with <span
 class="math inline">\(+W_N^k\)</span> give us the first half of the full
-DFT vector <span class="math inline">\(\bm{X}\)</span>, while the second
-computation with <span class="math inline">\(-W_N^k\)</span> give us the
-second half of <span class="math inline">\(\bm{X}\)</span>. The proof is
-laid out in the Appendix.</p>
+DFT vector <span class="math inline">\(\mathbf{X}\)</span>, while the
+second computation with <span class="math inline">\(-W_N^k\)</span> give
+us the second half of <span class="math inline">\(\mathbf{X}\)</span>.
+The proof is laid out in the Appendix.</p>
 <h2 id="complexity-1">Complexity</h2>
 <div class="algorithm">
 <div class="algorithmic">
 <p><span class="math inline">\(N \gets
-\text{length}(\bm{x})\)</span></p>
-<p><span class="math inline">\(\bm{x}\)</span></p>
-<p><span class="math inline">\(\bm{x}_{even} \gets
-\bm{x}[0:2:N-1]\)</span> <span class="math inline">\(\bm{x}_{odd} \gets
-\bm{x}[1:2:N-1]\)</span></p>
-<p><span class="math inline">\(\bm{X}_{even} \gets
-\text{FFT}(\bm{x}_{even})\)</span> <span
-class="math inline">\(\bm{X}_{odd} \gets
-\text{FFT}(\bm{x}_{odd})\)</span></p>
-<p><span class="math inline">\(\bm{X} \gets \text{zeros}(N)\)</span></p>
+\text{length}(\mathbf{x})\)</span></p>
+<p><span class="math inline">\(\mathbf{x}\)</span></p>
+<p><span class="math inline">\(\mathbf{x}_{even} \gets
+\mathbf{x}[0:2:N-1]\)</span> <span
+class="math inline">\(\mathbf{x}_{odd} \gets
+\mathbf{x}[1:2:N-1]\)</span></p>
+<p><span class="math inline">\(\mathbf{X}_{even} \gets
+\text{FFT}(\mathbf{x}_{even})\)</span> <span
+class="math inline">\(\mathbf{X}_{odd} \gets
+\text{FFT}(\mathbf{x}_{odd})\)</span></p>
+<p><span class="math inline">\(\mathbf{X} \gets
+\text{zeros}(N)\)</span></p>
 <p><span class="math inline">\(W_N^k \gets e^{-j2\pi k/N}\)</span> <span
-class="math inline">\(\bm{X}[k] \gets \bm{X}_{even}[k] + W_N^k \cdot
-\bm{X}_{odd}[k]\)</span> <span class="math inline">\(\bm{X}[k+N/2] \gets
-\bm{X}_{even}[k] - W_N^k \cdot \bm{X}_{odd}[k]\)</span></p>
-<p><span class="math inline">\(\bm{X}\)</span></p>
+class="math inline">\(\mathbf{X}[k] \gets \mathbf{X}_{even}[k] + W_N^k
+\cdot \mathbf{X}_{odd}[k]\)</span> <span
+class="math inline">\(\mathbf{X}[k+N/2] \gets \mathbf{X}_{even}[k] -
+W_N^k \cdot \mathbf{X}_{odd}[k]\)</span></p>
+<p><span class="math inline">\(\mathbf{X}\)</span></p>
 </div>
 </div>
 <p>We can follow the above procedure to split an <span
@@ -344,7 +339,7 @@ N)\)</span>.</p>
 <h1 id="experiments">Experiments</h1>
 <h2 id="complexity-2">Complexity</h2>
 <figure id="fig:complexity">
-<img src="../static/figures/complex.jpg" style="width:40.0%"
+<img src="../../static/figures/complex.jpg" style="width:40.0%"
 alt="Execution time versus signal length N for various implementations of DFT and FFT" />
 <figcaption aria-hidden="true">Execution time versus signal length <span
 class="math inline">\(N\)</span> for various implementations of DFT and
@@ -418,7 +413,7 @@ to <span class="math inline">\(O(N)\)</span> and <span
 class="math inline">\(O(N\log N)\)</span> models.</p>
 <h2 id="numerical-error">Numerical Error</h2>
 <figure id="fig:recon">
-<img src="../static/figures/recon.jpg" style="width:40.0%"
+<img src="../../static/figures/recon.jpg" style="width:40.0%"
 alt="Reconstruction error versus signal length N for various implementations of DFT and FFT" />
 <figcaption aria-hidden="true">Reconstruction error versus signal length
 <span class="math inline">\(N\)</span> for various implementations of
@@ -450,10 +445,10 @@ a sine wave of 5Hz input frequency, and do a DFT on the the input force
 transducer data (Channel 1):</p>
 <figure id="fig:windowing">
 <div class="minipage">
-<p><img src="../static/figures/sin5_window.png" style="width:70.0%" /></p>
+<p><img src="../../static/figures/sin5_window.png" style="width:70.0%" /></p>
 </div>
 <div class="minipage">
-<p><img src="../static/figures/sin5_window_zoomed.png"
+<p><img src="../../static/figures/sin5_window_zoomed.png"
 style="width:70.0%" /></p>
 </div>
 <figcaption>
@@ -572,9 +567,10 @@ X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
 <p>The multipliers <span class="math inline">\(W_N^k\)</span> are known
 as <em>twiddle factors</em>. The first computation with <span
 class="math inline">\(+W_N^k\)</span> give us the first half of the full
-DFT vector <span class="math inline">\(\bm{X}\)</span>, while the second
-computation with <span class="math inline">\(-W_N^k\)</span> give us the
-second half of <span class="math inline">\(\bm{X}\)</span>.</p>
+DFT vector <span class="math inline">\(\mathbf{X}\)</span>, while the
+second computation with <span class="math inline">\(-W_N^k\)</span> give
+us the second half of <span
+class="math inline">\(\mathbf{X}\)</span>.</p>
 <div id="refs" class="references csl-bib-body hanging-indent"
 data-entry-spacing="0" role="list">
 <div id="ref-csr_fft" class="csl-entry" role="listitem">
