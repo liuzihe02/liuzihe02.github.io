@@ -16,7 +16,14 @@
       <link>https://liuzihe02.github.io/posts/math/</link>
       <pubDate>Mon, 17 Oct 2022 22:45:36 +1100</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/posts/math/</guid>
-      <description>This is a post about latex.&#xA;An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace:&#xA;$${a}^{b} - \overbrace{c}^{d}$$ Two overbraces: $$\underbrace{a}_{b} - \underbrace{c}_{d}$$ None of these below works properly:&#xA;$$ \begin{aligned} equation &amp;= 16 \\ other &amp;= 26 + 13 \end{aligned} $$ $$ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} $$ </description>
+      <description>This is a post about latex.&#xA;An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace:&#xA;\[{a}^{b} - \overbrace{c}^{d}\] Two overbraces: \[\underbrace{a}_{b} - \underbrace{c}_{d}\] None of these below works properly:&#xA;\[ \begin{aligned} equation &amp;amp;= 16 \\ other &amp;amp;= 26 + 13 \end{aligned} \]&#xA;\[ \begin{pmatrix} a &amp;amp; b \\ c &amp;amp; d \end{pmatrix} \]</description>
+    </item>
+    <item>
+      <title>Investigating the Discrete Fourier Transform and Fast Fourier Transform</title>
+      <link>https://liuzihe02.github.io/posts/dft-fft/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <guid>https://liuzihe02.github.io/posts/dft-fft/</guid>
+      <description>Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.</description>
     </item>
   </channel>
 </rss>

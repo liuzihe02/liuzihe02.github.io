@@ -86,6 +86,27 @@
 
     
     
+        <script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [["$", "$"]], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
+    
 
     <body class="theme-base-">
         <div id="top-of-site-anchor"></div>
@@ -150,14 +171,17 @@
     </header>
 
     <div class="page-body">
-        <p>This is an example of a custom shortcode that you can put right into your content.
-You will need to add a form action to the the shortcode to make it work.
-Check out <a href="https://formspark.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspark</a> for a simple, free form service.</p>
-<p>Ed theme is not strictly tied to any forms backend. You can easily use any backend
-like <a href="https://formspark.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspark</a>, <a href="https://formspree.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspree</a>, <a href="https://fabform.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">FabForm</a> and so on just by changing the <code>formAction</code> parameter
-in the site configuration file.</p>
-<p>For a more subtle configuration of the contact form itself, you can also replace
-<code>layouts/shortcodes/form-contact.html</code> partial in project wide level.</p>
+        <p>This is an example of a custom shortcode that you can put right into
+your content. You will need to add a form action to the the shortcode to
+make it work. Check out <a href="https://formspark.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspark</a> for a simple, free form
+service.</p>
+<p>Ed theme is not strictly tied to any forms backend. You can easily
+use any backend like <a href="https://formspark.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspark</a>, <a href="https://formspree.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Formspree</a>,
+<a href="https://fabform.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">FabForm</a> and so on just by changing the
+<code>formAction</code> parameter in the site configuration file.</p>
+<p>For a more subtle configuration of the contact form itself, you can
+also replace <code>layouts/shortcodes/form-contact.html</code> partial
+in project wide level.</p>
 <div id="site-contact" class="contact-form">
     <form accept-charset="UTF-8" action="https://submit-form.com/example" method="POST" id="contact-form">
         <div class="form-item">

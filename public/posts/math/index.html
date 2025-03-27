@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://liuzihe02.github.io/posts/math/">
 
     <title>My First Post - Liu Zihe</title>
-    <meta name="description" content="This is a post about latex. An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace: $${a}^{b} - …">
+    <meta name="description" content="This is a post about latex. An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace: \[{a}^{b} - …">
     <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
 
     <meta name="author" content="Serghei Iakovlev">
@@ -32,7 +32,7 @@
 
     <meta name="theme-color" content="#ffffff">    
     <meta property="og:title" content="My First Post - Liu Zihe">
-    <meta property="og:description" content="This is a post about latex. An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace: $${a}^{b} - …">
+    <meta property="og:description" content="This is a post about latex. An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace: \[{a}^{b} - …">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://liuzihe02.github.io/posts/math/">
     <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
@@ -42,7 +42,7 @@
     <meta property="article:modified_time" content="2022-10-17T22:45:36">
     
     <meta name="twitter:title" content="My First Post - Liu Zihe">
-    <meta name="twitter:description" content="This is a post about latex. An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace: $${a}^{b} - …">
+    <meta name="twitter:description" content="This is a post about latex. An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace: \[{a}^{b} - …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
@@ -58,7 +58,7 @@
         },
         "url": "https://liuzihe02.github.io/posts/math/",
         "headline": "My First Post - Liu Zihe",
-        "description": "This is a post about latex. An equation: $$\\int_{-\\infty}^{\\infty} e^{-x^2} dx$$ . inline example: $\\sum_{i = 0}^N 2i = y$ One overbrace: $${a}^{b} - …",
+        "description": "This is a post about latex. An equation: \\[\\int_{-\\infty}^{\\infty} e^{-x^2} dx\\]. inline example: \\(\\sum_{i = 0}^N 2i = y\\) One overbrace: \\[{a}^{b} - …",
         "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
         "datePublished": "2022-10-17T22:45:36+11:00",
         "dateModified": "2022-10-17T22:45:36+11:00",
@@ -189,31 +189,28 @@ Published on
 
     <div class="post-body">
         <p>This is a post about latex.</p>
-<p>An equation:
-</p>
-$$\int_{-\infty}^{\infty} e^{-x^2} dx$$
-<p>. <!-- raw HTML omitted --></p>
-<p>inline example: $\sum_{i = 0}^N 2i = y$ <!-- raw HTML omitted --></p>
+<p>An equation: <span class="math display">\[\int_{-\infty}^{\infty}
+e^{-x^2} dx\]</span>. <!-- works --></p>
+<p>inline example: <span class="math inline">\(\sum_{i = 0}^N 2i =
+y\)</span> <!-- works --></p>
 <p>One overbrace:</p>
-$${a}^{b} - \overbrace{c}^{d}$$
-<p> <!-- raw HTML omitted --></p>
-<p>Two overbraces:
-</p>
-$$\underbrace{a}_{b} - \underbrace{c}_{d}$$
-<p> <!-- raw HTML omitted --></p>
+<p><span class="math display">\[{a}^{b} - \overbrace{c}^{d}\]</span>
+<!-- works--></p>
+<p>Two overbraces: <span class="math display">\[\underbrace{a}_{b} -
+\underbrace{c}_{d}\]</span> <!--does not work --></p>
 <p>None of these below works properly:</p>
-$$
+<p><span class="math display">\[
 \begin{aligned}
-        equation &= 16 \\
-        other &= 26 + 13
+        equation &amp;= 16 \\
+        other &amp;= 26 + 13
 \end{aligned}
-$$
-$$
+\]</span></p>
+<p><span class="math display">\[
 \begin{pmatrix}
-   a & b \\
-      c & d
+   a &amp; b \\
+      c &amp; d
       \end{pmatrix}
-$$
+\]</span></p>
 
     </div>
 

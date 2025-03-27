@@ -7,8 +7,8 @@
       id="top-of-site">
     {{ partial "head.html" . }}
 
-    <!-- add math rendering -->
-    {{ if .Params.math }}
+    <!-- add math rendering. will check frontmater, then section parameters, then site config in hugo.toml -->
+    {{ if .Param "math" }}
         {{ partialCached "math.html" . }}
     {{ end }}
 

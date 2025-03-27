@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://liuzihe02.github.io/documentation/">
 
     <title>Documentation - Liu Zihe</title>
-    <meta name="description" content="Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote …">
+    <meta name="description" content="Contents Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers. To install and use Ed …">
     <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
 
     <meta name="author" content="Alex Gil">
@@ -32,7 +32,7 @@
 
     <meta name="theme-color" content="#ffffff">    
     <meta property="og:title" content="Documentation - Liu Zihe">
-    <meta property="og:description" content="Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote …">
+    <meta property="og:description" content="Contents Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers. To install and use Ed …">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://liuzihe02.github.io/documentation/">
     <meta property="og:image" content="https://liuzihe02.github.io/documentation/screenshot-home.png">
@@ -40,7 +40,7 @@
     <meta property="og:image:height" content="1230">
     
     <meta name="twitter:title" content="Documentation - Liu Zihe">
-    <meta name="twitter:description" content="Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote …">
+    <meta name="twitter:description" content="Contents Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers. To install and use Ed …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://liuzihe02.github.io/documentation/screenshot-home.png">
@@ -56,7 +56,7 @@
         },
         "url": "https://liuzihe02.github.io/documentation/",
         "headline": "Documentation - Liu Zihe",
-        "description": "Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote …",
+        "description": "Contents Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers. To install and use Ed …",
         "image": {
             "@type": "ImageObject",
             "url": "https://liuzihe02.github.io/documentation/screenshot-home.png",
@@ -90,6 +90,27 @@
 
 
     
+    
+        <script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [["$", "$"]], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
     
 
     <body class="theme-base-">
@@ -159,288 +180,391 @@
     Contents
 </h2>
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#installing-ed">Installing Ed</a></li>
-    <li><a href="#getting-started">Getting started</a></li>
-    <li><a href="#hugo">Hugo</a></li>
-    <li><a href="#markdown-and-commonmark">Markdown and CommonMark</a></li>
-    <li><a href="#genres">Genres</a></li>
-    <li><a href="#configuring-author-selection">Configuring Author Selection</a>
-      <ul>
-        <li><a href="#author-display-in-ed">Author Display in Ed</a></li>
-      </ul>
-    </li>
-    <li><a href="#footnotes">Footnotes</a></li>
-    <li><a href="#blockquote">Blockquote</a></li>
-    <li><a href="#pages">Pages</a></li>
-    <li><a href="#tables-of-content">Tables of Content</a></li>
-    <li><a href="#styling-theme">Styling Theme</a></li>
-    <li><a href="#comments">Comments</a>
-      <ul>
-        <li><a href="#comment-configuration-for-content-types">Comment Configuration for Content Types</a></li>
-        <li><a href="#styling-comments">Styling Comments</a></li>
-        <li><a href="#localization">Localization</a></li>
-      </ul>
-    </li>
-    <li><a href="#integrating-analytics-with-ed">Integrating Analytics with Ed</a>
-      <ul>
-        <li><a href="#setting-up-google-analytics">Setting Up Google Analytics</a></li>
-        <li><a href="#configuring-google-tag-manager">Configuring Google Tag Manager</a></li>
-        <li><a href="#important-considerations-1">Important Considerations</a></li>
-        <li><a href="#making-the-choice">Making the Choice</a></li>
-      </ul>
-    </li>
-    <li><a href="#getting-help">Getting help</a></li>
-  </ul>
-</nav>
 
-<hr>
+
+<hr />
 <h2 id="prerequisites">Prerequisites</h2>
-<p>This documentation was built with beginners in mind, but has the necessary information for more seasoned producers.</p>
-<p>To install and use Ed you will be using your terminal. If you need a refresher, I highly recommend &ldquo;<a href="https://www.computervillage.org/articles/CommandLine.pdf" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">The Command Line Crash Course</a>&rdquo;. Working knowledge of HTML and CSS is also taken for granted. If you&rsquo;re new to HTML and CSS, you may want to check out the relevant courses on <a href="https://www.codecademy.com/learn/web" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">codecademy.com</a>.</p>
-<hr>
+<p>This documentation was built with beginners in mind, but has the
+necessary information for more seasoned producers.</p>
+<p>To install and use Ed you will be using your terminal. If you need a
+refresher, I highly recommend “<a href="https://www.computervillage.org/articles/CommandLine.pdf" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">The Command Line Crash Course</a>”. Working
+knowledge of HTML and CSS is also taken for granted. If you’re new to
+HTML and CSS, you may want to check out the relevant courses on
+<a href="https://www.codecademy.com/learn/web" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">codecademy.com</a>.</p>
+<hr />
 <h2 id="installing-ed">Installing Ed</h2>
-<p>Before starting, please be sure that you have <a href="https://gohugo.io/getting-started/quick-start/#step-1-install-hugo" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">installed Hugo</a> and <a href="https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">created a new site</a>. After that, you are ready to install Ed.</p>
-<p>Please note, to install Ed, you must have <a href="https://golang.org/dl/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Go >= 1.12</a> installed on your computer. You probably have Go already, but if you don&rsquo;t, the easiest way is probably to install is to follow <a href="https://go.dev/doc/install" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Go installation instruction</a>. To check if Go is running on your system enter the following line on your terminal (remember to ignore the <code>$</code>):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ go version
-</span></span></code></pre></div><p>If you don&rsquo;t get an error, you&rsquo;re good to go. Using the <code>cd</code> command on your terminal, navigate to the folder where you keep your web projects. Once you&rsquo;re in the folder where project live, initialize the <a href="https://gohugo.io/hugo-modules" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo Modules</a> system using the following line (replace <code>&lt;your_user&gt;</code> and <code>&lt;your_project&gt;</code> by real names):</p>
-<p><em>Note: If you have already initialized Hugo Modules for your site, you can skip this step.</em></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo mod init github.com/&lt;your_user&gt;/&lt;your_project&gt;
-</span></span></code></pre></div><p>If you haven&rsquo;t run this command before, your terminal output should
+<p>Before starting, please be sure that you have
+<a href="https://gohugo.io/getting-started/quick-start/#step-1-install-hugo" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">installed Hugo</a> and <a href="https://gohugo.io/getting-started/quick-start/#step-2-create-a-new-site" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">created a new site</a>. After that, you
+are ready to install Ed.</p>
+<p>Please note, to install Ed, you must have <a href="https://golang.org/dl/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Go >= 1.12</a>
+installed on your computer. You probably have Go already, but if you
+don’t, the easiest way is probably to install is to follow
+<a href="https://go.dev/doc/install" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Go installation instruction</a>. To check if Go is running on your system enter
+the following line on your terminal (remember to ignore the
+<code>$</code>):</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> go version</span></code></pre></div>
+<p>If you don’t get an error, you’re good to go. Using the
+<code>cd</code> command on your terminal, navigate to the folder where
+you keep your web projects. Once you’re in the folder where project
+live, initialize the <a href="https://gohugo.io/hugo-modules" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo Modules</a> system using the following
+line (replace <code>&lt;your_user&gt;</code> and
+<code>&lt;your_project&gt;</code> by real names):</p>
+<p><em>Note: If you have already initialized Hugo Modules for your site,
+you can skip this step.</em></p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> hugo mod init github.com/<span class="op">&lt;</span>your_user<span class="op">&gt;</span>/<span class="op">&lt;</span>your_project<span class="op">&gt;</span></span></code></pre></div>
+<p>If you haven’t run this command before, your terminal output should
 look similar to the following:</p>
-<pre tabindex="0"><code>go: creating new go.mod: module github.com/&lt;your_user&gt;/&lt;your_project&gt;
+<pre><code>go: creating new go.mod: module github.com/&lt;your_user&gt;/&lt;your_project&gt;
 go: to add module requirements and sums:
-    go mod tidy
-</code></pre><p>Take a look inside the <code><a href="https://github.com/sergeyklay/gohugo-theme-ed/tree/main/exampleSite" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">exampleSite</a></code> folder of the Ed theme. You&rsquo;ll find a file called <code><a href="https://github.com/sergeyklay/gohugo-theme-ed/blob/main/exampleSite/hugo.toml" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">hugo.toml</a></code>. Copy this file in the root directory of your Hugo site. After copying, review the contents of this file and adjust the settings according to your project&rsquo;s needs.</p>
-<p>By default, when you copy configuration file to the root of your Hugo site, it should contain the following lines:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">module</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">  <span class="c"># there might be additional settings here</span>
-</span></span><span class="line"><span class="cl">  <span class="c"># that are not relevant at the moment</span>
-</span></span><span class="line"><span class="cl">  <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">module</span><span class="p">.</span><span class="nx">imports</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">path</span> <span class="p">=</span> <span class="s1">&#39;github.com/sergeyklay/gohugo-theme-ed&#39;</span>
-</span></span></code></pre></div><p>If these lines are missing for some reason, make sure to add them:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">module</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[[</span><span class="nx">module</span><span class="p">.</span><span class="nx">imports</span><span class="p">]]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">path</span> <span class="p">=</span> <span class="s1">&#39;github.com/sergeyklay/gohugo-theme-ed&#39;</span>
-</span></span></code></pre></div><p>Finally, install Hugo Modules using the following command (remember you can copy and paste):</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo mod get
-</span></span></code></pre></div><p>Your terminal output should look similar to the following:</p>
-<pre tabindex="0"><code>go: no module dependencies to download
+    go mod tidy</code></pre>
+<p>Take a look inside the <code><a href="https://github.com/sergeyklay/gohugo-theme-ed/tree/main/exampleSite" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">exampleSite</a></code> folder
+of the Ed theme. You’ll find a file called
+<code><a href="https://github.com/sergeyklay/gohugo-theme-ed/blob/main/exampleSite/hugo.toml" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">hugo.toml</a></code>. Copy this file in the root
+directory of your Hugo site. After copying, review the contents of this
+file and adjust the settings according to your project’s needs.</p>
+<p>By default, when you copy configuration file to the root of your Hugo
+site, it should contain the following lines:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[module]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># there might be additional settings here</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># that are not relevant at the moment</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ...</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[module.imports]]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">path</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">github.com/sergeyklay/gohugo-theme-ed</span><span class="st">&#39;</span></span></code></pre></div>
+<p>If these lines are missing for some reason, make sure to add
+them:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[module]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[module.imports]]</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">path</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">github.com/sergeyklay/gohugo-theme-ed</span><span class="st">&#39;</span></span></code></pre></div>
+<p>Finally, install Hugo Modules using the following command (remember
+you can copy and paste):</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> hugo mod get</span></code></pre></div>
+<p>Your terminal output should look similar to the following:</p>
+<pre><code>go: no module dependencies to download
 go: downloading github.com/sergeyklay/gohugo-theme-ed v0.8.0
 go: added github.com/sergeyklay/gohugo-theme-ed v0.8.0
 hugo: downloading modules …
-hugo: collected modules in 5342 ms
-</code></pre><hr>
+hugo: collected modules in 5342 ms</code></pre>
+<hr />
 <h2 id="getting-started">Getting started</h2>
-<p>After installing the theme successfully it requires a just a few more steps to get your site running.</p>
-<p>If you create a new Hugo project, the <code>content</code> folder is blank by default. You can copy the <code>content</code> folder from <code>exampleSite/content</code> to the project root directory to preview.</p>
-<p>To see if Ed is working properly we will take advantage of Hugo&rsquo;s built in server. You can build the first version of your site and run the Hugo server at the same time by entering:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ hugo server
-</span></span></code></pre></div><p>Copy the url from your terminal log and paste it into your browser of choice. This url usually looks something like this <code>http://localhost:1313</code>. At this point you should be looking at your very own working version of Ed:</p>
+<p>After installing the theme successfully it requires a just a few more
+steps to get your site running.</p>
+<p>If you create a new Hugo project, the <code>content</code> folder is
+blank by default. You can copy the <code>content</code> folder from
+<code>exampleSite/content</code> to the project root directory to
+preview.</p>
+<p>To see if Ed is working properly we will take advantage of Hugo’s
+built in server. You can build the first version of your site and run
+the Hugo server at the same time by entering:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> hugo server</span></code></pre></div>
+<p>Copy the url from your terminal log and paste it into your browser of
+choice. This url usually looks something like this
+<code>http://localhost:1313</code>. At this point you should be looking
+at your very own working version of Ed:</p>
 
 <div style="display: block; width: 100%">
   <img src="screenshot-home.png" alt="Your very own Ed"   
   style="display: block; margin: 0 auto;">
 </div>
 
-<hr>
+<hr />
 <h2 id="hugo">Hugo</h2>
-<p>Ed is a Hugo theme. That means you will need some familiarity with Hugo to take advantage of its full potential. While running a Hugo site is a bit more involved than Wordpress and other similar tools, the payoff in the long term is worth the effort to learn it. If you are new to Hugo, I recommend you take a look at <a href="https://strapi.io/blog/guide-to-using-hugo-site-generator" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">A Guide to Using Hugo</a> at <em>Strapi</em>, <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Host on GitHub</a> on <em>Hugo Documentation Site</em> and <a href="https://gohugo.io/documentation/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo's own documentation</a> to start getting a sense of how it works.</p>
-<p>Once you have gone through these tutorials, you can get started using Ed. Remember to always and only edit content files for your site using <a href="https://en.wikipedia.org/wiki/Text_editor" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">a plain text editor</a>, and <em>not</em> a word processor. I&rsquo;m composing this file using a plain text editor called <a href="https://code.visualstudio.com/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Visual Studio Code</a>.</p>
-<p>You should make sure that all your texts have the YAML <a href="https://gohugo.io/content-management/front-matter/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Front Matter</a> (the information at the top of the file). YAML stands for &ldquo;YAML Ain&rsquo;t Markup Language&rdquo; &mdash; no disrespect to XML &mdash; and it&rsquo;s the main way that Hugo handles named data. Here&rsquo;s an example of YAML Front Matter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nn">---</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Common-Defined params</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Cahier d&#39;un retour au pays natal&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">draft</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Is this text a draft?</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tags</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">Tag</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;Another tag&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="ld">2022-02-01T14:56:58</span><span class="m">+02</span><span class="p">:</span><span class="m">00</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">lastmod</span><span class="p">:</span><span class="w"> </span><span class="ld">2022-05-01T14:56:58</span><span class="m">+02</span><span class="p">:</span><span class="m">00</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Theme-Defined params</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">Aimé Césaire</span><span class="w"> </span><span class="c"># Author of the text</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">editor</span><span class="p">:</span><span class="w"> </span><span class="l">Alex Gil</span><span class="w"> </span><span class="c"># Editor of the text</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l">Project Guttenberg</span><span class="w"> </span><span class="c"># The source of the text</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">rights</span><span class="p">:</span><span class="w"> </span><span class="l">Public Domain</span><span class="w"> </span><span class="c"># Rights for this text</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">pageTitle</span><span class="p">:</span><span class="w"> </span><span class="l">Hello!</span><span class="w"> </span><span class="c"># The title for the content w/o setting &lt;title&gt; tag</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Enable Table of Contents for specific page</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">private</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Hide text from search engines</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">semanticType</span><span class="p">:</span><span class="w"> </span><span class="l">about</span><span class="w"> </span><span class="c"># Semantic type of the work (used for Schema.org)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">featuredImage</span><span class="p">:</span><span class="w"> </span><span class="l">screenshot-home.png</span><span class="w"> </span><span class="c"># Featured image of the text</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c"># Disable annotation via hypothesis on this page</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
-</span></span></span></code></pre></div><p>For more information about all available standard front matter variables, please read <a href="https://gohugo.io/content-management/front-matter/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo Front Matter</a>.</p>
-<hr>
+<p>Ed is a Hugo theme. That means you will need some familiarity with
+Hugo to take advantage of its full potential. While running a Hugo site
+is a bit more involved than Wordpress and other similar tools, the
+payoff in the long term is worth the effort to learn it. If you are new
+to Hugo, I recommend you take a look at <a href="https://strapi.io/blog/guide-to-using-hugo-site-generator" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">A Guide to Using Hugo</a> at
+<em>Strapi</em>, <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Host on GitHub</a> on <em>Hugo Documentation
+Site</em> and <a href="https://gohugo.io/documentation/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo's own documentation</a> to start getting a sense of how
+it works.</p>
+<p>Once you have gone through these tutorials, you can get started using
+Ed. Remember to always and only edit content files for your site using
+<a href="https://en.wikipedia.org/wiki/Text_editor" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">a plain text editor</a>, and <em>not</em> a word processor. I’m
+composing this file using a plain text editor called
+<a href="https://code.visualstudio.com/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Visual Studio Code</a>.</p>
+<p>You should make sure that all your texts have the YAML
+<a href="https://gohugo.io/content-management/front-matter/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Front Matter</a> (the information at the top of the file). YAML
+stands for “YAML Ain’t Markup Language” — no disrespect to XML — and
+it’s the main way that Hugo handles named data. Here’s an example of
+YAML Front Matter:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Common-Defined params</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Cahier d&#39;un retour au pays natal&quot;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draft</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # Is this text a draft?</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tags</span><span class="kw">:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Tag</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="st">&quot;Another tag&quot;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2022-02-01T14:56:58+02:00</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">lastmod</span><span class="kw">:</span><span class="at"> 2022-05-01T14:56:58+02:00</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Theme-Defined params</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Aimé Césaire</span><span class="co"> # Author of the text</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> Alex Gil</span><span class="co"> # Editor of the text</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span><span class="kw">:</span><span class="at"> Project Guttenberg</span><span class="co"> # The source of the text</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">rights</span><span class="kw">:</span><span class="at"> Public Domain</span><span class="co"> # Rights for this text</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">pageTitle</span><span class="kw">:</span><span class="at"> Hello!</span><span class="co"> # The title for the content w/o setting &lt;title&gt; tag</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # Enable Table of Contents for specific page</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">private</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # Hide text from search engines</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="fu">semanticType</span><span class="kw">:</span><span class="at"> about</span><span class="co"> # Semantic type of the work (used for Schema.org)</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">featuredImage</span><span class="kw">:</span><span class="at"> screenshot-home.png</span><span class="co"> # Featured image of the text</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="fu">annotations</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="co"> # Disable annotation via hypothesis on this page</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>For more information about all available standard front matter
+variables, please read <a href="https://gohugo.io/content-management/front-matter/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo Front Matter</a>.</p>
+<hr />
 <h2 id="markdown-and-commonmark">Markdown and CommonMark</h2>
-<p>Ed is designed for scholars and amateur editors who want to produce either a clean reading edition or a scholarly annotated edition of a text. The main language we use to write in the Hugo environment is called Markdown. To learn more about the Markdown family, see Dennis Tenen and Grant Wythoff&rsquo;s &ldquo;<a href="http://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Sustainable Authorship in Plain Text using Pandoc and Markdown</a>&rdquo;.</p>
-<p>By default, Hugo uses a special Markdown processor called Goldmark. The processor can be said to use it&rsquo;s own &lsquo;flavor&rsquo; of Markdown called CommonMark, and sometimes the Markdown syntax will be different than other flavors of Markdown. CommonMark is a rationalized version of Markdown syntax with a spec whose goal is to remove the ambiguities and inconsistency surrounding the original Markdown specification. It offers a standardized specification that defines the common syntax of the language along with a suite of comprehensive tests to validate Markdown implementations against this specification. You can become familiar with the CommonMark syntax in the <a href="https://spec.commonmark.org/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">CommonMark documentation</a>. Another way to become familiar is to examine the sample text source files we provided.</p>
-<hr>
+<p>Ed is designed for scholars and amateur editors who want to produce
+either a clean reading edition or a scholarly annotated edition of a
+text. The main language we use to write in the Hugo environment is
+called Markdown. To learn more about the Markdown family, see Dennis
+Tenen and Grant Wythoff’s “<a href="http://programminghistorian.org/en/lessons/sustainable-authorship-in-plain-text-using-pandoc-and-markdown" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Sustainable Authorship in Plain Text using Pandoc and Markdown</a>”.</p>
+<p>By default, Hugo uses a special Markdown processor called Goldmark.
+The processor can be said to use it’s own ‘flavor’ of Markdown called
+CommonMark, and sometimes the Markdown syntax will be different than
+other flavors of Markdown. CommonMark is a rationalized version of
+Markdown syntax with a spec whose goal is to remove the ambiguities and
+inconsistency surrounding the original Markdown specification. It offers
+a standardized specification that defines the common syntax of the
+language along with a suite of comprehensive tests to validate Markdown
+implementations against this specification. You can become familiar with
+the CommonMark syntax in the <a href="https://spec.commonmark.org/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">CommonMark documentation</a>. Another way to
+become familiar is to examine the sample text source files we
+provided.</p>
+<hr />
 <h2 id="genres">Genres</h2>
-<p>Ed offers four different layouts: poem, narrative, drama and simple post. To create content of a certain genre, create a file in the appropriate folder. For example, if you want to create a poem, create a file in the <code>content/poems</code> folder. Another way is to indicated genre in the front matter on your texts. The templates that govern how these genres are displayed can be found in the Ed&rsquo;s <code>layouts</code> folder. Redefining these layouts in project wide level will allow you to tweak the stylesheets according to your different needs. Out of the box, Ed contains some special instructions for poetry in its stylesheets that allow you to deal with some of the peculiarities of poetry layouts.</p>
+<p>Ed offers four different layouts: poem, narrative, drama and simple
+post. To create content of a certain genre, create a file in the
+appropriate folder. For example, if you want to create a poem, create a
+file in the <code>content/poems</code> folder. Another way is to
+indicated genre in the front matter on your texts. The templates that
+govern how these genres are displayed can be found in the Ed’s
+<code>layouts</code> folder. Redefining these layouts in project wide
+level will allow you to tweak the stylesheets according to your
+different needs. Out of the box, Ed contains some special instructions
+for poetry in its stylesheets that allow you to deal with some of the
+peculiarities of poetry layouts.</p>
 <p>To indicate lines in poetry we use the line syntax from Markdown:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">-</span> Hold fast to dreams
-</span></span><span class="line"><span class="cl"><span class="k">-</span> For if dreams die
-</span></span><span class="line"><span class="cl"><span class="k">-</span> Life is a broken-winged bird
-</span></span><span class="line"><span class="cl"><span class="k">-</span> That cannot fly.
-</span></span><span class="line"><span class="cl"><span class="k">-</span> Hold fast to dreams
-</span></span><span class="line"><span class="cl"><span class="k">-</span> For when dreams go
-</span></span><span class="line"><span class="cl"><span class="k">-</span> Life is a barren field
-</span></span><span class="line"><span class="cl"><span class="k">-</span> Frozen with snow.
-</span></span></code></pre></div><p>The <code>-</code> at the beginning of each line indicates that these are lines. Another way to achieve the same effect is to use the following syntax:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">Hold fast to dreams\
-</span></span><span class="line"><span class="cl">For if dreams die\
-</span></span><span class="line"><span class="cl">Life is a broken-winged bird\
-</span></span><span class="line"><span class="cl">That cannot fly.\
-</span></span><span class="line"><span class="cl">Hold fast to dreams\
-</span></span><span class="line"><span class="cl">For when dreams go\
-</span></span><span class="line"><span class="cl">Life is a barren field\
-</span></span><span class="line"><span class="cl">Frozen with snow.
-</span></span></code></pre></div><p>To indent specific lines we take advantage of Hugo shortcuts that allows us to create empty indentation for a line. This approach still allows the line to be readable while editing.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">-</span> {{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">3</span> <span class="p">&gt;</span>}} But O heart! heart! heart!
-</span></span><span class="line"><span class="cl"><span class="k">-</span> {{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">4</span> <span class="p">&gt;</span>}} O the bleeding drops of red,
-</span></span><span class="line"><span class="cl"><span class="k">-</span> {{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">5</span> <span class="p">&gt;</span>}} Where on the deck my Captain lies,
-</span></span><span class="line"><span class="cl"><span class="k">-</span> {{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">6</span> <span class="p">&gt;</span>}} Fallen cold and dead.
-</span></span></code></pre></div><p>or:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">3</span> <span class="p">&gt;</span>}} But O heart! heart! heart!\
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">4</span> <span class="p">&gt;</span>}} O the bleeding drops of red,\
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">5</span> <span class="p">&gt;</span>}} Where on the deck my Captain lies,\
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">indent</span> <span class="na">6</span> <span class="p">&gt;</span>}} Fallen cold and dead.
-</span></span></code></pre></div><p>The <code>{{&lt; indent 3 &gt;}}</code> is what we need to in order to indicate the indent value for that line. Values can range from 1-10. You can expand the range or adjust the values in the custom stylesheet file. Ed is customized by creating stylesheet files in <code>assets/css/extended/*.css</code> at project wide level.</p>
-<p>The example from Raisin in the Sun shows us that we don&rsquo;t need much special markup for theater as long as we use CAPITAL LETTERS for speakers. Italics for directions are easy enough. Just use <code>*</code> around the words you want to italicize.</p>
-<p><em>Narrative of the Life of Frederick Douglass</em> shows us an example of narrative that includes footnotes and quoted poetry. See the sections below for how to accomplish these different effects.</p>
-<hr>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hold fast to dreams</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For if dreams die</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Life is a broken-winged bird</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>That cannot fly.</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Hold fast to dreams</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>For when dreams go</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Life is a barren field</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Frozen with snow.</span></code></pre></div>
+<p>The <code>-</code> at the beginning of each line indicates that these
+are lines. Another way to achieve the same effect is to use the
+following syntax:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Hold fast to dreams\</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>For if dreams die\</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Life is a broken-winged bird\</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>That cannot fly.\</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>Hold fast to dreams\</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>For when dreams go\</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>Life is a barren field\</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>Frozen with snow.</span></code></pre></div>
+<p>To indent specific lines we take advantage of Hugo shortcuts that
+allows us to create empty indentation for a line. This approach still
+allows the line to be readable while editing.</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>{{&lt; indent 3 &gt;}} But O heart! heart! heart!</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>{{&lt; indent 4 &gt;}} O the bleeding drops of red,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>{{&lt; indent 5 &gt;}} Where on the deck my Captain lies,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>{{&lt; indent 6 &gt;}} Fallen cold and dead.</span></code></pre></div>
+<p>or:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>{{&lt; indent 3 &gt;}} But O heart! heart! heart!\</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>{{&lt; indent 4 &gt;}} O the bleeding drops of red,\</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>{{&lt; indent 5 &gt;}} Where on the deck my Captain lies,\</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>{{&lt; indent 6 &gt;}} Fallen cold and dead.</span></code></pre></div>
+<p>The <code>{{&lt; indent 3 &gt;}}</code> is what we need to in order
+to indicate the indent value for that line. Values can range from 1-10.
+You can expand the range or adjust the values in the custom stylesheet
+file. Ed is customized by creating stylesheet files in
+<code>assets/css/extended/*.css</code> at project wide level.</p>
+<p>The example from Raisin in the Sun shows us that we don’t need much
+special markup for theater as long as we use CAPITAL LETTERS for
+speakers. Italics for directions are easy enough. Just use
+<code>*</code> around the words you want to italicize.</p>
+<p><em>Narrative of the Life of Frederick Douglass</em> shows us an
+example of narrative that includes footnotes and quoted poetry. See the
+sections below for how to accomplish these different effects.</p>
+<hr />
 <h2 id="configuring-author-selection">Configuring Author Selection</h2>
 <p>Ed offers flexible author management that adapts to both simple and
-complex content needs. By leveraging Hugo’s templating capabilities and the
-theme’s configuration structure, you can control how authors are displayed
-without redundancy. This section explains how to set up author defaults,
-customize individual posts, and maintain clean frontmatter for your content.</p>
+complex content needs. By leveraging Hugo’s templating capabilities and
+the theme’s configuration structure, you can control how authors are
+displayed without redundancy. This section explains how to set up author
+defaults, customize individual posts, and maintain clean frontmatter for
+your content.</p>
 <h3 id="author-display-in-ed">Author Display in Ed</h3>
-<p>Ed uses the author’s name for displaying attribution on individual post
-pages, right below the title. This ensures that readers can easily see who wrote
-the article. Additionally, the author’s name is included in the HTML metadata of
-each page, such as:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;author&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;John Doe&#34;</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>If you prefer not to show the author on your posts, you can disable this feature
-by adding the following setting to your configuration:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">showAuthor</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span></code></pre></div><p>Furthermore, the author is also used in the built-in RSS templates and the feed
-templates provided by the Ed theme. If the author is defined in the site
-configuration, it will automatically be included in these feeds, allowing
-subscribers to see the post’s attribution directly within their feed readers.</p>
-<h4 id="setting-a-global-default-author">Setting a Global Default Author</h4>
-<p>In many cases, a site has a primary author for the majority of posts. Instead of
-specifying the author in every single page’s frontmatter, Ed allows you to
-define a global default in your Hugo configuration. To set this up, add the
-following snippet to your <code>hugo.toml</code> file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">author</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s1">&#39;John Doe&#39;</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s1">&#39;john@example.com&#39;</span>
-</span></span></code></pre></div><p>This snippet registers <code>John Doe</code> as the default author for any post that doesn’t
-explicitly specify an author. Now, when your content files omit the author
-parameter, Ed will automatically use this global setting.</p>
-<h4 id="overriding-the-author-per-page">Overriding the Author per Page</h4>
-<p>For cases where an individual post has a different author or multiple contributors,
-simply include the <code>author</code> parameter in the frontmatter of that page. Ed
-supports both single-author and multi-author configurations:</p>
+<p>Ed uses the author’s name for displaying attribution on individual
+post pages, right below the title. This ensures that readers can easily
+see who wrote the article. Additionally, the author’s name is included
+in the HTML metadata of each page, such as:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">meta</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;author&quot;</span><span class="ot"> content</span><span class="op">=</span><span class="st">&quot;John Doe&quot;</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>If you prefer not to show the author on your posts, you can disable
+this feature by adding the following setting to your configuration:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">showAuthor</span> <span class="op">=</span> <span class="cn">false</span></span></code></pre></div>
+<p>Furthermore, the author is also used in the built-in RSS templates
+and the feed templates provided by the Ed theme. If the author is
+defined in the site configuration, it will automatically be included in
+these feeds, allowing subscribers to see the post’s attribution directly
+within their feed readers.</p>
+<h4 id="setting-a-global-default-author">Setting a Global Default
+Author</h4>
+<p>In many cases, a site has a primary author for the majority of posts.
+Instead of specifying the author in every single page’s frontmatter, Ed
+allows you to define a global default in your Hugo configuration. To set
+this up, add the following snippet to your <code>hugo.toml</code>
+file:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params.author]</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">name</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">John Doe</span><span class="st">&#39;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">email</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">john@example.com</span><span class="st">&#39;</span></span></code></pre></div>
+<p>This snippet registers <code>John Doe</code> as the default author
+for any post that doesn’t explicitly specify an author. Now, when your
+content files omit the author parameter, Ed will automatically use this
+global setting.</p>
+<h4 id="overriding-the-author-per-page">Overriding the Author per
+Page</h4>
+<p>For cases where an individual post has a different author or multiple
+contributors, simply include the <code>author</code> parameter in the
+frontmatter of that page. Ed supports both single-author and
+multi-author configurations:</p>
 <ul>
-<li><strong>Single Author:</strong> If a post has one unique author, specify it as a string:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: Exploring Hugo
-</span></span><span class="line"><span class="cl">date: 2024-09-19T14:08:00+02:00
-</span></span><span class="line"><span class="cl">author: Jane Smith
-</span></span><span class="line"><span class="cl">---
-</span></span></code></pre></div></li>
-<li><strong>Multiple Authors:</strong> For posts with more than one author, use a list of strings:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">---
-</span></span><span class="line"><span class="cl">title: Exploring Hugo
-</span></span><span class="line"><span class="cl">date: 2024-09-19T14:08:00+02:00
-</span></span><span class="line"><span class="cl">author:
-</span></span><span class="line"><span class="cl">  <span class="k">-</span> Jane Doe
-</span></span><span class="line"><span class="cl">  <span class="k">-</span> John Smith
-</span></span><span class="line"><span class="cl">---
-</span></span></code></pre></div></li>
+<li><p><strong>Single Author:</strong> If a post has one unique author,
+specify it as a string:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Exploring Hugo</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-09-19T14:08:00+02:00</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Jane Smith</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div></li>
+<li><p><strong>Multiple Authors:</strong> For posts with more than one
+author, use a list of strings:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Exploring Hugo</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-09-19T14:08:00+02:00</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - Jane Doe</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - John Smith</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code></pre></div></li>
 </ul>
-<p>Ed will format and display these authors appropriately, using commas to
-separate the names.</p>
-<h4 id="template-logic-and-author-handling">Template Logic and Author Handling</h4>
-<p>The logic behind this setup is handled in a partial template, ensuring that the
-theme intelligently selects the correct author value. The template performs the
-following checks:</p>
-<ol>
-<li><strong>Checks for a Page-Specific Author:</strong> If the frontmatter includes the author
-parameter, it takes precedence. The theme distinguishes between a single string
-and a list of strings, applying appropriate formatting.</li>
-<li><strong>Falls Back to Global Default:</strong> If no author is defined at the page level,
-the template falls back to the global value defined in <code>[params.author]</code> in
-your configuration file.</li>
+<p>Ed will format and display these authors appropriately, using commas
+to separate the names.</p>
+<h4 id="template-logic-and-author-handling">Template Logic and Author
+Handling</h4>
+<p>The logic behind this setup is handled in a partial template,
+ensuring that the theme intelligently selects the correct author value.
+The template performs the following checks:</p>
+<ol type="1">
+<li><strong>Checks for a Page-Specific Author:</strong> If the
+frontmatter includes the author parameter, it takes precedence. The
+theme distinguishes between a single string and a list of strings,
+applying appropriate formatting.</li>
+<li><strong>Falls Back to Global Default:</strong> If no author is
+defined at the page level, the template falls back to the global value
+defined in <code>[params.author]</code> in your configuration file.</li>
 </ol>
-<p>This ensures consistent and clean display of author names throughout the site.</p>
+<p>This ensures consistent and clean display of author names throughout
+the site.</p>
 <h4 id="practical-usage-scenarios">Practical Usage Scenarios</h4>
-<ol>
-<li><strong>Single Author Blogs:</strong> If your site primarily has one author, define the
-global default in <code>hugo.toml</code> and skip specifying the author in individual
-posts. This reduces redundancy and simplifies the frontmatter structure.</li>
-<li><strong>Multi-Author or Guest Posts:</strong> For collaborative projects, specify multiple
-authors directly in the frontmatter. The theme will handle the formatting
-automatically.</li>
-<li><strong>Guest Posts with Defaults:</strong> You can use the global setting for regular
-posts and specify authors explicitly only for guest contributions, maintaining
-clarity and reducing manual repetition.</li>
+<ol type="1">
+<li><strong>Single Author Blogs:</strong> If your site primarily has one
+author, define the global default in <code>hugo.toml</code> and skip
+specifying the author in individual posts. This reduces redundancy and
+simplifies the frontmatter structure.</li>
+<li><strong>Multi-Author or Guest Posts:</strong> For collaborative
+projects, specify multiple authors directly in the frontmatter. The
+theme will handle the formatting automatically.</li>
+<li><strong>Guest Posts with Defaults:</strong> You can use the global
+setting for regular posts and specify authors explicitly only for guest
+contributions, maintaining clarity and reducing manual repetition.</li>
 </ol>
 <h4 id="important-considerations">Important Considerations</h4>
 <ul>
-<li><strong>Default Fallback:</strong> When both the frontmatter and <code>params.author.name</code> are
-empty, Ed will return an empty string, leading to no author being
-displayed. Always ensure that either the frontmatter or the global
-configuration is populated.</li>
-<li><strong>Email and Other Metadata:</strong> While <code>params.author.email</code> can be set globally,
-the current template logic does not expose email addresses by default.
-If you wish to include email metadata in your posts, additional adjustments
-would be required.</li>
+<li><strong>Default Fallback:</strong> When both the frontmatter and
+<code>params.author.name</code> are empty, Ed will return an empty
+string, leading to no author being displayed. Always ensure that either
+the frontmatter or the global configuration is populated.</li>
+<li><strong>Email and Other Metadata:</strong> While
+<code>params.author.email</code> can be set globally, the current
+template logic does not expose email addresses by default. If you wish
+to include email metadata in your posts, additional adjustments would be
+required.</li>
 </ul>
-<hr>
+<hr />
 <h2 id="footnotes">Footnotes</h2>
-<p>Footnotes are the bread and butter of scholarship. Hugo makes footnotes a fairly simple affair:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="k">-</span> O Captain! my Captain! rise up and hear the bells;
-</span></span><span class="line"><span class="cl"><span class="k">-</span> Rise up—for you the flag is flung—for you the bugle[^1] trills,
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[^1]: The bugle is a small trumpet implicated in the military industrial complex.
-</span></span></code></pre></div><p>These footnotes can be placed anywhere, but they will always be generated at the bottom of the document. To have a multi-paragraph footnote you need to start the footnote text on the next line after the footnote anchor and indent it:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">[^1]: Ugh pinterest fixie cronut pitchfork beard. Literally deep
-</span></span><span class="line"><span class="cl">      cold-pressed distillery pabst austin.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">      Typewriter 90&#39;s roof party poutine, kickstarter raw
-</span></span><span class="line"><span class="cl">      denim pabst readymade biodiesel umami chicharrones XOXO.
-</span></span></code></pre></div><p>Please note, you need to indent all lines at the same level to make them stay inside the footnote.</p>
-<p>At the moment (May 2022) time the footnotes system provided by Hugo does have one limitation: It does not support non-numbered footnotes, and it only allows you to have one set of footnotes for a text. In some cases we have to separate the author&rsquo;s footnotes from our own, in others we want to represent the author&rsquo;s own footnote style. In these cases we have to use custom Ed&rsquo;s shortcode for footnotes. Here&rsquo;s the example from <em>Narrative of the Life</em>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">... At this time, Anna,{{<span class="p">&lt;</span> <span class="nt">footnote</span> <span class="err">&#34;</span><span class="na">fn2</span><span class="err">&#34;</span> <span class="p">&gt;</span>}} my intended wife, came on;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">footnotesList</span> <span class="p">&gt;</span>}}
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">citation</span> <span class="err">&#34;</span><span class="na">fn2</span><span class="err">&#34;</span> <span class="err">&#34;</span><span class="na">She</span> <span class="na">was</span> <span class="na">free</span><span class="err">.&#34;</span> <span class="p">&gt;</span>}}
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">footnotesList</span> <span class="p">&gt;</span>}}
-</span></span></code></pre></div><hr>
+<p>Footnotes are the bread and butter of scholarship. Hugo makes
+footnotes a fairly simple affair:</p>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>O Captain! my Captain! rise up and hear the bells;</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Rise up—for you the flag is flung—for you the bugle<span class="ot">[^1]</span> trills,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>The bugle is a small trumpet implicated in the military industrial complex.</span></code></pre></div>
+<p>These footnotes can be placed anywhere, but they will always be
+generated at the bottom of the document. To have a multi-paragraph
+footnote you need to start the footnote text on the next line after the
+footnote anchor and indent it:</p>
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>Ugh pinterest fixie cronut pitchfork beard. Literally deep</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>      cold-pressed distillery pabst austin.</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="in">      Typewriter 90&#39;s roof party poutine, kickstarter raw</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="in">      denim pabst readymade biodiesel umami chicharrones XOXO.</span></span></code></pre></div>
+<p>Please note, you need to indent all lines at the same level to make
+them stay inside the footnote.</p>
+<p>At the moment (May 2022) time the footnotes system provided by Hugo
+does have one limitation: It does not support non-numbered footnotes,
+and it only allows you to have one set of footnotes for a text. In some
+cases we have to separate the author’s footnotes from our own, in others
+we want to represent the author’s own footnote style. In these cases we
+have to use custom Ed’s shortcode for footnotes. Here’s the example from
+<em>Narrative of the Life</em>:</p>
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>... At this time, Anna,{{&lt; footnote &quot;fn2&quot; &gt;}} my intended wife, came on;</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>{{&lt; footnotesList &gt;}}</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>{{&lt; citation &quot;fn2&quot; &quot;She was free.&quot; &gt;}}</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>{{&lt; /footnotesList &gt;}}</span></code></pre></div>
+<hr />
 <h2 id="blockquote">Blockquote</h2>
-<p><em>Narrative of the Life</em> also includes several blockquote elements. You can also find another example of blockquote use in the footnote of &ldquo;O Captain! My Captain!&rdquo; Simple blockquote are simple enough in Markdown:</p>
-<pre tabindex="0"><code>&gt; This is to certify that I, the undersigned, have given the bearer, my servant, full liberty to go to Baltimore, and spend the Easter holidays.
+<p><em>Narrative of the Life</em> also includes several blockquote
+elements. You can also find another example of blockquote use in the
+footnote of “O Captain! My Captain!” Simple blockquote are simple enough
+in Markdown:</p>
+<pre><code>&gt; This is to certify that I, the undersigned, have given the bearer, my servant, full liberty to go to Baltimore, and spend the Easter holidays.
 &gt;
 &gt; Written with mine own hand, &amp;c., 1835.
-&gt; WILLIAM HAMILTON,
-</code></pre><p>To use a line break in block elements add two spaces after the end of the line where you want the break. You can&rsquo;t see them after <code>&amp;c., 1835.</code> but they are there.</p>
-<p>Things get a bit complicated when we want to use poetry inside the block or when the block is included in another block element, like a footnote. Here&rsquo;s the last two stanzas from &ldquo;A Parody&rdquo; in <em>Narrative of the Life</em>, which shows an example of a blockquote of poetry:</p>
-<pre tabindex="0"><code>...
+&gt; WILLIAM HAMILTON,</code></pre>
+<p>To use a line break in block elements add two spaces after the end of
+the line where you want the break. You can’t see them after
+<code>&amp;c., 1835.</code> but they are there.</p>
+<p>Things get a bit complicated when we want to use poetry inside the
+block or when the block is included in another block element, like a
+footnote. Here’s the last two stanzas from “A Parody” in <em>Narrative
+of the Life</em>, which shows an example of a blockquote of poetry:</p>
+<pre><code>...
 &gt; - Two others oped their iron jaws,
 &gt; - And waved their children-stealing paws;
 &gt; - There sat their children in gewgaws;
@@ -452,192 +576,361 @@ would be required.</li>
 &gt; - Who dress as sleek as glossy snakes,
 &gt; - And cram their mouths with sweetened cakes;
 &gt; - And this goes down for union.
-{.poetry}
-</code></pre><p>The <code>{.poetry}</code> tag at the end tells the processor to think of the lines above it as poetry. The <code>{.poetry}</code> tag is an example of Goldmark class assignments for block-elements. Because this segment of poetry exists in the &rsquo;narrative&rsquo; layout, and because it is part of a blockquote, we need to signal to the processor to process poetry this way, so that the right class is invoked in the stylesheet. The good news is this is the most complex Goldmark syntax layout you will encounter in Ed.</p>
+{.poetry}</code></pre>
+<p>The <code>{.poetry}</code> tag at the end tells the processor to
+think of the lines above it as poetry. The <code>{.poetry}</code> tag is
+an example of Goldmark class assignments for block-elements. Because
+this segment of poetry exists in the ‘narrative’ layout, and because it
+is part of a blockquote, we need to signal to the processor to process
+poetry this way, so that the right class is invoked in the stylesheet.
+The good news is this is the most complex Goldmark syntax layout you
+will encounter in Ed.</p>
 <h2 id="pages">Pages</h2>
-<p>Your editions are treated as <a href="https://gohugo.io/content-management/sections/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">sections</a> or <a href="https://gohugo.io/content-management/page-bundles/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">page bundles</a> in Ed. Other web pages in your site exist outside the <code>content</code> folder. Default homepage, for example, is constructed from the <code>index.html</code> file found on the <code>layouts</code> folder of Ed theme.</p>
-<p>You will notice that the homepage in particular has a <code>.html</code> file ending instead of a <code>.md</code> ending. All template files in Hugo are HTML, and the index behaves as a template file. Although these files are mostly written in HTML, notice that they may contain <a href="https://gohugo.io/templates/introduction/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">template tags</a>. To create your own homepage create <code>index.html</code> file in project <code>layouts</code> folder, making sure that your changes to <code>index.html</code> are written in valid HTML. The same goes for all Ed&rsquo;s template files in the <code>layouts</code> folder.</p>
-<hr>
+<p>Your editions are treated as <a href="https://gohugo.io/content-management/sections/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">sections</a> or
+<a href="https://gohugo.io/content-management/page-bundles/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">page bundles</a> in Ed. Other web pages in your site exist
+outside the <code>content</code> folder. Default homepage, for example,
+is constructed from the <code>index.html</code> file found on the
+<code>layouts</code> folder of Ed theme.</p>
+<p>You will notice that the homepage in particular has a
+<code>.html</code> file ending instead of a <code>.md</code> ending. All
+template files in Hugo are HTML, and the index behaves as a template
+file. Although these files are mostly written in HTML, notice that they
+may contain <a href="https://gohugo.io/templates/introduction/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">template tags</a>. To create your own homepage
+create <code>index.html</code> file in project <code>layouts</code>
+folder, making sure that your changes to <code>index.html</code> are
+written in valid HTML. The same goes for all Ed’s template files in the
+<code>layouts</code> folder.</p>
+<hr />
 <h2 id="tables-of-content">Tables of Content</h2>
-<p>You will find three kinds of Tables of Content in Ed. The first example is in the list of Latest Publications in the Homepage. This list is generated using the <a href="https://gohugo.io/templates/introduction/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">templating language</a>. This is one of the major components of Hugo, and I recommend you deepen your knowledge of it if you want to modify the logic that automates much of Ed. Here is the code that generates the Latest Publications list on the homepage:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;toc&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Latest Publications<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;texts&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      {{ range first 10 (where site.RegularPages.ByDate.Reverse &#34;Type&#34; &#34;in&#34; site.Params.mainSections) }}
-</span></span><span class="line"><span class="cl">          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;text-title&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">              <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ .Permalink }}&#34;</span><span class="p">&gt;</span>{{ .Title }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">          <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">      {{ end }}
-</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>To override this list, create file <code>mini-toc.html</code> inside <code>layouts/partials</code> folder.</p>
-<p>As you can see, the templating tags <code>{{ }}</code> are embedded into the HTML. These tags often use programmatic logic, as is the case here. However, another use of these tags is pull data from your project. In the example above it pulls the <code>Title</code> from each allowed post type.</p>
-<p>As you may have noticed already, we are basically adapting the blogging features of Hugo to our own ends, what Cuban designer and theorist Ernesto Oroza would call &ldquo;<a href="https://www.ernestooroza.com/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">technological dissobedience</a>&rdquo;.</p>
-<p>The second kind of table of content is exemplified in this documentation. If you open the source file for the documentation, you will notice at the top this snippet:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="nt">toc</span> <span class="p">&gt;</span>}}
-</span></span></code></pre></div><p>This is the Hugo way. The shortcode, <code>{{&lt; toc &gt;}}</code> tells the processor to create a table of contents based on headers in the document. You can use this syntax in any page on the site that uses headers.</p>
-<p>The third way is simple as the previous one, but very useful for long texts. If we enable the table of contents in the front matter of a page:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">toc</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span></code></pre></div><p>Ed will activate the optional table of content sidebar (<code>layouts/partials/sidebar-toc.html</code> in Ed) and move the table of contents to a special sidebar for that page. <em>Narrative of the Life</em> uses this method for its table of content.</p>
-<p>The internal links pointing to the right sections in your document are generated from the title names automatically. If you can figure out how Ed accomplishes this trick, you have graduated from the Ed school of minimal editions.</p>
-<hr>
+<p>You will find three kinds of Tables of Content in Ed. The first
+example is in the list of Latest Publications in the Homepage. This list
+is generated using the <a href="https://gohugo.io/templates/introduction/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">templating language</a>. This is one of the
+major components of Hugo, and I recommend you deepen your knowledge of
+it if you want to modify the logic that automates much of Ed. Here is
+the code that generates the Latest Publications list on the
+homepage:</p>
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;toc&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>Latest Publications<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;texts&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>      {{ range first 10 (where site.RegularPages.ByDate.Reverse &quot;Type&quot; &quot;in&quot; site.Params.mainSections) }}</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;text-title&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>              <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;{{ .Permalink }}&quot;</span><span class="dt">&gt;</span>{{ .Title }}<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>          <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>      {{ end }}</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>To override this list, create file <code>mini-toc.html</code> inside
+<code>layouts/partials</code> folder.</p>
+<p>As you can see, the templating tags <code>{{ }}</code> are embedded
+into the HTML. These tags often use programmatic logic, as is the case
+here. However, another use of these tags is pull data from your project.
+In the example above it pulls the <code>Title</code> from each allowed
+post type.</p>
+<p>As you may have noticed already, we are basically adapting the
+blogging features of Hugo to our own ends, what Cuban designer and
+theorist Ernesto Oroza would call “<a href="https://www.ernestooroza.com/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">technological dissobedience</a>”.</p>
+<p>The second kind of table of content is exemplified in this
+documentation. If you open the source file for the documentation, you
+will notice at the top this snippet:</p>
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>{{&lt; toc &gt;}}</span></code></pre></div>
+<p>This is the Hugo way. The shortcode, <code>{{&lt; toc &gt;}}</code>
+tells the processor to create a table of contents based on headers in
+the document. You can use this syntax in any page on the site that uses
+headers.</p>
+<p>The third way is simple as the previous one, but very useful for long
+texts. If we enable the table of contents in the front matter of a
+page:</p>
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<p>Ed will activate the optional table of content sidebar
+(<code>layouts/partials/sidebar-toc.html</code> in Ed) and move the
+table of contents to a special sidebar for that page. <em>Narrative of
+the Life</em> uses this method for its table of content.</p>
+<p>The internal links pointing to the right sections in your document
+are generated from the title names automatically. If you can figure out
+how Ed accomplishes this trick, you have graduated from the Ed school of
+minimal editions.</p>
+<hr />
 <h2 id="styling-theme">Styling Theme</h2>
-<p>To change the main color accents of the theme, such as the headers, links, and text logo, you can use the <code>colorScheme</code> configuration parameter, as shown below:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">colorScheme</span> <span class="p">=</span> <span class="s1">&#39;magenta&#39;</span>
-</span></span></code></pre></div><p>The currently supported colors are: red, orange, magenta, cyan, blue, and brown.</p>
-<p>If no value is provided, or if you remove the <code>colorScheme</code> parameter altogether, the theme defaults to red.</p>
-<p>At the moment, the theme does not support arbitrary changes to fonts, custom colors, or other visual elements beyond those predefined by the theme. However, the theme provides a way for you to add your own custom styles to your project.</p>
-<p>To do this, create a <code>layouts/partials</code> directory in your project, and inside it, add a file named <code>custom-head.html</code>. You can now define any custom styles within this file. For example:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">html</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;PT Sans&#34;</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</span></span></code></pre></div><p>This allows you to override or extend the theme’s default styles with your own customizations.</p>
+<p>To change the main color accents of the theme, such as the headers,
+links, and text logo, you can use the <code>colorScheme</code>
+configuration parameter, as shown below:</p>
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">colorScheme</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">magenta</span><span class="st">&#39;</span></span></code></pre></div>
+<p>The currently supported colors are: red, orange, magenta, cyan, blue,
+and brown.</p>
+<p>If no value is provided, or if you remove the
+<code>colorScheme</code> parameter altogether, the theme defaults to
+red.</p>
+<p>At the moment, the theme does not support arbitrary changes to fonts,
+custom colors, or other visual elements beyond those predefined by the
+theme. However, the theme provides a way for you to add your own custom
+styles to your project.</p>
+<p>To do this, create a <code>layouts/partials</code> directory in your
+project, and inside it, add a file named <code>custom-head.html</code>.
+You can now define any custom styles within this file. For example:</p>
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    html {</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">font-family</span><span class="ch">:</span> <span class="st">&quot;PT Sans&quot;</span><span class="op">,</span> <span class="dv">Helvetica</span><span class="op">,</span> <span class="dv">Arial</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>This allows you to override or extend the theme’s default styles with
+your own customizations.</p>
 <h2 id="comments">Comments</h2>
-<p>Ed theme now supports adding a comments system to your site, enhancing interactive engagement. Currently, the theme supports integration with <a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus</a>.</p>
-<p><a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus</a> is a comments system powered by <a href="https://docs.github.com/en/discussions/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">GitHub Discussions</a>. It leverages GitHub&rsquo;s infrastructure to provide a free, open source platform for comments.</p>
-<p>giscus operates by linking your website&rsquo;s comment section directly to GitHub Discussions. Here’s an overview of the process:</p>
-<ul>
-<li>When a page with giscus integration loads, it uses the <a href="https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">GitHub Discussions search API</a> to locate a discussion that matches the page. The association is determined based on a chosen mapping strategy such as URL, pathname, or the page&rsquo;s <code>&lt;title&gt;</code>.</li>
-<li>If no existing discussion matches the page, giscus is configured to automatically create a new discussion when a visitor posts the first comment or reaction. This ensures that each page can have its own dedicated discussion thread, even if one was not previously set up manually.</li>
-<li>To post a comment, visitors must authorize the giscus application via the GitHub OAuth flow, which grants the app permission to <a href="https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">post comments on their behalf</a>. This authorization is a straightforward process, typically requiring just a few clicks to connect a GitHub account.</li>
-<li>Alternatively, visitors can choose to comment directly within the GitHub Discussions platform. This flexibility allows users familiar with GitHub to engage in the discussion using an interface they are comfortable with.</li>
-<li>All comments posted through giscus are hosted and moderated on GitHub, leveraging GitHub&rsquo;s native tools for managing discussions. This integration allows site owners to manage comments using the same workflows they use for other GitHub activities, providing a seamless moderation experience.</li>
-</ul>
-<p>Integrating giscus not only activates the dynamic interaction capabilities of GitHub Discussions on your Hugo site but also simplifies the management of user comments and engagements.</p>
-<p>To enable giscus in your Hugo site, you must first add configuration settings in the site&rsquo;s configuration file. Below is a template for setting up giscus, which includes enabling the system and specifying necessary identifiers that link your site with the giscus service:</p>
-<p>To enable giscus, you need to add the following to the site configuration file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">false</span>  <span class="c"># Set to true to enable comments globally</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">type</span> <span class="p">=</span> <span class="s1">&#39;giscus&#39;</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Required parameters:</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Replace with your repository</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">repo</span> <span class="p">=</span> <span class="s1">&#39;your-github-username/repository-name&#39;</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Repository ID from giscus setup</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">repoId</span> <span class="p">=</span> <span class="s1">&#39;repository-ID&#39;</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Discussion category</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">category</span> <span class="p">=</span> <span class="s1">&#39;Announcements&#39;</span>
-</span></span><span class="line"><span class="cl">      <span class="c"># Category ID from giscus setup</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">categoryId</span> <span class="p">=</span> <span class="s1">&#39;category-ID&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c"># Optional parameters:</span>
-</span></span><span class="line"><span class="cl">    <span class="c">#</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span></code></pre></div><p>You can obtain the <code>repoId</code> and <code>categoryId</code> by configuring your repository on the <a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus setup page</a>. More details can also be found there.</p>
-<h3 id="comment-configuration-for-content-types">Comment Configuration for Content Types</h3>
-<p>In the Ed theme, comments are disabled by default for all content types to maintain simplicity and focus for users. This includes all posts (poems, narratives, dramas, and blog posts) and pages. This setting helps ensure that comments are only enabled where they are explicitly needed, allowing for more granular control over site interactions.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># Default site configuration to disable comments globally</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span></code></pre></div><p>If you wish to enable comments on specific posts to encourage community interaction, you can override the default setting in the front matter of each post:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Example of enabling comments in the front matter of a post</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Exploring Narratives</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">comments</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nn">---</span><span class="w">
-</span></span></span></code></pre></div><p>This allows you to selectively activate comments on content that benefits from user engagement, such as articles, stories, and discussions.</p>
-<p>For sites where community feedback is integral across all posts, comments can be enabled globally through the site&rsquo;s configuration file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># Enable comments globally in site configuration</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">enable</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span></code></pre></div><p>This setting will activate comments for all posts but will not affect pages, as comments on pages are not supported. This approach is consistent with the theme’s design to keep static pages like &ldquo;About&rdquo; and &ldquo;Contact&rdquo; free from comments, ensuring these pages remain streamlined and professional.</p>
+<p>Ed theme now supports adding a comments system to your site,
+enhancing interactive engagement. Currently, the theme supports
+integration with <a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus</a>.</p>
+<p><a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus</a> is a comments system powered by
+<a href="https://docs.github.com/en/discussions/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">GitHub Discussions</a>. It leverages GitHub’s infrastructure to
+provide a free, open source platform for comments.</p>
+<p>giscus operates by linking your website’s comment section directly to
+GitHub Discussions. Here’s an overview of the process: - When a page
+with giscus integration loads, it uses the <a href="https://docs.github.com/en/graphql/guides/using-the-graphql-api-for-discussions#search" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">GitHub Discussions search API</a> to
+locate a discussion that matches the page. The association is determined
+based on a chosen mapping strategy such as URL, pathname, or the page’s
+<code>&lt;title&gt;</code>. - If no existing discussion matches the
+page, giscus is configured to automatically create a new discussion when
+a visitor posts the first comment or reaction. This ensures that each
+page can have its own dedicated discussion thread, even if one was not
+previously set up manually. - To post a comment, visitors must authorize
+the giscus application via the GitHub OAuth flow, which grants the app
+permission to <a href="https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">post comments on their behalf</a>. This authorization is a
+straightforward process, typically requiring just a few clicks to
+connect a GitHub account. - Alternatively, visitors can choose to
+comment directly within the GitHub Discussions platform. This
+flexibility allows users familiar with GitHub to engage in the
+discussion using an interface they are comfortable with. - All comments
+posted through giscus are hosted and moderated on GitHub, leveraging
+GitHub’s native tools for managing discussions. This integration allows
+site owners to manage comments using the same workflows they use for
+other GitHub activities, providing a seamless moderation experience.</p>
+<p>Integrating giscus not only activates the dynamic interaction
+capabilities of GitHub Discussions on your Hugo site but also simplifies
+the management of user comments and engagements.</p>
+<p>To enable giscus in your Hugo site, you must first add configuration
+settings in the site’s configuration file. Below is a template for
+setting up giscus, which includes enabling the system and specifying
+necessary identifiers that link your site with the giscus service:</p>
+<p>To enable giscus, you need to add the following to the site
+configuration file:</p>
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments]</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">enable</span> <span class="op">=</span> <span class="cn">false</span>  <span class="co"># Set to true to enable comments globally</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">type</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">giscus</span><span class="st">&#39;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[params.comments.giscus]</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Required parameters:</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Replace with your repository</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">repo</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">your-github-username/repository-name</span><span class="st">&#39;</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Repository ID from giscus setup</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>      <span class="dt">repoId</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">repository-ID</span><span class="st">&#39;</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Discussion category</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">category</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">Announcements</span><span class="st">&#39;</span></span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Category ID from giscus setup</span></span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">categoryId</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">category-ID</span><span class="st">&#39;</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optional parameters:</span></span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">#</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+<p>You can obtain the <code>repoId</code> and <code>categoryId</code> by
+configuring your repository on the <a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus setup page</a>. More
+details can also be found there.</p>
+<h3 id="comment-configuration-for-content-types">Comment Configuration
+for Content Types</h3>
+<p>In the Ed theme, comments are disabled by default for all content
+types to maintain simplicity and focus for users. This includes all
+posts (poems, narratives, dramas, and blog posts) and pages. This
+setting helps ensure that comments are only enabled where they are
+explicitly needed, allowing for more granular control over site
+interactions.</p>
+<div class="sourceCode" id="cb30"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default site configuration to disable comments globally</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments]</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">enable</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+<p>If you wish to enable comments on specific posts to encourage
+community interaction, you can override the default setting in the front
+matter of each post:</p>
+<div class="sourceCode" id="cb31"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example of enabling comments in the front matter of a post</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Exploring Narratives</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="fu">comments</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<p>This allows you to selectively activate comments on content that
+benefits from user engagement, such as articles, stories, and
+discussions.</p>
+<p>For sites where community feedback is integral across all posts,
+comments can be enabled globally through the site’s configuration
+file:</p>
+<div class="sourceCode" id="cb32"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Enable comments globally in site configuration</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments]</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">enable</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span></code></pre></div>
+<p>This setting will activate comments for all posts but will not affect
+pages, as comments on pages are not supported. This approach is
+consistent with the theme’s design to keep static pages like “About” and
+“Contact” free from comments, ensuring these pages remain streamlined
+and professional.</p>
 <h3 id="styling-comments">Styling Comments</h3>
-<p>By default, giscus will inherit the styling from your GitHub discussion forum. However, you can customize the appearance to better fit your site&rsquo;s design by specifying a <code>theme</code> parameter in the giscus configuration block:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># Required parameters:</span>
-</span></span><span class="line"><span class="cl">    <span class="c">#</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c"># Optional parameters:</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># Available themes: cobalt, dark, light, dark, purge, etc.</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;dark_dimmed&#39;</span>
-</span></span></code></pre></div><p>Refer to the <a href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus theme documentation</a> for more details on available themes.</p>
+<p>By default, giscus will inherit the styling from your GitHub
+discussion forum. However, you can customize the appearance to better
+fit your site’s design by specifying a <code>theme</code> parameter in
+the giscus configuration block:</p>
+<div class="sourceCode" id="cb33"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments]</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments.giscus]</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Required parameters:</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optional parameters:</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Available themes: cobalt, dark, light, dark, purge, etc.</span></span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">theme</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">dark_dimmed</span><span class="st">&#39;</span></span></code></pre></div>
+<p>Refer to the <a href="https://github.com/giscus/giscus/blob/main/ADVANCED-USAGE.md#data-theme" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus theme documentation</a> for more details on available
+themes.</p>
 <h3 id="localization">Localization</h3>
-<p>giscus supports multiple languages, and you can set the desired language for your comments section through the <code>lang</code> parameter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">comments</span><span class="p">.</span><span class="nx">giscus</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># Required parameters:</span>
-</span></span><span class="line"><span class="cl">    <span class="c">#</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># ...</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c"># Optional parameters:</span>
-</span></span><span class="line"><span class="cl">    <span class="c"># Use language codes like &#39;en&#39; for English, &#39;es&#39; for Spanish, etc.</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">lang</span> <span class="p">=</span> <span class="s1">&#39;fr&#39;</span>
-</span></span></code></pre></div><hr>
-<p>This enhancement to the Ed theme allows you to leverage the power of community discussions directly on your site, making it more dynamic and engaging for visitors.</p>
-<p>For more information on giscus, visit the <a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus website</a>.</p>
-<h2 id="integrating-analytics-with-ed">Integrating Analytics with Ed</h2>
-<p>Ed provides seamless integration options to harness the power of Google Analytics and Google Tag Manager, ensuring you can monitor the performance and user engagement of your site effortlessly. To activate these services, a few configurations must be set up within your Hugo project’s configuration file. This section guides you through the process, highlighting the nuances and preferences within Ed’s theme.</p>
+<p>giscus supports multiple languages, and you can set the desired
+language for your comments section through the <code>lang</code>
+parameter:</p>
+<div class="sourceCode" id="cb34"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments]</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.comments.giscus]</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Required parameters:</span></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Optional parameters:</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Use language codes like &#39;en&#39; for English, &#39;es&#39; for Spanish, etc.</span></span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">lang</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">fr</span><span class="st">&#39;</span></span></code></pre></div>
+<hr />
+<p>This enhancement to the Ed theme allows you to leverage the power of
+community discussions directly on your site, making it more dynamic and
+engaging for visitors.</p>
+<p>For more information on giscus, visit the
+<a href="https://giscus.app/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">giscus website</a>.</p>
+<h2 id="integrating-analytics-with-ed">Integrating Analytics with
+Ed</h2>
+<p>Ed provides seamless integration options to harness the power of
+Google Analytics and Google Tag Manager, ensuring you can monitor the
+performance and user engagement of your site effortlessly. To activate
+these services, a few configurations must be set up within your Hugo
+project’s configuration file. This section guides you through the
+process, highlighting the nuances and preferences within Ed’s theme.</p>
 <h3 id="setting-up-google-analytics">Setting Up Google Analytics</h3>
-<p>To enable Google Analytics, you first need to obtain your tracking ID from the Google Analytics dashboard. Once you have it, add the following to your configuration file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">services</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">services</span><span class="p">.</span><span class="nx">googleAnalytics</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">ID</span> <span class="p">=</span> <span class="s1">&#39;G-MEASUREMENT_ID&#39;</span>
-</span></span></code></pre></div><p>This snippet tells Hugo to include the Google Analytics tracking code in your site. However, merely providing the ID is not enough. You must also explicitly enable Google Analytics by modifying the privacy settings:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">privacy</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">googleAnalytics</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">disable</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span></code></pre></div><p>For a more privacy-conscious implementation, you can configure Ed to respect users&rsquo; “Do Not Track” browser settings. This ensures that visitors who prefer not to be tracked are excluded from analytics data:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">privacy</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">googleAnalytics</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">disable</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">respectDoNotTrack</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span></code></pre></div><p>When <code>respectDoNotTrack</code> is set to <code>true</code>, Ed will honor the user&rsquo;s preference, making your site more respectful of user privacy choices.</p>
-<h3 id="configuring-google-tag-manager">Configuring Google Tag Manager</h3>
-<p>If you prefer to use Google Tag Manager instead of Google Analytics, Ed has built-in support for it as well. Google Tag Manager offers more flexibility, allowing you to manage various tags — such as conversion tracking, remarketing, and more — through a single platform.</p>
-<p>To configure Google Tag Manager, add your container ID in the following format:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">services</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">services</span><span class="p">.</span><span class="nx">googleTagManager</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">id</span> <span class="p">=</span> <span class="s1">&#39;GTM-MEASUREMENT_ID&#39;</span>
-</span></span></code></pre></div><p>As with Google Analytics, simply adding the ID does not enable tracking by itself. You must adjust the corresponding privacy settings to activate it:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">params</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">  <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">privacy</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nx">params</span><span class="p">.</span><span class="nx">privacy</span><span class="p">.</span><span class="nx">googleTagManager</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">disable</span> <span class="p">=</span> <span class="kc">false</span>
-</span></span><span class="line"><span class="cl">      <span class="nx">respectDoNotTrack</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span></code></pre></div><p>Here, setting <code>disable</code> to <code>false</code> activates Google Tag Manager, while the <code>respectDoNotTrack</code> option enables the same privacy-conscious behavior as described for Google Analytics.</p>
+<p>To enable Google Analytics, you first need to obtain your tracking ID
+from the Google Analytics dashboard. Once you have it, add the following
+to your configuration file:</p>
+<div class="sourceCode" id="cb35"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[services]</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[services.googleAnalytics]</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">ID</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">G-MEASUREMENT_ID</span><span class="st">&#39;</span></span></code></pre></div>
+<p>This snippet tells Hugo to include the Google Analytics tracking code
+in your site. However, merely providing the ID is not enough. You must
+also explicitly enable Google Analytics by modifying the privacy
+settings:</p>
+<div class="sourceCode" id="cb36"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[privacy]</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[privacy.googleAnalytics]</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">disable</span> <span class="op">=</span> <span class="cn">false</span></span></code></pre></div>
+<p>For a more privacy-conscious implementation, you can configure Ed to
+respect users’ “Do Not Track” browser settings. This ensures that
+visitors who prefer not to be tracked are excluded from analytics
+data:</p>
+<div class="sourceCode" id="cb37"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[privacy]</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[privacy.googleAnalytics]</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">disable</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">respectDoNotTrack</span> <span class="op">=</span> <span class="cn">true</span></span></code></pre></div>
+<p>When <code>respectDoNotTrack</code> is set to <code>true</code>, Ed
+will honor the user’s preference, making your site more respectful of
+user privacy choices.</p>
+<h3 id="configuring-google-tag-manager">Configuring Google Tag
+Manager</h3>
+<p>If you prefer to use Google Tag Manager instead of Google Analytics,
+Ed has built-in support for it as well. Google Tag Manager offers more
+flexibility, allowing you to manage various tags — such as conversion
+tracking, remarketing, and more — through a single platform.</p>
+<p>To configure Google Tag Manager, add your container ID in the
+following format:</p>
+<div class="sourceCode" id="cb38"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.services]</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[params.services.googleTagManager]</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">id</span> <span class="op">=</span> <span class="st">&#39;</span><span class="vs">GTM-MEASUREMENT_ID</span><span class="st">&#39;</span></span></code></pre></div>
+<p>As with Google Analytics, simply adding the ID does not enable
+tracking by itself. You must adjust the corresponding privacy settings
+to activate it:</p>
+<div class="sourceCode" id="cb39"><pre
+class="sourceCode toml"><code class="sourceCode toml"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[params]</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[params.privacy]</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[params.privacy.googleTagManager]</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>      <span class="dt">disable</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">respectDoNotTrack</span> <span class="op">=</span> <span class="cn">true</span></span></code></pre></div>
+<p>Here, setting <code>disable</code> to <code>false</code> activates
+Google Tag Manager, while the <code>respectDoNotTrack</code> option
+enables the same privacy-conscious behavior as described for Google
+Analytics.</p>
 <h3 id="important-considerations-1">Important Considerations</h3>
 <ul>
-<li><strong>Mutual Exclusivity of Services:</strong> Ed only supports activating <em>either</em> Google Analytics <em>or</em> Google Tag Manager, but not both simultaneously. This is by design — Google Tag Manager, when enabled, forwards data to Google Analytics internally. Therefore, enabling both services would result in redundant tracking and could potentially skew your metrics.</li>
-<li><strong>Configuration File Locations:</strong> Note that the configuration structures differ slightly:
+<li><strong>Mutual Exclusivity of Services:</strong> Ed only supports
+activating <em>either</em> Google Analytics <em>or</em> Google Tag
+Manager, but not both simultaneously. This is by design — Google Tag
+Manager, when enabled, forwards data to Google Analytics internally.
+Therefore, enabling both services would result in redundant tracking and
+could potentially skew your metrics.</li>
+<li><strong>Configuration File Locations:</strong> Note that the
+configuration structures differ slightly:
 <ul>
-<li>Google Analytics settings reside under the root configuration sections.</li>
-<li>Google Tag Manager settings are nested within the <code>[params]</code> section of your configuration file.</li>
+<li>Google Analytics settings reside under the root configuration
+sections.</li>
+<li>Google Tag Manager settings are nested within the
+<code>[params]</code> section of your configuration file.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>When both configurations are present, Ed prioritizes Google Tag Manager, bypassing the Google Analytics settings entirely. This makes your setup simpler and more robust, avoiding conflicting tracking scripts.</p>
+<p>When both configurations are present, Ed prioritizes Google Tag
+Manager, bypassing the Google Analytics settings entirely. This makes
+your setup simpler and more robust, avoiding conflicting tracking
+scripts.</p>
 <h3 id="making-the-choice">Making the Choice</h3>
 <p>So, which should you choose? It depends on your needs:</p>
 <ul>
-<li><strong>Google Analytics</strong> is ideal for straightforward tracking and reporting without additional complexity.</li>
-<li><strong>Google Tag Manager</strong> is recommended if you need advanced tag management, custom events, or multiple analytics integrations.</li>
+<li><strong>Google Analytics</strong> is ideal for straightforward
+tracking and reporting without additional complexity.</li>
+<li><strong>Google Tag Manager</strong> is recommended if you need
+advanced tag management, custom events, or multiple analytics
+integrations.</li>
 </ul>
-<p>When you decide, set up the configurations accordingly and let Ed handle the rest.</p>
-<hr>
+<p>When you decide, set up the configurations accordingly and let Ed
+handle the rest.</p>
+<hr />
 <h2 id="getting-help">Getting help</h2>
-<p>That should do it. If you have suggestions on how to improve Ed, make sure to leave us a line on <a href="https://github.com/sergeyklay/gohugo-theme-ed/issues" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">our issues page</a>, or send us a pull request. If you run into an issue that isn&rsquo;t answered by this documentation or the <code><a href="https://github.com/sergeyklay/gohugo-theme-ed/tree/main/exampleSite" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">exampleSite</a></code>, then visit the <a href="https://discourse.gohugo.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo forum</a>. The folks there are helpful and friendly. <strong>Before</strong> asking your question, be sure to read the <a href="https://discourse.gohugo.io/t/requesting-help/9132" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">requesting help guidelines</a>. Feel free to tag me in your question, my forum username is <a href="https://discourse.gohugo.io/u/egrep/summary" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">@egrep</a>.</p>
+<p>That should do it. If you have suggestions on how to improve Ed, make
+sure to leave us a line on <a href="https://github.com/sergeyklay/gohugo-theme-ed/issues" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">our issues page</a>, or send us a pull
+request. If you run into an issue that isn’t answered by this
+documentation or the <code><a href="https://github.com/sergeyklay/gohugo-theme-ed/tree/main/exampleSite" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">exampleSite</a></code>, then visit
+the <a href="https://discourse.gohugo.io/" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">Hugo forum</a>. The folks there are helpful and friendly.
+<strong>Before</strong> asking your question, be sure to read the
+<a href="https://discourse.gohugo.io/t/requesting-help/9132" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">requesting help guidelines</a>. Feel free to tag me in your question, my
+forum username is <a href="https://discourse.gohugo.io/u/egrep/summary" hreflang="en" class="external" target="_blank" rel="noopener noreferrer">@egrep</a>.</p>
 <p>Happy editing!</p>
-<p>Serghei Iakovlev<br>
+<p>Serghei Iakovlev<br />
 April 2024</p>
-<p>Alex Gil<br>
+<p>Alex Gil<br />
 April 2016</p>
 
     </div>

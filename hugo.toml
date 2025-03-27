@@ -57,7 +57,8 @@ refLinksErrorLevel = 'WARNING'
 
   recentPostsSize = 5
 
-  #default is enable math unless the frontmatter says math = false
+  #this is the site-wide config that does auto math-rendering for every page'
+  #granular control is in the page-specific frontmatter
   math = true
 
   [params.contact]
@@ -346,24 +347,31 @@ refLinksErrorLevel = 'WARNING'
 
 # For more see https://gohugo.io/getting-started/configuration-markup/
 [markup]
-  defaultMarkdownHandler = 'goldmark'
-  [markup.highlight]
-    # false due to generated Syntax Highlighter CSS
-    noClasses = false
-  [markup.goldmark]
-    [markup.goldmark.parser]
-      [markup.goldmark.parser.attribute]
-        # Enable custom attribute support for blocks
-        block = true
 
-    #we add this for math rendering
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        #use this to display inline
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['$', '$']]
+  # # settings if you want to use thge goldmark md handler
+  # defaultMarkdownHandler = 'goldmark'
+  # [markup.highlight]
+  #   # false due to generated Syntax Highlighter CSS
+  #   noClasses = false
+  # [markup.goldmark]
+  #   [markup.goldmark.parser]
+  #     [markup.goldmark.parser.attribute]
+  #       # Enable custom attribute support for blocks
+  #       block = true
+
+  #   #we add this for math rendering
+  #   [markup.goldmark.extensions]
+  #     [markup.goldmark.extensions.passthrough]
+  #       enable = true
+  #       #use this to display inline
+  #       [markup.goldmark.extensions.passthrough.delimiters]
+  #         block = [['\[', '\]'], ['$$', '$$']]
+  #         inline = [['$', '$']]
+
+    defaultMarkdownHandler = "pandoc"
+    # Keep your existing highlight settings
+    [markup.highlight]
+      noClasses = false
 
 # If enableGitInfo is true, it will override any lastmod dates in our
 # front matter. We should at least allow ourselves to manually override
@@ -405,7 +413,11 @@ refLinksErrorLevel = 'WARNING'
     enable = true
 
 # change the location of where we store images in the cache
-# default is in the reosurce directory, not the cache directory
+# default is in the resource directory, not the cache directory
 [caches]
   [caches.images]
     dir = ':cacheDir/images'
+
+# add security config to allow hugo to use pandoc
+[security.exec]
+  allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$', '^pandoc$']

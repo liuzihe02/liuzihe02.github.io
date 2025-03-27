@@ -54,6 +54,27 @@
 
     
     
+        <script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [["$", "$"]], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
+    
 
     <body class="theme-base-">
         <div id="top-of-site-anchor"></div>
@@ -141,11 +162,42 @@ Published on
     </header>
     <p class="post-content">
         This is a post about latex.
-An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace:
-$${a}^{b} - \overbrace{c}^{d}$$ Two overbraces: $$\underbrace{a}_{b} - \underbrace{c}_{d}$$ None of these below works properly:
-$$ \begin{aligned} equation &= 16 \\ other &= 26 + 13 \end{aligned} $$ $$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$ 
+An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace:
+\[{a}^{b} - \overbrace{c}^{d}\] Two overbraces: \[\underbrace{a}_{b} - \underbrace{c}_{d}\] None of these below works properly:
+\[ \begin{aligned} equation &amp;= 16 \\ other &amp;= 26 + 13 \end{aligned} \]
+\[ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \]
     </p>
     
+        
+    
+</article>
+
+        
+            <article class="post">
+    <header>
+        <h2 class="post-title">
+            <a href="https://liuzihe02.github.io/posts/dft-fft/" rel="bookmark">Investigating the Discrete Fourier Transform and Fast Fourier Transform</a>
+        </h2>
+        <p class="post-meta">
+
+
+Published on
+<time datetime="0001-01-01T00:00:00Z">
+    January 1, 1
+</time>
+
+
+
+</p>
+    </header>
+    <p class="post-content">
+        Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.
+    </p>
+    
+        
+            <footer>
+                <a href="/posts/dft-fft/" class="read-more">Read more...</a>
+            </footer>
         
     
 </article>

@@ -29,8 +29,28 @@
         <id>urn:uuid:ca59884e-df81-5fa1-892b-a33b753f7d52</id>
         
         <summary type="html"><![CDATA[This is a post about latex.
-An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace:
-$${a}^{b} - \overbrace{c}^{d}$$ Two overbraces: $$\underbrace{a}_{b} - \underbrace{c}_{d}$$ None of these below works properly:
-$$ \begin{aligned} equation &= 16 \\ other &= 26 + 13 \end{aligned} $$ $$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$ ]]></summary>
+An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i = 0}^N 2i = y\) One overbrace:
+\[{a}^{b} - \overbrace{c}^{d}\] Two overbraces: \[\underbrace{a}_{b} - \underbrace{c}_{d}\] None of these below works properly:
+\[ \begin{aligned} equation &amp;= 16 \\ other &amp;= 26 + 13 \end{aligned} \]
+\[ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \]]]></summary>
+    </entry>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/dft-fft/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[Investigating the Discrete Fourier Transform and Fast Fourier Transform]]></title>
+        
+        
+        
+        <published>0001-01-01T00:00:00Z</published>
+        <updated>0001-01-01T00:00:00Z</updated>
+        <id>urn:uuid:8ae2474a-d471-5d23-1921-3ac30bad0906</id>
+        
+                <author>
+                    <name>Zihe</name>
+                </author>
+        
+        <summary type="html"><![CDATA[Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.]]></summary>
     </entry>
 </feed>

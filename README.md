@@ -70,11 +70,48 @@ This creates a hyperlink to "http://gohugo.io" with the visible text "University
 
 The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of creating reusable components within your content. This particular shortcode is called "link" and is likely defined in your Hugo theme or site configuration.
 
-### Math Content
+### Overleaf Documents
 
-See [here](https://gohugo.io/content-management/mathematics/)
+Most of my documents are written in overleaf. We will go through the procedure of converting an overleaf zipped package into GitHub Flavored Markdown. Make sure you have an updated version of `pandoc`
 
-We have used the `$` delimiter for inline equations. However, to avoid confusion, to use the regular $ sign, we will need to add a double escape `A \\$5 bill is a awesome`
+**Step 1: Extract Overleaf ZIP source file**
+
+> This is assuming we have downloaded the directory to the root directory
+
+Go to the zip file and extract contents to a directory
+
+```bash
+unzip DFT-FFT.zip -d dft-fft
+```
+
+**Step 2: Convert main LaTEX file to Markdown**
+
+```bash
+cd dft-fft
+pandoc main.tex -o ../content/posts/dft-fft.pdc \
+  --from=latex \
+  --to=markdown \
+  --extract-media=../static \
+  --citeproc \
+  --bibliography=references.bib \
+  --standalone \
+  --mathjax
+```
+
+#### Math Content
+
+See [here](https://gohugo.io/content-management/mathematics/) on how to render `$` and `$$` in Hugo markdown.
+
+We have used the `$` delimiter for inline equations. However, to avoid confusion, to use the regular `$` sign, we will need to add a double escape `A \\$5 bill is a awesome`
+
+```html
+<!-- add math rendering. will check frontmater, then section parameters, then site config in hugo.toml -->
+{{ if .Param "math" }} {{ partialCached "math.html" . }} {{ end }}
+```
+
+We have also used `{{ if .Param "math" }}` instead of the reccomended `{{ if .Params.math }}` in step 3 of the guide. The reccomended version only checks the page configuration in `frontmatter`, but our version checks the site settings too. We have set default math rendering for everything.
+
+> If you find that this makes loading the page much slower, you can simply set `math` to be `false` in the site config and selectively apply `math` to be `true` in the page frontmatter
 
 ## Deployment
 

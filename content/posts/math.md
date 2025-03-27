@@ -1,10 +1,8 @@
 ---
-
 title: "My First Post"
 date: 2022-10-17T22:45:36+11:00
 draft: false
 math: true
-
 ---
 
 This is a post about latex.
