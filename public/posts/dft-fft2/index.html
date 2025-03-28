@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 
-    <link rel="canonical" href="https://liuzihe02.github.io/posts/dft-fft/">
+    <link rel="canonical" href="http://localhost:1313/posts/dft-fft2/">
 
     <title>Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe</title>
     <meta name="description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
@@ -23,7 +23,7 @@
     <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
     <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
-<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/dft-fft/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dft-fft2/">
 
     <meta name="theme-color" content="#ffffff">
     <script>
@@ -54,8 +54,8 @@
     <meta property="og:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
     <meta property="og:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://liuzihe02.github.io/posts/dft-fft/">
-    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta property="og:url" content="http://localhost:1313/posts/dft-fft2/">
+    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
     <meta property="og:image:width" content="100">
     <meta property="og:image:height" content="100">
     
@@ -63,7 +63,7 @@
     <meta name="twitter:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
     
 
 <script type="application/ld+json" id="schema-data">
@@ -72,9 +72,9 @@
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://liuzihe02.github.io/posts/dft-fft/"
+            "@id": "http://localhost:1313/posts/dft-fft2/"
         },
-        "url": "https://liuzihe02.github.io/posts/dft-fft/",
+        "url": "http://localhost:1313/posts/dft-fft2/",
         "headline": "Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
         "description": "Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
         "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
@@ -90,7 +90,7 @@
             "name": "Serghei Iakovlev",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
                 "width": "96",
                 "height": "96"
             }
@@ -352,10 +352,10 @@ N)\)</span>.</p>
 <h2 id="complexity-2">Complexity</h2>
 <figure id="fig:complexity">
 <img src="/figures/complex.jpg" style="width:40.0%"
-alt="Execution time versus signal length N for various implementations of DFT and FFT" />
-<figcaption aria-hidden="true">Execution time versus signal length <span
-class="math inline">\(N\)</span> for various implementations of DFT and
-FFT</figcaption>
+alt="Figure 1: Execution time versus signal length N for various implementations of DFT and FFT" />
+<figcaption aria-hidden="true">Figure 1: Execution time versus signal
+length <span class="math inline">\(N\)</span> for various
+implementations of DFT and FFT</figcaption>
 </figure>
 <div id="tab:R2">
 <p>Algorithm O(N) O(N²) O(N³) O(log N) O(N log N)</p>
@@ -392,10 +392,10 @@ class="math inline">\(O(N\log N)\)</span> models.</p>
 <h2 id="numerical-error">Numerical Error</h2>
 <figure id="fig:recon">
 <img src="/figures/recon.jpg" style="width:40.0%"
-alt="Reconstruction error versus signal length N for various implementations of DFT and FFT" />
-<figcaption aria-hidden="true">Reconstruction error versus signal length
-<span class="math inline">\(N\)</span> for various implementations of
-DFT and FFT</figcaption>
+alt="Figure 2: Reconstruction error versus signal length N for various implementations of DFT and FFT" />
+<figcaption aria-hidden="true">Figure 2: Reconstruction error versus
+signal length <span class="math inline">\(N\)</span> for various
+implementations of DFT and FFT</figcaption>
 </figure>
 <p>We evaluate numerical accuracy of both algorithms in <a
 href="#fig:recon" data-reference-type="ref+label"
@@ -430,7 +430,7 @@ transducer data (Channel 1):</p>
 style="width:70.0%" /></p>
 </div>
 <figcaption>
-Effect of windowing on amplitude and side lobe suppression.
+Figure 3: Effect of windowing on amplitude and side lobe suppression.
 </figcaption>
 </figure>
 <ul>

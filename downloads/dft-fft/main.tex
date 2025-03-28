@@ -328,16 +328,7 @@ Noting $W_N^{k +\frac{N}{2}}=-W_{N}^{k}$, we write
 \end{cases}
 \end{equation*}
 
-finally giving us
-
-\begin{align}
-X[k] &= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1 \\
-X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1
-\label{eq:fft_final}
-\end{align}
-
-The multipliers $W_N^k$ are known as \textit{twiddle factors}. The first computation with $+W_N^k$ give us the first half of the full DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give us the second half of $\mathbf{X}$.
-
+finally giving us \autoref{eq:fft_final}. The multipliers $W_N^k$ are known as \textit{twiddle factors}. The first computation with $+W_N^k$ give us the first half of the full DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give us the second half of $\mathbf{X}$.
 
 \newpage
 \bibliographystyle{plain}  % or any style you prefer (e.g., alpha, abbrv)

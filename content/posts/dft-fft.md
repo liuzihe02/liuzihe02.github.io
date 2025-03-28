@@ -167,7 +167,7 @@ Our overall complexity is $O(N\log N)$.
 ## Complexity
 
 ![Execution time versus signal length $N$ for various implementations of
-DFT and FFT](../../static/figures/complex.jpg){#fig:complexity
+DFT and FFT](/figures/complex.jpg){#fig:complexity
 width="40%"}
 
 ::: {#tab:R2}
@@ -205,7 +205,7 @@ $O(N)$ and $O(N\log N)$ models.
 
 ![Reconstruction error versus signal length $N$ for various
 implementations of DFT and
-FFT](../../static/figures/recon.jpg){#fig:recon width="40%"}
+FFT](/figures/recon.jpg){#fig:recon width="40%"}
 
 We evaluate numerical accuracy of both algorithms in
 [2](#fig:recon){reference-type="ref+label" reference="fig:recon"} by
@@ -233,10 +233,10 @@ transducer data (Channel 1):
 
 <figure id="fig:windowing">
 <div class="minipage">
-<img src="../../static/figures/sin5_window.png" style="width:70.0%" />
+<img src="/figures/sin5_window.png" style="width:70.0%" />
 </div>
 <div class="minipage">
-<img src="../../static/figures/sin5_window_zoomed.png"
+<img src="/figures/sin5_window_zoomed.png"
 style="width:70.0%" />
 </div>
 <figcaption>Effect of windowing on amplitude and side lobe
@@ -332,19 +332,11 @@ X[k] =
 $$
 
 finally giving us
-
-$$
-\begin{aligned}
-X[k] &= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1 \\
-X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1
-\label{eq:fft_final}
-\end{aligned}
-$$
-
-The multipliers $W_N^k$ are known as _twiddle factors_. The first
-computation with $+W_N^k$ give us the first half of the full DFT vector
-$\mathbf{X}$, while the second computation with $-W_N^k$ give us the
-second half of $\mathbf{X}$.
+[\[eq:fft_final\]](#eq:fft_final){reference-type="ref+label"
+reference="eq:fft_final"}. The multipliers $W_N^k$ are known as _twiddle
+factors_. The first computation with $+W_N^k$ give us the first half of
+the full DFT vector $\mathbf{X}$, while the second computation with
+$-W_N^k$ give us the second half of $\mathbf{X}$.
 
 [^1]:
     This package is highly optimized to each machine and is written in

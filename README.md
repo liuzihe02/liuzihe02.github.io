@@ -24,7 +24,9 @@ The Hugo [content management](https://gohugo.io/content-management/) sites espec
 
 Only use the `content/` folder to add new content
 
-Use ISO 8601 for the datetime added to the frontmatter of the markdown page.
+> Use ISO 8601 for the datetime added to the frontmatter of the markdown page.
+
+> Hugo expects media to be referenced directly from the `static/` folder
 
 ### Modifying Styles
 
@@ -88,17 +90,29 @@ unzip DFT-FFT.zip -d dft-fft
 
 ```bash
 cd dft-fft
-pandoc main.tex -o ../../content/posts/dft-fft.pdc \
+# pandoc main.tex -o ../../content/posts/dft-fft.pdc \
+#   --from=latex \
+#   --to=markdown \
+#   --extract-media=../../static \
+#   --standalone \
+#   --mathjax
+
+# convert to stdout first, then remove static prefix, then save to content file
+pandoc main.tex -o - \
   --from=latex \
   --to=markdown \
   --extract-media=../../static \
   --standalone \
-  --mathjax
+  --mathjax | \
+  sed 's|../../static||g' \
+  > ../../content/posts/dft-fft.md
 ```
 
 There might be some issues with the author. I reccomended removing the author field in the frontmatter.
 
-> Note that converting to references here also causes some issues, so we have to manually handle the references section :(
+> Note that converting to references here also causes some issues, so we have to **manually handle** the references section :( LaTEX has rich referencing system that md doesnt support well
+
+> In the Overleaf package, please ensure all the images are in the folder `figures`, for standardization purpose. Pandoc will continue appending images to the `figures` folder instead of overriding it. I don't want multiple folders which serve the same purpose but have different naming.
 
 #### Math Content
 

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+
+    <link rel="canonical" href="http://localhost:1313/posts/e4/">
+
+    <title>Part IB Labs E4\
+Wave Transmission and Reflection
+ - Liu Zihe</title>
+    <meta name="description" content="Summary This experiment investigates the propagation and reflection characteristics of microwaves. The primary aims are: Measure the wavelength and phase …">
+    <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
+
+    <meta name="author" content="Serghei Iakovlev">
+    <meta name="generator" content="Hugo 0.127.0">
+
+    
+    <link crossorigin="anonymous" href="/css/stylesheet.min.ddff76a17889e714853ced93d59096be3dca89927ec0e446c2d9c6b70da094a6.css" integrity="sha256-3f92oXiJ5xSFPO2T1ZCWvj3KiZJ+wORGwtnGtw2glKY=" rel="preload stylesheet" as="style">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/red_sinc.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+    <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/e4/">
+
+    <meta name="theme-color" content="#ffffff">
+    <script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]  
+        ], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+    
+    <meta property="og:title" content="Part IB Labs E4\
+Wave Transmission and Reflection
+ - Liu Zihe">
+    <meta property="og:description" content="Summary This experiment investigates the propagation and reflection characteristics of microwaves. The primary aims are: Measure the wavelength and phase …">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://localhost:1313/posts/e4/">
+    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    
+    <meta name="twitter:title" content="Part IB Labs E4\
+Wave Transmission and Reflection
+ - Liu Zihe">
+    <meta name="twitter:description" content="Summary This experiment investigates the propagation and reflection characteristics of microwaves. The primary aims are: Measure the wavelength and phase …">
+    <meta name="twitter:site" content="@egreps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
+    
+
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http://localhost:1313/posts/e4/"
+        },
+        "url": "http://localhost:1313/posts/e4/",
+        "headline": "Part IB Labs E4\\\nWave Transmission and Reflection\n - Liu Zihe",
+        "description": "Summary This experiment investigates the propagation and reflection characteristics of microwaves. The primary aims are: Measure the wavelength and phase …",
+        "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
+        "datePublished": "0001-01-01T00:00:00Z",
+        "dateModified": "0001-01-01T00:00:00Z",
+            "author": {
+                "@type": "Person",
+                "name": "Serghei Iakovlev",
+                "url": "https://twitter.com/egreps"
+            },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Serghei Iakovlev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "width": "96",
+                "height": "96"
+            }
+        }
+    }
+</script>
+
+
+
+    <script src="/js/common.js"></script>
+</head>
+
+    <body class="theme-base-">
+        <div id="top-of-site-anchor"></div>
+        
+            
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+        <p></p>
+    </div>
+
+    <nav class="sidebar-nav">
+            <a class="sidebar-nav-item"
+                href="/"
+                id="menu-main-home">Home</a>
+            <a class="sidebar-nav-item"
+                href="/projects/"
+                id="menu-main-projects">Projects</a>
+            <a class="sidebar-nav-item active"
+                href="/posts/"
+                id="menu-main-posts">Posts</a>
+            <a class="sidebar-nav-item"
+                href="/documentation/"
+                id="menu-main-documentation">Documentation</a>
+            <a class="sidebar-nav-item"
+                href="/poems/"
+                id="menu-main-poems">Poems</a>
+            <a class="sidebar-nav-item"
+                href="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing"
+                id="menu-main-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+        
+        
+        
+    </nav>
+
+    
+    <div class="sidebar-item">
+        <p>Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.</p>
+    </div>
+
+
+</aside>
+        
+        <div class="wrap">
+            <header class="masthead">
+                <div class="container">
+                    <h3 class="masthead-title">
+                        <a href="/" title="Home">Liu Zihe</a>
+                        <br><small>Dancing in the Moonlight</small>
+                    </h3>
+                </div>
+            </header>
+
+            <main class="container content" id="main">
+                <article class="post" role="document">
+    <header>
+        <h1 class="text-title">
+            Part IB Labs E4\
+Wave Transmission and Reflection
+
+        </h1>
+        <p class="byline">
+            
+                
+
+
+Published on
+<time datetime="0001-01-01T00:00:00Z">
+    January 1, 1
+</time>
+
+
+
+
+            
+        </p>
+    </header>
+
+    <div class="post-body">
+        <h1 id="summary">Summary</h1>
+<p>This experiment investigates the propagation and reflection
+characteristics of microwaves. The primary aims are:</p>
+<ul>
+<li><p>Measure the wavelength and phase velocity in air by analyzing
+standing waves in a coaxial line.</p></li>
+<li><p>Use uncertainty analysis to quantitatively assess the accuracy of
+the results.</p></li>
+<li><p>Characterize the refractive index <span
+class="math inline">\(n\)</span> of a material by measuring the change
+in travel time when the material is substituted for air.</p></li>
+<li><p>Construct a microwave resonator using a section line with highly
+reflective ends.</p></li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>Electromagnetic waves are defined by their frequency (<span
+class="math inline">\(f\)</span>), wavelength (<span
+class="math inline">\(\lambda\)</span>), and phase velocity (<span
+class="math inline">\(u\)</span>), with the relation <span
+class="math display">\[u = f\lambda.
+    \label{eq:phase_velocity}\]</span> In free space, this velocity is
+approximately <span
+class="math inline">\(c\approx3.0\times10^8\,\mathrm{m/s}\)</span>.
+However, guided propagation (in a coaxial or strip line) allows for the
+observation of standing waves due to the interference between a forward
+and reflected wave. The positions of minima (nodes) and maxima occur at
+intervals of <span class="math inline">\(\lambda/2\)</span>, enabling an
+accurate determination of <span class="math inline">\(\lambda\)</span>.
+When dielectric materials are introduced into the waveguide, the
+propagation speed decreases according to <span
+class="math display">\[u_{\text{material}} = \frac{c}{n},
+    \label{eq:material_velocity}\]</span> where <span
+class="math inline">\(n\)</span> is the refractive index.</p>
+<p>In addition, the reflection of waves at boundaries (with either a
+closed or open end) can be quantified via the power reflection
+coefficient,</p>
+<p><span class="math display">\[
+\rho = \frac{B}{A},
+    \label{eq:reflection_coeff}\]</span> with <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span> representing the amplitudes of the
+forward and reflected waves, respectively.</p>
+<h1 id="experimental-apparatus-and-methodology">Experimental Apparatus
+and Methodology</h1>
+<p>The setup comprises:</p>
+<ul>
+<li><p><strong>Microwave Source:</strong> A microprocessor-controlled
+generator (2–4 GHz) providing a continuous-wave signal.</p></li>
+<li><p><strong>Slotted Line:</strong> A coaxial line with an adjustable
+probe that scans along the line to detect minima in the standing wave
+pattern.</p></li>
+<li><p><strong>Strip Line:</strong> A configuration permitting the
+insertion of dielectric materials and the formation of resonant cavities
+using brass screws.</p></li>
+<li><p><strong>Data Logger:</strong> Integrated with the signal source
+for real-time measurement of the signal amplitude.</p></li>
+</ul>
+<p>The experiment was divided into four main parts:</p>
+<ol type="1">
+<li><p><strong>Wavelength and Phase Velocity:</strong> Measurements of
+minima positions were taken for three distinct frequencies to calculate
+<span class="math inline">\(\lambda\)</span> and hence <span
+class="math inline">\(u\)</span>.</p></li>
+<li><p><strong>Reflection Coefficients:</strong> By switching between a
+short-circuit plug and an open-circuit plug, shifts in the minima were
+recorded and used to determine the reflection coefficient.</p></li>
+<li><p><strong>Dielectric Material Analysis:</strong> Dielectric sheets
+(teflon, perspex, and glass) were inserted, and the corresponding shifts
+in the standing wave pattern were used to compute the refractive index
+via the change in effective line length.</p></li>
+<li><p><strong>Resonator Response:</strong> A resonator was constructed
+by placing two brass screws in the strip line. Frequency sweeps were
+performed for two different screw spacings to analyze the resonant
+transmission characteristics.</p></li>
+</ol>
+<h1 id="results-and-analysis">Results and Analysis</h1>
+<h2 id="wavelength-and-phase-velocity-measurement">Wavelength and Phase
+Velocity Measurement</h2>
+<p>Standing waves were observed on the slotted line and the positions of
+successive minima were recorded. The positions of the leftmost minima
+<span class="math inline">\(P_1\)</span> and rightmost minima <span
+class="math inline">\(Q_1\)</span>, and the number of maxima <span
+class="math inline">\(N\)</span> in between them are recorded. Table <a
+href="#tab:wavelength" data-reference-type="ref"
+data-reference="tab:wavelength">1</a> shows our measurements.</p>
+<div id="tab:wavelength">
+<table>
+<caption>Measured minima positions and derived wavelengths and phase
+velocities.</caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(f\)</span>
+(GHz)</th>
+<th style="text-align: center;"><span class="math inline">\(P_1\)</span>
+(mm)</th>
+<th style="text-align: center;"><span class="math inline">\(Q_1\)</span>
+(mm)</th>
+<th style="text-align: center;">No. of maxima <span
+class="math inline">\(N\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(\lambda\)</span> (mm)</th>
+<th style="text-align: center;"><span class="math inline">\(u\)</span>
+(mm/ns)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">2.508</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">465</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">118.3</td>
+<td style="text-align: center;">296.7</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">46</td>
+<td style="text-align: center;">497</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">100.22</td>
+<td style="text-align: center;">300.7</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.6</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">480</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">83.5</td>
+<td style="text-align: center;">300.4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The wavelength is determined from the fact that the distance between
+adjacent minima is <span class="math inline">\(\lambda/2\)</span>, and
+the phase velocity is then calculated using Equation <a
+href="#eq:phase_velocity" data-reference-type="ref"
+data-reference="eq:phase_velocity">[eq:phase_velocity]</a>. The
+calculated values of the wave propagation speed are quite close to <span
+class="math inline">\(c\)</span>, and we also quantify the
+uncertainty.</p>
+<h3 class="unnumbered" id="uncertainty-analysis">Uncertainty
+Analysis</h3>
+<p>The wavelength <span class="math inline">\(\lambda\)</span> is
+determined from the distance between successive minima. If <span
+class="math inline">\(P\)</span> and <span
+class="math inline">\(Q\)</span> are the measured positions of two
+minima (with uncertainty <span class="math inline">\(\Delta P\)</span>
+and <span class="math inline">\(\Delta Q\)</span>), then: <span
+class="math display">\[\lambda = 2\frac{(Q-P)}{N},\]</span> where <span
+class="math inline">\(N\)</span> is the number of half-wavelength
+intervals between the measurements. The relative uncertainty in <span
+class="math inline">\(\lambda\)</span> is: <span
+class="math display">\[\frac{\Delta \lambda}{\lambda} = \frac{\Delta P +
+\Delta Q}{Q-P}.\]</span> Since the phase velocity is given by <span
+class="math inline">\(u = f\lambda\)</span>, its relative uncertainty
+is: <span class="math display">\[\frac{\Delta u}{u} = \frac{\Delta f}{f}
++ \frac{\Delta \lambda}{\lambda}.\]</span></p>
+<p>We estimate the absolute uncertainties of the measurements as the
+smallest division. <span class="math inline">\(\Delta f = \pm 0.001
+\text{ GHz}\)</span> and <span class="math inline">\(\Delta P = \Delta Q
+= \pm 1 \text{ mm}\)</span>. The calculated uncertainties are shown in
+Table <a href="#tab:wavelength_uncertainty" data-reference-type="ref"
+data-reference="tab:wavelength_uncertainty">2</a> . The accuracy of
+values is quite high, with only around 0.5% uncertainty.</p>
+<div id="tab:wavelength_uncertainty">
+<table>
+<caption>Uncertainties for values of <span
+class="math inline">\(u\)</span> obtained.</caption>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math inline">\(u\)</span>
+(mm/ns)</th>
+<th style="text-align: center;"><span class="math inline">\(\frac{\Delta
+f}{f}\)</span> (%)</th>
+<th style="text-align: center;"><span
+class="math inline">\(\frac{(\Delta P + \Delta Q)}{Q - P}\)</span>
+(%)</th>
+<th style="text-align: center;"><span class="math inline">\(\frac{\Delta
+u}{u}\)</span> (%)</th>
+<th style="text-align: center;"><span class="math inline">\(\Delta
+u\)</span> (mm/ns)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">296.7</td>
+<td style="text-align: center;">0.040</td>
+<td style="text-align: center;">0.483</td>
+<td style="text-align: center;">0.512</td>
+<td style="text-align: center;"><span
+class="math inline">\(\pm\)</span><!-- -->1.52</td>
+</tr>
+<tr>
+<td style="text-align: center;">300.7</td>
+<td style="text-align: center;">0.033</td>
+<td style="text-align: center;">0.444</td>
+<td style="text-align: center;">0.488</td>
+<td style="text-align: center;"><span
+class="math inline">\(\pm\)</span><!-- -->1.47</td>
+</tr>
+<tr>
+<td style="text-align: center;">300.4</td>
+<td style="text-align: center;">0.028</td>
+<td style="text-align: center;">0.436</td>
+<td style="text-align: center;">0.463</td>
+<td style="text-align: center;"><span
+class="math inline">\(\pm\)</span><!-- -->1.39</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="reflection-coefficient-determination">Reflection Coefficient
+Determination</h2>
+<p>With a brass short-circuit plug installed, we expect nearly complete
+cancellation at the minima (ideal <span
+class="math inline">\(\rho\approx-1\)</span>). Replacing the short plug
+with an open-circuit plug shifted the minima. Table <a
+href="#tab:reflection_shift" data-reference-type="ref"
+data-reference="tab:reflection_shift">3</a> summarizes the observed
+shifts at a frequency near 3 GHz.</p>
+<div id="tab:reflection_shift">
+<table>
+<caption>Minima shifts upon replacing the short-circuit with an
+open-circuit plug</caption>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math inline">\(f\)</span>
+(GHz)</td>
+<td style="text-align: center;"><span class="math inline">\(P_2\)</span>
+(mm)</td>
+<td style="text-align: center;"><span
+class="math inline">\(P_2-P_1\)</span> (mm)</td>
+<td style="text-align: center;"><span class="math inline">\(Q_2\)</span>
+(mm)</td>
+<td style="text-align: center;"><span
+class="math inline">\(Q_2-Q_1\)</span> (mm)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">Shift <span
+class="math inline">\(\Delta\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">(mm)</td>
+<td style="text-align: center;"><span class="math inline">\(n =
+\Delta/\lambda\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">71</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">471</td>
+<td style="text-align: center;">27</td>
+<td>26</td>
+<td>0.26</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="unnumbered" id="uncertainty-analysis-1">Uncertainty
+Analysis</h3>
+<p>The uncertainty of <span class="math inline">\(n\)</span> is
+calculated as follows:</p>
+<p><span class="math display">\[n = \frac{\frac{(P_2 - P_1) - (Q_2 -
+Q_1))}{2}}{\frac{c}{f}}\]</span></p>
+<p>The relative uncertainty in <span class="math inline">\(n\)</span> is
+given by:</p>
+<p><span class="math display">\[\frac{\Delta n}{n} = \frac{1}{2} \left(
+\frac{2 \Delta P}{P_2 - P_1} + \frac{2 \Delta Q}{Q_2 - Q_1} \right) +
+\frac{\Delta f}{f}\]</span></p>
+<p>Substituting in the values, we get a relative uncertainty of about
+7%. The standing wave pattern typically shifts by <span
+class="math inline">\(\lambda/4\)</span>, hence the theoretical value of
+<span class="math inline">\(n\)</span> is <span
+class="math inline">\(0.25\)</span>. However, due to the high
+experimental uncertainty, we have our measured values deviating
+significantly to the theoretical value.</p>
+<h3 class="unnumbered"
+id="measurement-of-reflection-coefficient">Measurement of Reflection
+Coefficient</h3>
+<p>Additionally, detector readings were recorded with a brass screw in
+place as a short circuit. The detector output offset, maximum observed
+amplitude <span class="math inline">\(A+B\)</span> and minimum observed
+amplitude <span class="math inline">\(A-B\)</span> are recorded in
+Table <a href="#tab:detector_readings" data-reference-type="ref"
+data-reference="tab:detector_readings">4</a>.</p>
+<div id="tab:detector_readings">
+<table>
+<caption>Detector output readings used to calculate the Standing Wave
+Ratio <span class="math inline">\(S\)</span>.</caption>
+<thead>
+<tr>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: center;">Value (mV)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Offset</td>
+<td style="text-align: center;">1.2</td>
+</tr>
+<tr>
+<td style="text-align: center;">A+B</td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr>
+<td style="text-align: center;">A-B</td>
+<td style="text-align: center;">0.3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The standing wave ratio <span class="math inline">\(S\)</span> is
+computed as: <span class="math display">\[S^2 = \frac{\text{A+B} -
+\text{Offset}}{\text{A-B} - \text{Offset}}\]</span> and the reflection
+coefficient is then given by: <span class="math display">\[\rho =
+\frac{S-1}{S+1}\]</span> This gives us <span
+class="math inline">\(S=7.46\)</span> and <span
+class="math inline">\(\rho = 0.76\)</span>. This value indicates that
+the open-circuit plug is nearly as reflective as the short-circuit plug,
+though not ideal.</p>
+<h2 id="propagation-in-dielectric-materials">Propagation in Dielectric
+Materials</h2>
+<p>Dielectric samples (teflon, perspex, and glass) of various
+thicknesses were inserted beneath the strip line and ground plane. The
+insertion causes a shift in the minima. The refractive index is
+determined by: <span class="math display">\[n = 1 + \frac{R -
+M}{d},\]</span> where <span class="math inline">\(M\)</span> is the
+original minima position, <span class="math inline">\(R\)</span> is the
+shifted position when the sample is inserted, and <span
+class="math inline">\(d\)</span> is the sample thickness. We record the
+relevant values in Table <a href="#tab:refractive_index"
+data-reference-type="ref"
+data-reference="tab:refractive_index">5</a>.</p>
+<div id="tab:refractive_index">
+<table>
+<caption>Refractive index calculations for different
+materials.</caption>
+<thead>
+<tr>
+<th style="text-align: center;">Material</th>
+<th style="text-align: center;"><span class="math inline">\(M\)</span>
+(mm)</th>
+<th style="text-align: center;"><span class="math inline">\(d\)</span>
+(mm)</th>
+<th style="text-align: center;"><span class="math inline">\(R\)</span>
+(mm)</th>
+<th style="text-align: center;"><span class="math inline">\(R -
+M\)</span> (mm)</th>
+<th style="text-align: center;"><span
+class="math inline">\(n\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\frac{\Delta
+n}{n}\)</span> (%)</th>
+<th style="text-align: center;"><span class="math inline">\(\Delta
+n\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Glass</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">69</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">1.57</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+15.1\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.24\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Glass</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">1.73</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+6.2\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.11\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Glass</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">114</td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">1.69</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+4.3\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.07\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Teflon</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">59</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">1.23</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+31.9\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.39\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Teflon</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">1.25</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+15.0\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.19\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Perspex</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">92</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">1.44</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+6.1\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.09\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">Perspex</td>
+<td style="text-align: center;">52</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">48</td>
+<td style="text-align: center;">1.40</td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+5.0\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pm
+0.07\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="unnumbered" id="uncertainty-analysis-2">Uncertainty
+Analysis</h3>
+<p>The relative uncertainty in <span class="math inline">\(n\)</span>
+is: <span class="math display">\[\frac{\Delta n}{n} = \frac{\Delta R +
+\Delta M}{R-M} + \frac{\Delta d}{d}.\]</span> Assuming <span
+class="math inline">\(\Delta R = \Delta M = \Delta d = \pm1\)</span> mm,
+the percentage uncertainty in <span class="math inline">\(n\)</span>
+will vary with the sample thickness, typically ranging from about 5% for
+thicker samples to nearly 30% for thinner ones. The relative uncertainty
+decreases with increasing sample thickness.</p>
+<h2 id="resonator-transmission-characteristics">Resonator Transmission
+Characteristics</h2>
+<p>A microwave resonator was formed by lightly screwing two brass pins
+into the strip line. For a spacing of 120 mm, a single resonance was
+observed near 2338 MHz, yielding a wavelength of approximately 128 mm,
+slightly larger than the physical spacing. The effective resonator
+length, expressed in half-wavelength multiples, is slightly larger than
+the physical spacing. This discrepancy is possibly due to fringing
+electric fields and the finite size of the reflectors.</p>
+<figure id="fig:standing_wave">
+<img src="/Figures/2338.png" style="width:80.0%"
+alt="Peak frequency at 2338MHz" />
+<figcaption aria-hidden="true">Peak frequency at 2338MHz</figcaption>
+</figure>
+<h1 id="discussion">Discussion</h1>
+<p>The measured phase velocities in air were consistently close to the
+theoretical value of <span
+class="math inline">\(300\,\mathrm{mm/ns}\)</span>, confirming the
+validity of the standing-wave method. The observed shift in minima when
+changing from a short-circuit to an open-circuit termination reflects
+the phase difference introduced at the boundary, and the calculated
+reflection coefficient (<span
+class="math inline">\(\rho\approx0.76\)</span>) indicates incomplete
+reflection with the open plug.</p>
+<p>The refractive index results show a trend where the effective <span
+class="math inline">\(n\)</span> decreases with increasing sample
+thickness, though variations among samples suggest that experimental
+uncertainties—such as positioning errors and material
+nonuniformities—play a significant role. Finally, the resonator
+experiments clearly demonstrate that the effective cavity length can
+exceed the physical spacing due to factors like fringing fields.</p>
+<h1 id="conclusions">Conclusions</h1>
+<p>In summary:</p>
+<ul>
+<li><p>The wavelength and phase velocity of microwaves in air were
+accurately determined using standing-wave measurements.</p></li>
+<li><p>Different terminations (short vs. open ends) produced measurable
+phase shifts</p></li>
+<li><p>The reflection coefficient of a brass pin can be calculated from
+the maxima and minima amplitudes, where we saw the brass pin was not a
+perfect reflector</p></li>
+<li><p>Inserting dielectric materials under the strip line enabled the
+estimation of various refractive indices, although uncertainties were
+significant for thinner samples.</p></li>
+<li><p>Resonator measurements indicated that the effective length is
+greater than the physical spacing, likely due to fringing and imperfect
+terminations.</p></li>
+</ul>
+<p>These results are in good agreement with theoretical expectations and
+demonstrate the key principles of wave transmission and reflection in
+guided systems. $$</p>
+
+    </div>
+
+    
+    
+        
+
+<div class="tags-wrapper">
+    <ul class="post-tags">
+        
+    </ul>
+</div>
+
+    
+
+    
+</article>
+
+            </main>
+        </div>
+
+        <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+        <a href="#top-of-site" class="top-of-site-link" data-visible="false">
+            <span class="screen-reader-text" aria-label="Back to top of the page">
+                Back to top
+            </span>
+            <svg width="32" height="32" viewBox="0 0 100 100">
+                <path fill="white" d="m50 0c-13.262 0-25.98 5.2695-35.355 14.645s-14.645 22.094-14.645 35.355 5.2695 25.98 14.645 35.355 22.094 14.645 35.355 14.645 25.98-5.2695 35.355-14.645 14.645-22.094 14.645-35.355-5.2695-25.98-14.645-35.355-22.094-14.645-35.355-14.645zm20.832 62.5-20.832-22.457-20.625 22.457c-1.207 0.74219-2.7656 0.57812-3.7891-0.39844-1.0273-0.98047-1.2695-2.5273-0.58594-3.7695l22.918-25c0.60156-0.61328 1.4297-0.96094 2.2891-0.96094 0.86328 0 1.6914 0.34766 2.293 0.96094l22.918 25c0.88672 1.2891 0.6875 3.0352-0.47266 4.0898-1.1562 1.0508-2.9141 1.0859-4.1133 0.078125z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
