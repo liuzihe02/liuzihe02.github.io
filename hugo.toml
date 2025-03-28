@@ -61,6 +61,8 @@ refLinksErrorLevel = 'WARNING'
   #granular control is in the page-specific frontmatter
   math = true
 
+
+
   [params.contact]
     # Forms Backend URL, used in contacts form
     formAction = 'https://submit-form.com/example'
@@ -378,12 +380,6 @@ refLinksErrorLevel = 'WARNING'
 # this value in the front matter.
 [frontmatter]
   lastmod = ['lastmod', ':git', 'modified', 'date', 'publishdate', 'pubdate', 'published']
-
-[[frontmatter.defaults]]
-  where = {}  # Applies to all content pages
-  [frontmatter.defaults.values]
-    [frontmatter.defaults.values.params]
-      annotations = false
 
 [module]
   [module.hugoVersion]

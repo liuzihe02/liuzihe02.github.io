@@ -109,45 +109,44 @@
         <div id="top-of-site-anchor"></div>
         
             
-<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-
-
-<aside class="sidebar" id="sidebar">
-    <div class="sidebar-item">
-        <p></p>
-    </div>
-
-    <nav class="sidebar-nav">
-            <a class="sidebar-nav-item"
-                href="/"
-                id="menu-main-home">Home</a>
-            <a class="sidebar-nav-item"
-                href="/projects/"
-                id="menu-main-projects">Projects</a>
-            <a class="sidebar-nav-item active"
-                href="/posts/"
-                id="menu-main-posts">Posts</a>
-            <a class="sidebar-nav-item"
-                href="/documentation/"
-                id="menu-main-documentation">Documentation</a>
-            <a class="sidebar-nav-item"
-                href="/poems/"
-                id="menu-main-poems">Poems</a>
-            <a class="sidebar-nav-item"
-                href="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing"
-                id="menu-main-resume" target="_blank" rel="noopener noreferrer">Resume</a>
-        
-        
-        
-    </nav>
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
     
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p></p>
+        </div>
+    
+        <nav class="sidebar-nav">
+                <a class="sidebar-nav-item"
+                    href="/"
+                    id="menu-main-home">Home</a>
+                <a class="sidebar-nav-item"
+                    href="/projects/"
+                    id="menu-main-projects">Projects</a>
+                <a class="sidebar-nav-item active"
+                    href="/posts/"
+                    id="menu-main-posts">Posts</a>
+                <a class="sidebar-nav-item"
+                    href="/documentation/"
+                    id="menu-main-documentation">Documentation</a>
+                <a class="sidebar-nav-item"
+                    href="/poems/"
+                    id="menu-main-poems">Poems</a>
+                <a class="sidebar-nav-item"
+                    href="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing"
+                    id="menu-main-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+            
+            
+        </nav>
+    
+        
     <div class="sidebar-item">
         <p>Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.</p>
     </div>
 
 
-</aside>
+    </aside>
         
         <div class="wrap">
             <header class="masthead">
@@ -311,20 +310,118 @@ the asymptotic complexity is dominated by multiplication, giving <span
 class="math inline">\(O(N^2)\)</span>.</p>
 <hr />
 <h1 id="fast-fourier-transform">Fast Fourier Transform</h1>
+<h2 id="preliminaries">Preliminaries</h2>
+<p>We layout some properties of <span class="math inline">\(W_N\)</span>
+we’ll be using later</p>
+<p><strong>Property 1:</strong></p>
+<p><span class="math display">\[
+W_N^2 = W_{N/2}
+\]</span></p>
+<p><em>Proof:</em></p>
+<p><span class="math display">\[
+W_N^2 = e^{-j\frac{2\pi}{N}\cdot 2} = e^{-j\frac{2\pi}{N/2}} = W_{N/2}
+\]</span></p>
+<p>More generally, <span class="math inline">\(W_N^{2nk} =
+W_{N/2}^{nk}\)</span>.</p>
+<p><strong>Property 2:</strong></p>
+<p><span class="math display">\[
+W_N^{k+\frac{N}{2}} = -W_N^k
+\]</span></p>
+<p><em>Proof:</em></p>
+<p><span class="math display">\[
+W_N^{k+\frac{N}{2}} = e^{-j\frac{2\pi}{N}\left(k+\frac{N}{2}\right)} =
+e^{-j\frac{2\pi}{N}k} \cdot e^{-j\pi} = -W_N^k
+\]</span></p>
 <h2 id="theory-1">Theory</h2>
 <p>The radix-2 FFT algorithms work by dividing the DFT into 2 DFTs of
 length <span class="math inline">\(N/2\)</span> each, and iterating. We
 introduce the simplest variant, called the <em>Decimation-In-Time</em>
-(DIT) algorithm. DIT begins by splitting <span
-class="math inline">\(x[n]\)</span> into two parts — one for the
-even-indexed values <span class="math inline">\(x[2n]\)</span> and one
-for the odd-indexed values <span class="math inline">\(x[2n +
-1]\)</span>. Define two <span class="math inline">\(N/2\)</span>-point
-signals <span class="math inline">\(x_{even}[n]\)</span> and <span
+(DIT) algorithm.</p>
+<p>Consider a <span class="math inline">\(N\)</span>-point signal <span
+class="math inline">\(x[n]\)</span> of even length, indexed from <span
+class="math inline">\(0\)</span> to <span
+class="math inline">\(N-1\)</span>. The derivation of the DIT radix-2
+FFT begins by splitting the <span class="math inline">\(x[n]\)</span>
+into two parts — one part for the even-indexed values <span
+class="math inline">\(x[2n]\)</span> and one part for the odd-indexed
+values <span class="math inline">\(x[2n + 1]\)</span>. Define two <span
+class="math inline">\(N/2\)</span>-point signals <span
+class="math inline">\(x_{even}[n]\)</span> and <span
 class="math inline">\(x_{odd}[n]\)</span> as <span
 class="math display">\[x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n +
 1], \quad 0 \leq n \leq N/2-1\]</span></p>
-<p>using the DFT of these 2 splits gives us:</p>
+<p>The DFT can be written as</p>
+<p><span class="math display">\[
+\begin{aligned}
+X[k] &amp;= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} +
+\sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
+&amp;= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1]
+W_N^{(2n+1)k}\\
+&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1}
+x_{odd}[n] W_N^{(2n+1)k} \\
+&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot
+\sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
+\end{aligned}
+\]</span></p>
+<p>Noting that <span class="math inline">\(W_N^{2}=W_{N/2}\)</span> or
+more generally <span
+class="math inline">\(W_N^{2nk}=W_{N/2}^{nk}\)</span> , then</p>
+<p><span class="math display">\[
+\begin{aligned}
+X[k]&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot
+\sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
+\end{aligned}
+\]</span></p>
+<p>Recognizing that the <span
+class="math inline">\(\frac{N}{2}\)</span>-point DFT of <span
+class="math inline">\(x_{even}[n]\)</span> and <span
+class="math inline">\(x_{odd}[n]\)</span> are given by:</p>
+<p><span class="math display">\[X_{even}[k] =
+\text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n]
+W_{N/2}^{nk}\]</span></p>
+<p><span class="math display">\[X_{odd}[k] =
+\text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n]
+W_{N/2}^{nk}\]</span></p>
+<p>we then obtain our core recursive equation:</p>
+<p><span class="math display">\[
+X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
+    \label{eq:fft_int}
+\]</span></p>
+<p>Since <span class="math inline">\(x_{even}[n]\)</span> and <span
+class="math inline">\(x_{odd}[n]\)</span> are <span
+class="math inline">\(N/2\)</span>-point signals with <span
+class="math inline">\(0 \leq n \leq N/2-1\)</span>, their DFT are also
+only <span class="math inline">\(N/2\)</span>-point signals. However, we
+require <span class="math inline">\(0 \le k \le N-1\)</span>. We resolve
+this by noting their DFT coefficients are periodic with a period of
+<span class="math inline">\(\frac{N}{2}\)</span>:</p>
+<p><span class="math display">\[X_{even}[k] = X_{even}\left[k +
+\frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k +
+\frac{N}{2}\right]\]</span></p>
+<p>This gives us</p>
+<p><span class="math display">\[
+X[k] =
+    \begin{cases}
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
+0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot
+X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
+\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+\end{cases}
+\]</span></p>
+<p>Noting <span class="math inline">\(W_N^{k
++\frac{N}{2}}=-W_{N}^{k}\)</span>, we write</p>
+<p><span class="math display">\[
+X[k] =
+    \begin{cases}
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
+0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot
+X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
+\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+\end{cases}
+\]</span></p>
+<p>finally giving us</p>
 <p><span class="math display">\[
 \begin{aligned}
 X[k] &amp;= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0
@@ -334,45 +431,66 @@ X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
 \label{eq:fft_final}
 \end{aligned}
 \]</span></p>
-<p>The first computation with <span
+<p>The multipliers <span class="math inline">\(W_N^k\)</span> are known
+as <em>twiddle factors</em>. The first computation with <span
 class="math inline">\(+W_N^k\)</span> give us the first half of the full
 DFT vector <span class="math inline">\(\mathbf{X}\)</span>, while the
 second computation with <span class="math inline">\(-W_N^k\)</span> give
-us the second half of <span class="math inline">\(\mathbf{X}\)</span>.
-The proof is laid out in the Appendix.</p>
+us the second half of <span
+class="math inline">\(\mathbf{X}\)</span>.</p>
 <h2 id="complexity-1">Complexity</h2>
-<div class="algorithm">
-<div class="algorithmic">
-<p><span class="math inline">\(N \gets
-\text{length}(\mathbf{x})\)</span></p>
-<p><span class="math inline">\(\mathbf{x}\)</span></p>
-<p><span class="math inline">\(\mathbf{x}_{even} \gets
-\mathbf{x}[0:2:N-1]\)</span> <span
-class="math inline">\(\mathbf{x}_{odd} \gets
-\mathbf{x}[1:2:N-1]\)</span></p>
-<p><span class="math inline">\(\mathbf{X}_{even} \gets
-\text{FFT}(\mathbf{x}_{even})\)</span> <span
-class="math inline">\(\mathbf{X}_{odd} \gets
-\text{FFT}(\mathbf{x}_{odd})\)</span></p>
-<p><span class="math inline">\(\mathbf{X} \gets
-\text{zeros}(N)\)</span></p>
-<p><span class="math inline">\(W_N^k \gets e^{-j2\pi k/N}\)</span> <span
-class="math inline">\(\mathbf{X}[k] \gets \mathbf{X}_{even}[k] + W_N^k
-\cdot \mathbf{X}_{odd}[k]\)</span> <span
-class="math inline">\(\mathbf{X}[k+N/2] \gets \mathbf{X}_{even}[k] -
-W_N^k \cdot \mathbf{X}_{odd}[k]\)</span></p>
-<p><span class="math inline">\(\mathbf{X}\)</span></p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/FFT-pseudo.png"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Pseudocode for FFT</figcaption>
+  
 </div>
-</div>
+
+<p><code>MATLAB</code> code for FFT:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>X <span class="p">=</span><span class="w"> </span><span class="nf">fft_vectorized</span><span class="p">(</span>x<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">% computes the radix-2 FFT recursively using vectorized operations.</span>
+</span></span><span class="line"><span class="cl"><span class="c">% If the length of x is not a power of 2, it is zero-padded to the next power of 2, added at the end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="p">=</span> <span class="n">x</span><span class="p">(:);</span>         <span class="c">% Ensure x is a column vector</span>
+</span></span><span class="line"><span class="cl">    <span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% If N is not a power of 2, zero-pad x to the next power of 2</span>
+</span></span><span class="line"><span class="cl">    <span class="n">M</span> <span class="p">=</span> <span class="mi">2</span>^<span class="nb">nextpow2</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>  <span class="c">% nextpow2 returns the exponent so that 2^exponent &gt;= N</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">M</span> <span class="o">~=</span> <span class="n">N</span>
+</span></span><span class="line"><span class="cl">        <span class="c">%add zeros to the end</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="p">=</span> <span class="p">[</span><span class="n">x</span><span class="p">;</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">M</span> <span class="o">-</span> <span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">N</span> <span class="p">=</span> <span class="n">M</span><span class="p">;</span>  <span class="c">% Update N to the new length</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Base case: if the input length is 1, return x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">N</span> <span class="o">==</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">X</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Recursively compute FFT for even and odd indices</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X_even</span> <span class="p">=</span> <span class="n">fft_vectorized</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">));</span> <span class="c">%select all the even indices</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X_odd</span>  <span class="p">=</span> <span class="n">fft_vectorized</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">));</span> <span class="c">% selects all the odd indices</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Compute twiddle factors (complex exponentials) in a vectorized manner</span>
+</span></span><span class="line"><span class="cl">    <span class="c">% row array</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">factor</span> <span class="p">=</span> <span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="nb">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pi</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="o">&#39;</span> <span class="o">/</span> <span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Combine the FFTs of the even and odd parts using the butterfly operation</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="p">=</span> <span class="p">[</span><span class="n">X_even</span> <span class="o">+</span> <span class="nb">factor</span> <span class="o">.*</span> <span class="n">X_odd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">         <span class="n">X_even</span> <span class="o">-</span> <span class="nb">factor</span> <span class="o">.*</span> <span class="n">X_odd</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
 <p>We can follow the above procedure to split an <span
 class="math inline">\(N\)</span>-point DFT into two <span
-class="math inline">\(\frac{N}{2}\)</span>-point DFT, giving us
-Algorithm <a href="#alg:fft" data-reference-type="ref+label"
-data-reference="alg:fft">[alg:fft]</a>. Let <span
-class="math inline">\(A_c(N)\)</span> and <span
-class="math inline">\(M_c(N)\)</span> denote respectively the number of
-complex additions and multiplications for computing the DFT of an <span
-class="math inline">\(N\)</span>-point complex sequence <span
+class="math inline">\(\frac{N}{2}\)</span>-point DFT, giving us the
+above algorithim. Let <span class="math inline">\(A_c(N)\)</span> and
+<span class="math inline">\(M_c(N)\)</span> denote respectively the
+number of complex additions and multiplications for computing the DFT of
+an <span class="math inline">\(N\)</span>-point complex sequence <span
 class="math inline">\(x[n]\)</span>. Let <span
 class="math inline">\(N\)</span> be a power of 2, <span
 class="math inline">\(N = 2^k\)</span>. Then, we have <span
@@ -383,44 +501,75 @@ of even and odd terms) and <span class="math inline">\(\frac{N}{2} -
 1\)</span> complex multiplications (<span class="math inline">\(W_N^{k}
 \cdot X_{odd}[k]\)</span>) are required to put the two <span
 class="math inline">\(N/2\)</span>-point DFTs together. Note that a
-2-point DFT is simply a sum and difference <span
-class="math inline">\(X[0] = x[0] + x[1] , \quad X[1] = x[0] -
-x[1]\)</span>. Hence, the starting conditions are <span
-class="math inline">\(A_c(2) = 2\)</span> and <span
-class="math inline">\(M_c(2) = 0\)</span>. Solving the recursive
-equation yields <span class="math display">\[A_c(N) = N \log_2 N  \quad
-, \quad M_c(N) = \frac{N}{2} \log_2 N - N + 1\]</span></p>
+2-point DFT is simply a sum and difference</p>
+<p><span class="math display">\[X[0] = x[0] + x[1] , \quad X[1] = x[0] -
+x[1]\]</span></p>
+<p>Hence, the starting conditions are <span class="math inline">\(A_c(2)
+= 2\)</span> and <span class="math inline">\(M_c(2) = 0\)</span>.
+Solving the recursive equation yields <span
+class="math display">\[A_c(N) = N \log_2 N  \quad , \quad M_c(N) =
+\frac{N}{2} \log_2 N - N + 1\]</span></p>
 <p>Our overall complexity is <span class="math inline">\(O(N\log
 N)\)</span>.</p>
+<hr />
 <h1 id="experiments">Experiments</h1>
 <h2 id="complexity-2">Complexity</h2>
-<figure id="fig:complexity">
-<img src="/figures/complex.jpg" style="width:40.0%"
-alt="Execution time versus signal length N for various implementations of DFT and FFT" />
-<figcaption aria-hidden="true">Execution time versus signal length <span
-class="math inline">\(N\)</span> for various implementations of DFT and
-FFT</figcaption>
-</figure>
-<div id="tab:R2">
-<p>Algorithm O(N) O(N²) O(N³) O(log N) O(N log N)</p>
-<hr />
-<p>my-DFT 0.9208 0.9999 0.9864 0.4167 0.9417 my-FFT 0.9830 0.9657 0.9161
-0.5634 0.9894 MATLAB-FFT 0.8491 0.7141 0.6526 0.8537 0.8287</p>
-<p>: R<sup>2</sup> values for different complexity models.</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/complex.jpg"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Execution time versus signal length $N$ for various implementations of DFT and FFT</figcaption>
+  
 </div>
+
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>O(N)</th>
+<th>O(N²)</th>
+<th>O(N³)</th>
+<th>O(log N)</th>
+<th>O(N log N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>my-DFT</td>
+<td>0.9208</td>
+<td>0.9999</td>
+<td>0.9864</td>
+<td>0.4167</td>
+<td>0.9417</td>
+</tr>
+<tr>
+<td>my-FFT</td>
+<td>0.9830</td>
+<td>0.9657</td>
+<td>0.9161</td>
+<td>0.5634</td>
+<td>0.9894</td>
+</tr>
+<tr>
+<td>MATLAB-FFT</td>
+<td>0.8491</td>
+<td>0.7141</td>
+<td>0.6526</td>
+<td>0.8537</td>
+<td>0.8287</td>
+</tr>
+</tbody>
+</table>
 <p>To verify the theoretical complexity, we measured the execution time
 for computing the DFT over a range of signal lengths. For each signal
 length <span class="math inline">\(N\)</span>, <span
 class="math inline">\(N\)</span> samples were taken from a 5Hz sine
 wave, and the DFT/FFT computation time recorded. We compare our
-implementation of Algorithm <a href="#alg:dft"
-data-reference-type="ref+label" data-reference="alg:dft">[alg:dft]</a>
-as <code>my-DFT</code>, our implementation of Algorithm <a
-href="#alg:fft" data-reference-type="ref+label"
-data-reference="alg:fft">[alg:fft]</a> as <code>my-FFT</code>, and the
-<code>MATLAB</code> FFT implementation as <code>MATLAB-FFT</code>. <a
-href="#fig:complexity" data-reference-type="ref+label"
-data-reference="fig:complexity">1</a> shows the measured execution times
+implementation of DFT <code>my-DFT</code>, our implementation of FFT as
+<code>my-FFT</code>, and the <code>MATLAB</code> FFT implementation as
+<code>MATLAB-FFT</code>. You can view the measured execution times above
 on a log-log plot. The FFT results clearly exhibit an <span
 class="math inline">\(O(N\log N)\)</span> scaling, while the DFT scales
 as <span class="math inline">\(O(N^2)\)</span>. These experimental
@@ -428,11 +577,15 @@ results confirm the significant computational advantage of using the FFT
 for large-scale problems. We also note the much more efficient
 implementation of <code>MATLAB</code> FFT, which uses the
 <code>FFTW</code> <a href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a> package. <a href="#tab:R2"
-data-reference-type="ref+label" data-reference="tab:R2">1</a> show the
+role="doc-noteref"><sup>2</sup></a> package. The table also shows the
 how well different models fit to data. Both FFT implementations fit well
 to <span class="math inline">\(O(N)\)</span> and <span
 class="math inline">\(O(N\log N)\)</span> models.</p>
+<blockquote>
+<p>Test some code blocks</p>
+<p>more testing</p>
+<p>kasdka</p>
+</blockquote>
 <h2 id="numerical-error">Numerical Error</h2>
 <figure id="fig:recon">
 <img src="/figures/recon.jpg" style="width:40.0%"
@@ -470,96 +623,6 @@ accurate frequency analysis, with the Han or Hamming window recommended
 for most applications. All code available at <a
 href="https://github.com/liuzihe02/dft-fft.git"
 class="uri">https://github.com/liuzihe02/dft-fft.git</a>.</p>
-<h1 class="unnumbered" id="app:fft_proof">Appendix: Derivation of
-FFT</h1>
-<p>Consider again a <span class="math inline">\(N\)</span>-point signal
-<span class="math inline">\(x[n]\)</span> of even length. The derivation
-of the DIT radix-2 FFT begins by splitting the <span
-class="math inline">\(x[n]\)</span> into two parts — one part for the
-even-indexed values <span class="math inline">\(x[2n]\)</span> and one
-part for the odd-indexed values <span class="math inline">\(x[2n +
-1]\)</span>. Define two <span class="math inline">\(N/2\)</span>-point
-signals <span class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> as <span
-class="math display">\[x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n +
-1], \quad 0 \leq n \leq N/2-1\]</span></p>
-<p>The DFT can be written as</p>
-<p><span class="math display">\[
-\begin{aligned}
-X[k] &amp;= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} +
-\sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
-&amp;= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1]
-W_N^{(2n+1)k}\\
-&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1}
-x_{odd}[n] W_N^{(2n+1)k} \\
-&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot
-\sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
-\end{aligned}
-\]</span></p>
-<p>Noting that <span class="math inline">\(W_N^{2}=W_{N/2}\)</span> or
-more generally <span
-class="math inline">\(W_N^{2nk}=W_{N/2}^{nk}\)</span>, <span
-class="math display">\[\begin{aligned}
-X[k]&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot
-\sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
-\end{aligned}\]</span></p>
-<p>Recognizing that the <span
-class="math inline">\(\frac{N}{2}\)</span>-point DFT of <span
-class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> are given by:</p>
-<p><span class="math display">\[X_{even}[k] =
-\text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n]
-W_{N/2}^{nk} \quad , \quad X_{odd}[k] =
-\text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n]
-W_{N/2}^{nk}\]</span></p>
-<p>we then obtain our core recursive equation:</p>
-<p><span class="math display">\[
-X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
-    \label{eq:fft_int}
-\]</span></p>
-<p>Since <span class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> are <span
-class="math inline">\(N/2\)</span>-point signals with <span
-class="math inline">\(0 \leq n \leq N/2-1\)</span>, their DFT are also
-only <span class="math inline">\(N/2\)</span>-point signals. However, we
-require <span class="math inline">\(0 \le k \le N-1\)</span>. We resolve
-this by noting their DFT coefficients are periodic with a period of
-<span class="math inline">\(\frac{N}{2}\)</span></p>
-<p><span class="math display">\[X_{even}[k] = X_{even}\left[k +
-\frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k +
-\frac{N}{2}\right]\]</span></p>
-<p>This gives us</p>
-<p><span class="math display">\[
-X[k] =
-    \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
-0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot
-X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
-\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}
-\]</span></p>
-<p>Noting <span class="math inline">\(W_N^{k
-+\frac{N}{2}}=-W_{N}^{k}\)</span>, we write</p>
-<p><span class="math display">\[
-X[k] =
-    \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
-0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot
-X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
-\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}
-\]</span></p>
-<p>finally giving us <a href="#eq:fft_final"
-data-reference-type="ref+label"
-data-reference="eq:fft*final">[eq:fft_final]</a>. The multipliers <span
-class="math inline">\(W_N^k\)</span> are known as _twiddle factors*. The
-first computation with <span class="math inline">\(+W_N^k\)</span> give
-us the first half of the full DFT vector <span
-class="math inline">\(\mathbf{X}\)</span>, while the second computation
-with <span class="math inline">\(-W_N^k\)</span> give us the second half
-of <span class="math inline">\(\mathbf{X}\)</span>.</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />

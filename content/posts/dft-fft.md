@@ -131,17 +131,111 @@ asymptotic complexity is dominated by multiplication, giving $O(N^2)$.
 
 # Fast Fourier Transform
 
+## Preliminaries
+
+We layout some properties of $W_N$ we'll be using later
+
+**Property 1:**
+
+$$
+W_N^2 = W_{N/2}
+$$
+
+_Proof:_
+
+$$
+W_N^2 = e^{-j\frac{2\pi}{N}\cdot 2} = e^{-j\frac{2\pi}{N/2}} = W_{N/2}
+$$
+
+More generally, $W_N^{2nk} = W_{N/2}^{nk}$.
+
+**Property 2:**
+
+$$
+W_N^{k+\frac{N}{2}} = -W_N^k
+$$
+
+_Proof:_
+
+$$
+W_N^{k+\frac{N}{2}} = e^{-j\frac{2\pi}{N}\left(k+\frac{N}{2}\right)} = e^{-j\frac{2\pi}{N}k} \cdot e^{-j\pi} = -W_N^k
+$$
+
 ## Theory
 
 The radix-2 FFT algorithms work by dividing the DFT into 2 DFTs of
 length $N/2$ each, and iterating. We introduce the simplest variant,
-called the _Decimation-In-Time_ (DIT) algorithm. DIT begins by splitting
-$x[n]$ into two parts --- one for the even-indexed values $x[2n]$ and
-one for the odd-indexed values $x[2n + 1]$. Define two $N/2$-point
-signals $x_{even}[n]$ and $x_{odd}[n]$ as
+called the _Decimation-In-Time_ (DIT) algorithm.
+
+Consider a $N$-point signal $x[n]$ of even length, indexed from $0$ to $N-1$. The derivation
+of the DIT radix-2 FFT begins by splitting the $x[n]$ into two parts ---
+one part for the even-indexed values $x[2n]$ and one part for the
+odd-indexed values $x[2n + 1]$. Define two $N/2$-point signals
+$x_{even}[n]$ and $x_{odd}[n]$ as
 $$x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n + 1], \quad 0 \leq n \leq N/2-1$$
 
-using the DFT of these 2 splits gives us:
+The DFT can be written as
+
+$$
+\begin{aligned}
+X[k] &= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} + \sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
+&= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1] W_N^{(2n+1)k}\\
+&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{(2n+1)k} \\
+&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
+\end{aligned}
+$$
+
+Noting that $W_N^{2}=W_{N/2}$ or more generally
+$W_N^{2nk}=W_{N/2}^{nk}$ , then
+
+$$
+\begin{aligned}
+X[k]&= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
+\end{aligned}
+$$
+
+Recognizing that the $\frac{N}{2}$-point DFT of $x_{even}[n]$ and
+$x_{odd}[n]$ are given by:
+
+$$X_{even}[k] = \text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk}$$
+
+$$X_{odd}[k] = \text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}$$
+
+we then obtain our core recursive equation:
+
+$$
+X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
+    \label{eq:fft_int}
+$$
+
+Since $x_{even}[n]$ and $x_{odd}[n]$ are $N/2$-point signals with
+$0 \leq n \leq N/2-1$, their DFT are also only $N/2$-point signals.
+However, we require $0 \le k \le N-1$. We resolve this by noting their
+DFT coefficients are periodic with a period of $\frac{N}{2}$:
+
+$$X_{even}[k] = X_{even}\left[k + \frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k + \frac{N}{2}\right]$$
+
+This gives us
+
+$$
+X[k] =
+    \begin{cases}
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+\end{cases}
+$$
+
+Noting $W_N^{k +\frac{N}{2}}=-W_{N}^{k}$, we write
+
+$$
+X[k] =
+    \begin{cases}
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+\end{cases}
+$$
+
+finally giving us
 
 $$
 \begin{aligned}
@@ -151,38 +245,56 @@ X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k 
 \end{aligned}
 $$
 
-The first computation with $+W_N^k$ give us the first half of the full
+The multipliers $W_N^k$ are known as _twiddle
+factors_. The first computation with $+W_N^k$ give us the first half of the full
 DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give
-us the second half of $\mathbf{X}$. The proof is laid out in the
-Appendix.
+us the second half of $\mathbf{X}$.
 
 ## Complexity
 
-:::: algorithm
-::: algorithmic
-$N \gets \text{length}(\mathbf{x})$
+{{< img src="/figures/FFT-pseudo.png" caption="Pseudocode for FFT" width="500">}}
 
-$\mathbf{x}$
+`MATLAB` code for FFT:
 
-$\mathbf{x}_{even} \gets \mathbf{x}[0:2:N-1]$
-$\mathbf{x}_{odd} \gets \mathbf{x}[1:2:N-1]$
+{{< highlight matlab >}}
+function X = fft_vectorized(x)
+% computes the radix-2 FFT recursively using vectorized operations.
+% If the length of x is not a power of 2, it is zero-padded to the next power of 2, added at the end
 
-$\mathbf{X}_{even} \gets \text{FFT}(\mathbf{x}_{even})$
-$\mathbf{X}_{odd} \gets \text{FFT}(\mathbf{x}_{odd})$
+    x = x(:);         % Ensure x is a column vector
+    N = length(x);
 
-$\mathbf{X} \gets \text{zeros}(N)$
+    % If N is not a power of 2, zero-pad x to the next power of 2
+    M = 2^nextpow2(N);  % nextpow2 returns the exponent so that 2^exponent >= N
+    if M ~= N
+        %add zeros to the end
+        x = [x; zeros(M - N, 1)];
+        N = M;  % Update N to the new length
+    end
 
-$W_N^k \gets e^{-j2\pi k/N}$
-$\mathbf{X}[k] \gets \mathbf{X}_{even}[k] + W_N^k \cdot \mathbf{X}_{odd}[k]$
-$\mathbf{X}[k+N/2] \gets \mathbf{X}_{even}[k] - W_N^k \cdot \mathbf{X}_{odd}[k]$
+    % Base case: if the input length is 1, return x
+    if N == 1
+        X = x;
+        return;
+    end
 
-$\mathbf{X}$
-:::
-::::
+    % Recursively compute FFT for even and odd indices
+    X_even = fft_vectorized(x(1:2:end)); %select all the even indices
+    X_odd  = fft_vectorized(x(2:2:end)); % selects all the odd indices
+
+    % Compute twiddle factors (complex exponentials) in a vectorized manner
+    % row array
+    factor = exp(-1j * 2 * pi * (0:N/2-1).' / N);
+
+    % Combine the FFTs of the even and odd parts using the butterfly operation
+    X = [X_even + factor .* X_odd;
+         X_even - factor .* X_odd];
+
+end
+{{< /highlight >}}
 
 We can follow the above procedure to split an $N$-point DFT into two
-$\frac{N}{2}$-point DFT, giving us Algorithm
-[\[alg:fft\]](#alg:fft){reference-type="ref+label" reference="alg:fft"}.
+$\frac{N}{2}$-point DFT, giving us the above algorithim.
 Let $A_c(N)$ and $M_c(N)$ denote respectively the number of complex
 additions and multiplications for computing the DFT of an $N$-point
 complex sequence $x[n]$. Let $N$ be a power of 2, $N = 2^k$. Then, we
@@ -193,51 +305,47 @@ as $N$ complex additions (addition of even and odd terms) and
 $\frac{N}{2} - 1$ complex multiplications ($W_N^{k} \cdot X_{odd}[k]$)
 are required to put the two $N/2$-point DFTs together. Note that a
 2-point DFT is simply a sum and difference
-$X[0] = x[0] + x[1] , \quad X[1] = x[0] - x[1]$. Hence, the starting
+
+$$X[0] = x[0] + x[1] , \quad X[1] = x[0] - x[1]$$
+
+Hence, the starting
 conditions are $A_c(2) = 2$ and $M_c(2) = 0$. Solving the recursive
 equation yields
 $$A_c(N) = N \log_2 N  \quad , \quad M_c(N) = \frac{N}{2} \log_2 N - N + 1$$
 
 Our overall complexity is $O(N\log N)$.
 
+---
+
 # Experiments
 
 ## Complexity
 
-![Execution time versus signal length $N$ for various implementations of
-DFT and FFT](/figures/complex.jpg){#fig:complexity
-width="40%"}
+{{< img src="/figures/complex.jpg" caption="Execution time versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
 
-::: {#tab:R2}
-Algorithm O(N) O(N²) O(N³) O(log N) O(N log N)
-
----
-
-my-DFT 0.9208 0.9999 0.9864 0.4167 0.9417
-my-FFT 0.9830 0.9657 0.9161 0.5634 0.9894
-MATLAB-FFT 0.8491 0.7141 0.6526 0.8537 0.8287
-
-: R^2^ values for different complexity models.
-:::
+| Algorithm  | O(N)   | O(N²)  | O(N³)  | O(log N) | O(N log N) |
+| ---------- | ------ | ------ | ------ | -------- | ---------- |
+| my-DFT     | 0.9208 | 0.9999 | 0.9864 | 0.4167   | 0.9417     |
+| my-FFT     | 0.9830 | 0.9657 | 0.9161 | 0.5634   | 0.9894     |
+| MATLAB-FFT | 0.8491 | 0.7141 | 0.6526 | 0.8537   | 0.8287     |
 
 To verify the theoretical complexity, we measured the execution time for
 computing the DFT over a range of signal lengths. For each signal length
 $N$, $N$ samples were taken from a 5Hz sine wave, and the DFT/FFT
-computation time recorded. We compare our implementation of Algorithm
-[\[alg:dft\]](#alg:dft){reference-type="ref+label" reference="alg:dft"}
-as `my-DFT`, our implementation of Algorithm
-[\[alg:fft\]](#alg:fft){reference-type="ref+label" reference="alg:fft"}
-as `my-FFT`, and the `MATLAB` FFT implementation as `MATLAB-FFT`.
-[1](#fig:complexity){reference-type="ref+label"
-reference="fig:complexity"} shows the measured execution times on a
+computation time recorded. We compare our implementation of DFT `my-DFT`, our implementation of FFT as `my-FFT`, and the `MATLAB` FFT implementation as `MATLAB-FFT`. You can view the measured execution times above on a
 log-log plot. The FFT results clearly exhibit an $O(N\log N)$ scaling,
 while the DFT scales as $O(N^2)$. These experimental results confirm the
 significant computational advantage of using the FFT for large-scale
 problems. We also note the much more efficient implementation of
-`MATLAB` FFT, which uses the `FFTW` [^2] package.
-[1](#tab:R2){reference-type="ref+label" reference="tab:R2"} show the how
+`MATLAB` FFT, which uses the `FFTW` [^2] package. The table also shows the how
 well different models fit to data. Both FFT implementations fit well to
 $O(N)$ and $O(N\log N)$ models.
+
+> Test some code blocks
+>
+> more testing
+>
+> kasdka
 
 ## Numerical Error
 
@@ -270,77 +378,6 @@ exhibited superior numerical stability. Selecting the appropriate
 windowing function is also crucial for accurate frequency analysis, with
 the Han or Hamming window recommended for most applications. All code
 available at <https://github.com/liuzihe02/dft-fft.git>.
-
-# Appendix: Derivation of FFT {#app:fft_proof .unnumbered}
-
-Consider again a $N$-point signal $x[n]$ of even length. The derivation
-of the DIT radix-2 FFT begins by splitting the $x[n]$ into two parts ---
-one part for the even-indexed values $x[2n]$ and one part for the
-odd-indexed values $x[2n + 1]$. Define two $N/2$-point signals
-$x_{even}[n]$ and $x_{odd}[n]$ as
-$$x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n + 1], \quad 0 \leq n \leq N/2-1$$
-
-The DFT can be written as
-
-$$
-\begin{aligned}
-X[k] &= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} + \sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
-&= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1] W_N^{(2n+1)k}\\
-&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{(2n+1)k} \\
-&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
-\end{aligned}
-$$
-
-Noting that $W_N^{2}=W_{N/2}$ or more generally
-$W_N^{2nk}=W_{N/2}^{nk}$, $$\begin{aligned}
-X[k]&= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
-\end{aligned}$$
-
-Recognizing that the $\frac{N}{2}$-point DFT of $x_{even}[n]$ and
-$x_{odd}[n]$ are given by:
-
-$$X_{even}[k] = \text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} \quad , \quad X_{odd}[k] = \text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}$$
-
-we then obtain our core recursive equation:
-
-$$
-X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
-    \label{eq:fft_int}
-$$
-
-Since $x_{even}[n]$ and $x_{odd}[n]$ are $N/2$-point signals with
-$0 \leq n \leq N/2-1$, their DFT are also only $N/2$-point signals.
-However, we require $0 \le k \le N-1$. We resolve this by noting their
-DFT coefficients are periodic with a period of $\frac{N}{2}$
-
-$$X_{even}[k] = X_{even}\left[k + \frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k + \frac{N}{2}\right]$$
-
-This gives us
-
-$$
-X[k] =
-    \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}
-$$
-
-Noting $W_N^{k +\frac{N}{2}}=-W_{N}^{k}$, we write
-
-$$
-X[k] =
-    \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}
-$$
-
-finally giving us
-[\[eq:fft_final\]](#eq:fft_final){reference-type="ref+label"
-reference="eq:fft*final"}. The multipliers $W_N^k$ are known as \_twiddle
-factors*. The first computation with $+W_N^k$ give us the first half of
-the full DFT vector $\mathbf{X}$, while the second computation with
-$-W_N^k$ give us the second half of $\mathbf{X}$.
 
 [^1]: This post was created for educational purposes, so much of the analysis is taken directly from the sources quoted in the references
 [^2]: This package is highly optimized to each machine and is written inlow level C
