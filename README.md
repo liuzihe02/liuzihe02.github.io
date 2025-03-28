@@ -16,9 +16,20 @@ This version of Ed is written with Hugo, where the documentation is available [h
 
 Note that the theme layout files are not present in the layout folder, only in the site layout folder. Ed provides for layouts out of the box `['posts', 'dramas', 'narratives', 'poems']`. We need to create our own layout if we wish to. Same goes for the custom stylesheet files.
 
-The Hugo [content management](https://gohugo.io/content-management/) sites especially on [sections](https://gohugo.io/content-management/sections/) and [pages](https://gohugo.io/content-management/page-bundles/) are especially relevant.
+The Hugo [content management](https://gohugo.io/content-management/) sites especially on [sections](https://gohugo.io/content-management/sections/) and [pages](https://gohugo.io/content-management/page-bundles/) are especially relevant. Also [Module management](https://gohugo.io/hugo-modules/use-modules/).
 
-[Module management](https://gohugo.io/hugo-modules/use-modules/) like cleaning the module cache with `hugo mod clean`
+Code to clean hugo repo:
+
+```bash
+#remove files in public directory that are no longer neede before building
+hugo --cleanDestinationDir
+# Remove generated directories
+rm -rf public/
+rm -rf resources/_gen/
+# Clean Hugo modules and cache
+hugo mod clean
+hugo --gc
+```
 
 ### Adding Content
 
@@ -49,7 +60,9 @@ The Ed Github `layouts/shortcodes/` contains a bunch of Hugo shortcuts to add a 
 We use a `img` shortcode
 
 ```
+
 {{< img src="/profile.jpeg" alt="A description" width="400" height="400" class="test">}}
+
 ```
 
 Put your images under `/static`, and when using the path immediately use the image name without the `/static/profile.jpeg`
@@ -59,7 +72,9 @@ Put your images under `/static`, and when using the path immediately use the ima
 We use a custom `link` shortcode
 
 ```
+
 {{< link src="http://gohugo.io" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}
+
 ```
 
 This creates a hyperlink to "http://gohugo.io" with the visible text "University of Cambridge" and several important attributes:

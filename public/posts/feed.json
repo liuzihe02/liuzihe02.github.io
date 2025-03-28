@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Posts - Liu Zihe",
-  "home_page_url": "https://liuzihe02.github.io/?utm_source=json_feed",
+  "home_page_url": "http://localhost:1313/?utm_source=json_feed",
   
   
-  "icon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
-  "favicon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "icon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "favicon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
   "authors": [
     {
       "name": "Serghei Iakovlev",
@@ -15,15 +15,15 @@
   "language" : "en",
   "items": [
     {
-      "id": "ca59884e-df81-5fa1-892b-a33b753f7d52",
-      "url": "https://liuzihe02.github.io/posts/math/?utm_source=json_feed",
+      "id": "d1eab331-475b-555a-79c7-331f74a70fcb",
+      "url": "http://localhost:1313/posts/math/?utm_source=json_feed",
       "title": "My First Post",
       "summary": "This is a post about latex.\nAn equation: \\[\\int_{-\\infty}^{\\infty} e^{-x^2} dx\\]. inline example: \\(\\sum_{i = 0}^N 2i = y\\) One overbrace:\n\\[{a}^{b} - \\overbrace{c}^{d}\\] Two overbraces: \\[\\underbrace{a}_{b} - \\underbrace{c}_{d}\\] None of these below works properly:\n\\[ \\begin{aligned} equation \u0026amp;= 16 \\\\ other \u0026amp;= 26 + 13 \\end{aligned} \\]\n\\[ \\begin{pmatrix} a \u0026amp; b \\\\ c \u0026amp; d \\end{pmatrix} \\]",
       "date_published": "2022-10-17T22:45:36+11:00"
     },
     {
-      "id": "8ae2474a-d471-5d23-1921-3ac30bad0906",
-      "url": "https://liuzihe02.github.io/posts/dft-fft/?utm_source=json_feed",
+      "id": "406114f9-c07f-5eab-0935-1f2aad68e3c4",
+      "url": "http://localhost:1313/posts/dft-fft/?utm_source=json_feed",
       "title": "Investigating the Discrete Fourier Transform and Fast Fourier Transform",
       "summary": "Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.",
       "date_published": "0001-01-01T00:00:00Z"
