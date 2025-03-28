@@ -8,6 +8,8 @@ We analyze [^1] the theoretical properties of both the _Discrete Fourier
 Transform_ (DFT) and the optimized _Fast Fourier Transform_ (FFT), and
 estimate their algorithmic complexity.
 
+All code available at <https://github.com/liuzihe02/dft-fft.git>
+
 ---
 
 # Discrete Fourier Transform
@@ -337,24 +339,15 @@ log-log plot. The FFT results clearly exhibit an $O(N\log N)$ scaling,
 while the DFT scales as $O(N^2)$. These experimental results confirm the
 significant computational advantage of using the FFT for large-scale
 problems. We also note the much more efficient implementation of
-`MATLAB` FFT, which uses the `FFTW` [^2] package. The table also shows the how
+`MATLAB` FFT, which uses the `FFTW` [^2] package. The table above also shows the how
 well different models fit to data. Both FFT implementations fit well to
 $O(N)$ and $O(N\log N)$ models.
 
-> Test some code blocks
->
-> more testing
->
-> kasdka
-
 ## Numerical Error
 
-![Reconstruction error versus signal length $N$ for various
-implementations of DFT and
-FFT](/figures/recon.jpg){#fig:recon width="40%"}
+{{< img src="/figures/recon.jpg" caption="Reconstruction error versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
 
-We evaluate numerical accuracy of both algorithms in
-[2](#fig:recon){reference-type="ref+label" reference="fig:recon"} by
+We evaluate numerical accuracy of above algorithims by
 measuring reconstruction error of the reconstructed signal
 $\text{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N}|x_i - \hat{x}_i|^2}$
 where $x_i$ is the original signal and $\hat{x}_i$ is the reconstructed
@@ -367,17 +360,26 @@ The superior numerical stability of FFT algorithms is possibly due to
 its lower operation count (lower algorithmic complexity). Floating-point
 rounding errors accumulate more significantly in DFT.
 
+---
+
 # Conclusion
 
-In this report, we investigated both theoretical and practical aspects
-of the DFT and the FFT. The analysis verified that the computational
+We study the theoretical motivations behind FFT. We verify that the computational
 complexity of the direct DFT implementation scales as $O(N^2)$, whereas
 our FFT implementation achieved the expected $O(N \log N)$ complexity,
-offering a significant improvement in efficiency. Moreover, the FFT
-exhibited superior numerical stability. Selecting the appropriate
-windowing function is also crucial for accurate frequency analysis, with
-the Han or Hamming window recommended for most applications. All code
-available at <https://github.com/liuzihe02/dft-fft.git>.
+offering a significant improvement in efficiency.
+
+---
+
+# References
+
+Golub, G. H., & Van Loan, C. F. (1996). _Matrix computations (3rd ed.)_. Johns Hopkins University Press.
+
+Strang, G. (2007). _Computational Science and Engineering_. Wellesley-Cambridge Press. https://epubs.siam.org/doi/abs/10.1137/1.9780961408817
+
+Ramalingam, C.S. _Introduction to the Fast-Fourier Transform (FFT) Algorithm_. https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf
+
+_Fast Fourier Transform (FFT)_. NYU Engineering. https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft
 
 [^1]: This post was created for educational purposes, so much of the analysis is taken directly from the sources quoted in the references
-[^2]: This package is highly optimized to each machine and is written inlow level C
+[^2]: This package is highly optimized to each machine and is written in low level C

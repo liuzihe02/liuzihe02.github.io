@@ -12,7 +12,7 @@ title: "Home"
 
 I'm Zihe (or you can call me Zach[^1]). I do computer engineering at the {{< link src="https://www.eng.cam.ac.uk/research/academic-divisions/information-engineering" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}. Most of my time is spent thinking about how frontier AI systems learn, reinforcement learning (RL), and addressing the practical {{< link src="https://drive.google.com/file/d/1O6quCTEn2L7Xew5IqTx2eYbbSmzgLMdi/view?usp=sharing" class="external" target="_blank" rel="noopener noreferrer" >}}issues of robustness and reliability in LLMs{{< /link >}}. This is my little corner of the Internet where I talk about what I'm currently obssessed with, cool projects I've worked on, and stuff I've learnt.
 
-## About Me
+# About Me
 
 I'm really curious about why RL works at all, and how the {{< link src="https://arxiv.org/abs/2210.10760" class="external" target="_blank" rel="noopener noreferrer" >}}overoptimization{{< /link >}} problem could cause model outputs to become {{< link src="https://www.lesswrong.com/posts/HQyWGE2BummDCc2Cx/the-case-for-cot-unfaithfulness-is-overstated" class="external" target="_blank" rel="noopener noreferrer" >}}unintelligible to humans{{< /link >}}. Currently, I'm working on sample-efficient Reinforcement Learning from Human Feedback (RLHF). Previously, I did {{< link src="https://arxiv.org/abs/2409.04913" class="external" target="_blank" rel="noopener noreferrer" >}}some research{{< /link >}} on {{< link src="https://www.matsprogram.org/developmental" class="external" target="_blank" rel="noopener noreferrer" >}}developmental interpretability{{< /link >}}, where we investigated the high level learning dynamics of Natural Gradient Descent.
 

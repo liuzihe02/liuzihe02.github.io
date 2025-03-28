@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 
-    <link rel="canonical" href="https://liuzihe02.github.io/posts/dft-fft/">
+    <link rel="canonical" href="http://localhost:1313/posts/dft-fft/">
 
     <title>The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe</title>
     <meta name="description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
@@ -23,7 +23,7 @@
     <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
     <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
-<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/dft-fft/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dft-fft/">
 
     <meta name="theme-color" content="#ffffff">
     <script>
@@ -54,8 +54,8 @@
     <meta property="og:title" content="The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
     <meta property="og:description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://liuzihe02.github.io/posts/dft-fft/">
-    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta property="og:url" content="http://localhost:1313/posts/dft-fft/">
+    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
     <meta property="og:image:width" content="100">
     <meta property="og:image:height" content="100">
     <meta property="article:published_time" content="2025-03-07T17:05:08">
@@ -65,7 +65,7 @@
     <meta name="twitter:description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
     
 
 <script type="application/ld+json" id="schema-data">
@@ -74,9 +74,9 @@
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://liuzihe02.github.io/posts/dft-fft/"
+            "@id": "http://localhost:1313/posts/dft-fft/"
         },
-        "url": "https://liuzihe02.github.io/posts/dft-fft/",
+        "url": "http://localhost:1313/posts/dft-fft/",
         "headline": "The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
         "description": "We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
         "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
@@ -92,7 +92,7 @@
             "name": "Serghei Iakovlev",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
                 "width": "96",
                 "height": "96"
             }
@@ -187,6 +187,9 @@ role="doc-noteref"><sup>1</sup></a> the theoretical properties of both
 the <em>Discrete Fourier Transform</em> (DFT) and the optimized <em>Fast
 Fourier Transform</em> (FFT), and estimate their algorithmic
 complexity.</p>
+<p>All code available at <a
+href="https://github.com/liuzihe02/dft-fft.git"
+class="uri">https://github.com/liuzihe02/dft-fft.git</a></p>
 <hr />
 <h1 id="discrete-fourier-transform">Discrete Fourier Transform</h1>
 <h2 id="theory">Theory</h2>
@@ -577,29 +580,26 @@ results confirm the significant computational advantage of using the FFT
 for large-scale problems. We also note the much more efficient
 implementation of <code>MATLAB</code> FFT, which uses the
 <code>FFTW</code> <a href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a> package. The table also shows the
-how well different models fit to data. Both FFT implementations fit well
-to <span class="math inline">\(O(N)\)</span> and <span
+role="doc-noteref"><sup>2</sup></a> package. The table above also shows
+the how well different models fit to data. Both FFT implementations fit
+well to <span class="math inline">\(O(N)\)</span> and <span
 class="math inline">\(O(N\log N)\)</span> models.</p>
-<blockquote>
-<p>Test some code blocks</p>
-<p>more testing</p>
-<p>kasdka</p>
-</blockquote>
 <h2 id="numerical-error">Numerical Error</h2>
-<figure id="fig:recon">
-<img src="/figures/recon.jpg" style="width:40.0%"
-alt="Reconstruction error versus signal length N for various implementations of DFT and FFT" />
-<figcaption aria-hidden="true">Reconstruction error versus signal length
-<span class="math inline">\(N\)</span> for various implementations of
-DFT and FFT</figcaption>
-</figure>
-<p>We evaluate numerical accuracy of both algorithms in <a
-href="#fig:recon" data-reference-type="ref+label"
-data-reference="fig:recon">2</a> by measuring reconstruction error of
-the reconstructed signal <span class="math inline">\(\text{RMSE} =
-\sqrt{\frac{1}{N}\sum_{i=1}^{N}|x_i - \hat{x}_i|^2}\)</span> where <span
-class="math inline">\(x_i\)</span> is the original signal and <span
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/recon.jpg"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Reconstruction error versus signal length $N$ for various implementations of DFT and FFT</figcaption>
+  
+</div>
+
+<p>We evaluate numerical accuracy of above algorithims by measuring
+reconstruction error of the reconstructed signal <span
+class="math inline">\(\text{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N}|x_i
+- \hat{x}_i|^2}\)</span> where <span class="math inline">\(x_i\)</span>
+is the original signal and <span
 class="math inline">\(\hat{x}_i\)</span> is the reconstructed signal
 (using the <code>MATLAB</code> Inverse DFT function) Despite all errors
 falling within the <span class="math inline">\(10^{-12}\)</span> range,
@@ -610,19 +610,26 @@ across all tested sequence lengths. The superior numerical stability of
 FFT algorithms is possibly due to its lower operation count (lower
 algorithmic complexity). Floating-point rounding errors accumulate more
 significantly in DFT.</p>
+<hr />
 <h1 id="conclusion">Conclusion</h1>
-<p>In this report, we investigated both theoretical and practical
-aspects of the DFT and the FFT. The analysis verified that the
+<p>We study the theoretical motivations behind FFT. We verify that the
 computational complexity of the direct DFT implementation scales as
 <span class="math inline">\(O(N^2)\)</span>, whereas our FFT
 implementation achieved the expected <span class="math inline">\(O(N
 \log N)\)</span> complexity, offering a significant improvement in
-efficiency. Moreover, the FFT exhibited superior numerical stability.
-Selecting the appropriate windowing function is also crucial for
-accurate frequency analysis, with the Han or Hamming window recommended
-for most applications. All code available at <a
-href="https://github.com/liuzihe02/dft-fft.git"
-class="uri">https://github.com/liuzihe02/dft-fft.git</a>.</p>
+efficiency.</p>
+<hr />
+<h1 id="references">References</h1>
+<p>Golub, G. H., &amp; Van Loan, C. F. (1996). <em>Matrix computations
+(3rd ed.)</em>. Johns Hopkins University Press.</p>
+<p>Strang, G. (2007). <em>Computational Science and Engineering</em>.
+Wellesley-Cambridge Press.
+https://epubs.siam.org/doi/abs/10.1137/1.9780961408817</p>
+<p>Ramalingam, C.S. <em>Introduction to the Fast-Fourier Transform (FFT)
+Algorithm</em>.
+https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf</p>
+<p><em>Fast Fourier Transform (FFT)</em>. NYU Engineering.
+https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
@@ -632,7 +639,7 @@ of the analysis is taken directly from the sources quoted in the
 references<a href="#fnref1" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>This package is highly optimized to each machine and is
-written inlow level C<a href="#fnref2" class="footnote-back"
+written in low level C<a href="#fnref2" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
