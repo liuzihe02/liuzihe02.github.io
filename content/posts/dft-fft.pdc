@@ -1,8 +1,8 @@
 ---
-author: "Zihe Liu"
-bibliography: references.bib
+bibliography:
+  - references.bib
 date: 7 March 2025
-nocite: "`\\nocite{*}`{=latex}"
+nocite: "[@*]"
 title: Investigating the Discrete Fourier Transform and Fast Fourier
   Transform
 ---
@@ -345,30 +345,6 @@ The multipliers $W_N^k$ are known as _twiddle factors_. The first
 computation with $+W_N^k$ give us the first half of the full DFT vector
 $\mathbf{X}$, while the second computation with $-W_N^k$ give us the
 second half of $\mathbf{X}$.
-
-::::::: {#refs .references .csl-bib-body .hanging-indent entry-spacing="0"}
-::: {#ref-csr_fft .csl-entry}
-C.S. Ramalingam. n.d. "Introduction to the Fast-Fourier Transform (FFT)
-Algorithm."
-<https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf>.
-:::
-
-::: {#ref-nyu_fft .csl-entry}
-"Fast Fourier Transform (FFT)." n.d.
-<https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft>.
-:::
-
-::: {#ref-10.5555/248979 .csl-entry}
-Golub, Gene H., and Charles F. Van Loan. 1996. _Matrix Computations (3rd
-Ed.)_. USA: Johns Hopkins University Press.
-:::
-
-::: {#ref-doi:10.1137/1.9780961408817 .csl-entry}
-Strang, Gilbert. 2007. _Computational Science and Engineering_.
-Philadelphia, PA: Wellesley-Cambridge Press.
-<https://doi.org/10.1137/1.9780961408817>.
-:::
-:::::::
 
 [^1]:
     This package is highly optimized to each machine and is written in

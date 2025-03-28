@@ -47,10 +47,6 @@ An equation: \[\int_{-\infty}^{\infty} e^{-x^2} dx\]. inline example: \(\sum_{i 
         <updated>0001-01-01T00:00:00Z</updated>
         <id>urn:uuid:8ae2474a-d471-5d23-1921-3ac30bad0906</id>
         
-                <author>
-                    <name>Zihe Liu</name>
-                </author>
-        
         <summary type="html"><![CDATA[Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity. Following Objective 6 in Experiment A4 Lab of Part 1B Integrated Coursework, we implement both the DFT and FFT in MATLAB, thereafter measuring their algorithmic complexity in the context of processing signal response to vibrations. We also investigate the effect of windowing functions on the accuracy of the frequency analysis using DFT.]]></summary>
     </entry>
 </feed>

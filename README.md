@@ -92,13 +92,13 @@ pandoc main.tex -o ../../content/posts/dft-fft.pdc \
   --from=latex \
   --to=markdown \
   --extract-media=../../static \
-  --citeproc \
-  --bibliography=references.bib \
   --standalone \
   --mathjax
 ```
 
-There might be some issues
+There might be some issues with the author. I reccomended removing the author field in the frontmatter.
+
+> Note that converting to references here also causes some issues, so we have to manually handle the references section :(
 
 #### Math Content
 
