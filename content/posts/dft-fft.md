@@ -1,22 +1,14 @@
 ---
-bibliography:
-  - references.bib
-date: 7 March 2025
+date: 2025-03-07T17:05:08.000Z
 nocite: "[@*]"
-title: Investigating the Discrete Fourier Transform and Fast Fourier
-  Transform
+title: The Discrete Fourier Transform and Fast Fourier Transform
 ---
 
-# Outline
+---
 
-We analyze the theoretical properties of both the _Discrete Fourier
+We analyze [^1] the theoretical properties of both the _Discrete Fourier
 Transform_ (DFT) and the optimized _Fast Fourier Transform_ (FFT), and
-estimate their algorithmic complexity. Following Objective 6 in
-Experiment A4 Lab of Part 1B Integrated Coursework, we implement both
-the DFT and FFT in `MATLAB`, thereafter measuring their algorithmic
-complexity in the context of processing signal response to vibrations.
-We also investigate the effect of windowing functions on the accuracy of
-the frequency analysis using DFT.
+estimate their algorithmic complexity.
 
 # Discrete Fourier Transform
 
@@ -36,20 +28,22 @@ and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency
 $f_s$. We can rewrite $X[k]$ as an inner product:
 
 $$
-X[k] = \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
+\begin{align}
+X[k] &= \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
+    \begin{bmatrix}
+    x[0] \\
+    x[1] \\
+    \vdots \\
+    x[N-1]
+    \end{bmatrix} \\
+&= \left[ 1 \quad W_N^k \quad \ldots \quad W_N^{(N-1)k} \right]
     \begin{bmatrix}
     x[0] \\
     x[1] \\
     \vdots \\
     x[N-1]
     \end{bmatrix}
-    = \left[ 1 \quad W_N^k  \quad \ldots \quad W_N^{(N-1)k} \right]
-    \begin{bmatrix}
-    x[0] \\
-    x[1] \\
-    \vdots \\
-    x[N-1]
-    \end{bmatrix}
+\end{align}
 $$
 
 By varying $k$ from $0$ to $N-1$, we can collate all outputs ${X[k]}$
@@ -72,18 +66,28 @@ where $\mathbf{W}$ is the DFT matrix.
 
 ## Complexity
 
-:::: algorithm
-::: algorithmic
-$N \gets \text{length}(\mathbf{x})$
-$\mathbf{W} \gets \text{zeros}(N, N)$
+{{< highlight matlab >}}
+function X = dft_vectorized(x)
+% Compute the Discrete Fourier Transform (DFT) of input vector x using vectorized operations
+% x : input signal (vector)
+% X : DFT of x
 
-$\mathbf{W}[k,n] \gets e^{-j2\pi kn/N}$
+    % Convert input to a column vector for consistency
+    x = x(:);
+    N = length(x);       % Number of samples in the signal
 
-$\mathbf{X} \gets \mathbf{W} \cdot \mathbf{x}$ $\mathbf{X}$
-:::
+    % Create index vectors: n as a row vector and k as a column vector
+    n = 0:N-1;           % Time indices (row vector)
+    k = n';              % Frequency indices (column vector)
 
-[]{#alg:dft label="alg:dft"}
-::::
+    % Construct the DFT matrix using the formula: exp(-1j*2*pi*k*n/N)
+    W = exp(-1j * 2 * pi * k * n / N);
+
+    % Multiply the DFT matrix with the signal to obtain the transform
+    X = W * x;
+
+end
+{{< /highlight >}}
 
 Direct computation of $\mathbf{X}$ requires $(N-1)^2$ complex
 multiplications and $N(N-1)$ complex additions, as in Algorithm
@@ -196,7 +200,7 @@ log-log plot. The FFT results clearly exhibit an $O(N\log N)$ scaling,
 while the DFT scales as $O(N^2)$. These experimental results confirm the
 significant computational advantage of using the FFT for large-scale
 problems. We also note the much more efficient implementation of
-`MATLAB` FFT, which uses the `FFTW` [^1] package.
+`MATLAB` FFT, which uses the `FFTW` [^2] package.
 [1](#tab:R2){reference-type="ref+label" reference="tab:R2"} show the how
 well different models fit to data. Both FFT implementations fit well to
 $O(N)$ and $O(N\log N)$ models.
@@ -220,40 +224,6 @@ maintain consistently minimal error across all tested sequence lengths.
 The superior numerical stability of FFT algorithms is possibly due to
 its lower operation count (lower algorithmic complexity). Floating-point
 rounding errors accumulate more significantly in DFT.
-
-## Windowing
-
-Since we can only sample signals for a finite time period, the truncated
-signal contains discontinuities. Discontinuities in the time domain
-become \"ripples\" in the frequency domain, known as spectral leakage. A
-\"window function\" smooths these edges, reducing unwanted spectral
-leakage. We experiment with 3 different windowing functions on a sine
-wave of 5Hz input frequency, and do a DFT on the the input force
-transducer data (Channel 1):
-
-<figure id="fig:windowing">
-<div class="minipage">
-<img src="/figures/sin5_window.png" style="width:70.0%" />
-</div>
-<div class="minipage">
-<img src="/figures/sin5_window_zoomed.png"
-style="width:70.0%" />
-</div>
-<figcaption>Effect of windowing on amplitude and side lobe
-suppression.</figcaption>
-</figure>
-
-- **Hann Window:** $0.5*(1-cos(2\pi n / (N - 1)))$
-
-- **Hamming Window:** $0.54-0.46cos(2\pi n / (N - 1))$
-
-- **Blackman-Harris Window:**
-  $0.42-0.5cos(2\pi n / (N - 1))+0.8cos(4\pi n / (N - 1)))$
-
-As seen in [3](#fig:windowing){reference-type="ref+label"
-reference="fig:windowing"}, the Han/Hamming window is effective and
-reducing unwanted frequences for smooth, continuous signals while the
-Blackman window is ideal for transient analysis with minimal leakage.
 
 # Conclusion
 
@@ -333,11 +303,10 @@ $$
 
 finally giving us
 [\[eq:fft_final\]](#eq:fft_final){reference-type="ref+label"
-reference="eq:fft_final"}. The multipliers $W_N^k$ are known as _twiddle
-factors_. The first computation with $+W_N^k$ give us the first half of
+reference="eq:fft*final"}. The multipliers $W_N^k$ are known as \_twiddle
+factors*. The first computation with $+W_N^k$ give us the first half of
 the full DFT vector $\mathbf{X}$, while the second computation with
 $-W_N^k$ give us the second half of $\mathbf{X}$.
 
-[^1]:
-    This package is highly optimized to each machine and is written in
-    low level C
+[^1]: This post was created for educational purposes, so much of the analysis is taken directly from the sources quoted in the references
+[^2]: This package is highly optimized to each machine and is written inlow level C

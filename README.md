@@ -18,7 +18,9 @@ Note that the theme layout files are not present in the layout folder, only in t
 
 The Hugo [content management](https://gohugo.io/content-management/) sites especially on [sections](https://gohugo.io/content-management/sections/) and [pages](https://gohugo.io/content-management/page-bundles/) are especially relevant. Also [Module management](https://gohugo.io/hugo-modules/use-modules/).
 
-Code to clean hugo repo:
+### Cleaning Hugo Repo
+
+Each time we build, we generate html content in `public/` and `resources/`. To reduce clutter, we use the following code to clear unneccessary stuff and just build only the core stuff.
 
 ```bash
 #remove files in public directory that are no longer neede before building
@@ -86,6 +88,26 @@ This creates a hyperlink to "http://gohugo.io" with the visible text "University
    - `noreferrer`: Prevents passing the referrer information to the linked website
 
 The `{{< >}}` syntax indicates this is a Hugo shortcode, which is Hugo's way of creating reusable components within your content. This particular shortcode is called "link" and is likely defined in your Hugo theme or site configuration.
+
+#### Code Highlighting
+
+For code to display properly with syntax highlighting, we do
+
+```
+{{< highlight python >}}
+a=2
+{{< /highlight >}}
+```
+
+instead of
+
+````
+```python
+a=2
+```
+````
+
+This allows the Hugo to directly process the syntax and bypass the markdown processor Pandoc.
 
 ### Overleaf Documents
 
