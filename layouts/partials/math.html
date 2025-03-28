@@ -1,8 +1,3 @@
-<script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-></script>
 <script>
   MathJax = {
     tex: {
@@ -10,10 +5,19 @@
         ["\\[", "\\]"],
         ["$$", "$$"],
       ], // block
-      inlineMath: [["$", "$"]], // inline, weve changed this
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]  // <- this enables support for what Pandoc outputs
+        ], // inline, weve changed this
     },
     loader: {
       load: ["ui/safe"],
     },
   };
 </script>
+{{/*  define the mathjax config before actually loading mathjax  */}}
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>

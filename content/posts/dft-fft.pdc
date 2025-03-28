@@ -9,8 +9,8 @@ title: Investigating the Discrete Fourier Transform and Fast Fourier
 
 # Outline
 
-We analyze the theoretical properties of both the *Discrete Fourier
-Transform* (DFT) and the optimized *Fast Fourier Transform* (FFT), and
+We analyze the theoretical properties of both the _Discrete Fourier
+Transform_ (DFT) and the optimized _Fast Fourier Transform_ (FFT), and
 estimate their algorithmic complexity. Following Objective 6 in
 Experiment A4 Lab of Part 1B Integrated Coursework, we implement both
 the DFT and FFT in `MATLAB`, thereafter measuring their algorithmic
@@ -26,41 +26,47 @@ The DFT converts a finite-length time-domain signal into its
 frequency-domain representation. For an input signal $x[n]$ of length
 $N$, where $0 \le n \le N-1$, the DFT is defined as:
 
-$$X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1
-\label{eq:DFT}$$
+$$
+X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1
+\label{eq:DFT}
+$$
 
 where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity,
 and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency
 $f_s$. We can rewrite $X[k]$ as an inner product:
 
-$$X[k] = \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right] 
-    \begin{bmatrix} 
-    x[0] \\
-    x[1] \\
-    \vdots \\
-    x[N-1]
-    \end{bmatrix} 
-    = \left[ 1 \quad W_N^k  \quad \ldots \quad W_N^{(N-1)k} \right] 
+$$
+X[k] = \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
     \begin{bmatrix}
     x[0] \\
     x[1] \\
     \vdots \\
     x[N-1]
-    \end{bmatrix}$$
+    \end{bmatrix}
+    = \left[ 1 \quad W_N^k  \quad \ldots \quad W_N^{(N-1)k} \right]
+    \begin{bmatrix}
+    x[0] \\
+    x[1] \\
+    \vdots \\
+    x[N-1]
+    \end{bmatrix}
+$$
 
 By varying $k$ from $0$ to $N-1$, we can collate all outputs ${X[k]}$
 into a vector $\mathbf{X}$, collate all inputs $x[n]$ into a vector
 $\mathbf{x}$, to get:
 
-$$\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
-\mathbf{W} = 
+$$
+\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
+\mathbf{W} =
 \begin{bmatrix}
 1 & 1 & 1 & \cdots & 1 \\
 1 & W_N & W_N^2 & \cdots & W_N^{N-1} \\
 1 & W_N^2 & W_N^4 & \cdots & W_N^{2(N-1)} \\
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 1 & W_N^{N-1} & W_N^{2(N-1)} & \cdots & W_N^{(N-1)(N-1)}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 where $\mathbf{W}$ is the DFT matrix.
 
@@ -91,7 +97,7 @@ asymptotic complexity is dominated by multiplication, giving $O(N^2)$.
 
 The radix-2 FFT algorithms work by dividing the DFT into 2 DFTs of
 length $N/2$ each, and iterating. We introduce the simplest variant,
-called the *Decimation-In-Time* (DIT) algorithm. DIT begins by splitting
+called the _Decimation-In-Time_ (DIT) algorithm. DIT begins by splitting
 $x[n]$ into two parts --- one for the even-indexed values $x[2n]$ and
 one for the odd-indexed values $x[2n + 1]$. Define two $N/2$-point
 signals $x_{even}[n]$ and $x_{odd}[n]$ as
@@ -99,11 +105,13 @@ $$x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n + 1], \quad 0 \leq n \leq N/2-1$$
 
 using the DFT of these 2 splits gives us:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 X[k] &= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1 \\
 X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1
 \label{eq:fft_final}
-\end{aligned}$$
+\end{aligned}
+$$
 
 The first computation with $+W_N^k$ give us the first half of the full
 DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give
@@ -163,13 +171,15 @@ DFT and FFT](../../static/figures/complex.jpg){#fig:complexity
 width="40%"}
 
 ::: {#tab:R2}
-  Algorithm      O(N)    O(N²)    O(N³)    O(log N)   O(N log N)
-  ------------ -------- -------- -------- ---------- ------------
-  my-DFT        0.9208   0.9999   0.9864    0.4167      0.9417
-  my-FFT        0.9830   0.9657   0.9161    0.5634      0.9894
-  MATLAB-FFT    0.8491   0.7141   0.6526    0.8537      0.8287
+Algorithm O(N) O(N²) O(N³) O(log N) O(N log N)
 
-  : R^2^ values for different complexity models.
+---
+
+my-DFT 0.9208 0.9999 0.9864 0.4167 0.9417
+my-FFT 0.9830 0.9657 0.9161 0.5634 0.9894
+MATLAB-FFT 0.8491 0.7141 0.6526 0.8537 0.8287
+
+: R^2^ values for different complexity models.
 :::
 
 To verify the theoretical complexity, we measured the execution time for
@@ -268,12 +278,14 @@ $$x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n + 1], \quad 0 \leq n \leq N/2-1$$
 
 The DFT can be written as
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 X[k] &= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} + \sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
 &= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1] W_N^{(2n+1)k}\\
 &= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{(2n+1)k} \\
 &= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
-\end{aligned}$$
+\end{aligned}
+$$
 
 Noting that $W_N^{2}=W_{N/2}$ or more generally
 $W_N^{2nk}=W_{N/2}^{nk}$, $$\begin{aligned}
@@ -287,8 +299,10 @@ $$X_{even}[k] = \text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{
 
 we then obtain our core recursive equation:
 
-$$X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
-    \label{eq:fft_int}$$
+$$
+X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
+    \label{eq:fft_int}
+$$
 
 Since $x_{even}[n]$ and $x_{odd}[n]$ are $N/2$-point signals with
 $0 \leq n \leq N/2-1$, their DFT are also only $N/2$-point signals.
@@ -299,29 +313,35 @@ $$X_{even}[k] = X_{even}\left[k + \frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}
 
 This gives us
 
-$$X[k] = 
+$$
+X[k] =
     \begin{cases}
     X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
     X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}$$
+\end{cases}
+$$
 
 Noting $W_N^{k +\frac{N}{2}}=-W_{N}^{k}$, we write
 
-$$X[k] = 
+$$
+X[k] =
     \begin{cases}
     X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
     X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}$$
+\end{cases}
+$$
 
 finally giving us
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 X[k] &= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1 \\
 X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1
 \label{eq:fft_final}
-\end{aligned}$$
+\end{aligned}
+$$
 
-The multipliers $W_N^k$ are known as *twiddle factors*. The first
+The multipliers $W_N^k$ are known as _twiddle factors_. The first
 computation with $+W_N^k$ give us the first half of the full DFT vector
 $\mathbf{X}$, while the second computation with $-W_N^k$ give us the
 second half of $\mathbf{X}$.
@@ -339,16 +359,17 @@ Algorithm."
 :::
 
 ::: {#ref-10.5555/248979 .csl-entry}
-Golub, Gene H., and Charles F. Van Loan. 1996. *Matrix Computations (3rd
-Ed.)*. USA: Johns Hopkins University Press.
+Golub, Gene H., and Charles F. Van Loan. 1996. _Matrix Computations (3rd
+Ed.)_. USA: Johns Hopkins University Press.
 :::
 
 ::: {#ref-doi:10.1137/1.9780961408817 .csl-entry}
-Strang, Gilbert. 2007. *Computational Science and Engineering*.
+Strang, Gilbert. 2007. _Computational Science and Engineering_.
 Philadelphia, PA: Wellesley-Cambridge Press.
 <https://doi.org/10.1137/1.9780961408817>.
 :::
 :::::::
 
-[^1]: This package is highly optimized to each machine and is written in
+[^1]:
+    This package is highly optimized to each machine and is written in
     low level C

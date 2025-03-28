@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 
-    <link rel="canonical" href="http://localhost:1313/posts/dft-fft/">
+    <link rel="canonical" href="https://liuzihe02.github.io/posts/dft-fft/">
 
     <title>Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe</title>
     <meta name="description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
@@ -23,22 +23,20 @@
     <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
     <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dft-fft/">
+<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/dft-fft/">
 
     <meta name="theme-color" content="#ffffff">
-    <script
-  id="MathJax-script"
-  async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
-></script>
-<script>
+    <script>
   MathJax = {
     tex: {
       displayMath: [
         ["\\[", "\\]"],
         ["$$", "$$"],
       ], 
-      inlineMath: [["$", "$"]], 
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]  
+        ], 
     },
     loader: {
       load: ["ui/safe"],
@@ -46,12 +44,18 @@
   };
 </script>
 
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
     
     <meta property="og:title" content="Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
     <meta property="og:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/posts/dft-fft/">
-    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta property="og:url" content="https://liuzihe02.github.io/posts/dft-fft/">
+    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
     <meta property="og:image:width" content="100">
     <meta property="og:image:height" content="100">
     
@@ -59,7 +63,7 @@
     <meta name="twitter:description" content="Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
     
 
 <script type="application/ld+json" id="schema-data">
@@ -68,9 +72,9 @@
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:1313/posts/dft-fft/"
+            "@id": "https://liuzihe02.github.io/posts/dft-fft/"
         },
-        "url": "http://localhost:1313/posts/dft-fft/",
+        "url": "https://liuzihe02.github.io/posts/dft-fft/",
         "headline": "Investigating the Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
         "description": "Outline We analyze the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
         "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
@@ -85,7 +89,7 @@
             "name": "Serghei Iakovlev",
             "logo": {
                 "@type": "ImageObject",
-                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
                 "width": "96",
                 "height": "96"
             }
@@ -193,17 +197,19 @@ frequency-domain representation. For an input signal <span
 class="math inline">\(x[n]\)</span> of length <span
 class="math inline">\(N\)</span>, where <span class="math inline">\(0
 \le n \le N-1\)</span>, the DFT is defined as:</p>
-<p><span class="math display">\[X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn},
-\quad 0 \le k \le N-1
-\label{eq:DFT}\]</span></p>
+<p><span class="math display">\[
+X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1
+\label{eq:DFT}
+\]</span></p>
 <p>where <span class="math inline">\(W_N=e^{-j\frac{2\pi}{N}}\)</span>
 is the <span class="math inline">\(N\)</span>-th principal root of
 unity, and <span class="math inline">\(X[k]\)</span> is component at
 frequency <span class="math inline">\(kf_s/N\)</span> with sampling
 frequency <span class="math inline">\(f_s\)</span>. We can rewrite <span
 class="math inline">\(X[k]\)</span> as an inner product:</p>
-<p><span class="math display">\[X[k] = \left[ 1 \quad e^{-j\frac{2\pi
-k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
+<p><span class="math display">\[
+X[k] = \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad
+e^{-j\frac{2\pi k}{N}(N-1)} \right]
     \begin{bmatrix}
     x[0] \\
     x[1] \\
@@ -216,7 +222,8 @@ k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
     x[1] \\
     \vdots \\
     x[N-1]
-    \end{bmatrix}\]</span></p>
+    \end{bmatrix}
+\]</span></p>
 <p>By varying <span class="math inline">\(k\)</span> from <span
 class="math inline">\(0\)</span> to <span
 class="math inline">\(N-1\)</span>, we can collate all outputs <span
@@ -224,7 +231,8 @@ class="math inline">\({X[k]}\)</span> into a vector <span
 class="math inline">\(\mathbf{X}\)</span>, collate all inputs <span
 class="math inline">\(x[n]\)</span> into a vector <span
 class="math inline">\(\mathbf{x}\)</span>, to get:</p>
-<p><span class="math display">\[\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
+<p><span class="math display">\[
+\mathbf{X}=\mathbf{W}\mathbf{x}, \quad
 \mathbf{W} =
 \begin{bmatrix}
 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
@@ -232,7 +240,8 @@ class="math inline">\(\mathbf{x}\)</span>, to get:</p>
 1 &amp; W_N^2 &amp; W_N^4 &amp; \cdots &amp; W_N^{2(N-1)} \\
 \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
 1 &amp; W_N^{N-1} &amp; W_N^{2(N-1)} &amp; \cdots &amp; W_N^{(N-1)(N-1)}
-\end{bmatrix}\]</span></p>
+\end{bmatrix}
+\]</span></p>
 <p>where <span class="math inline">\(\mathbf{W}\)</span> is the DFT
 matrix.</p>
 <h2 id="complexity">Complexity</h2>
@@ -271,13 +280,15 @@ class="math inline">\(x_{odd}[n]\)</span> as <span
 class="math display">\[x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n +
 1], \quad 0 \leq n \leq N/2-1\]</span></p>
 <p>using the DFT of these 2 splits gives us:</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 X[k] &amp;= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0
 \leq k \leq \frac{N}{2} - 1 \\
 X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
 } 0 \leq k \leq \frac{N}{2} - 1
 \label{eq:fft_final}
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>The first computation with <span
 class="math inline">\(+W_N^k\)</span> give us the first half of the full
 DFT vector <span class="math inline">\(\mathbf{X}\)</span>, while the
@@ -346,45 +357,11 @@ class="math inline">\(N\)</span> for various implementations of DFT and
 FFT</figcaption>
 </figure>
 <div id="tab:R2">
-<table>
-<caption>R<sup>2</sup> values for different complexity models.</caption>
-<thead>
-<tr>
-<th style="text-align: left;">Algorithm</th>
-<th style="text-align: center;">O(N)</th>
-<th style="text-align: center;">O(N²)</th>
-<th style="text-align: center;">O(N³)</th>
-<th style="text-align: center;">O(log N)</th>
-<th style="text-align: center;">O(N log N)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">my-DFT</td>
-<td style="text-align: center;">0.9208</td>
-<td style="text-align: center;">0.9999</td>
-<td style="text-align: center;">0.9864</td>
-<td style="text-align: center;">0.4167</td>
-<td style="text-align: center;">0.9417</td>
-</tr>
-<tr>
-<td style="text-align: left;">my-FFT</td>
-<td style="text-align: center;">0.9830</td>
-<td style="text-align: center;">0.9657</td>
-<td style="text-align: center;">0.9161</td>
-<td style="text-align: center;">0.5634</td>
-<td style="text-align: center;">0.9894</td>
-</tr>
-<tr>
-<td style="text-align: left;">MATLAB-FFT</td>
-<td style="text-align: center;">0.8491</td>
-<td style="text-align: center;">0.7141</td>
-<td style="text-align: center;">0.6526</td>
-<td style="text-align: center;">0.8537</td>
-<td style="text-align: center;">0.8287</td>
-</tr>
-</tbody>
-</table>
+<p>Algorithm O(N) O(N²) O(N³) O(log N) O(N log N)</p>
+<hr />
+<p>my-DFT 0.9208 0.9999 0.9864 0.4167 0.9417 my-FFT 0.9830 0.9657 0.9161
+0.5634 0.9894 MATLAB-FFT 0.8491 0.7141 0.6526 0.8537 0.8287</p>
+<p>: R<sup>2</sup> values for different complexity models.</p>
 </div>
 <p>To verify the theoretical complexity, we measured the execution time
 for computing the DFT over a range of signal lengths. For each signal
@@ -496,7 +473,8 @@ class="math inline">\(x_{odd}[n]\)</span> as <span
 class="math display">\[x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n +
 1], \quad 0 \leq n \leq N/2-1\]</span></p>
 <p>The DFT can be written as</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 X[k] &amp;= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} +
 \sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
 &amp;= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1]
@@ -505,7 +483,8 @@ W_N^{(2n+1)k}\\
 x_{odd}[n] W_N^{(2n+1)k} \\
 &amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot
 \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Noting that <span class="math inline">\(W_N^{2}=W_{N/2}\)</span> or
 more generally <span
 class="math inline">\(W_N^{2nk}=W_{N/2}^{nk}\)</span>, <span
@@ -523,9 +502,10 @@ W_{N/2}^{nk} \quad , \quad X_{odd}[k] =
 \text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n]
 W_{N/2}^{nk}\]</span></p>
 <p>we then obtain our core recursive equation:</p>
-<p><span class="math display">\[X[k] = X_{even}[k] + W_N^{k} \cdot
-X_{odd}[k]
-    \label{eq:fft_int}\]</span></p>
+<p><span class="math display">\[
+X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
+    \label{eq:fft_int}
+\]</span></p>
 <p>Since <span class="math inline">\(x_{even}[n]\)</span> and <span
 class="math inline">\(x_{odd}[n]\)</span> are <span
 class="math inline">\(N/2\)</span>-point signals with <span
@@ -538,32 +518,38 @@ this by noting their DFT coefficients are periodic with a period of
 \frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k +
 \frac{N}{2}\right]\]</span></p>
 <p>This gives us</p>
-<p><span class="math display">\[X[k] =
+<p><span class="math display">\[
+X[k] =
     \begin{cases}
     X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
 0,1,\ldots,\frac{N}{2}-1 \\
     X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot
 X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
 \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}\]</span></p>
+\end{cases}
+\]</span></p>
 <p>Noting <span class="math inline">\(W_N^{k
 +\frac{N}{2}}=-W_{N}^{k}\)</span>, we write</p>
-<p><span class="math display">\[X[k] =
+<p><span class="math display">\[
+X[k] =
     \begin{cases}
     X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
 0,1,\ldots,\frac{N}{2}-1 \\
     X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot
 X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
 \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
-\end{cases}\]</span></p>
+\end{cases}
+\]</span></p>
 <p>finally giving us</p>
-<p><span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 X[k] &amp;= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0
 \leq k \leq \frac{N}{2} - 1 \\
 X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
 } 0 \leq k \leq \frac{N}{2} - 1
 \label{eq:fft_final}
-\end{aligned}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>The multipliers <span class="math inline">\(W_N^k\)</span> are known
 as <em>twiddle factors</em>. The first computation with <span
 class="math inline">\(+W_N^k\)</span> give us the first half of the full
