@@ -183,12 +183,12 @@ Published on
     </header>
 
     <div class="post-body">
-        <hr />
-<p>We analyze <a href="#fn1" class="footnote-ref" id="fnref1"
+        <p>We analyze <a href="#fn1" class="footnote-ref" id="fnref1"
 role="doc-noteref"><sup>1</sup></a> the theoretical properties of both
 the <em>Discrete Fourier Transform</em> (DFT) and the optimized <em>Fast
 Fourier Transform</em> (FFT), and estimate their algorithmic
 complexity.</p>
+<hr />
 <h1 id="discrete-fourier-transform">Discrete Fourier Transform</h1>
 <h2 id="theory">Theory</h2>
 <p>The DFT converts a finite-length time-domain signal into its
@@ -246,6 +246,43 @@ class="math inline">\(\mathbf{x}\)</span>, to get:</p>
 <p>where <span class="math inline">\(\mathbf{W}\)</span> is the DFT
 matrix.</p>
 <h2 id="complexity">Complexity</h2>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/DFT-pseudo.png"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Pseudocode for DFT</figcaption>
+  
+</div>
+
+<p>Direct implementation in <code>MATLAB</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>X <span class="p">=</span><span class="w"> </span><span class="nf">dft_loop</span><span class="p">(</span>x<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">% Compute the Discrete Fourier Transform (DFT) of input vector x using naive loops</span>
+</span></span><span class="line"><span class="cl"><span class="c">% x : input signal (vector)</span>
+</span></span><span class="line"><span class="cl"><span class="c">% X : DFT of x</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Convert input to a column vector for consistency</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="p">=</span> <span class="n">x</span><span class="p">(:);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">N</span> <span class="p">=</span> <span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>       <span class="c">% Number of samples in the signal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Pre-allocate the output vector for efficiency</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% Loop over each frequency bin k (from 0 to N-1)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum_val</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c">% Loop over each time sample n (from 0 to N-1)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">n</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="c">% Compute and accumulate the contribution for the k-th frequency component</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sum_val</span> <span class="p">=</span> <span class="n">sum_val</span> <span class="o">+</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="nb">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">pi</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">n</span> <span class="o">/</span> <span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">end</span>
+</span></span><span class="line"><span class="cl">        <span class="c">% MATLAB uses one-based indexing, so assign to X(k+1)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">X</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">sum_val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
+<p><code>MATLAB</code> code (vectorized):</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>X <span class="p">=</span><span class="w"> </span><span class="nf">dft_vectorized</span><span class="p">(</span>x<span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">% Compute the Discrete Fourier Transform (DFT) of input vector x using vectorized operations</span>
 </span></span><span class="line"><span class="cl"><span class="c">% x : input signal (vector)</span>
@@ -269,11 +306,10 @@ matrix.</p>
 <p>Direct computation of <span class="math inline">\(\mathbf{X}\)</span>
 requires <span class="math inline">\((N-1)^2\)</span> complex
 multiplications and <span class="math inline">\(N(N-1)\)</span> complex
-additions, as in Algorithm <a href="#alg:dft"
-data-reference-type="ref+label" data-reference="alg:dft">[alg:dft]</a>.
-Since multiplication is more compute-intensive than addition, the
-asymptotic complexity is dominated by multiplication, giving <span
+additions. Since multiplication is more compute-intensive than addition,
+the asymptotic complexity is dominated by multiplication, giving <span
 class="math inline">\(O(N^2)\)</span>.</p>
+<hr />
 <h1 id="fast-fourier-transform">Fast Fourier Transform</h1>
 <h2 id="theory-1">Theory</h2>
 <p>The radix-2 FFT algorithms work by dividing the DFT into 2 DFTs of

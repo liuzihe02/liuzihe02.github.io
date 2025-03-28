@@ -371,17 +371,7 @@ refLinksErrorLevel = 'WARNING'
     defaultMarkdownHandler = "pandoc"
     # Keep your existing highlight settings
     [markup.highlight]
-      codeFences = true      # Enable fenced code block highlighting
-      guessSyntax = false    # Don't try to guess syntax if not specified
       noClasses = false      # Use CSS classes instead of inline styles
-      style = "github"       # Use GitHub style highlighting
-  
-    [markup.pandoc]
-      args = [
-      "--from=markdown+fenced_code_blocks+backtick_code_blocks",  # Enable fenced code blocks in Pandoc
-      "--highlight-style=github",                                 # Set highlighting style
-      "--to=html"                                                 # Output format
-    ]
 
 # If enableGitInfo is true, it will override any lastmod dates in our
 # front matter. We should at least allow ourselves to manually override

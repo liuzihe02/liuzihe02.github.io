@@ -127,14 +127,9 @@ unzip DFT-FFT.zip -d dft-fft
 
 ```bash
 cd dft-fft
-# pandoc main.tex -o ../../content/posts/dft-fft.pdc \
-#   --from=latex \
-#   --to=markdown \
-#   --extract-media=../../static \
-#   --standalone \
-#   --mathjax
 
-# convert to stdout first, then remove static prefix, then save to content file
+# convert to stdout first, then remove static path prefix, then save to content file
+# this is because Hugo expects all images to be referenced directly from static dir not root dir
 pandoc main.tex -o - \
   --from=latex \
   --to=markdown \
@@ -147,7 +142,7 @@ pandoc main.tex -o - \
 
 There might be some issues with the author. I reccomended removing the author field in the frontmatter.
 
-> Note that converting to references here also causes some issues, so we have to **manually handle** the references section :( LaTEX has rich referencing system that md doesnt support well
+> Note that converting to references here also causes some issues, so we have to **manually handle** the references and bibliography section :( LaTEX has rich referencing system that md doesnt support well.
 
 > In the Overleaf package, please ensure all the images are in the folder `figures`, for standardization purpose. Pandoc will continue appending images to the `figures` folder instead of overriding it. I don't want multiple folders which serve the same purpose but have different naming.
 

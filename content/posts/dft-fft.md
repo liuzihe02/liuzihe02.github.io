@@ -4,11 +4,11 @@ nocite: "[@*]"
 title: The Discrete Fourier Transform and Fast Fourier Transform
 ---
 
----
-
 We analyze [^1] the theoretical properties of both the _Discrete Fourier
 Transform_ (DFT) and the optimized _Fast Fourier Transform_ (FFT), and
 estimate their algorithmic complexity.
+
+---
 
 # Discrete Fourier Transform
 
@@ -66,6 +66,40 @@ where $\mathbf{W}$ is the DFT matrix.
 
 ## Complexity
 
+{{< img src="/figures/DFT-pseudo.png" caption="Pseudocode for DFT" width="500">}}
+
+Direct implementation in `MATLAB`:
+
+{{< highlight matlab >}}
+function X = dft_loop(x)
+% Compute the Discrete Fourier Transform (DFT) of input vector x using naive loops
+% x : input signal (vector)
+% X : DFT of x
+
+    % Convert input to a column vector for consistency
+    x = x(:);
+    N = length(x);       % Number of samples in the signal
+
+    % Pre-allocate the output vector for efficiency
+    X = zeros(N, 1);
+
+    % Loop over each frequency bin k (from 0 to N-1)
+    for k = 0:N-1
+        sum_val = 0;
+        % Loop over each time sample n (from 0 to N-1)
+        for n = 0:N-1
+            % Compute and accumulate the contribution for the k-th frequency component
+            sum_val = sum_val + x(n+1) * exp(-1j * 2 * pi * k * n / N);
+        end
+        % MATLAB uses one-based indexing, so assign to X(k+1)
+        X(k+1) = sum_val;
+    end
+
+end
+{{< /highlight >}}
+
+`MATLAB` code (vectorized):
+
 {{< highlight matlab >}}
 function X = dft_vectorized(x)
 % Compute the Discrete Fourier Transform (DFT) of input vector x using vectorized operations
@@ -90,10 +124,10 @@ end
 {{< /highlight >}}
 
 Direct computation of $\mathbf{X}$ requires $(N-1)^2$ complex
-multiplications and $N(N-1)$ complex additions, as in Algorithm
-[\[alg:dft\]](#alg:dft){reference-type="ref+label" reference="alg:dft"}.
-Since multiplication is more compute-intensive than addition, the
+multiplications and $N(N-1)$ complex additions. Since multiplication is more compute-intensive than addition, the
 asymptotic complexity is dominated by multiplication, giving $O(N^2)$.
+
+---
 
 # Fast Fourier Transform
 

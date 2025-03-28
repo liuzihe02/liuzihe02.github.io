@@ -1,7 +1,11 @@
-<!-- the margin auto here makes the image automatically centred. we use a custom shortcode here to centre the image -->
-<div style="display: block; width: 100%">
+<!-- the margin auto here makes the image automatically centred. we use a custom shortcode here to centre the image, and add spacing to the top and bottom -->
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
   <img src="{{ .Get "src" }}" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{
   with .Get "width" }}width="{{ . }}"{{ end }} {{ with .Get "height"
   }}height="{{ . }}"{{ end }} {{ with .Get "class" }}class="{{ . }}"{{ end }}
   style="display: block; margin: 0 auto;">
+  {{/*  add captions ourselves, with approrpirate spacing  */}}
+  {{ with .Get "caption" }}
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">{{ . }}</figcaption>
+  {{ end }}
 </div>
