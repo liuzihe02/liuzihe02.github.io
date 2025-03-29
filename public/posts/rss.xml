@@ -32,12 +32,5 @@
       <guid>https://liuzihe02.github.io/posts/mcts/</guid>
       <description>We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&amp;rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.&#xA;Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s&#39;$ with the transition probability $p_a(s&#39;|s)$.</description>
     </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://liuzihe02.github.io/posts/math/</link>
-      <pubDate>Mon, 17 Oct 2022 22:45:36 +1100</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/posts/math/</guid>
-      <description>This is a post about latex.&#xA;An equation: $$\int_{-\infty}^{\infty} e^{-x^2} dx$$ . inline example: $\sum_{i = 0}^N 2i = y$ One overbrace:&#xA;$${a}^{b} - \overbrace{c}^{d}$$ Two overbraces: $$\underbrace{a}_{b} - \underbrace{c}_{d}$$ None of these below works properly:&#xA;$$ \begin{aligned} equation &amp;= 16 \\ other &amp;= 26 + 13 \end{aligned} $$ $$ \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} $$ </description>
-    </item>
   </channel>
 </rss>
