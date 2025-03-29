@@ -346,6 +346,7 @@ Using the computed advantages, update the policy parameters and value
 network by maximizing a surrogate objective (e.g., the PPO objective) to
 favor actions with higher expected returns. Repeat until agent&rsquo;s
 performance converges.</p>
+<hr>
 <h1 id="r1-zero">R1-Zero</h1>
 <h2 id="group-relative-policy-optimization-grpo">Group Relative Policy Optimization (GRPO)</h2>
 
@@ -371,31 +372,24 @@ advantage <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noter
 <p><strong>GRPO Advantages</strong></p>
 <p>Advantages $A_i$ are computed using group rewards
 $\{r_1,r_2,\ldots,r_G\}$:</p>
-$$A_i = \frac{r_i - \text{mean}(\{r_1,r_2,\ldots,r_G\})}{\text{std}(\{r_1,r_2,\ldots,r_G\})} \tag{3}$$
+$$A_i = \frac{r_i - \text{mean}(\{r_1,r_2,\ldots,r_G\})}{\text{std}(\{r_1,r_2,\ldots,r_G\})} $$
 <p>As the value network is typically another model of comparable size as
 the policy model, it brings a substantial memory and computational
 burden. GRPO eliminates value network completely, saving enourmous amounts of compute!</p>
 <p><strong>Reward Modelling</strong></p>
 <p>R1-Zero uses a rule-based reward system consisting of:</p>
 <ul>
-<li>
-<p><strong>Accuracy rewards:</strong> The accuracy reward model evaluates whether the
-response is correct.</p>
+<li><strong>Accuracy rewards:</strong> The accuracy reward model evaluates whether the
+response is correct.
 <ul>
-<li>
-<p>For math problems with deterministic results, can easily check if
-right or wrong. Provider higher reward if right.</p>
-</li>
-<li>
-<p>For LeetCode problems, a compiler can be used to generate feedback
-based on predefined test cases</p>
-</li>
+<li>For math problems with deterministic results, can easily check if
+right or wrong. Provider higher reward if right.</li>
+<li>For LeetCode problems, a compiler can be used to generate feedback
+based on predefined test cases</li>
 </ul>
 </li>
-<li>
-<p><strong>Format rewards:</strong> Enforces the model to put its thinking process
-between <code>&lt;think&gt;</code> and <code>&lt;/think&gt;</code> tags.</p>
-</li>
+<li><strong>Format rewards:</strong> Enforces the model to put its thinking process
+between <code>&lt;think&gt;</code> and <code>&lt;/think&gt;</code> tags.</li>
 </ul>
 <p>Usually for LLMs, a neural reward model (neural network used to estimate
 rewards) is used to provide rewards, as human preferences or
@@ -411,276 +405,201 @@ complicates the whole training pipeline</p>
 </li>
 </ul>
 <p><strong>Performance</strong></p>
-<p><img alt="image" src="/figures/aime.png">{width=&ldquo;80%&rdquo;}</p>
-<ul>
-<li>
-<p>No Supervised-Fine-Tuning involved in R1-Zero</p>
-</li>
-<li>
-<p>Majority voting bring performance on AIME benchmark from 71% to 86%
-:::</p>
-</li>
-</ul>
-<p>::: frame
-Self-Evolution <img alt="image" src="/figures/perf.png">{width=&ldquo;80%&rdquo;}</p>
-<ul>
-<li>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/aime.png"  width="600"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
+<p>There&rsquo;s no supervised fine tuning involved at all in R1-Zero, which is extremely impressive considering its performance. Majority voting bring performance on AIME benchmark from 71% to 86%.</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/perf.png"  width="600"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
 <p>R1-Zero naturally acquires the ability to solve increasingly complex
 reasoning tasks by leveraging extended test-time computation
-(increased Chain-Of-Thought)</p>
-</li>
-<li>
-<p>Behaviours like backtracking and reflection emerge
-:::</p>
-</li>
-</ul>
-<p>::: frame
-Problems</p>
-<ul>
-<li>
-<p>Poor Readability of Chain-Of-Thought</p>
-</li>
-<li>
-<p>Language Mixing</p>
-</li>
-</ul>
-<p>Probably some form of reward over-optimization, more efficient to reason
-in its own language and achieve higher reward
-:::</p>
+(increased Chain-Of-Thought length). Behaviours like backtracking and reflection naturally emerge, which is absolutely incredible&hellip;</p>
+<p><strong>Problems</strong></p>
+<p>R1-Zero exhibits poor readability of its chain of thoughts, where language mixing often occurs. I suspect this is probably some form of reward over-optimization, as it is more efficient to reason in its own language and achieve higher reward.</p>
+<blockquote>
+<p>We know different languages have <a href="https://seantrott.github.io/information/">different information density</a>. This can be thought of as the &ldquo;efficiency&rdquo; of language, given a constraint on its length. Suppose an LLM had a length constraint (the context window), and was incentivised to achieve a goal. Won&rsquo;t you expect the LLM to naturally use more information dense languages? Or even more extreme - if it were intelligent enough - create its own language that is information dense enough to achieve its goals?</p>
+</blockquote>
+<p>I worry about this aspect quite abit, about future intelligent systems reasoning in its own language uninterpretable to humans. If you&rsquo;ve ever seen Villeneuve&rsquo;s incredible film <a href="https://en.wikipedia.org/wiki/Arrival_(film)">Arrival</a>, you would have seen the heptapods&rsquo; non-linear language which isn&rsquo;t formed by sequentially combining words linearly. If these systems start communicating in their own language and are given goals by humans, you can see how this could cause all sorts of various problems.</p>
+<hr>
 <h1 id="r1-training-pipeline">R1 Training Pipeline</h1>
 <h2 id="phase-1-cold-start">Phase 1: Cold Start</h2>
-<p>::: frame
-Phase 1: Cold Start
-<img alt="image" src="/figures/phase1.png">{width=&ldquo;60%&rdquo;}
-:::</p>
-<p>::: frame
-Phase 1: Cold Start</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/phase1.png"  width="700"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
 <ul>
-<li>
-<p>Construct and collect small amounts (thousands) of long CoT data to
-fine-tune V3</p>
+<li>Construct and collect small amounts (thousands) of long CoT data to
+fine-tune V3
 <ul>
-<li>
-<p>Using few-shot prompting on V3 with long CoT examples</p>
-</li>
-<li>
-<p>Direct prompting on V3 for detailed answers with reflection</p>
-</li>
-<li>
-<p>Gathering DeepSeek-R1-Zero outputs with human post-processing</p>
-</li>
+<li>Using few-shot prompting on V3 with long CoT examples</li>
+<li>Direct prompting on V3 for detailed answers with reflection</li>
+<li>Gathering DeepSeek-R1-Zero outputs with human post-processing</li>
 </ul>
 </li>
-<li>
-<p>Key advantages:</p>
+<li>Key advantages:
 <ul>
-<li>
-<p><strong>Readability:</strong> R1-Zero has unreadable responses. We define output
+<li><strong>Readability:</strong> R1-Zero has unreadable responses. We define output
 format as
 <code>|special_token|&lt;reasoning_process&gt;|special_token|&lt;summary&gt;</code> so
-reasoning process (CoT) and summary of reasoning provided</p>
-</li>
-<li>
-<p><strong>Potential:</strong> Carefully designed patterns with human priors show
-better performance vs R1-Zero
-:::</p>
-</li>
+reasoning process (CoT) and summary of reasoning provided</li>
+<li><strong>Potential:</strong> Carefully designed patterns with human priors show
+better performance vs R1-Zero</li>
 </ul>
 </li>
 </ul>
 <h2 id="phase-2-reasoning-reinforcement-learning">Phase 2: Reasoning Reinforcement Learning</h2>
-<p>::: frame
-Phase 2: Reasoning Reinforcement Learning
-<img alt="image" src="/figures/phase2.png">{width=&ldquo;60%&rdquo;}
-:::</p>
-<p>::: frame
-Phase 2: Reasoning Reinforcement Learning After cold start fine-tuning,
-apply large-scale RL training similar to DeepSeek-R1-Zero:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/phase1.png"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
+<p>After cold start fine-tuning, apply large-scale RL training similar to DeepSeek-R1-Zero:</p>
 <ul>
-<li>
-<p>Focus on reasoning-intensive tasks:</p>
+<li>Focus on reasoning-intensive tasks:
 <ul>
-<li>
-<p>Coding, mathematics, science, logic reasoning</p>
-</li>
-<li>
-<p>Well-defined problems with clear solutions</p>
-</li>
+<li>Coding, mathematics, science, logic reasoning</li>
+<li>Well-defined problems with clear solutions</li>
 </ul>
 </li>
-<li>
-<p>Language Consistency:</p>
+<li>Language Consistency:
 <ul>
-<li>
-<p>CoT exhibits language mixing in multi-language prompts</p>
-</li>
-<li>
-<p>Introduce language consistency reward, measured as proportion of
-target language words in CoT</p>
-</li>
+<li>CoT exhibits language mixing in multi-language prompts</li>
+<li>Introduce language consistency reward, measured as proportion of
+target language words in CoT</li>
 </ul>
 </li>
 </ul>
 <p>Final reward function combines reasoning task accuracy, language
-consistency reward, and formatting reward to train until convergence.
-:::</p>
+consistency reward, and formatting reward to train until convergence.</p>
 <h2 id="phase-3-rejection-sampling-and-supervised-fine-tuning">Phase 3: Rejection Sampling and Supervised Fine-Tuning</h2>
-<p>::: frame
-Phase 3: Rejection Sampling and Supervised Fine-Tuning
-<img alt="image" src="/figures/phase3.png">{width=&ldquo;60%&rdquo;}
-:::</p>
-<p>:::::: frame
-Phase 3: Rejection Sampling and Supervised Fine-Tuning</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/phase3.png"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
 <p>After RL convergence, collect SFT data from checkpoint for further
-training. Include</p>
-<p>::::: columns
-::: column
-0.5 <strong>Reasoning Data (600k samples)</strong></p>
+training. Data includes:</p>
+<p><strong>Reasoning Data (600k samples)</strong></p>
 <ul>
-<li>
-<p>Rejection sampling from RL checkpoint</p>
-</li>
-<li>
-<p>Expanded dataset includes:</p>
+<li>Rejection sampling from RL checkpoint</li>
+<li>Expanded dataset includes:
 <ul>
-<li>
-<p>Rule-based rewards</p>
-</li>
-<li>
-<p>Generative rewards via DeepSeek-V3 as LLM-Judge</p>
-</li>
+<li>Rule-based rewards</li>
+<li>Generative rewards via DeepSeek-V3 as LLM-Judge</li>
 </ul>
 </li>
-<li>
-<p>Quality filters:</p>
+<li>Quality filters:
 <ul>
-<li>
-<p>Remove mixed languages</p>
-</li>
-<li>
-<p>Filter long paragraphs</p>
-</li>
-<li>
-<p>Remove chaotic code blocks
-:::</p>
-</li>
+<li>Remove mixed languages</li>
+<li>Filter long paragraphs</li>
+<li>Remove chaotic code blocks</li>
 </ul>
 </li>
 </ul>
-<p>::: column
-0.5 <strong>Non-Reasoning Data (200k samples)</strong></p>
+<p><strong>Non-Reasoning Data (200k samples)</strong></p>
 <ul>
-<li>
-<p>Types:</p>
+<li>Types:
 <ul>
-<li>
-<p>Writing</p>
-</li>
-<li>
-<p>Factual QA</p>
-</li>
-<li>
-<p>Self-cognition</p>
-</li>
-<li>
-<p>Translation</p>
-</li>
+<li>Writing</li>
+<li>Factual QA</li>
+<li>Self-cognition</li>
+<li>Translation</li>
 </ul>
 </li>
-<li>
-<p>Reuse SFT data for DeepSeek-V3
-:::
-:::::</p>
-</li>
+<li>Reuse SFT data for DeepSeek-V3</li>
 </ul>
 <p>Final fine-tuning on <strong>DeepSeek-V3-Base</strong>: 2 epochs on combined 800k
-samples
-::::::</p>
+samples</p>
 <h2 id="phase-4-diverse-reinforcement-learning-phase">Phase 4: Diverse Reinforcement Learning Phase</h2>
-<p>::: frame
-Phase 4: Diverse Reinforcement Learning Phase
-<img alt="image" src="/figures/phase4.png">{width=&ldquo;60%&rdquo;}
-:::</p>
-<p>:::::: frame
-Phase 4: Diverse Reinforcement Learning Phase</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/phase4.png"  width="500"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
 <p>Secondary RL stage to align with human preferences while improving,
 helpfulnes, harmlessness, and reasoning:</p>
-<p>::::: columns
-::: column
-0.5 <strong>Training Approach</strong></p>
+<p><strong>Training Approach</strong></p>
 <ul>
-<li>
-<p>Reasoning data:</p>
+<li>Reasoning data:
 <ul>
-<li>
-<p>Same approach as DeepSeek-R1-Zero</p>
-</li>
-<li>
-<p>Rule-based rewards on Math, code, logical reasoning</p>
-</li>
+<li>Same approach as DeepSeek-R1-Zero</li>
+<li>Rule-based rewards on Math, code, logical reasoning</li>
 </ul>
 </li>
-<li>
-<p>General data:</p>
+<li>General data:
 <ul>
-<li>
-<p>Reward model as in DeepSeek V3</p>
-</li>
-<li>
-<p>Use preference pairs
-:::</p>
-</li>
+<li>Reward model as in DeepSeek V3</li>
+<li>Use preference pairs</li>
 </ul>
 </li>
 </ul>
-<p>::: column
-0.5 <strong>HHH Criteria</strong></p>
+<p><strong>Helpful Honest Harmless (HHH) Criteria</strong></p>
 <ul>
-<li>
-<p>Helpfulness:</p>
+<li>Helpfulness:
 <ul>
-<li>
-<p>Focus on final summary in summary tag is useful and relevance</p>
-</li>
-<li>
-<p>Preserves reasoning process in the reasoning tag</p>
-</li>
+<li>Focus on final summary in summary tag is useful and relevance</li>
+<li>Preserves reasoning process in the reasoning tag</li>
 </ul>
 </li>
-<li>
-<p>Harmlessness:</p>
+<li>Harmlessness:
 <ul>
-<li>Evaluate full response for potential biases or hamful content
-:::
-:::::
-::::::</li>
+<li>Evaluate full response for potential biases or hamful content</li>
 </ul>
 </li>
 </ul>
+<hr>
 <h1 id="r1-engineering-unlocks">R1 Engineering Unlocks</h1>
-<p>::: frame
-Engineering Unlocks</p>
-<p>Insane software and hardware optimizations</p>
+<p>The DeepSeek team also did some insane software and hardware optimizations:</p>
 <ul>
-<li>
-<p>Multi-Head Latent Attention (for efficient inference)</p>
+<li>Multi-Head Latent Attention (for efficient inference)
 <ul>
 <li>Low-rank join compression for <strong>K,Q,V</strong> matrices to reduce key-value
 cache memory usage</li>
 </ul>
 </li>
-<li>
-<p>DeepSeekMoE with Auxiliary-Loss-Free Load Balancing (efficient
-training)</p>
+<li>DeepSeekMoE with Auxiliary-Loss-Free Load Balancing (efficient
+training)
 <ul>
 <li>671B parameters, but only which 37B are activated for each token</li>
 </ul>
 </li>
-<li>
-<p>Multi-Token Prediction Objective
-:::</p>
-</li>
+<li>Multi-Token Prediction Objective</li>
 </ul>
+<hr>
+<h1 id="conclusion">Conclusion</h1>
+<p>I think the core reason behind R1&rsquo;s success was its sheer efficiency: getting rid of the value network via simple advantage estimation, using a simple reward model instead of a neural reward model, and all the hardware/software optimizations. The multi-phase training approach, while quite hacky, preserves the reasoning ability of R1-Zero while ensuring readability. All in all I&rsquo;m very impressed by the DeepSeek team, and I hope you learnt something from this post!</p>
+<hr>
+<h1 id="references">References</h1>
+<h2 id="references-1">References</h2>
+<p>Shao, Z., Wang, P., Zhu, Q., Xu, R., Song, J., Bi, X., Zhang, H., Zhang, M., Li, Y. K., Wu, Y., &amp; Guo, D. (2024). <em>DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models</em>. arXiv:2402.03300 [cs.CL]. <a href="https://arxiv.org/abs/2402.03300">https://arxiv.org/abs/2402.03300</a></p>
+<p>DeepSeek-AI, Guo, D., Yang, D., Zhang, H., Song, J., Zhang, R., Xu, R., Zhu, Q., Ma, S., Wang, P., et al. (2025). <em>DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning</em>. arXiv:2501.12948 [cs.CL]. <a href="https://arxiv.org/abs/2501.12948">https://arxiv.org/abs/2501.12948</a></p>
+<p>DeepSeek-AI, Liu, A., Feng, B., Xue, B., Wang, B., Wu, B., Lu, C., Zhao, C., Deng, C., Zhang, C., et al. (2025). <em>DeepSeek-V3 Technical Report</em>. arXiv:2412.19437 [cs.CL]. <a href="https://arxiv.org/abs/2412.19437">https://arxiv.org/abs/2412.19437</a></p>
+<p>ARENA curriculum. <em>Transformer from Scratch</em>. <a href="https://arena-chapter1-transformer-interp.streamlit.app/[1.1]_Transformer_from_Scratch">https://arena-chapter1-transformer-interp.streamlit.app/[1.1]_Transformer_from_Scratch</a></p>
+<hr>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>

@@ -381,5 +381,7 @@ Ramalingam, C.S. _Introduction to the Fast-Fourier Transform (FFT) Algorithm_. h
 
 _Fast Fourier Transform (FFT)_. NYU Engineering. https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft
 
+---
+
 [^1]: This post was created for educational purposes, so much of the analysis is taken directly from the sources quoted in the references
 [^2]: This package is highly optimized to each machine and is written in low level C
