@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
 
-    <link rel="canonical" href="http://localhost:1313/posts/dft-fft/">
+    <link rel="canonical" href="https://liuzihe02.github.io/posts/dft-fft/">
 
     <title>The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe</title>
     <meta name="description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
@@ -23,7 +23,7 @@
     <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
     <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/dft-fft/">
+<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/dft-fft/">
 
     <meta name="theme-color" content="#ffffff">
     <script>
@@ -54,8 +54,8 @@
     <meta property="og:title" content="The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe">
     <meta property="og:description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="http://localhost:1313/posts/dft-fft/">
-    <meta property="og:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta property="og:url" content="https://liuzihe02.github.io/posts/dft-fft/">
+    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
     <meta property="og:image:width" content="100">
     <meta property="og:image:height" content="100">
     <meta property="article:published_time" content="2025-03-07T17:05:08">
@@ -65,7 +65,7 @@
     <meta name="twitter:description" content="We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …">
     <meta name="twitter:site" content="@egreps">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="http://localhost:1313/img/red_sinc.png">
+    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
     
 
 <script type="application/ld+json" id="schema-data">
@@ -74,9 +74,9 @@
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:1313/posts/dft-fft/"
+            "@id": "https://liuzihe02.github.io/posts/dft-fft/"
         },
-        "url": "http://localhost:1313/posts/dft-fft/",
+        "url": "https://liuzihe02.github.io/posts/dft-fft/",
         "headline": "The Discrete Fourier Transform and Fast Fourier Transform - Liu Zihe",
         "description": "We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their …",
         "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
@@ -92,7 +92,7 @@
             "name": "Serghei Iakovlev",
             "logo": {
                 "@type": "ImageObject",
-                "url": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
                 "width": "96",
                 "height": "96"
             }
@@ -128,8 +128,11 @@
                     href="/posts/"
                     id="menu-main-posts">Posts</a>
                 <a class="sidebar-nav-item"
-                    href="/documentation/"
-                    id="menu-main-documentation">Documentation</a>
+                    href="/dramas/"
+                    id="menu-main-dramas">Dramas</a>
+                <a class="sidebar-nav-item"
+                    href="/narratives/"
+                    id="menu-main-narratives">Narratives</a>
                 <a class="sidebar-nav-item"
                     href="/poems/"
                     id="menu-main-poems">Poems</a>
@@ -182,43 +185,33 @@ Published on
     </header>
 
     <div class="post-body">
-        <p>We analyze <a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a> the theoretical properties of both
-the <em>Discrete Fourier Transform</em> (DFT) and the optimized <em>Fast
-Fourier Transform</em> (FFT), and estimate their algorithmic
-complexity.</p>
-<p>All code available at <a
-href="https://github.com/liuzihe02/dft-fft.git"
-class="uri">https://github.com/liuzihe02/dft-fft.git</a></p>
-<hr />
+        <p>We analyze <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> the theoretical properties of both the <em>Discrete Fourier
+Transform</em> (DFT) and the optimized <em>Fast Fourier Transform</em> (FFT), and
+estimate their algorithmic complexity.</p>
+<p>All code available on <a href="https://github.com/liuzihe02/dft-fft.git">Github</a>. Slides available <a href="https://drive.google.com/file/d/1l2QpD1UfyVwv4J3sF3TbtCOC0KYjQuIB/view?usp=sharing">here</a>.</p>
+<hr>
 <h1 id="discrete-fourier-transform">Discrete Fourier Transform</h1>
 <h2 id="theory">Theory</h2>
 <p>The DFT converts a finite-length time-domain signal into its
-frequency-domain representation. For an input signal <span
-class="math inline">\(x[n]\)</span> of length <span
-class="math inline">\(N\)</span>, where <span class="math inline">\(0
-\le n \le N-1\)</span>, the DFT is defined as:</p>
-<p><span class="math display">\[
+frequency-domain representation. For an input signal $x[n]$ of length
+$N$, where $0 \le n \le N-1$, the DFT is defined as:</p>
+$$
 X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1
 \label{eq:DFT}
-\]</span></p>
-<p>where <span class="math inline">\(W_N=e^{-j\frac{2\pi}{N}}\)</span>
-is the <span class="math inline">\(N\)</span>-th principal root of
-unity, and <span class="math inline">\(X[k]\)</span> is component at
-frequency <span class="math inline">\(kf_s/N\)</span> with sampling
-frequency <span class="math inline">\(f_s\)</span>. We can rewrite <span
-class="math inline">\(X[k]\)</span> as an inner product:</p>
-<p><span class="math display">\[
+$$
+<p>where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity,
+and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency
+$f_s$. We can rewrite $X[k]$ as an inner product:</p>
+$$
 \begin{align}
-X[k] &amp;= \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad
-e^{-j\frac{2\pi k}{N}(N-1)} \right]
+X[k] &= \left[ 1 \quad e^{-j\frac{2\pi k}{N}} \quad \ldots \quad e^{-j\frac{2\pi k}{N}(N-1)} \right]
     \begin{bmatrix}
     x[0] \\
     x[1] \\
     \vdots \\
     x[N-1]
     \end{bmatrix} \\
-&amp;= \left[ 1 \quad W_N^k \quad \ldots \quad W_N^{(N-1)k} \right]
+&= \left[ 1 \quad W_N^k \quad \ldots \quad W_N^{(N-1)k} \right]
     \begin{bmatrix}
     x[0] \\
     x[1] \\
@@ -226,27 +219,22 @@ e^{-j\frac{2\pi k}{N}(N-1)} \right]
     x[N-1]
     \end{bmatrix}
 \end{align}
-\]</span></p>
-<p>By varying <span class="math inline">\(k\)</span> from <span
-class="math inline">\(0\)</span> to <span
-class="math inline">\(N-1\)</span>, we can collate all outputs <span
-class="math inline">\({X[k]}\)</span> into a vector <span
-class="math inline">\(\mathbf{X}\)</span>, collate all inputs <span
-class="math inline">\(x[n]\)</span> into a vector <span
-class="math inline">\(\mathbf{x}\)</span>, to get:</p>
-<p><span class="math display">\[
+$$
+<p>By varying $k$ from $0$ to $N-1$, we can collate all outputs ${X[k]}$
+into a vector $\mathbf{X}$, collate all inputs $x[n]$ into a vector
+$\mathbf{x}$, to get:</p>
+$$
 \mathbf{X}=\mathbf{W}\mathbf{x}, \quad
 \mathbf{W} =
 \begin{bmatrix}
-1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
-1 &amp; W_N &amp; W_N^2 &amp; \cdots &amp; W_N^{N-1} \\
-1 &amp; W_N^2 &amp; W_N^4 &amp; \cdots &amp; W_N^{2(N-1)} \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-1 &amp; W_N^{N-1} &amp; W_N^{2(N-1)} &amp; \cdots &amp; W_N^{(N-1)(N-1)}
+1 & 1 & 1 & \cdots & 1 \\
+1 & W_N & W_N^2 & \cdots & W_N^{N-1} \\
+1 & W_N^2 & W_N^4 & \cdots & W_N^{2(N-1)} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & W_N^{N-1} & W_N^{2(N-1)} & \cdots & W_N^{(N-1)(N-1)}
 \end{bmatrix}
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{W}\)</span> is the DFT
-matrix.</p>
+$$
+<p>where $\mathbf{W}$ is the DFT matrix.</p>
 <h2 id="complexity">Complexity</h2>
 
 <div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
@@ -305,142 +293,99 @@ matrix.</p>
 </span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="p">=</span> <span class="n">W</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
-<p>Direct computation of <span class="math inline">\(\mathbf{X}\)</span>
-requires <span class="math inline">\((N-1)^2\)</span> complex
-multiplications and <span class="math inline">\(N(N-1)\)</span> complex
-additions. Since multiplication is more compute-intensive than addition,
-the asymptotic complexity is dominated by multiplication, giving <span
-class="math inline">\(O(N^2)\)</span>.</p>
-<hr />
+<p>Direct computation of $\mathbf{X}$ requires $(N-1)^2$ complex
+multiplications and $N(N-1)$ complex additions. Since multiplication is more compute-intensive than addition, the
+asymptotic complexity is dominated by multiplication, giving $O(N^2)$.</p>
+<hr>
 <h1 id="fast-fourier-transform">Fast Fourier Transform</h1>
 <h2 id="preliminaries">Preliminaries</h2>
-<p>We layout some properties of <span class="math inline">\(W_N\)</span>
-we’ll be using later</p>
+<p>We layout some properties of $W_N$ we&rsquo;ll be using later</p>
 <p><strong>Property 1:</strong></p>
-<p><span class="math display">\[
+$$
 W_N^2 = W_{N/2}
-\]</span></p>
+$$
 <p><em>Proof:</em></p>
-<p><span class="math display">\[
+$$
 W_N^2 = e^{-j\frac{2\pi}{N}\cdot 2} = e^{-j\frac{2\pi}{N/2}} = W_{N/2}
-\]</span></p>
-<p>More generally, <span class="math inline">\(W_N^{2nk} =
-W_{N/2}^{nk}\)</span>.</p>
+$$
+<p>More generally, $W_N^{2nk} = W_{N/2}^{nk}$.</p>
 <p><strong>Property 2:</strong></p>
-<p><span class="math display">\[
+$$
 W_N^{k+\frac{N}{2}} = -W_N^k
-\]</span></p>
+$$
 <p><em>Proof:</em></p>
-<p><span class="math display">\[
-W_N^{k+\frac{N}{2}} = e^{-j\frac{2\pi}{N}\left(k+\frac{N}{2}\right)} =
-e^{-j\frac{2\pi}{N}k} \cdot e^{-j\pi} = -W_N^k
-\]</span></p>
+$$
+W_N^{k+\frac{N}{2}} = e^{-j\frac{2\pi}{N}\left(k+\frac{N}{2}\right)} = e^{-j\frac{2\pi}{N}k} \cdot e^{-j\pi} = -W_N^k
+$$
 <h2 id="theory-1">Theory</h2>
 <p>The radix-2 FFT algorithms work by dividing the DFT into 2 DFTs of
-length <span class="math inline">\(N/2\)</span> each, and iterating. We
-introduce the simplest variant, called the <em>Decimation-In-Time</em>
-(DIT) algorithm.</p>
-<p>Consider a <span class="math inline">\(N\)</span>-point signal <span
-class="math inline">\(x[n]\)</span> of even length, indexed from <span
-class="math inline">\(0\)</span> to <span
-class="math inline">\(N-1\)</span>. The derivation of the DIT radix-2
-FFT begins by splitting the <span class="math inline">\(x[n]\)</span>
-into two parts — one part for the even-indexed values <span
-class="math inline">\(x[2n]\)</span> and one part for the odd-indexed
-values <span class="math inline">\(x[2n + 1]\)</span>. Define two <span
-class="math inline">\(N/2\)</span>-point signals <span
-class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> as <span
-class="math display">\[x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n +
-1], \quad 0 \leq n \leq N/2-1\]</span></p>
+length $N/2$ each, and iterating. We introduce the simplest variant,
+called the <em>Decimation-In-Time</em> (DIT) algorithm.</p>
+<p>Consider a $N$-point signal $x[n]$ of even length, indexed from $0$ to $N-1$. The derivation
+of the DIT radix-2 FFT begins by splitting the $x[n]$ into two parts &mdash;
+one part for the even-indexed values $x[2n]$ and one part for the
+odd-indexed values $x[2n + 1]$. Define two $N/2$-point signals
+$x_{even}[n]$ and $x_{odd}[n]$ as
+</p>
+$$x_{even}[n] = x[2n], \quad x_{odd}[n] = x[2n + 1], \quad 0 \leq n \leq N/2-1$$
 <p>The DFT can be written as</p>
-<p><span class="math display">\[
+$$
 \begin{aligned}
-X[k] &amp;= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} +
-\sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
-&amp;= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1]
-W_N^{(2n+1)k}\\
-&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1}
-x_{odd}[n] W_N^{(2n+1)k} \\
-&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot
-\sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
+X[k] &= \sum_{n=0 \atop n \text{ even}}^{N-1} x[n] W_N^{nk} + \sum_{n=0 \atop n \text{ odd}}^{N-1} x[n] W_N^{nk}\\
+&= \sum_{n=0}^{N/2-1} x[2n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x[2n + 1] W_N^{(2n+1)k}\\
+&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{(2n+1)k} \\
+&= \sum_{n=0}^{N/2-1} x_{even}[n] W_N^{2nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_N^{2nk}\\
 \end{aligned}
-\]</span></p>
-<p>Noting that <span class="math inline">\(W_N^{2}=W_{N/2}\)</span> or
-more generally <span
-class="math inline">\(W_N^{2nk}=W_{N/2}^{nk}\)</span> , then</p>
-<p><span class="math display">\[
+$$
+<p>Noting that $W_N^{2}=W_{N/2}$ or more generally
+$W_N^{2nk}=W_{N/2}^{nk}$ , then</p>
+$$
 \begin{aligned}
-X[k]&amp;= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot
-\sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
+X[k]&= \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk} + W_N^{k} \cdot \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}
 \end{aligned}
-\]</span></p>
-<p>Recognizing that the <span
-class="math inline">\(\frac{N}{2}\)</span>-point DFT of <span
-class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> are given by:</p>
-<p><span class="math display">\[X_{even}[k] =
-\text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n]
-W_{N/2}^{nk}\]</span></p>
-<p><span class="math display">\[X_{odd}[k] =
-\text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n]
-W_{N/2}^{nk}\]</span></p>
+$$
+<p>Recognizing that the $\frac{N}{2}$-point DFT of $x_{even}[n]$ and
+$x_{odd}[n]$ are given by:</p>
+$$X_{even}[k] = \text{DFT}_{\frac{N}{2}}\{x_{even}[n]\} = \sum_{n=0}^{N/2-1} x_{even}[n] W_{N/2}^{nk}$$
+$$X_{odd}[k] = \text{DFT}_{\frac{N}{2}}\{x_{odd}[n]\} = \sum_{n=0}^{N/2-1} x_{odd}[n] W_{N/2}^{nk}$$
 <p>we then obtain our core recursive equation:</p>
-<p><span class="math display">\[
+$$
 X[k] = X_{even}[k] + W_N^{k} \cdot X_{odd}[k]
     \label{eq:fft_int}
-\]</span></p>
-<p>Since <span class="math inline">\(x_{even}[n]\)</span> and <span
-class="math inline">\(x_{odd}[n]\)</span> are <span
-class="math inline">\(N/2\)</span>-point signals with <span
-class="math inline">\(0 \leq n \leq N/2-1\)</span>, their DFT are also
-only <span class="math inline">\(N/2\)</span>-point signals. However, we
-require <span class="math inline">\(0 \le k \le N-1\)</span>. We resolve
-this by noting their DFT coefficients are periodic with a period of
-<span class="math inline">\(\frac{N}{2}\)</span>:</p>
-<p><span class="math display">\[X_{even}[k] = X_{even}\left[k +
-\frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k +
-\frac{N}{2}\right]\]</span></p>
+$$
+<p>Since $x_{even}[n]$ and $x_{odd}[n]$ are $N/2$-point signals with
+$0 \leq n \leq N/2-1$, their DFT are also only $N/2$-point signals.
+However, we require $0 \le k \le N-1$. We resolve this by noting their
+DFT coefficients are periodic with a period of $\frac{N}{2}$:</p>
+$$X_{even}[k] = X_{even}\left[k + \frac{N}{2}\right], \quad X_{odd}[k] = X_{odd}\left[k + \frac{N}{2}\right]$$
 <p>This gives us</p>
-<p><span class="math display">\[
+$$
 X[k] =
     \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
-0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot
-X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
-\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] + W_N^{k} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
 \end{cases}
-\]</span></p>
-<p>Noting <span class="math inline">\(W_N^{k
-+\frac{N}{2}}=-W_{N}^{k}\)</span>, we write</p>
-<p><span class="math display">\[
+$$
+<p>Noting $W_N^{k +\frac{N}{2}}=-W_{N}^{k}$, we write</p>
+$$
 X[k] =
     \begin{cases}
-    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], &amp; \text{for } k =
-0,1,\ldots,\frac{N}{2}-1 \\
-    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot
-X_{odd}\left[k-\frac{N}{2}\right], &amp; \text{for } k =
-\frac{N}{2},\frac{N}{2}+1,\ldots,N-1
+    X_{even}[k] + W_N^{k} \cdot X_{odd}[k], & \text{for } k = 0,1,\ldots,\frac{N}{2}-1 \\
+    X_{even}\left[k-\frac{N}{2}\right] - W_N^{k-\frac{N}{2}} \cdot X_{odd}\left[k-\frac{N}{2}\right], & \text{for } k = \frac{N}{2},\frac{N}{2}+1,\ldots,N-1
 \end{cases}
-\]</span></p>
+$$
 <p>finally giving us</p>
-<p><span class="math display">\[
+$$
 \begin{aligned}
-X[k] &amp;= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0
-\leq k \leq \frac{N}{2} - 1 \\
-X[k + N/2] &amp;= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for
-} 0 \leq k \leq \frac{N}{2} - 1
+X[k] &= X_{even}[k] + W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1 \\
+X[k + N/2] &= X_{even}[k] - W_N^{k} \cdot X_{odd}[k] \quad \text{for } 0 \leq k \leq \frac{N}{2} - 1
 \label{eq:fft_final}
 \end{aligned}
-\]</span></p>
-<p>The multipliers <span class="math inline">\(W_N^k\)</span> are known
-as <em>twiddle factors</em>. The first computation with <span
-class="math inline">\(+W_N^k\)</span> give us the first half of the full
-DFT vector <span class="math inline">\(\mathbf{X}\)</span>, while the
-second computation with <span class="math inline">\(-W_N^k\)</span> give
-us the second half of <span
-class="math inline">\(\mathbf{X}\)</span>.</p>
+$$
+<p>The multipliers $W_N^k$ are known as <em>twiddle
+factors</em>. The first computation with $+W_N^k$ give us the first half of the full
+DFT vector $\mathbf{X}$, while the second computation with $-W_N^k$ give
+us the second half of $\mathbf{X}$.</p>
 <h2 id="complexity-1">Complexity</h2>
 
 <div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
@@ -487,34 +432,26 @@ class="math inline">\(\mathbf{X}\)</span>.</p>
 </span></span><span class="line"><span class="cl">         <span class="n">X_even</span> <span class="o">-</span> <span class="nb">factor</span> <span class="o">.*</span> <span class="n">X_odd</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">end</span></span></span></code></pre></div>
-<p>We can follow the above procedure to split an <span
-class="math inline">\(N\)</span>-point DFT into two <span
-class="math inline">\(\frac{N}{2}\)</span>-point DFT, giving us the
-above algorithim. Let <span class="math inline">\(A_c(N)\)</span> and
-<span class="math inline">\(M_c(N)\)</span> denote respectively the
-number of complex additions and multiplications for computing the DFT of
-an <span class="math inline">\(N\)</span>-point complex sequence <span
-class="math inline">\(x[n]\)</span>. Let <span
-class="math inline">\(N\)</span> be a power of 2, <span
-class="math inline">\(N = 2^k\)</span>. Then, we have <span
-class="math display">\[A_c(N) = 2 A_c(N/2) + N \quad , \quad M_c(N) = 2
-M_c(N/2) + \frac{N}{2} - 1\]</span></p>
-<p>as <span class="math inline">\(N\)</span> complex additions (addition
-of even and odd terms) and <span class="math inline">\(\frac{N}{2} -
-1\)</span> complex multiplications (<span class="math inline">\(W_N^{k}
-\cdot X_{odd}[k]\)</span>) are required to put the two <span
-class="math inline">\(N/2\)</span>-point DFTs together. Note that a
+<p>We can follow the above procedure to split an $N$-point DFT into two
+$\frac{N}{2}$-point DFT, giving us the above algorithim.
+Let $A_c(N)$ and $M_c(N)$ denote respectively the number of complex
+additions and multiplications for computing the DFT of an $N$-point
+complex sequence $x[n]$. Let $N$ be a power of 2, $N = 2^k$. Then, we
+have
+</p>
+$$A_c(N) = 2 A_c(N/2) + N \quad , \quad M_c(N) = 2 M_c(N/2) + \frac{N}{2} - 1$$
+<p>as $N$ complex additions (addition of even and odd terms) and
+$\frac{N}{2} - 1$ complex multiplications ($W_N^{k} \cdot X_{odd}[k]$)
+are required to put the two $N/2$-point DFTs together. Note that a
 2-point DFT is simply a sum and difference</p>
-<p><span class="math display">\[X[0] = x[0] + x[1] , \quad X[1] = x[0] -
-x[1]\]</span></p>
-<p>Hence, the starting conditions are <span class="math inline">\(A_c(2)
-= 2\)</span> and <span class="math inline">\(M_c(2) = 0\)</span>.
-Solving the recursive equation yields <span
-class="math display">\[A_c(N) = N \log_2 N  \quad , \quad M_c(N) =
-\frac{N}{2} \log_2 N - N + 1\]</span></p>
-<p>Our overall complexity is <span class="math inline">\(O(N\log
-N)\)</span>.</p>
-<hr />
+$$X[0] = x[0] + x[1] , \quad X[1] = x[0] - x[1]$$
+<p>Hence, the starting
+conditions are $A_c(2) = 2$ and $M_c(2) = 0$. Solving the recursive
+equation yields
+</p>
+$$A_c(N) = N \log_2 N  \quad , \quad M_c(N) = \frac{N}{2} \log_2 N - N + 1$$
+<p>Our overall complexity is $O(N\log N)$.</p>
+<hr>
 <h1 id="experiments">Experiments</h1>
 <h2 id="complexity-2">Complexity</h2>
 
@@ -565,25 +502,17 @@ N)\)</span>.</p>
 </tr>
 </tbody>
 </table>
-<p>To verify the theoretical complexity, we measured the execution time
-for computing the DFT over a range of signal lengths. For each signal
-length <span class="math inline">\(N\)</span>, <span
-class="math inline">\(N\)</span> samples were taken from a 5Hz sine
-wave, and the DFT/FFT computation time recorded. We compare our
-implementation of DFT <code>my-DFT</code>, our implementation of FFT as
-<code>my-FFT</code>, and the <code>MATLAB</code> FFT implementation as
-<code>MATLAB-FFT</code>. You can view the measured execution times above
-on a log-log plot. The FFT results clearly exhibit an <span
-class="math inline">\(O(N\log N)\)</span> scaling, while the DFT scales
-as <span class="math inline">\(O(N^2)\)</span>. These experimental
-results confirm the significant computational advantage of using the FFT
-for large-scale problems. We also note the much more efficient
-implementation of <code>MATLAB</code> FFT, which uses the
-<code>FFTW</code> <a href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a> package. The table above also shows
-the how well different models fit to data. Both FFT implementations fit
-well to <span class="math inline">\(O(N)\)</span> and <span
-class="math inline">\(O(N\log N)\)</span> models.</p>
+<p>To verify the theoretical complexity, we measured the execution time for
+computing the DFT over a range of signal lengths. For each signal length
+$N$, $N$ samples were taken from a 5Hz sine wave, and the DFT/FFT
+computation time recorded. We compare our implementation of DFT <code>my-DFT</code>, our implementation of FFT as <code>my-FFT</code>, and the <code>MATLAB</code> FFT implementation as <code>MATLAB-FFT</code>. You can view the measured execution times above on a
+log-log plot. The FFT results clearly exhibit an $O(N\log N)$ scaling,
+while the DFT scales as $O(N^2)$. These experimental results confirm the
+significant computational advantage of using the FFT for large-scale
+problems. We also note the much more efficient implementation of
+<code>MATLAB</code> FFT, which uses the <code>FFTW</code> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> package. The table above also shows the how
+well different models fit to data. Both FFT implementations fit well to
+$O(N)$ and $O(N\log N)$ models.</p>
 <h2 id="numerical-error">Numerical Error</h2>
 
 <div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
@@ -595,54 +524,41 @@ class="math inline">\(O(N\log N)\)</span> models.</p>
   
 </div>
 
-<p>We evaluate numerical accuracy of above algorithims by measuring
-reconstruction error of the reconstructed signal <span
-class="math inline">\(\text{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N}|x_i
-- \hat{x}_i|^2}\)</span> where <span class="math inline">\(x_i\)</span>
-is the original signal and <span
-class="math inline">\(\hat{x}_i\)</span> is the reconstructed signal
-(using the <code>MATLAB</code> Inverse DFT function) Despite all errors
-falling within the <span class="math inline">\(10^{-12}\)</span> range,
-indicating high overall accuracy, the custom DFT implementation exhibits
-exponentially growing error with increasing sequence length. In
-contrast, both FFT implementations maintain consistently minimal error
-across all tested sequence lengths. The superior numerical stability of
-FFT algorithms is possibly due to its lower operation count (lower
-algorithmic complexity). Floating-point rounding errors accumulate more
-significantly in DFT.</p>
-<hr />
+<p>We evaluate numerical accuracy of above algorithims by
+measuring reconstruction error of the reconstructed signal
+$\text{RMSE} = \sqrt{\frac{1}{N}\sum_{i=1}^{N}|x_i - \hat{x}_i|^2}$
+where $x_i$ is the original signal and $\hat{x}_i$ is the reconstructed
+signal (using the <code>MATLAB</code> Inverse DFT function) Despite all errors
+falling within the $10^{-12}$ range, indicating high overall accuracy,
+the custom DFT implementation exhibits exponentially growing error with
+increasing sequence length. In contrast, both FFT implementations
+maintain consistently minimal error across all tested sequence lengths.
+The superior numerical stability of FFT algorithms is possibly due to
+its lower operation count (lower algorithmic complexity). Floating-point
+rounding errors accumulate more significantly in DFT.</p>
+<hr>
 <h1 id="conclusion">Conclusion</h1>
-<p>We study the theoretical motivations behind FFT. We verify that the
-computational complexity of the direct DFT implementation scales as
-<span class="math inline">\(O(N^2)\)</span>, whereas our FFT
-implementation achieved the expected <span class="math inline">\(O(N
-\log N)\)</span> complexity, offering a significant improvement in
-efficiency.</p>
-<hr />
+<p>We study the theoretical motivations behind FFT. We verify that the computational
+complexity of the direct DFT implementation scales as $O(N^2)$, whereas
+our FFT implementation achieved the expected $O(N \log N)$ complexity,
+offering a significant improvement in efficiency.</p>
+<hr>
 <h1 id="references">References</h1>
-<p>Golub, G. H., &amp; Van Loan, C. F. (1996). <em>Matrix computations
-(3rd ed.)</em>. Johns Hopkins University Press.</p>
-<p>Strang, G. (2007). <em>Computational Science and Engineering</em>.
-Wellesley-Cambridge Press.
-https://epubs.siam.org/doi/abs/10.1137/1.9780961408817</p>
-<p>Ramalingam, C.S. <em>Introduction to the Fast-Fourier Transform (FFT)
-Algorithm</em>.
-https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf</p>
-<p><em>Fast Fourier Transform (FFT)</em>. NYU Engineering.
-https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
+<p>Golub, G. H., &amp; Van Loan, C. F. (1996). <em>Matrix computations (3rd ed.)</em>. Johns Hopkins University Press.</p>
+<p>Strang, G. (2007). <em>Computational Science and Engineering</em>. Wellesley-Cambridge Press. <a href="https://epubs.siam.org/doi/abs/10.1137/1.9780961408817">https://epubs.siam.org/doi/abs/10.1137/1.9780961408817</a></p>
+<p>Ramalingam, C.S. <em>Introduction to the Fast-Fourier Transform (FFT) Algorithm</em>. <a href="https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf">https://www.ee.iitm.ac.in/~csr/teaching/pg_dsp/lecnotes/fft.pdf</a></p>
+<p><em>Fast Fourier Transform (FFT)</em>. NYU Engineering. <a href="https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft">https://eeweb.engineering.nyu.edu/iselesni/EL713/zoom/fft</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn1"><p>This post was created for educational purposes, so much
-of the analysis is taken directly from the sources quoted in the
-references<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>This package is highly optimized to each machine and is
-written in low level C<a href="#fnref2" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+<li id="fn:1">
+<p>This post was created for educational purposes, so much of the analysis is taken directly from the sources quoted in the references&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>This package is highly optimized to each machine and is written in low level C&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</section>
+</div>
 
     </div>
 

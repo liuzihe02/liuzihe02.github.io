@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+
+    <link rel="canonical" href="https://liuzihe02.github.io/posts/r1/">
+
+    <title>Breaking Down R1 - Liu Zihe</title>
+    <meta name="description" content="In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction …">
+    <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
+
+    <meta name="author" content="Serghei Iakovlev">
+    <meta name="generator" content="Hugo 0.127.0">
+
+    
+    <link crossorigin="anonymous" href="/css/stylesheet.min.ddff76a17889e714853ced93d59096be3dca89927ec0e446c2d9c6b70da094a6.css" integrity="sha256-3f92oXiJ5xSFPO2T1ZCWvj3KiZJ+wORGwtnGtw2glKY=" rel="preload stylesheet" as="style">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/red_sinc.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+    <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
+<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/r1/">
+
+    <meta name="theme-color" content="#ffffff">
+    <script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]  
+        ], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+    
+    <meta property="og:title" content="Breaking Down R1 - Liu Zihe">
+    <meta property="og:description" content="In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction …">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://liuzihe02.github.io/posts/r1/">
+    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    <meta property="article:published_time" content="2025-02-17T17:05:08">
+    <meta property="article:modified_time" content="2025-02-17T17:05:08">
+    
+    <meta name="twitter:title" content="Breaking Down R1 - Liu Zihe">
+    <meta name="twitter:description" content="In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction …">
+    <meta name="twitter:site" content="@egreps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    
+
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://liuzihe02.github.io/posts/r1/"
+        },
+        "url": "https://liuzihe02.github.io/posts/r1/",
+        "headline": "Breaking Down R1 - Liu Zihe",
+        "description": "In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I\u0026amp;rsquo;ll provide a brief introduction …",
+        "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
+        "datePublished": "2025-02-17T17:05:08Z",
+        "dateModified": "2025-02-17T17:05:08Z",
+            "author": {
+                "@type": "Person",
+                "name": "Serghei Iakovlev",
+                "url": "https://twitter.com/egreps"
+            },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Serghei Iakovlev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "width": "96",
+                "height": "96"
+            }
+        }
+    }
+</script>
+
+
+
+    <script src="/js/common.js"></script>
+</head>
+
+    <body class="theme-base-">
+        <div id="top-of-site-anchor"></div>
+        
+            
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p></p>
+        </div>
+    
+        <nav class="sidebar-nav">
+                <a class="sidebar-nav-item"
+                    href="/"
+                    id="menu-main-home">Home</a>
+                <a class="sidebar-nav-item"
+                    href="/projects/"
+                    id="menu-main-projects">Projects</a>
+                <a class="sidebar-nav-item active"
+                    href="/posts/"
+                    id="menu-main-posts">Posts</a>
+                <a class="sidebar-nav-item"
+                    href="/dramas/"
+                    id="menu-main-dramas">Dramas</a>
+                <a class="sidebar-nav-item"
+                    href="/narratives/"
+                    id="menu-main-narratives">Narratives</a>
+                <a class="sidebar-nav-item"
+                    href="/poems/"
+                    id="menu-main-poems">Poems</a>
+                <a class="sidebar-nav-item"
+                    href="https://drive.google.com/drive/folders/1-LHa9BiT_OILTLwLgVtdNiAymSpbTTRt?usp=sharing"
+                    id="menu-main-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+            
+            
+        </nav>
+    
+        
+    <div class="sidebar-item">
+        <p>Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.</p>
+    </div>
+
+
+    </aside>
+        
+        <div class="wrap">
+            <header class="masthead">
+                <div class="container">
+                    <h3 class="masthead-title">
+                        <a href="/" title="Home">Liu Zihe</a>
+                        <br><small>Dancing in the Moonlight</small>
+                    </h3>
+                </div>
+            </header>
+
+            <main class="container content" id="main">
+                <article class="post" role="document">
+    <header>
+        <h1 class="text-title">
+            Breaking Down R1
+        </h1>
+        <p class="byline">
+            
+                
+
+
+Published on
+<time datetime="2025-02-17T17:05:08Z">
+    February 17, 2025
+</time>
+
+
+
+
+            
+        </p>
+    </header>
+
+    <div class="post-body">
+        <p>In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available <a href="https://drive.google.com/file/d/1l-rt-DZ6yW-HK405iEFd1RI9Iv-R99Ug/view?usp=sharing">here</a>.</p>
+<hr>
+<h1 id="preliminaries">Preliminaries</h1>
+<h2 id="transformers">Transformers</h2>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/transformer-overview.png"  width="700"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Illustration of autoregressive model of transformers, taken from the ARENA curriculum</figcaption>
+  
+</div>
+
+<p>Modern transformers are autoregressive models. They predict the next token (essetially a word) given all the tokens before it:</p>
+$$p(x_1,\ldots,x_N) = \prod_{n=1}^N p(x_n|x_1,\ldots,x_{n-1})$$
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/transformer-arch.png"  width="700"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Transformer architecture overview, taken from the ARENA curriculum</figcaption>
+  
+</div>
+
+<p>At a high level, input natural language are broken up into tokens, and converted to a numerical form. The output is then a probability distribution over the next possible token (from logits), and the next token is sampled from this distribution.</p>
+<hr>
+<h1 id="reinforcement-learning">Reinforcement Learning</h1>
+<p>We provide a brief overview of the RL setup.</p>
+<ul>
+<li>
+<p>An agent in <strong>state</strong> $s$ issues an <strong>action</strong> $a$ to the
+environment, and the environment replies with <strong>state, reward</strong> pairs
+$(s',r)$. We can then define a trajectory $\tau$ as a sequence of states
+and actions: $s_0, a_0, r_1, a_1, r_2, s_2, a_2, r_3...$</p>
+</li>
+<li>
+<p>The agent chooses actions using a policy $\pi$ which can either be a
+deterministic function $a=\pi(s)$ from states to actions, or more
+generally actions are sampled $a \sim \pi(\cdot|s)$</p>
+</li>
+<li>
+<p>The <strong>return</strong> at time $t$ is the sum of rewards obtained <em>after</em> time
+$t$ until the time $T$ when the terminal state is reached, discounted
+by how far into the future:</p>
+</li>
+</ul>
+$$G_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k+1} = r_{t+1} + \gamma r_{t+2} + \gamma^2 r_{t+3} ...$$
+<ul>
+<li>
+<p>The <strong>state value function</strong> $V_\pi(s)$ is the expected return, if you
+start in state $s$ and always act according to policy $\pi$:</p>
+$$V_{\pi}(s) = \mathbb{E}_{\pi}\left[G_t| s_t = s\right]$$
+</li>
+</ul>
+<p>We deal with these core quantities:</p>
+<ul>
+<li>
+<p>The <strong>action value function</strong> is the expected return if you start in
+state $s$, take an arbitrary action $a$ (which may not have come from
+the policy), and then afterwards forever act according to policy
+$\pi$:
+</p>
+$$Q_\pi(s, a) = \mathbb{E}_{\pi} \left[G_t| s_t = s, a_t = a\right]$$
+</li>
+<li>
+<p>The <strong>advantage function</strong> describes how much better it is to take a
+specific action $a$ in state $s$, over randomly selecting an action
+according to $\pi(\cdot|s)$, assuming you act according to $\pi$
+forever after:</p>
+$$A_\pi(s, a) = Q_\pi(s, a) - V_\pi(s)$$
+</li>
+</ul>
+<p><strong>Trust Region Policy Optimization (TRPO)</strong></p>
+<p>Let $\pi_\theta$ denote a policy with parameters $\theta$. We aim to
+maximize the expected return $J$ of policy $\pi_\theta$, where we take
+expectation over all possible trajectories $\tau$ generated by following
+policy $\pi_\theta$</p>
+$$J(\pi_\theta) = \underset{\tau \sim \pi_\theta}{\mathbb{E}}[G(\tau)]$$
+<p>To achieve the optimum $\pi_\theta$ that maximizes J, we can iteratively
+update $\pi_{\theta_{k}}$ according to:</p>
+$$\theta_{k+1} = \arg \max_\theta \mathcal{L}(\theta_k, \theta) = \arg \max_\theta \underset{s,a\sim\pi_{\theta_k}}{\mathbb{E}} \left[L(s, a, \theta_k, \theta)\right], \quad \text{s.t. } \bar{D}_{KL}(\theta\|\theta_k) \leq \delta$$
+<p>where $\mathcal{L}(\theta_k, \theta)$ is the <em>surrogate advantage</em>, a
+measure of how policy $\pi_\theta$ performs relative to the old policy
+$\pi_{\theta_k}$ using data from the old policy:</p>
+$$L(s, a, \theta_k, \theta) = \frac{\pi_\theta(a|s)}{\pi_{\theta_k}(a|s)} A_{\pi_{\theta_k}}(s,a)$$
+<p>TRPO updates policies by taking the largest step possible to improve
+performance, while satisfying a special constraint on how close the new
+and old policies are allowed to be.</p>
+<p><strong>Proximal Policy Optimization (PPO)</strong></p>
+<p>Proximal Policy Optimization updates
+policies via:</p>
+$$\theta_{k+1} = \arg \max_\theta \mathcal{L}(\theta_k, \theta) = \arg \max_\theta \underset{s,a\sim\pi_{\theta_k}}{\mathbb{E}} \left[L(s, a, \theta_k, \theta)\right],$$
+<p>typically taking multiple steps of SGD to maximize the objective. Here
+$L$ is given by:</p>
+$$L(s, a, \theta_k, \theta) = \min\Bigg(\frac{\pi_\theta(a|s)}{\pi_{\theta_k}(a|s)}A_{\pi_{\theta_k}}(s,a), \text{clip}\left(\frac{\pi_\theta(a|s)}{\pi_{\theta_k}(a|s)}, 1-\epsilon, 1+\epsilon\right)A_{\pi_{\theta_k}}(s,a)\Bigg)$$
+<p>PPO-Clip doesn&rsquo;t have a KL-divergence term in the objective and doesn&rsquo;t
+have a constraint at all. Instead relies on specialized clipping in the
+objective function to remove incentives for the new policy to get far
+from the old policy.</p>
+<p><strong>Generalized Advantage Estimation (GAE)</strong>
+is used in PPO to estimate the advantage function:</p>
+$$A_t = \sum_{l=0}^{\infty} (\gamma \lambda)^l \delta_{t+l} \\
+= \delta_t + (\gamma \lambda) \delta_{t+1} + (\gamma \lambda)^2 \delta_{t+2} + \dots$$
+<p>where:</p>
+<ul>
+<li>
+<p>$\delta_t = r_t + \gamma V(s_{t+1}) - V(s_t)$ (TD error)</p>
+<ul>
+<li>the reward $r_t$ is usually given by a trained (neural) reward model</li>
+</ul>
+</li>
+<li>
+<p>$\gamma$ is the discount factor</p>
+</li>
+<li>
+<p>$\lambda$ is the GAE parameter (tradeoff between bias and variance)</p>
+</li>
+<li>
+<p>$V(s)$ is the value function estimate, from value network</p>
+<ul>
+<li>Often a value network $V_\psi$ needs to be trained alongside the
+policy model $\pi_\theta$ to estimate the value, often as big as the
+policy model itself</li>
+</ul>
+</li>
+</ul>
+<h2 id="general-rl-training-setup">General RL Training Setup</h2>
+<p><strong>Objective:</strong>
+</p>
+$$J(\pi_\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^{T} \gamma^t r_t\right],$$
+<p>
+where $\tau = \{s_0, a_0, r_1, s_1, a_1, \dots, s_T\}$ is a trajectory.
+For LLMs, <em>actions</em> $a_t$ here are <em>tokens</em>!</p>
+<p><strong>Policy Gradient:</strong>
+</p>
+$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, Q^{\pi_\theta}(s,a)\right],$$
+<p>
+or equivalently, using the advantage function $A^{\pi_\theta}(s,a)$:
+</p>
+$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, A^{\pi_\theta}(s,a)\right].$$
+<p><strong>Trajectory Collection:</strong> LLM interacts with the environment (reward
+model) to sample trajectories. For each timestep:
+</p>
+$$s_t \xrightarrow{\pi_\theta} a_t \rightarrow r_{t+1},\, s_{t+1}.$$
+<p><strong>Return and Advantage Calculation:</strong>
+</p>
+$$G_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k+1}, \quad
+    A(s_t,a_t) = Q^{\pi_\theta}(s_t,a_t) - V^{\pi_\theta}(s_t).$$
+<p>
+Generalized Advantage Estimation (GAE) are used to compute $A(s_t,a_t)$
+practically</p>
+<p><strong>Policy Update:</strong>
+</p>
+$$\theta_{k+1} = \theta_k + \alpha\, \nabla_\theta J(\pi_\theta),$$
+<p>
+Using the computed advantages, update the policy parameters and value
+network by maximizing a surrogate objective (e.g., the PPO objective) to
+favor actions with higher expected returns. Repeat until agent&rsquo;s
+performance converges.</p>
+<h1 id="r1-zero">R1-Zero</h1>
+<h2 id="group-relative-policy-optimization-grpo">Group Relative Policy Optimization (GRPO)</h2>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/figures/grpo.png"  width="700"  
+  style="display: block; margin: 0 auto;">
+  
+  
+</div>
+
+<p>DeepSeek uses GRPO (created in-house) which foregoes the value network
+and estimates the advantages directly from group rewards instead.</p>
+<p>For each question $q$, GRPO samples a group of outputs $\{o_i\}_{i=1}^G$
+from the old policy $\pi_{\theta_{\text{old}}}$ and then optimizes the
+policy model $\pi_\theta$ by maximizing:</p>
+$$\begin{aligned}
+\mathcal{J}_{\text{GRPO}}(\theta) &= \mathbb{E}[q \sim P(Q), \{o_i\}_{i=1}^G \sim \pi_{\theta_{\text{old}}}(Q|q)] \\
+&\quad \cdot \frac{1}{G}\sum_{i=1}^G\left(\min\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}A_i, \text{clip}\left(\frac{\pi_\theta(o_i|q)}{\pi_{\theta_{\text{old}}}(o_i|q)}, 1-\epsilon, 1+\epsilon\right)A_i\right) - \beta\mathbb{D}_{KL}(\pi_\theta\|\pi_{\text{ref}})\right)
+\end{aligned}$$
+$$\mathbb{D}_{KL}(\pi_\theta\|\pi_{\text{ref}}) = \frac{\pi_{\text{ref}}(o_i|q)}{\pi_\theta(o_i|q)} - \log\frac{\pi_{\text{ref}}(o_i|q)}{\pi_\theta(o_i|q)} - 1$$
+<p>where $\epsilon$ and $\beta$ are hyper-parameters, and $A_i$ is the
+advantage <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p><strong>GRPO Advantages</strong></p>
+<p>Advantages $A_i$ are computed using group rewards
+$\{r_1,r_2,\ldots,r_G\}$:</p>
+$$A_i = \frac{r_i - \text{mean}(\{r_1,r_2,\ldots,r_G\})}{\text{std}(\{r_1,r_2,\ldots,r_G\})} \tag{3}$$
+<p>As the value network is typically another model of comparable size as
+the policy model, it brings a substantial memory and computational
+burden. GRPO eliminates value network completely, saving enourmous amounts of compute!</p>
+<p><strong>Reward Modelling</strong></p>
+<p>R1-Zero uses a rule-based reward system consisting of:</p>
+<ul>
+<li>
+<p><strong>Accuracy rewards:</strong> The accuracy reward model evaluates whether the
+response is correct.</p>
+<ul>
+<li>
+<p>For math problems with deterministic results, can easily check if
+right or wrong. Provider higher reward if right.</p>
+</li>
+<li>
+<p>For LeetCode problems, a compiler can be used to generate feedback
+based on predefined test cases</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Format rewards:</strong> Enforces the model to put its thinking process
+between <code>&lt;think&gt;</code> and <code>&lt;/think&gt;</code> tags.</p>
+</li>
+</ul>
+<p>Usually for LLMs, a neural reward model (neural network used to estimate
+rewards) is used to provide rewards, as human preferences or
+requirements are difficult to define in a rules-based way. However, R1
+does not use any neural reward model:</p>
+<ul>
+<li>
+<p>Neural reward model may suffer from reward hacking</p>
+</li>
+<li>
+<p>Retraining the reward model needs additional training resources and it
+complicates the whole training pipeline</p>
+</li>
+</ul>
+<p><strong>Performance</strong></p>
+<p><img alt="image" src="/figures/aime.png">{width=&ldquo;80%&rdquo;}</p>
+<ul>
+<li>
+<p>No Supervised-Fine-Tuning involved in R1-Zero</p>
+</li>
+<li>
+<p>Majority voting bring performance on AIME benchmark from 71% to 86%
+:::</p>
+</li>
+</ul>
+<p>::: frame
+Self-Evolution <img alt="image" src="/figures/perf.png">{width=&ldquo;80%&rdquo;}</p>
+<ul>
+<li>
+<p>R1-Zero naturally acquires the ability to solve increasingly complex
+reasoning tasks by leveraging extended test-time computation
+(increased Chain-Of-Thought)</p>
+</li>
+<li>
+<p>Behaviours like backtracking and reflection emerge
+:::</p>
+</li>
+</ul>
+<p>::: frame
+Problems</p>
+<ul>
+<li>
+<p>Poor Readability of Chain-Of-Thought</p>
+</li>
+<li>
+<p>Language Mixing</p>
+</li>
+</ul>
+<p>Probably some form of reward over-optimization, more efficient to reason
+in its own language and achieve higher reward
+:::</p>
+<h1 id="r1-training-pipeline">R1 Training Pipeline</h1>
+<h2 id="phase-1-cold-start">Phase 1: Cold Start</h2>
+<p>::: frame
+Phase 1: Cold Start
+<img alt="image" src="/figures/phase1.png">{width=&ldquo;60%&rdquo;}
+:::</p>
+<p>::: frame
+Phase 1: Cold Start</p>
+<ul>
+<li>
+<p>Construct and collect small amounts (thousands) of long CoT data to
+fine-tune V3</p>
+<ul>
+<li>
+<p>Using few-shot prompting on V3 with long CoT examples</p>
+</li>
+<li>
+<p>Direct prompting on V3 for detailed answers with reflection</p>
+</li>
+<li>
+<p>Gathering DeepSeek-R1-Zero outputs with human post-processing</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Key advantages:</p>
+<ul>
+<li>
+<p><strong>Readability:</strong> R1-Zero has unreadable responses. We define output
+format as
+<code>|special_token|&lt;reasoning_process&gt;|special_token|&lt;summary&gt;</code> so
+reasoning process (CoT) and summary of reasoning provided</p>
+</li>
+<li>
+<p><strong>Potential:</strong> Carefully designed patterns with human priors show
+better performance vs R1-Zero
+:::</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="phase-2-reasoning-reinforcement-learning">Phase 2: Reasoning Reinforcement Learning</h2>
+<p>::: frame
+Phase 2: Reasoning Reinforcement Learning
+<img alt="image" src="/figures/phase2.png">{width=&ldquo;60%&rdquo;}
+:::</p>
+<p>::: frame
+Phase 2: Reasoning Reinforcement Learning After cold start fine-tuning,
+apply large-scale RL training similar to DeepSeek-R1-Zero:</p>
+<ul>
+<li>
+<p>Focus on reasoning-intensive tasks:</p>
+<ul>
+<li>
+<p>Coding, mathematics, science, logic reasoning</p>
+</li>
+<li>
+<p>Well-defined problems with clear solutions</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Language Consistency:</p>
+<ul>
+<li>
+<p>CoT exhibits language mixing in multi-language prompts</p>
+</li>
+<li>
+<p>Introduce language consistency reward, measured as proportion of
+target language words in CoT</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Final reward function combines reasoning task accuracy, language
+consistency reward, and formatting reward to train until convergence.
+:::</p>
+<h2 id="phase-3-rejection-sampling-and-supervised-fine-tuning">Phase 3: Rejection Sampling and Supervised Fine-Tuning</h2>
+<p>::: frame
+Phase 3: Rejection Sampling and Supervised Fine-Tuning
+<img alt="image" src="/figures/phase3.png">{width=&ldquo;60%&rdquo;}
+:::</p>
+<p>:::::: frame
+Phase 3: Rejection Sampling and Supervised Fine-Tuning</p>
+<p>After RL convergence, collect SFT data from checkpoint for further
+training. Include</p>
+<p>::::: columns
+::: column
+0.5 <strong>Reasoning Data (600k samples)</strong></p>
+<ul>
+<li>
+<p>Rejection sampling from RL checkpoint</p>
+</li>
+<li>
+<p>Expanded dataset includes:</p>
+<ul>
+<li>
+<p>Rule-based rewards</p>
+</li>
+<li>
+<p>Generative rewards via DeepSeek-V3 as LLM-Judge</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Quality filters:</p>
+<ul>
+<li>
+<p>Remove mixed languages</p>
+</li>
+<li>
+<p>Filter long paragraphs</p>
+</li>
+<li>
+<p>Remove chaotic code blocks
+:::</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>::: column
+0.5 <strong>Non-Reasoning Data (200k samples)</strong></p>
+<ul>
+<li>
+<p>Types:</p>
+<ul>
+<li>
+<p>Writing</p>
+</li>
+<li>
+<p>Factual QA</p>
+</li>
+<li>
+<p>Self-cognition</p>
+</li>
+<li>
+<p>Translation</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Reuse SFT data for DeepSeek-V3
+:::
+:::::</p>
+</li>
+</ul>
+<p>Final fine-tuning on <strong>DeepSeek-V3-Base</strong>: 2 epochs on combined 800k
+samples
+::::::</p>
+<h2 id="phase-4-diverse-reinforcement-learning-phase">Phase 4: Diverse Reinforcement Learning Phase</h2>
+<p>::: frame
+Phase 4: Diverse Reinforcement Learning Phase
+<img alt="image" src="/figures/phase4.png">{width=&ldquo;60%&rdquo;}
+:::</p>
+<p>:::::: frame
+Phase 4: Diverse Reinforcement Learning Phase</p>
+<p>Secondary RL stage to align with human preferences while improving,
+helpfulnes, harmlessness, and reasoning:</p>
+<p>::::: columns
+::: column
+0.5 <strong>Training Approach</strong></p>
+<ul>
+<li>
+<p>Reasoning data:</p>
+<ul>
+<li>
+<p>Same approach as DeepSeek-R1-Zero</p>
+</li>
+<li>
+<p>Rule-based rewards on Math, code, logical reasoning</p>
+</li>
+</ul>
+</li>
+<li>
+<p>General data:</p>
+<ul>
+<li>
+<p>Reward model as in DeepSeek V3</p>
+</li>
+<li>
+<p>Use preference pairs
+:::</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>::: column
+0.5 <strong>HHH Criteria</strong></p>
+<ul>
+<li>
+<p>Helpfulness:</p>
+<ul>
+<li>
+<p>Focus on final summary in summary tag is useful and relevance</p>
+</li>
+<li>
+<p>Preserves reasoning process in the reasoning tag</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Harmlessness:</p>
+<ul>
+<li>Evaluate full response for potential biases or hamful content
+:::
+:::::
+::::::</li>
+</ul>
+</li>
+</ul>
+<h1 id="r1-engineering-unlocks">R1 Engineering Unlocks</h1>
+<p>::: frame
+Engineering Unlocks</p>
+<p>Insane software and hardware optimizations</p>
+<ul>
+<li>
+<p>Multi-Head Latent Attention (for efficient inference)</p>
+<ul>
+<li>Low-rank join compression for <strong>K,Q,V</strong> matrices to reduce key-value
+cache memory usage</li>
+</ul>
+</li>
+<li>
+<p>DeepSeekMoE with Auxiliary-Loss-Free Load Balancing (efficient
+training)</p>
+<ul>
+<li>671B parameters, but only which 37B are activated for each token</li>
+</ul>
+</li>
+<li>
+<p>Multi-Token Prediction Objective
+:::</p>
+</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Instead of adding KL penalty in the reward like in PPO, GRPO
+regularizes by directly adding the KL divergence between the trained
+policy and the reference policy to the loss, avoiding complicating
+the calculation of advantage $A$&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+        
+
+<div class="tags-wrapper">
+    <ul class="post-tags">
+        
+    </ul>
+</div>
+
+    
+
+    
+</article>
+
+            </main>
+        </div>
+
+        <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+        <a href="#top-of-site" class="top-of-site-link" data-visible="false">
+            <span class="screen-reader-text" aria-label="Back to top of the page">
+                Back to top
+            </span>
+            <svg width="32" height="32" viewBox="0 0 100 100">
+                <path fill="white" d="m50 0c-13.262 0-25.98 5.2695-35.355 14.645s-14.645 22.094-14.645 35.355 5.2695 25.98 14.645 35.355 22.094 14.645 35.355 14.645 25.98-5.2695 35.355-14.645 14.645-22.094 14.645-35.355-5.2695-25.98-14.645-35.355-22.094-14.645-35.355-14.645zm20.832 62.5-20.832-22.457-20.625 22.457c-1.207 0.74219-2.7656 0.57812-3.7891-0.39844-1.0273-0.98047-1.2695-2.5273-0.58594-3.7695l22.918-25c0.60156-0.61328 1.4297-0.96094 2.2891-0.96094 0.86328 0 1.6914 0.34766 2.293 0.96094l22.918 25c0.88672 1.2891 0.6875 3.0352-0.47266 4.0898-1.1562 1.0508-2.9141 1.0859-4.1133 0.078125z"></path>
+            </svg>
+        </a>
+    </body>
+</html>

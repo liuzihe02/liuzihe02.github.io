@@ -8,7 +8,7 @@ We analyze [^1] the theoretical properties of both the _Discrete Fourier
 Transform_ (DFT) and the optimized _Fast Fourier Transform_ (FFT), and
 estimate their algorithmic complexity.
 
-All code available at <https://github.com/liuzihe02/dft-fft.git>
+All code available on [Github](https://github.com/liuzihe02/dft-fft.git). Slides available [here](https://drive.google.com/file/d/1l2QpD1UfyVwv4J3sF3TbtCOC0KYjQuIB/view?usp=sharing).
 
 ---
 

@@ -41,6 +41,8 @@ Only use the `content/` folder to add new content
 
 > Hugo expects media to be referenced directly from the `static/` folder
 
+> You can set the `draft:true` in the frontmatter to hide a page
+
 ### Modifying Styles
 
 > **Important:** Do not modify the `public` folder or `resources` folder. You will see that alot of `scss` files are stored in the `resources/_gen/assets/` directory. Hugo will modify this stuff automatically whenever you build your project, so any modifications you make will be lost.
@@ -107,7 +109,7 @@ a=2
 ```
 ````
 
-This allows the Hugo to directly process the syntax and bypass the markdown processor Pandoc.
+This allows the Hugo to directly process the syntax and bypass the markdown processor.
 
 ### Overleaf Documents
 
@@ -148,7 +150,7 @@ There might be some issues with the author. I reccomended removing the author fi
 
 #### Math Content
 
-See [here](https://gohugo.io/content-management/mathematics/) on how to render `$` and `$$` in Hugo markdown, with **Goldmark** markdown handler. However, Goldmark, despite being much faster, has limited math support hence we shall be using Pandoc instead as our default markdown handler.
+See [here](https://gohugo.io/content-management/mathematics/) on how to render `$` and `$$` in Hugo markdown, with **Goldmark** markdown handler.
 
 We have used the `$` delimiter for inline equations. However, to avoid confusion, to use the regular `$` sign, we will need to add a double escape `A \\$5 bill is a awesome`
 

@@ -197,23 +197,23 @@ refLinksErrorLevel = 'WARNING'
   #   pageRef = '/credits'
   #   weight = 3
 
+  # [[menus.main]]
+  #   identifier = 'documentation'
+  #   name = 'Documentation'
+  #   pageRef = '/documentation'
+  #   weight = 4
+
   [[menus.main]]
-    identifier = 'documentation'
-    name = 'Documentation'
-    pageRef = '/documentation'
-    weight = 4
+    identifier = 'dramas'
+    name = 'Dramas'
+    pageRef = '/dramas'
+    weight = 5
 
-  # [[menus.main]]
-  #   identifier = 'dramas'
-  #   name = 'Dramas'
-  #   pageRef = '/dramas'
-  #   weight = 5
-
-  # [[menus.main]]
-  #   identifier = 'narratives'
-  #   name = 'Narratives'
-  #   pageRef = '/narratives'
-  #   weight = 5
+  [[menus.main]]
+    identifier = 'narratives'
+    name = 'Narratives'
+    pageRef = '/narratives'
+    weight = 5
 
   [[menus.main]]
     identifier = 'poems'
@@ -350,30 +350,31 @@ refLinksErrorLevel = 'WARNING'
 # For more see https://gohugo.io/getting-started/configuration-markup/
 [markup]
 
-  # # settings if you want to use thge goldmark md handler
-  # defaultMarkdownHandler = 'goldmark'
+  # settings if you want to use thge goldmark md handler
+  defaultMarkdownHandler = 'goldmark'
+  [markup.highlight]
+    # false due to generated Syntax Highlighter CSS
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        # Enable custom attribute support for blocks
+        block = true
+
+    #we add this for math rendering
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        #use this to display inline
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['$', '$']]
+
+  # # settings for if you want to use pandoc instead of goldmark
+  # defaultMarkdownHandler = "pandoc"
+  # # Keep your existing highlight settings
   # [markup.highlight]
-  #   # false due to generated Syntax Highlighter CSS
-  #   noClasses = false
-  # [markup.goldmark]
-  #   [markup.goldmark.parser]
-  #     [markup.goldmark.parser.attribute]
-  #       # Enable custom attribute support for blocks
-  #       block = true
-
-  #   #we add this for math rendering
-  #   [markup.goldmark.extensions]
-  #     [markup.goldmark.extensions.passthrough]
-  #       enable = true
-  #       #use this to display inline
-  #       [markup.goldmark.extensions.passthrough.delimiters]
-  #         block = [['\[', '\]'], ['$$', '$$']]
-  #         inline = [['$', '$']]
-
-    defaultMarkdownHandler = "pandoc"
-    # Keep your existing highlight settings
-    [markup.highlight]
-      noClasses = false      # Use CSS classes instead of inline styles
+  #   noClasses = false      # Use CSS classes instead of inline styles
 
 # If enableGitInfo is true, it will override any lastmod dates in our
 # front matter. We should at least allow ourselves to manually override
