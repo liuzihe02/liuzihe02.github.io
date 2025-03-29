@@ -68,7 +68,7 @@ where $\mathbf{W}$ is the DFT matrix.
 
 ## Complexity
 
-{{< img src="/figures/DFT-pseudo.png" caption="Pseudocode for DFT" width="500">}}
+{{< img src="/dft-fft/figures/DFT-pseudo.png" caption="Pseudocode for DFT" width="500">}}
 
 Direct implementation in `MATLAB`:
 
@@ -254,7 +254,7 @@ us the second half of $\mathbf{X}$.
 
 ## Complexity
 
-{{< img src="/figures/FFT-pseudo.png" caption="Pseudocode for FFT" width="500">}}
+{{< img src="/dft-fft/figures/FFT-pseudo.png" caption="Pseudocode for FFT" width="500">}}
 
 `MATLAB` code for FFT:
 
@@ -323,7 +323,7 @@ Our overall complexity is $O(N\log N)$.
 
 ## Complexity
 
-{{< img src="/figures/complex.jpg" caption="Execution time versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
+{{< img src="/dft-fft/figures/complex.jpg" caption="Execution time versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
 
 | Algorithm  | O(N)   | O(N²)  | O(N³)  | O(log N) | O(N log N) |
 | ---------- | ------ | ------ | ------ | -------- | ---------- |
@@ -345,7 +345,7 @@ $O(N)$ and $O(N\log N)$ models.
 
 ## Numerical Error
 
-{{< img src="/figures/recon.jpg" caption="Reconstruction error versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
+{{< img src="/dft-fft/figures/recon.jpg" caption="Reconstruction error versus signal length $N$ for various implementations of DFT and FFT" width="500">}}
 
 We evaluate numerical accuracy of above algorithims by
 measuring reconstruction error of the reconstructed signal

@@ -27,6 +27,13 @@
       "title": "Breaking Down R1",
       "summary": "In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I\u0026rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I\u0026rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.\nPreliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.",
       "date_published": "2025-02-17T17:05:08Z"
+    },
+    {
+      "id": "d202cb86-f47f-5559-5947-0043b755b246",
+      "url": "https://liuzihe02.github.io/posts/mcts/?utm_source=json_feed",
+      "title": "Breaking Down Monte Carlo Tree Search",
+      "summary": "Theory We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8\u0026rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.\nGame Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$.",
+      "date_published": "2024-12-07T17:05:08Z"
     }
   ]
 }

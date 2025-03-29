@@ -135,7 +135,7 @@ cd dft-fft
 pandoc main.tex -o - \
   --from=latex \
   --to=markdown \
-  --extract-media=../../static \
+  --extract-media=../../static/dft-fft \
   --standalone \
   --mathjax | \
   sed 's|../../static||g' \
@@ -146,7 +146,7 @@ There might be some issues with the author. I reccomended removing the author fi
 
 > Note that converting to references here also causes some issues, so we have to **manually handle** the references and bibliography section :( LaTEX has rich referencing system that md doesnt support well.
 
-> In the Overleaf package, please ensure all the images are in the folder `figures`, for standardization purpose. Pandoc will continue appending images to the `figures` folder instead of overriding it. I don't want multiple folders which serve the same purpose but have different naming.
+> In the Overleaf package, please ensure all the images are in the folder `figures`, for standardization purpose. During pandoc conversion, we'll extract the `figures/` folder into its own project folder, so multiple projects with multiple `figures/` folders. In the markdown documents, put the path after `/static`
 
 #### Math Content
 

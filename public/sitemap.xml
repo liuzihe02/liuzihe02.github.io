@@ -30,6 +30,13 @@
     </url>
     
     <url>
+        <loc>https://liuzihe02.github.io/posts/mcts/</loc>
+        <lastmod>2024-12-07T17:05:08Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
         <loc>https://liuzihe02.github.io/dramas/raisin/</loc>
         <lastmod>2022-02-03T14:56:58+02:00</lastmod>
         <changefreq>monthly</changefreq>

@@ -26,6 +26,13 @@
       <description>In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&amp;rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.&#xA;Preliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.</description>
     </item>
     <item>
+      <title>Breaking Down Monte Carlo Tree Search</title>
+      <link>https://liuzihe02.github.io/posts/mcts/</link>
+      <pubDate>Sat, 07 Dec 2024 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <guid>https://liuzihe02.github.io/posts/mcts/</guid>
+      <description>Theory We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&amp;rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.&#xA;Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s&#39;$ with the transition probability $p_a(s&#39;|s)$.</description>
+    </item>
+    <item>
       <title>A Raisin in the Sun</title>
       <link>https://liuzihe02.github.io/dramas/raisin/</link>
       <pubDate>Thu, 03 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>

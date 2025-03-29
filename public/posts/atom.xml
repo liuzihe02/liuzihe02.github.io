@@ -49,4 +49,20 @@ $$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT}
         <summary type="html"><![CDATA[In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.
 Preliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.]]></summary>
     </entry>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/mcts/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[Breaking Down Monte Carlo Tree Search]]></title>
+        
+        
+        
+        <published>2024-12-07T17:05:08Z</published>
+        <updated>2024-12-07T17:05:08Z</updated>
+        <id>urn:uuid:d202cb86-f47f-5559-5947-0043b755b246</id>
+        
+        <summary type="html"><![CDATA[Theory We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.
+Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$.]]></summary>
+    </entry>
 </feed>
