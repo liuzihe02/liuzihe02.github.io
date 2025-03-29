@@ -114,7 +114,7 @@
       <link>https://liuzihe02.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/projects/</guid>
-      <description>Reinforcement Learning for Spacecraft Control | GitHub | Slides Used Proximal Policy Optimization (PPO) to train a Mars lander, by controlling throttle action for descent and hovering. Integrated C++ simulation engine and OpenGL GUI with Python training scripts. Won 2nd place at the Cambridge Engineering Mars Lander Competition 2024&#xA;Fast Fourier Transform | GitHub | Post Analyzed the theoretical properties of both the Discrete Fourier Transform and the optimized Fast Fourier Transform in MATLAB, and measure their algorithmic complexity.</description>
+      <description>Fun stuff I&amp;rsquo;ve worked on, mostly on RL and robotics.&#xA;Reinforcement Learning for Spacecraft Control | GitHub | Slides Used Proximal Policy Optimization (PPO) to train a Mars lander, by controlling throttle action for descent and hovering. Integrated C++ simulation engine and OpenGL GUI with Python training scripts. Won 2nd place at the Cambridge Engineering Mars Lander Competition 2024&#xA;Fast Fourier Transform | GitHub | Post Analyzed the theoretical properties of both the Discrete Fourier Transform and the optimized Fast Fourier Transform in MATLAB, and measure their algorithmic complexity.</description>
     </item>
     <item>
       <title>Search</title>

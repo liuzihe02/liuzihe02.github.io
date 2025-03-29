@@ -18,29 +18,14 @@
       "url": "/"
     } ,
     {
-      "name": "Projects",
-      "short_name" : "projects",
-      "url": "/projects/"
-    } ,
-    {
       "name": "Posts",
       "short_name" : "posts",
       "url": "/posts/"
     } ,
     {
-      "name": "Dramas",
-      "short_name" : "dramas",
-      "url": "/dramas/"
-    } ,
-    {
-      "name": "Narratives",
-      "short_name" : "narratives",
-      "url": "/narratives/"
-    } ,
-    {
-      "name": "Poems",
-      "short_name" : "poems",
-      "url": "/poems/"
+      "name": "Projects",
+      "short_name" : "projects",
+      "url": "/projects/"
     } ,
     {
       "name": "Resume",

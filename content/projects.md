@@ -2,6 +2,8 @@
 title: Projects
 ---
 
+Fun stuff I've worked on, mostly on RL and robotics.
+
 ---
 
 ### Reinforcement Learning for Spacecraft Control | {{< link src="https://github.com/liuzihe02/lander" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="https://docs.google.com/presentation/d/1LLjk_Qy05jH7eOq6uAXz9vVR3R47hzQrIdak5wAA7DI/edit?usp=sharing" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Slides{{< /link >}}

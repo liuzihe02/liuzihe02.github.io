@@ -171,15 +171,15 @@ refLinksErrorLevel = 'WARNING'
     weight = 1          # order of the menu item
 
   [[menus.main]]
-    identifier = 'projects'
-    name = 'Projects'
-    pageRef = '/projects'
-    weight = 2
-
-  [[menus.main]]
     identifier = 'posts'
     name = 'Posts'
     pageRef = '/posts'
+    weight = 2
+
+  [[menus.main]]
+    identifier = 'projects'
+    name = 'Projects'
+    pageRef = '/projects'
     weight = 3
   
   # [[menus.main]]
@@ -203,23 +203,23 @@ refLinksErrorLevel = 'WARNING'
   #   pageRef = '/documentation'
   #   weight = 4
 
-  [[menus.main]]
-    identifier = 'dramas'
-    name = 'Dramas'
-    pageRef = '/dramas'
-    weight = 5
+  # [[menus.main]]
+  #   identifier = 'dramas'
+  #   name = 'Dramas'
+  #   pageRef = '/dramas'
+  #   weight = 5
 
-  [[menus.main]]
-    identifier = 'narratives'
-    name = 'Narratives'
-    pageRef = '/narratives'
-    weight = 5
+  # [[menus.main]]
+  #   identifier = 'narratives'
+  #   name = 'Narratives'
+  #   pageRef = '/narratives'
+  #   weight = 5
 
-  [[menus.main]]
-    identifier = 'poems'
-    name = 'Poems'
-    pageRef = '/poems'
-    weight = 5
+  # [[menus.main]]
+  #   identifier = 'poems'
+  #   name = 'Poems'
+  #   pageRef = '/poems'
+  #   weight = 5
 
   # [[menus.main]]
   #   identifier = 'contact'
@@ -360,6 +360,11 @@ refLinksErrorLevel = 'WARNING'
       [markup.goldmark.parser.attribute]
         # Enable custom attribute support for blocks
         block = true
+
+      # this allows custom html, but i really dont like it - doesnt feel safe or very neccessary
+      # [markup.goldmark.renderer]
+      #   #enable custom html
+      #   unsafe = true
 
     #we add this for math rendering
     [markup.goldmark.extensions]
