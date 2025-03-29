@@ -3,11 +3,11 @@ date: 2024-12-07T17:05:08.000Z
 title: Breaking Down Monte Carlo Tree Search
 ---
 
-# Theory
-
 We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from [int8's website](https://int8.io/monte-carlo-tree-search-beginners-guide/) and the [MCTS Wikipedia page](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search). I wrote a lightweight implementation for tic-tac-toe available [here](https://github.com/liuzihe02/mcts) and a super lightweight implementation available [here](https://github.com/liuzihe02/microMCTS).
 
-## Game Representation
+---
+
+# Game Representation
 
 A game tree is a tree data structure, where every node represents a distinct *state* of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$. If the transition probablity is $1$ (such as in simple deterministic games like Tic Tac Toe), then each node in the game tree represents a state.
 
@@ -19,21 +19,21 @@ A game tree is a tree data structure, where every node represents a distinct *st
 - Any transition from one state to another consists a *move*
 - The game ends at a terminal node
 
-## Monte Carlo Tree Search
+---
 
-<img src="UCT.png" width=300>
+# Monte Carlo Tree Search
 
-*Taken from CadiaPlayer*
+{{< img src="/mcts/figures/UCT.png" caption="Taken from CadiaPlayer" width="300">}}
 
-Our game tree contains various connected game states, with each node in the tree containing statistics used to compute the value of a particular state. During "training", MCTS traverses down the game tree until a leaf node $L$, then expands the game tree by adding a child node $C$.
+Our game tree contains various connected game states, with each node in the tree containing statistics used to compute the value of a particular state. During "training", MCTS traverses down the game tree from the root node $R$ until a leaf node $L$ is reached, then expands the game tree by adding a child node $C$.
 
 After expanding the game tree, we simulate the game from the child node until game termination at $T$ - a *rollout*. The results of the rollout is then used to update the game tree, so that we can choose better nodes to do rollouts from next time.
 
-This way we make the game tree contain better estimates of the values of each states, which allows us to make better actions when we actually play the game
+This way we make the game tree contain better estimates of the values of each states, which allows us to make better actions when we actually play the game. This occurs through the 4 stages: selection, expansion, simulation, and backpropagation.
 
-### Selection
+## Selection
 
-<img src="selection.png" width=400>
+{{< img src="/mcts/figures/selection.png" width="400">}}
 
 > The bold circles contain the nodes selected using the tree policy UCT. The color of the node represent whose turn it is to move next. The numbers in the nodes represent the statistics of the node. For example, a black circle with $7/10$ means black to move next, $7$ wins played from this state, total of $10$ visits at this state. Hence if there are no draws, white would have won $3$ times from this node.
 
@@ -51,29 +51,29 @@ $$
 UCT(v) = \arg\max_{i} \left\{ \frac{w(v_i)}{N(v_i)} + C_p \sqrt{\frac{\ln N(v) }{N(v_i)}} \right\}
 $$
 
-for a parent node $v$, child node $v_i$, and number of wins $w$ from this child node $v_i$. UCT It is a sum of two components – the first component of our function \( \frac{w(v_i)}{N(v_i)} \), also called exploitation component, can be read as a winning/rate. The term on the right is the exploration component - encouraging child nodes that have little visits. During selection, we want to allow some exploration, hence $C_p>0$ here.
+for a parent node $v$, child node $v_i$, and number of wins $w$ from this child node $v_i$. UCT It is a sum of two components – the first component of our function $ \frac{w(v_i)}{N(v_i)} $, also called exploitation component, can be read as a win rate. The term on the right is the exploration component - encouraging child nodes that have little visits. During selection, we want to allow some exploration, hence $C_p>0$ here.
 
-> A leaf node $L$ here is a node in the game tree, where not all actions have been explored. In other words, it still has unexplored game states (if one action transitions to a state deterministically). Once a leaf node has no more unexplored actions, it is *fully expanded*
+> A leaf node $L$ here is a node in the game tree, where not all actions have been explored. In other words, it still has unexplored game states (if one action transitions to a state deterministically). Once a leaf node has no more unexplored actions, it is *fully expanded*.
 
-### Expansion
+## Expansion
 
-<img src="expansion.png" width=400>
+{{< img src="/mcts/figures/expansion.png" width="400">}}
 
 > $3/3$ still has unexplored actions, hence we add a child node to it. This action then becomes "explored"
 
 The second phase expansion occurs when we've selected a leaf node $L$ to expand on. An unexplored node is randomly chosen, and is added to the game tree as a child node.
 
-### Simulation
+## Simulation
 
-<img src="simulation.png" width=400>
+{{< img src="/mcts/figures/simulation.png" width="400">}}
 
 > Once the new child is added to the tree, we do one rollout from the $0/0$ until game termination
 
 We do one simulation (rollout) from the new child node $C$ until game termination, where moves are chosen according to the rollout policy. This rollout policy is often completely random.
 
-### Backpropagation
+## Backpropagation
 
-<img src="backpropagation.png" width=400>
+{{< img src="/mcts/figures/backpropagation.png" width="400">}}
 
 > We can see only black nodes have their win count updated.
 
@@ -81,7 +81,7 @@ After the simulation reaches an end, all of the nodes taken in this path are upd
 
 > In this repo, we store the win counts of both players in each node. A node also stores the board state, which contains which player it is to move next
 
-### PseudoCode
+## PseudoCode
 
 ```
 def select(node):

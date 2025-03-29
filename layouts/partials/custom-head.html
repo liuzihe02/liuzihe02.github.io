@@ -1,8 +1,27 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     A partial to be overwritten by the user. */ -}}
+
+{{/*  math rendering  */}}
 {{ if .Param "math" }}
     {{ partialCached "math.html" . }}
 {{ end }}
+
+{{/*  The original font is
+
+$main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+$heading-font: sans-serif; 
+
+Below is code to change fonts. refer to documentation for extra help too*/}}
+
+{{/*  <style>
+    html {
+        font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Gill Sans MT"
+      }
+</style>  */}}
+
 {{- /*     Simply place a custom-head.html into your local /layouts/partials - directory. */ -}}
 {{- /*     Its content will appear before the closing </head>. */ -}}
 {{- /* Head custom content area end */ -}}

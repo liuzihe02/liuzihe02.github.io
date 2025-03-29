@@ -2,8 +2,7 @@
 title: "My First Post"
 date: 2022-10-17T22:45:36+11:00
 #use this to hide a document
-draft: true
-math: true
+draft: false
 ---
 
 This is a post about latex.
