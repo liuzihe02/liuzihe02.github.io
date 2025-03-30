@@ -1,22 +1,14 @@
-{{/* Define a section to pull recent posts from.
-    This will default to the section with the most number of pages. */}}
-{{ $mainSections := site.Params.mainSections | default (slice "posts") }}
-
-{{/* Create a variable with that section to use in multiple places. */}}
-{{ $section := where site.RegularPages.ByDate.Reverse "Section" "in" $mainSections }}
-
-{{/* Check to see if the section is defined for ranging through it */}}
-{{ $sectionCount := len $section }}
-
-{{ if ge $sectionCount 1 }}
+{{/* Get all regular pages, sorted by date */}}
+{{ $allPages := where site.RegularPages.ByDate.Reverse "Kind" "page" }}
+{{/* Check if there are any pages */}}
+{{ $pageCount := len $allPages }}
+{{ if ge $pageCount 1 }}
     {{ $maxPosts := site.Params.recentPostsSize | default 5 }}
-
     <div class="toc" role="navigation">
-        <!-- WE MODIFY in how the mini-toc looks like -->
-        <h2>{{"Latest posts" }}</h2>
+        <h2>{{ "Latest Posts"}}</h2>
         <ul class="texts">
-            {{/* Range through the first $maxPosts items of the $section */}}
-            {{ range (first $maxPosts $section) }}
+            {{/* Range through the first $maxPosts items of all pages */}}
+            {{ range (first $maxPosts $allPages) }}
                 <li class="text-title">
                     {{ partial "post-toc-summary" . }}
                 </li>
