@@ -1,7 +1,7 @@
 ---
 title: "O Captain! My Captain!"
 date: 2021-02-02T23:56:58+02:00
-draft: false
+draft: true
 author: Walt Whitman
 editor: Alex Gil
 source: Poetry Foundation

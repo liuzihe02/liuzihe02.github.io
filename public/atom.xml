@@ -16,7 +16,7 @@
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
-    <updated>2025-03-07T17:05:08Z</updated>
+    <updated>2025-03-29T23:56:58+02:00</updated>
     <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
     <entry>
         
@@ -41,7 +41,7 @@ $$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT}
         <category term="posts" />
         
         <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/r1/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[Breaking Down R1]]></title>
+        <title type="html"><![CDATA[Breaking Down DeepSeek R1]]></title>
         
         
         
@@ -67,143 +67,5 @@ Preliminaries Transformers Illustration of autoregressive model of transformers,
         
         <summary type="html"><![CDATA[We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.
 Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$.]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="dramas" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/dramas/raisin/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[A Raisin in the Sun]]></title>
-        
-        
-        
-        <published>2022-02-03T14:56:58+02:00</published>
-        <updated>2022-02-03T14:56:58+02:00</updated>
-        <id>urn:uuid:9af09d96-d741-5932-5925-8607d1a0fd3b</id>
-        
-                <author>
-                    <name>Lorraine Hansberry</name>
-                </author>
-        
-        <summary type="html"><![CDATA[(excerpt)
-MAMA: Son—how come you talk so much &lsquo;bout money?
-WALTER (with immense passion): Because it is life, Mama!
-MAMA: Oh—So now it’s life. Money is life. Once upon a time freedom used to be life—now it’s money. I guess the world really do change &hellip;
-WALTER: No—it was always money, Mama. We just didn’t know about it.
-MAMA: No &hellip; something has changed. (She looks at him) You something new, boy.]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="poems" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/mypoem/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[My poem]]></title>
-        
-        
-        
-        <published>2022-02-02T14:56:58+02:00</published>
-        <updated>2022-02-02T14:56:58+02:00</updated>
-        <id>urn:uuid:9364c51c-0b2f-582e-b92c-85aa1cc15148</id>
-        
-                <author>
-                    <name>Alex Gil</name>
-                </author>
-        
-        <summary type="html"><![CDATA[ The library is pretty And so are books Deep ]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="poems" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/dreams/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[Dreams]]></title>
-        
-        
-        
-        <published>2022-02-01T14:56:58+02:00</published>
-        <updated>2022-05-01T14:56:58+02:00</updated>
-        <id>urn:uuid:f93b0ffc-51ad-58d6-e9f8-edd839757724</id>
-        
-                <author>
-                    <name>Langston Hughes</name>
-                </author>
-        
-        <summary type="html"><![CDATA[ Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. ]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="poems" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/delayed/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[Delayed till she had ceased to know]]></title>
-        
-        
-        
-        <published>2022-01-30T14:56:58+02:00</published>
-        <updated>2022-01-30T14:56:58+02:00</updated>
-        <id>urn:uuid:bba0dbc5-43a3-516b-29d7-de40ba0efe8f</id>
-        
-                <author>
-                    <name>Emily Dickinson</name>
-                </author>
-        
-        <summary type="html"><![CDATA[DELAYED till she had ceased to know, Delayed till in its vest of snow Her loving bosom lay. An hour behind the fleeting breath, Later by just an hour than death,— Oh, lagging yesterday! Could she have guessed that it would be; Could but a crier of the glee Have climbed the distant hill; Had not the bliss so slow a pace,— Who knows but this surrendered face Were undefeated still?]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="poems" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/a-julia/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[A Julia de Burgos]]></title>
-        
-        
-        
-        <published>2022-01-01T14:57:10+02:00</published>
-        <updated>2022-01-01T14:57:10+02:00</updated>
-        <id>urn:uuid:314f2fff-198c-52d9-592e-27f5c287be0d</id>
-        
-                <author>
-                    <name>Julia de Burgos</name>
-                </author>
-        
-        <summary type="html"><![CDATA[Ya las gentes murmuran que yo soy tu enemiga porque dicen que en verso doy al mundo mi yo. Mienten, Julia de Burgos. Mienten, Julia de Burgos. La que se alza en mis versos no es tu voz: es mi voz porque tú eres ropaje y la esencia soy yo; y el más profundo abismo se tiende entre las dos. Tú eres fria muñeca de mentira social, y yo, viril destello de la humana verdad.]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="poems" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/poems/o-captain/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[O Captain! My Captain!]]></title>
-        
-        
-        
-        <published>2021-02-02T23:56:58+02:00</published>
-        <updated>2021-02-02T23:56:58+02:00</updated>
-        <id>urn:uuid:2e3dda18-ade1-5342-494a-ea8de0bc837d</id>
-        
-                <author>
-                    <name>Walt Whitman</name>
-                </author>
-        
-        <summary type="html"><![CDATA[O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!]]></summary>
-    </entry>
-    <entry>
-        
-        <category term="narratives" />
-        
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/narratives/narrative/?utm_source=atom_feed" />
-        <title type="html"><![CDATA[Narrative of the Life of Frederick Douglass]]></title>
-        
-        
-        
-        <published>2016-01-18T00:00:00Z</published>
-        <updated>2016-01-18T00:00:00Z</updated>
-        <id>urn:uuid:bd4a0bf7-97f0-56a4-7958-33be233af286</id>
-        
-                <author>
-                    <name>Frederick Douglass</name>
-                </author>
-        
-        <summary type="html"><![CDATA[Editor&rsquo;s note This version of Narrative of the Life of Frederick Douglass was adapted from The Project Gutenberg EBook of The Narrative of the Life of Frederick Douglass, by Frederick Douglass. The Guttenberg file does not tell us which witness was used in making their digital edition. The edition below is only a slightly modified version of the Guttenberg text, and therefore should not be taken too seriously as an edition.]]></summary>
     </entry>
 </feed>

@@ -9,8 +9,15 @@
     <managingEditor>contact@serghei.pl (Serghei Iakovlev)</managingEditor>
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
-    <lastBuildDate>Fri, 07 Mar 2025 17:05:08 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Mar 2025 23:56:58 +0200</lastBuildDate>
     <atom:link href="https://liuzihe02.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Dream Is a Wish Your Heart Makes</title>
+      <link>https://liuzihe02.github.io/flow/dream/</link>
+      <pubDate>Sat, 29 Mar 2025 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <guid>https://liuzihe02.github.io/flow/dream/</guid>
+      <description>Written and composed by Mack David, Al Hoffman and Jerry Livingston&#xA;A dream is a wish your heart makes When you&amp;rsquo;re fast asleep In dreams, you will lose your heartaches Whatever you wish for, you keep Have faith in your dreams and maybe someday Rainbow will come shining through No matter how your heart is grieving If you keep on believing Then the dream that you wish will come true The original version of this was written for the Walt Disney film Cinderella (1950).</description>
+    </item>
     <item>
       <title>The Discrete Fourier Transform and Fast Fourier Transform</title>
       <link>https://liuzihe02.github.io/posts/dft-fft/</link>
@@ -19,7 +26,7 @@
       <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
     </item>
     <item>
-      <title>Breaking Down R1</title>
+      <title>Breaking Down DeepSeek R1</title>
       <link>https://liuzihe02.github.io/posts/r1/</link>
       <pubDate>Mon, 17 Feb 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/posts/r1/</guid>
@@ -31,55 +38,6 @@
       <pubDate>Sat, 07 Dec 2024 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/posts/mcts/</guid>
       <description>We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&amp;rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.&#xA;Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s&#39;$ with the transition probability $p_a(s&#39;|s)$.</description>
-    </item>
-    <item>
-      <title>A Raisin in the Sun</title>
-      <link>https://liuzihe02.github.io/dramas/raisin/</link>
-      <pubDate>Thu, 03 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/dramas/raisin/</guid>
-      <description>(excerpt)&#xA;MAMA: Son—how come you talk so much &amp;lsquo;bout money?&#xA;WALTER (with immense passion): Because it is life, Mama!&#xA;MAMA: Oh—So now it’s life. Money is life. Once upon a time freedom used to be life—now it’s money. I guess the world really do change &amp;hellip;&#xA;WALTER: No—it was always money, Mama. We just didn’t know about it.&#xA;MAMA: No &amp;hellip; something has changed. (She looks at him) You something new, boy.</description>
-    </item>
-    <item>
-      <title>My poem</title>
-      <link>https://liuzihe02.github.io/poems/mypoem/</link>
-      <pubDate>Wed, 02 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/mypoem/</guid>
-      <description> The library is pretty And so are books Deep </description>
-    </item>
-    <item>
-      <title>Dreams</title>
-      <link>https://liuzihe02.github.io/poems/dreams/</link>
-      <pubDate>Tue, 01 Feb 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/dreams/</guid>
-      <description> Hold fast to dreams For if dreams die Life is a broken-winged bird That cannot fly. Hold fast to dreams For when dreams go Life is a barren field Frozen with snow. </description>
-    </item>
-    <item>
-      <title>Delayed till she had ceased to know</title>
-      <link>https://liuzihe02.github.io/poems/delayed/</link>
-      <pubDate>Sun, 30 Jan 2022 14:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/delayed/</guid>
-      <description>DELAYED till she had ceased to know, Delayed till in its vest of snow Her loving bosom lay. An hour behind the fleeting breath, Later by just an hour than death,— Oh, lagging yesterday! Could she have guessed that it would be; Could but a crier of the glee Have climbed the distant hill; Had not the bliss so slow a pace,— Who knows but this surrendered face Were undefeated still?</description>
-    </item>
-    <item>
-      <title>A Julia de Burgos</title>
-      <link>https://liuzihe02.github.io/poems/a-julia/</link>
-      <pubDate>Sat, 01 Jan 2022 14:57:10 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/a-julia/</guid>
-      <description>Ya las gentes murmuran que yo soy tu enemiga porque dicen que en verso doy al mundo mi yo. Mienten, Julia de Burgos. Mienten, Julia de Burgos. La que se alza en mis versos no es tu voz: es mi voz porque tú eres ropaje y la esencia soy yo; y el más profundo abismo se tiende entre las dos. Tú eres fria muñeca de mentira social, y yo, viril destello de la humana verdad.</description>
-    </item>
-    <item>
-      <title>O Captain! My Captain!</title>
-      <link>https://liuzihe02.github.io/poems/o-captain/</link>
-      <pubDate>Tue, 02 Feb 2021 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/poems/o-captain/</guid>
-      <description>O Captain! my Captain! our fearful trip is done;1 The ship has weather’d every rack, the prize we sought is won, The port is near, the bells I hear, the people all exulting, While follow eyes the steady keel, the vessel grim and daring; But O heart! heart! heart! O the bleeding drops of red, Where on the deck my Captain lies, Fallen cold and dead. O Captain! my Captain!</description>
-    </item>
-    <item>
-      <title>Narrative of the Life of Frederick Douglass</title>
-      <link>https://liuzihe02.github.io/narratives/narrative/</link>
-      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/narratives/narrative/</guid>
-      <description>Editor&amp;rsquo;s note This version of Narrative of the Life of Frederick Douglass was adapted from The Project Gutenberg EBook of The Narrative of the Life of Frederick Douglass, by Frederick Douglass. The Guttenberg file does not tell us which witness was used in making their digital edition. The edition below is only a slightly modified version of the Guttenberg text, and therefore should not be taken too seriously as an edition.</description>
     </item>
     <item>
       <title>About</title>

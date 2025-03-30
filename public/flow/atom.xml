@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
+    <title>Flow - Liu Zihe</title>
+    
+    <link href="/flow/" rel="alternate" type="text/html" title="html" />
+    <link href="/flow/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
+    <link href="/flow/atom.xml" rel="self" type="text/xml" title="atom" />
+    <link href="/flow/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
+    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <author>
+        <name>Serghei Iakovlev</name>
+        <email>contact@serghei.pl</email>
+    </author>
+    <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
+    <updated>2025-03-29T23:56:58+02:00</updated>
+    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <entry>
+        
+        <category term="flow" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/flow/dream/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[A Dream Is a Wish Your Heart Makes]]></title>
+        
+        
+        
+        <published>2025-03-29T23:56:58+02:00</published>
+        <updated>2025-03-29T23:56:58+02:00</updated>
+        <id>urn:uuid:a215ede7-e3a0-5f17-590c-590b14484402</id>
+        
+                <author>
+                    <name>Mack David</name>
+                </author>
+        
+        <summary type="html"><![CDATA[Written and composed by Mack David, Al Hoffman and Jerry Livingston
+A dream is a wish your heart makes When you&rsquo;re fast asleep In dreams, you will lose your heartaches Whatever you wish for, you keep Have faith in your dreams and maybe someday Rainbow will come shining through No matter how your heart is grieving If you keep on believing Then the dream that you wish will come true The original version of this was written for the Walt Disney film Cinderella (1950).]]></summary>
+    </entry>
+</feed>

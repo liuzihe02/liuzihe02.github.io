@@ -1,7 +1,7 @@
 ---
 title: "Narrative of the Life of Frederick Douglass"
 date: 2016-01-18
-draft: false
+draft: true
 author: Frederick Douglass
 editor: Alex Gil
 source: Project Guttenberg

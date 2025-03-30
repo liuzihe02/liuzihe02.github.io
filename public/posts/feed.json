@@ -24,7 +24,7 @@
     {
       "id": "22874317-628e-5906-99f5-28bf7a487dee",
       "url": "https://liuzihe02.github.io/posts/r1/?utm_source=json_feed",
-      "title": "Breaking Down R1",
+      "title": "Breaking Down DeepSeek R1",
       "summary": "In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I\u0026rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I\u0026rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.\nPreliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.",
       "date_published": "2025-02-17T17:05:08Z"
     },
