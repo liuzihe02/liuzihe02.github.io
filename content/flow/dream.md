@@ -22,7 +22,7 @@ draft: false
 
 The original version of this was written for the *Walt Disney* film *Cinderella* (1950). When I first listened to the [rendition](https://open.spotify.com/track/72mgfo7SWxWi4kmUTuhLPB?si=b7a3a9d5b7fe4a8d) by British artist [*Puma Blue*](https://www.instagram.com/pumablue/?hl=en), was completely captured by its darker tones and soft vocals. I really did feel like I was in a dream.
 
-I find it pretty interesting how the imaginary dreams we experience when we sleep came to be associated with the concrete goals we hope to achieve in reality. I barely dream in my sleep at all, but I think about my goals in reality a lot. Perhaps sometimes even obsessively so. I often wonder why I place so much importance on the goal itself. It seems a bit arbitrary to me: you can always keep asking *"Why did you set this goal?"* and you just end up with another goal to pursue. I guess its turtles all the way down.
+I find it pretty interesting how the imaginary dreams we experience when we sleep came to be associated with the concrete goals we hope to achieve in reality. I barely dream in my sleep at all, but I think about my goals in reality a lot. Perhaps sometimes even obsessively so. I often wonder why I place so much importance on the goal itself. It seems a bit arbitrary to me: you can always keep asking *"Why did you set this goal?"*, find a reason (usually another goal), and you just end up with another goal to pursue. I guess its [turtles all the way down](https://en.wikipedia.org/wiki/Turtles_all_the_way_down).
 
 {{< img src="/turtles.jpg" caption="Terrapins on terrapins. (Wikipedia)" width="120">}}
 

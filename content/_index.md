@@ -6,9 +6,9 @@ title: "Home"
 
 # Hey!
 
-I'm Zihe (or you can call me Zach[^1]). I do computer engineering at the **{{< link src="https://www.eng.cam.ac.uk/research/academic-divisions/information-engineering" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}**. Most of my time is spent thinking about how **frontier AI** systems learn, **[Reinforcement Learning]({{< relref "posts/r1" >}})** (RL), and addressing the practical {{< link src="https://drive.google.com/file/d/1O6quCTEn2L7Xew5IqTx2eYbbSmzgLMdi/view?usp=sharing" class="external" target="_blank" rel="noopener noreferrer" >}}issues of robustness and reliability in LLMs{{< /link >}}. This is my little corner of the Internet where I talk about what I'm currently obssessed with, cool projects I've worked on, stuff I've learnt, and some thoughts that have bubbled to the surface but refuse to pop.
+I'm Zihe[^1] (or you can call me Zach[^2]). I do computer engineering at the **{{< link src="https://www.eng.cam.ac.uk/research/academic-divisions/information-engineering" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}**. Most of my time is spent thinking about how **frontier AI** systems learn, **Reinforcement Learning** (RL), and addressing the practical {{< link src="https://drive.google.com/file/d/1O6quCTEn2L7Xew5IqTx2eYbbSmzgLMdi/view?usp=sharing" class="external" target="_blank" rel="noopener noreferrer" >}}issues of robustness and reliability in LLMs{{< /link >}}. This is my little corner of the Internet where I talk about what I'm currently [obsessed]({{< relref "/posts/r1" >}}) with, cool [projects]({{< relref "/projects" >}}) I've worked on, stuff I've learnt, and some [thoughts]({{< relref "/flow" >}}) that have recently bubbled to the surface but refuse to pop.
 
-[Email](mailto:zl559@cam.ac.uk) | [GitHub](https://github.com/liuzihe02) | [LinkedIn](https://linkedin.com/in/liu-zihe) | [Instagram](https://instagram.com/flowingpurplecrane) | [Spotify](https://open.spotify.com/user/magnoliapotato?si=qAx5VSDLQvqv2rZg3PVZgA)
+[Email](mailto:zl559@cam.ac.uk) | {{< link src="https://github.com/liuzihe02" class="external" target="_blank" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="https://linkedin.com/in/liu-zihe" class="external" target="_blank" rel="noopener noreferrer" >}}LinkedIn{{< /link >}} | {{< link src="https://instagram.com/flowingpurplecrane" class="external" target="_blank" rel="noopener noreferrer" >}}Instagram{{< /link >}} | {{< link src="https://open.spotify.com/user/magnoliapotato?si=qAx5VSDLQvqv2rZg3PVZgA" class="external" target="_blank" rel="noopener noreferrer" >}}Spotify{{< /link >}}
 
 ---
 
@@ -20,5 +20,5 @@ I recently interned at {{< link src="https://aiverifyfoundation.sg/" class="exte
 
 Singapore is where I call home, and before university I served 2 years in the {{< link src="https://www.mindef.gov.sg/rsaf" class="external" target="_blank" rel="noopener noreferrer" >}}Republic of Singapore Air Force{{< /link >}} as a security trooper. Outside work, you'll probably find me {{< link src="https://www.instagram.com/reel/DHhsk8tIxKO/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" class="external" target="_blank" rel="noopener noreferrer" >}}dancing{{< /link >}} to hip-hop and R&B music, or rewatching old {{< link src="https://www.criterionchannel.com/world-of-wong-kar-wai" target="_blank" rel="noopener noreferrer" >}}Wong Kar Wai{{< /link >}} films.
 
-
-[^1]: I actually made this name up on the airplane ride to starting university, so unfortunately it is not my real name...
+[^1]: My Chinese name is *刘子赫*, which when read aloud can also be interpreted as *流紫鹤*, or "flowing purple crane". Hence the website and username.
+[^2]: I actually made this name up on the airplane ride to starting university, so unfortunately it is not my real name...

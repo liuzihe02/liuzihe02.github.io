@@ -12,7 +12,7 @@ Used Proximal Policy Optimization (PPO) to train a Mars lander, by controlling t
 
 ---
 
-### Fast Fourier Transform | {{< link src="https://github.com/liuzihe02/dft-fft" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="https://docs.google.com/presentation/d/1LLjk_Qy05jH7eOq6uAXz9vVR3R47hzQrIdak5wAA7DI/edit?usp=sharing" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Post{{< /link >}}
+### Fast Fourier Transform | {{< link src="https://github.com/liuzihe02/dft-fft" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | [Post]({{< relref "/posts/dft-fft" >}})
 
 Analyzed the theoretical properties of both the _Discrete Fourier Transform_ and the optimized _Fast Fourier Transform_ in MATLAB, and measure their algorithmic complexity.
 
@@ -24,7 +24,7 @@ Built self-guided mechanical robot for package delivery, and implement the contr
 
 ---
 
-### Monte Carlo Tree Search for 2 Player Games | {{< link src="https://github.com/liuzihe02/mcts" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | Post
+### Monte Carlo Tree Search for 2 Player Games | {{< link src="https://github.com/liuzihe02/mcts" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | [Post]({{< relref "/posts/mcts" >}})
 
 Lightweight implementation of Monte Carlo Tree Search for deterministic 2 player games.
 

@@ -21,9 +21,16 @@
     <item>
       <title>The Discrete Fourier Transform and Fast Fourier Transform</title>
       <link>https://liuzihe02.github.io/posts/dft-fft/</link>
-      <pubDate>Fri, 07 Mar 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <pubDate>Fri, 28 Mar 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/posts/dft-fft/</guid>
       <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
+    </item>
+    <item>
+      <title>Unconditional</title>
+      <link>https://liuzihe02.github.io/flow/unconditional/</link>
+      <pubDate>Thu, 27 Mar 2025 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <guid>https://liuzihe02.github.io/flow/unconditional/</guid>
+      <description>Composed and written by Jaehyun&#xA;I just, I just bought my baby Prada Got another for hеr, straight from the store Fly her &amp;lsquo;round the world so she can hang by the shore That&amp;rsquo;s my baby, that’s my sugar I don&amp;rsquo;t need no honey on the side That&amp;rsquo;s unconditiona-nal For her, I&amp;rsquo;d break the law, just take me straight to the court Buy a billion roses and I&amp;rsquo;d still get her more That&amp;rsquo;s my baby, that’s my sugar I don&amp;rsquo;t need no honey on the side That&amp;rsquo;s unconditiona-nal Alright I&amp;rsquo;ll be honest, the lyrics aren&amp;rsquo;t the most refined.</description>
     </item>
     <item>
       <title>Breaking Down DeepSeek R1</title>
