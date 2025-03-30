@@ -76,13 +76,13 @@ refLinksErrorLevel = 'WARNING'
   # Site icons, relative to ./static
   [params.assets]
     # favicon.ico for legacy browsers
-    favicon = ''
+    favicon = 'red_since.ico'
 
     # A single SVG icon with a light/dark version for modern browsers
     svgicon = 'red_sinc.svg'
 
     # 180×180 PNG image for Apple devices
-    apple_touch_icon = ''
+    apple_touch_icon = 'red_sinc.png'
 
     # Logo image, relative to ./assets
     logo = '/img/red_sinc.png'
