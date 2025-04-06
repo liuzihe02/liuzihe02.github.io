@@ -23,7 +23,7 @@ The Hugo [content management](https://gohugo.io/content-management/) sites espec
 Each time we build, we generate html content in `public/` and `resources/`. To reduce clutter, we use the following code to clear unneccessary stuff and just build only the core stuff.
 
 ```bash
-#remove files in public directory that are no longer neede before building
+#remove files in public directory that are no longer need before building
 hugo --cleanDestinationDir
 # Remove generated directories
 rm -rf public/
