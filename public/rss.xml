@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Liu Zihe</title>
-    <link>https://liuzihe02.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Liu Zihe</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -10,96 +10,96 @@
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
     <lastBuildDate>Thu, 03 Apr 2025 15:00:10 +0000</lastBuildDate>
-    <atom:link href="https://liuzihe02.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Dog</title>
-      <link>https://liuzihe02.github.io/flow/dog/</link>
+      <link>http://localhost:1313/flow/dog/</link>
       <pubDate>Thu, 03 Apr 2025 15:00:10 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/flow/dog/</guid>
+      <guid>http://localhost:1313/flow/dog/</guid>
       <description>I like a dog at my feet when I read, Whatever his size or whatever his breed. A dog now and then that will nuzzle my hand As though I were the greatest of men in the land, And trying to tell me it’s pleasant to be On such intimate terms with a fellow like me. I like a dog at my side when I eat, I like to give him a bit of my meat; And though mother objects and insists it is bad To let dogs in the dining room, still I am glad To behold him stretched out on the floor by my chair.</description>
     </item>
     <item>
       <title>A Dream Is a Wish Your Heart Makes</title>
-      <link>https://liuzihe02.github.io/flow/dream/</link>
+      <link>http://localhost:1313/flow/dream/</link>
       <pubDate>Sat, 29 Mar 2025 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/flow/dream/</guid>
+      <guid>http://localhost:1313/flow/dream/</guid>
       <description>Written and composed by Mack David, Al Hoffman and Jerry Livingston&#xA;A dream is a wish your heart makes When you&amp;rsquo;re fast asleep In dreams, you will lose your heartaches Whatever you wish for, you keep Have faith in your dreams and maybe someday Rainbow will come shining through No matter how your heart is grieving If you keep on believing Then the dream that you wish will come true The original version of this was written for the Walt Disney film Cinderella (1950).</description>
     </item>
     <item>
       <title>The Discrete Fourier Transform and Fast Fourier Transform</title>
-      <link>https://liuzihe02.github.io/posts/dft-fft/</link>
+      <link>http://localhost:1313/posts/dft-fft/</link>
       <pubDate>Fri, 28 Mar 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/posts/dft-fft/</guid>
+      <guid>http://localhost:1313/posts/dft-fft/</guid>
       <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
     </item>
     <item>
       <title>Unconditional</title>
-      <link>https://liuzihe02.github.io/flow/unconditional/</link>
+      <link>http://localhost:1313/flow/unconditional/</link>
       <pubDate>Thu, 27 Mar 2025 23:56:58 +0200</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/flow/unconditional/</guid>
+      <guid>http://localhost:1313/flow/unconditional/</guid>
       <description>Composed and written by Jaehyun&#xA;I just, I just bought my baby Prada Got another for hеr, straight from the store Fly her &amp;lsquo;round the world so she can hang by the shore That&amp;rsquo;s my baby, that’s my sugar I don&amp;rsquo;t need no honey on the side That&amp;rsquo;s unconditiona-nal For her, I&amp;rsquo;d break the law, just take me straight to the court Buy a billion roses and I&amp;rsquo;d still get her more That&amp;rsquo;s my baby, that’s my sugar I don&amp;rsquo;t need no honey on the side That&amp;rsquo;s unconditiona-nal Alright I&amp;rsquo;ll be honest, the lyrics aren&amp;rsquo;t the most refined.</description>
     </item>
     <item>
       <title>Breaking Down DeepSeek R1</title>
-      <link>https://liuzihe02.github.io/posts/r1/</link>
+      <link>http://localhost:1313/posts/r1/</link>
       <pubDate>Mon, 17 Feb 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/posts/r1/</guid>
+      <guid>http://localhost:1313/posts/r1/</guid>
       <description>In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&amp;rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.&#xA;Preliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.</description>
     </item>
     <item>
       <title>Breaking Down Monte Carlo Tree Search</title>
-      <link>https://liuzihe02.github.io/posts/mcts/</link>
+      <link>http://localhost:1313/posts/mcts/</link>
       <pubDate>Sat, 07 Dec 2024 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/posts/mcts/</guid>
+      <guid>http://localhost:1313/posts/mcts/</guid>
       <description>We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&amp;rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.&#xA;Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s&#39;$ with the transition probability $p_a(s&#39;|s)$.</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://liuzihe02.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Contact</title>
-      <link>https://liuzihe02.github.io/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>This is an example of a custom shortcode that you can put right into your content. You will need to add a form action to the the shortcode to make it work. Check out Formspark for a simple, free form service.&#xA;Ed theme is not strictly tied to any forms backend. You can easily use any backend like Formspark, Formspree, FabForm and so on just by changing the formAction parameter in the site configuration file.</description>
     </item>
     <item>
       <title>Credits</title>
-      <link>https://liuzihe02.github.io/credits/</link>
+      <link>http://localhost:1313/credits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/credits/</guid>
+      <guid>http://localhost:1313/credits/</guid>
       <description>Serghei Iakovlev | Software Engineer Serghei Iakovlev is a software engineer with 20 years of experience in IT who enjoys finding elegant solutions to non-trivial problems. Serghei focused on the goal and driven by visual sophistication and laser-sharp precision, he takes pride in every finished project, and never stop learning along the way. Serghei work as the Head Of Development with 20 teams of 90+ engineers to develop airSlate &amp;mdash; better nocode workflow automation platform.</description>
     </item>
     <item>
       <title>Documentation</title>
-      <link>https://liuzihe02.github.io/documentation/</link>
+      <link>http://localhost:1313/documentation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/documentation/</guid>
+      <guid>http://localhost:1313/documentation/</guid>
       <description>Contents Prerequisites Installing Ed Getting started Hugo Markdown and CommonMark Genres Configuring Author Selection Author Display in Ed Footnotes Blockquote Pages Tables of Content Styling Theme Comments Comment Configuration for Content Types Styling Comments Localization Integrating Analytics with Ed Setting Up Google Analytics Configuring Google Tag Manager Important Considerations Making the Choice Getting help Prerequisites This documentation was built with beginners in mind, but has the necessary information for more seasoned producers.</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>https://liuzihe02.github.io/projects/</link>
+      <link>http://localhost:1313/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/projects/</guid>
+      <guid>http://localhost:1313/projects/</guid>
       <description>Fun stuff I&amp;rsquo;ve worked on, mostly on RL and robotics.&#xA;Reinforcement Learning for Spacecraft Control | GitHub | Slides Used Proximal Policy Optimization (PPO) to train a Mars lander, by controlling throttle action for descent and hovering. Integrated C++ simulation engine and OpenGL GUI with Python training scripts. Won 2nd place at the Cambridge Engineering Mars Lander Competition 2024&#xA;Fast Fourier Transform | GitHub | Post Analyzed the theoretical properties of both the Discrete Fourier Transform and the optimized Fast Fourier Transform in MATLAB, and measure their algorithmic complexity.</description>
     </item>
     <item>
       <title>Search</title>
-      <link>https://liuzihe02.github.io/search/</link>
+      <link>http://localhost:1313/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/search/</guid>
+      <guid>http://localhost:1313/search/</guid>
       <description> To search the site, enter a search term.&#xA;Found results: </description>
     </item>
     <item>
       <title>Thank you</title>
-      <link>https://liuzihe02.github.io/thanks/</link>
+      <link>http://localhost:1313/thanks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>https://liuzihe02.github.io/thanks/</guid>
+      <guid>http://localhost:1313/thanks/</guid>
       <description>Your message will be sent within a short time. We&amp;rsquo;ll answer as soon as possible.&#xA;← Back to Home.</description>
     </item>
   </channel>

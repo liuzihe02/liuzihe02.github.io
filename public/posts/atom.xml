@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
     <title>Posts - Liu Zihe</title>
     
     <link href="/posts/" rel="alternate" type="text/html" title="html" />
     <link href="/posts/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/posts/atom.xml" rel="self" type="text/xml" title="atom" />
     <link href="/posts/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
-    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <icon>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2025-04-03T15:00:10Z</updated>
-    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
     <entry>
         
         <category term="posts" />
         
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/dft-fft/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="http://localhost:1313/posts/dft-fft/?utm_source=atom_feed" />
         <title type="html"><![CDATA[The Discrete Fourier Transform and Fast Fourier Transform]]></title>
         
         
         
         <published>2025-03-28T17:05:08Z</published>
         <updated>2025-03-28T17:05:08Z</updated>
-        <id>urn:uuid:8ae2474a-d471-5d23-1921-3ac30bad0906</id>
+        <id>urn:uuid:406114f9-c07f-5eab-0935-1f2aad68e3c4</id>
         
         <summary type="html"><![CDATA[We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.
 All code available on Github. Slides available here.
@@ -37,14 +37,14 @@ $$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT}
         
         <category term="posts" />
         
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/r1/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="http://localhost:1313/posts/r1/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Breaking Down DeepSeek R1]]></title>
         
         
         
         <published>2025-02-17T17:05:08Z</published>
         <updated>2025-02-17T17:05:08Z</updated>
-        <id>urn:uuid:22874317-628e-5906-99f5-28bf7a487dee</id>
+        <id>urn:uuid:7a759a70-7197-5313-c977-89ed66bcd4be</id>
         
         <summary type="html"><![CDATA[In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.
 Preliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.]]></summary>
@@ -53,14 +53,14 @@ Preliminaries Transformers Illustration of autoregressive model of transformers,
         
         <category term="posts" />
         
-        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/mcts/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="http://localhost:1313/posts/mcts/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Breaking Down Monte Carlo Tree Search]]></title>
         
         
         
         <published>2024-12-07T17:05:08Z</published>
         <updated>2024-12-07T17:05:08Z</updated>
-        <id>urn:uuid:d202cb86-f47f-5559-5947-0043b755b246</id>
+        <id>urn:uuid:cd8bcb48-6d82-52d0-096c-3d7d62060a5b</id>
         
         <summary type="html"><![CDATA[We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.
 Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$.]]></summary>

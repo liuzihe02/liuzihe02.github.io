@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Flow - Liu Zihe",
-  "home_page_url": "https://liuzihe02.github.io/?utm_source=json_feed",
+  "home_page_url": "http://localhost:1313/?utm_source=json_feed",
   
   
-  "icon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
-  "favicon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "icon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "favicon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
   "authors": [
     {
       "name": "Serghei Iakovlev",
@@ -15,23 +15,23 @@
   "language" : "en",
   "items": [
     {
-      "id": "0205f8b3-3d07-5b77-d9ac-128d6a6bc331",
-      "url": "https://liuzihe02.github.io/flow/dog/?utm_source=json_feed",
+      "id": "b2335122-3802-5b96-29c9-d26be3866137",
+      "url": "http://localhost:1313/flow/dog/?utm_source=json_feed",
       "title": "The Dog",
       "summary": "I like a dog at my feet when I read, Whatever his size or whatever his breed. A dog now and then that will nuzzle my hand As though I were the greatest of men in the land, And trying to tell me it’s pleasant to be On such intimate terms with a fellow like me. I like a dog at my side when I eat, I like to give him a bit of my meat; And though mother objects and insists it is bad To let dogs in the dining room, still I am glad To behold him stretched out on the floor by my chair.",
       "date_published": "2025-04-03T15:00:10Z",
       "date_modified" : "2025-04-03T15:00:10Z"
     },
     {
-      "id": "a215ede7-e3a0-5f17-590c-590b14484402",
-      "url": "https://liuzihe02.github.io/flow/dream/?utm_source=json_feed",
+      "id": "22bed9d0-739b-5a2c-59f4-e27d3a6cd5df",
+      "url": "http://localhost:1313/flow/dream/?utm_source=json_feed",
       "title": "A Dream Is a Wish Your Heart Makes",
       "summary": "Written and composed by Mack David, Al Hoffman and Jerry Livingston\nA dream is a wish your heart makes When you\u0026rsquo;re fast asleep In dreams, you will lose your heartaches Whatever you wish for, you keep Have faith in your dreams and maybe someday Rainbow will come shining through No matter how your heart is grieving If you keep on believing Then the dream that you wish will come true The original version of this was written for the Walt Disney film Cinderella (1950).",
       "date_published": "2025-03-29T23:56:58+02:00"
     },
     {
-      "id": "a1085bc8-320a-5fdb-9988-fb87bdc133f2",
-      "url": "https://liuzihe02.github.io/flow/unconditional/?utm_source=json_feed",
+      "id": "324f1eed-4792-5831-5917-546b4fed762d",
+      "url": "http://localhost:1313/flow/unconditional/?utm_source=json_feed",
       "title": "Unconditional",
       "summary": "Composed and written by Jaehyun\nI just, I just bought my baby Prada Got another for hеr, straight from the store Fly her \u0026lsquo;round the world so she can hang by the shore That\u0026rsquo;s my baby, that’s my sugar I don\u0026rsquo;t need no honey on the side That\u0026rsquo;s unconditiona-nal For her, I\u0026rsquo;d break the law, just take me straight to the court Buy a billion roses and I\u0026rsquo;d still get her more That\u0026rsquo;s my baby, that’s my sugar I don\u0026rsquo;t need no honey on the side That\u0026rsquo;s unconditiona-nal Alright I\u0026rsquo;ll be honest, the lyrics aren\u0026rsquo;t the most refined.",
       "date_published": "2025-03-27T23:56:58+02:00"
