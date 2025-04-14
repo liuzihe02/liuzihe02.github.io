@@ -1,11 +1,11 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
   "title": "Posts - Liu Zihe",
-  "home_page_url": "http://localhost:1313/?utm_source=json_feed",
+  "home_page_url": "https://liuzihe02.github.io/?utm_source=json_feed",
   
   
-  "icon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
-  "favicon": "http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "icon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+  "favicon": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
   "authors": [
     {
       "name": "Serghei Iakovlev",
@@ -15,22 +15,22 @@
   "language" : "en",
   "items": [
     {
-      "id": "406114f9-c07f-5eab-0935-1f2aad68e3c4",
-      "url": "http://localhost:1313/posts/dft-fft/?utm_source=json_feed",
+      "id": "8ae2474a-d471-5d23-1921-3ac30bad0906",
+      "url": "https://liuzihe02.github.io/posts/dft-fft/?utm_source=json_feed",
       "title": "The Discrete Fourier Transform and Fast Fourier Transform",
       "summary": "We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.\nAll code available on Github. Slides available here.\nDiscrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \\le n \\le N-1$, the DFT is defined as:\n$$ X[k] = \\sum_{n=0}^{N-1} x[n]\\, W_N^{kn}, \\quad 0 \\le k \\le N-1 \\label{eq:DFT} $$ where $W_N=e^{-j\\frac{2\\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.",
       "date_published": "2025-03-28T17:05:08Z"
     },
     {
-      "id": "7a759a70-7197-5313-c977-89ed66bcd4be",
-      "url": "http://localhost:1313/posts/r1/?utm_source=json_feed",
+      "id": "22874317-628e-5906-99f5-28bf7a487dee",
+      "url": "https://liuzihe02.github.io/posts/r1/?utm_source=json_feed",
       "title": "Breaking Down DeepSeek R1",
       "summary": "In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I\u0026rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I\u0026rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.\nPreliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.",
       "date_published": "2025-02-17T17:05:08Z"
     },
     {
-      "id": "cd8bcb48-6d82-52d0-096c-3d7d62060a5b",
-      "url": "http://localhost:1313/posts/mcts/?utm_source=json_feed",
+      "id": "d202cb86-f47f-5559-5947-0043b755b246",
+      "url": "https://liuzihe02.github.io/posts/mcts/?utm_source=json_feed",
       "title": "Breaking Down Monte Carlo Tree Search",
       "summary": "We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8\u0026rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.\nGame Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s'$ with the transition probability $p_a(s'|s)$.",
       "date_published": "2024-12-07T17:05:08Z"

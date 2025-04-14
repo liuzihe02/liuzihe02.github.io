@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="http://localhost:1313/">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en" xml:base="https://liuzihe02.github.io/">
     <title>Flow - Liu Zihe</title>
     
     <link href="/flow/" rel="alternate" type="text/html" title="html" />
     <link href="/flow/rss.xml" rel="alternate" type="application/rss+xml" title="rss" />
     <link href="/flow/atom.xml" rel="self" type="text/xml" title="atom" />
     <link href="/flow/feed.json" rel="alternate" type="application/feed+json" title="jsonfeed" />
-    <icon>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
-    <logo>http://localhost:1313/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
+    <icon>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</icon>
+    <logo>https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png</logo>
     <author>
         <name>Serghei Iakovlev</name>
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
     <updated>2025-04-03T15:00:10Z</updated>
-    <id>urn:uuid:6d116a4d-807d-53e3-09c2-1fde53eae16b</id>
+    <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
     <entry>
         
         <category term="flow" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/flow/dog/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/flow/dog/?utm_source=atom_feed" />
         <title type="html"><![CDATA[The Dog]]></title>
         
         
         
         <published>2025-04-03T15:00:10Z</published>
         <updated>2025-04-03T15:00:10Z</updated>
-        <id>urn:uuid:b2335122-3802-5b96-29c9-d26be3866137</id>
+        <id>urn:uuid:0205f8b3-3d07-5b77-d9ac-128d6a6bc331</id>
         
         <summary type="html"><![CDATA[I like a dog at my feet when I read, Whatever his size or whatever his breed. A dog now and then that will nuzzle my hand As though I were the greatest of men in the land, And trying to tell me it’s pleasant to be On such intimate terms with a fellow like me. I like a dog at my side when I eat, I like to give him a bit of my meat; And though mother objects and insists it is bad To let dogs in the dining room, still I am glad To behold him stretched out on the floor by my chair.]]></summary>
     </entry>
@@ -34,14 +34,14 @@
         
         <category term="flow" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/flow/dream/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/flow/dream/?utm_source=atom_feed" />
         <title type="html"><![CDATA[A Dream Is a Wish Your Heart Makes]]></title>
         
         
         
         <published>2025-03-29T23:56:58+02:00</published>
         <updated>2025-03-29T23:56:58+02:00</updated>
-        <id>urn:uuid:22bed9d0-739b-5a2c-59f4-e27d3a6cd5df</id>
+        <id>urn:uuid:a215ede7-e3a0-5f17-590c-590b14484402</id>
         
         <summary type="html"><![CDATA[Written and composed by Mack David, Al Hoffman and Jerry Livingston
 A dream is a wish your heart makes When you&rsquo;re fast asleep In dreams, you will lose your heartaches Whatever you wish for, you keep Have faith in your dreams and maybe someday Rainbow will come shining through No matter how your heart is grieving If you keep on believing Then the dream that you wish will come true The original version of this was written for the Walt Disney film Cinderella (1950).]]></summary>
@@ -50,14 +50,14 @@ A dream is a wish your heart makes When you&rsquo;re fast asleep In dreams, you 
         
         <category term="flow" />
         
-        <link rel="alternate" type="type/html" href="http://localhost:1313/flow/unconditional/?utm_source=atom_feed" />
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/flow/unconditional/?utm_source=atom_feed" />
         <title type="html"><![CDATA[Unconditional]]></title>
         
         
         
         <published>2025-03-27T23:56:58+02:00</published>
         <updated>2025-03-27T23:56:58+02:00</updated>
-        <id>urn:uuid:324f1eed-4792-5831-5917-546b4fed762d</id>
+        <id>urn:uuid:a1085bc8-320a-5fdb-9988-fb87bdc133f2</id>
         
         <summary type="html"><![CDATA[Composed and written by Jaehyun
 I just, I just bought my baby Prada Got another for hеr, straight from the store Fly her &lsquo;round the world so she can hang by the shore That&rsquo;s my baby, that’s my sugar I don&rsquo;t need no honey on the side That&rsquo;s unconditiona-nal For her, I&rsquo;d break the law, just take me straight to the court Buy a billion roses and I&rsquo;d still get her more That&rsquo;s my baby, that’s my sugar I don&rsquo;t need no honey on the side That&rsquo;s unconditiona-nal Alright I&rsquo;ll be honest, the lyrics aren&rsquo;t the most refined.]]></summary>

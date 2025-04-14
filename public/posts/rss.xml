@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Liu Zihe</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://liuzihe02.github.io/posts/</link>
     <description>Recent content in Posts on Liu Zihe</description>
     <generator>Hugo</generator>
     <language>en</language>
@@ -10,26 +10,26 @@
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
     <lastBuildDate>Fri, 28 Mar 2025 17:05:08 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/rss.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://liuzihe02.github.io/posts/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Discrete Fourier Transform and Fast Fourier Transform</title>
-      <link>http://localhost:1313/posts/dft-fft/</link>
+      <link>https://liuzihe02.github.io/posts/dft-fft/</link>
       <pubDate>Fri, 28 Mar 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/posts/dft-fft/</guid>
+      <guid>https://liuzihe02.github.io/posts/dft-fft/</guid>
       <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
     </item>
     <item>
       <title>Breaking Down DeepSeek R1</title>
-      <link>http://localhost:1313/posts/r1/</link>
+      <link>https://liuzihe02.github.io/posts/r1/</link>
       <pubDate>Mon, 17 Feb 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/posts/r1/</guid>
+      <guid>https://liuzihe02.github.io/posts/r1/</guid>
       <description>In this post, I want to explore the key RL architecture and software optimizations DeepSeek made to create Deepseek-R1. I&amp;rsquo;ll provide a brief introduction to the RL setup and explain how GRPO makes traditional algorithims much more efficient. At the end, I&amp;rsquo;ll provide a brief overview of how DeepSeek-R1 was trained. Talk given at Cambridge AI Safety Hub Members Meeting in February, slides available here.&#xA;Preliminaries Transformers Illustration of autoregressive model of transformers, taken from the ARENA curriculum Modern transformers are autoregressive models.</description>
     </item>
     <item>
       <title>Breaking Down Monte Carlo Tree Search</title>
-      <link>http://localhost:1313/posts/mcts/</link>
+      <link>https://liuzihe02.github.io/posts/mcts/</link>
       <pubDate>Sat, 07 Dec 2024 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
-      <guid>http://localhost:1313/posts/mcts/</guid>
+      <guid>https://liuzihe02.github.io/posts/mcts/</guid>
       <description>We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from int8&amp;rsquo;s website and the MCTS Wikipedia page. I wrote a lightweight implementation for tic-tac-toe available here and a super lightweight implementation available here.&#xA;Game Representation A game tree is a tree data structure, where every node represents a distinct state of the game. Given a state $s$, we take an action $a$, and the environment transitions to the new state $s&#39;$ with the transition probability $p_a(s&#39;|s)$.</description>
     </item>
   </channel>
