@@ -182,6 +182,10 @@ Please use `{{ if .Param "math" }}` instead of `{{ if .Params.math }}` in step 3
 
 For using custom domains, we used the CloudFlare service and these guides [here](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/) and the GitHub Pages [guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site?platform=linux)
 
+### Pushing Changes
+
+Note that despite the `github.io` website displaying build process has finished, it can take around 10 minutes before all the changes are fully reflected. Sometimes these lags occur.
+
 ## Guides
 
 The follow tutorials were used to learn Hugo and Github Pages:
