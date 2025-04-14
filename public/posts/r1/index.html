@@ -14,7 +14,7 @@
     <meta name="generator" content="Hugo 0.127.0">
 
     
-    <link crossorigin="anonymous" href="/css/stylesheet.min.ddff76a17889e714853ced93d59096be3dca89927ec0e446c2d9c6b70da094a6.css" integrity="sha256-3f92oXiJ5xSFPO2T1ZCWvj3KiZJ+wORGwtnGtw2glKY=" rel="preload stylesheet" as="style">
+    <link crossorigin="anonymous" href="/css/stylesheet.min.7d4d17396740abbc7057c884ed870bac885036763d73aad8b7fd475593e1ad71.css" integrity="sha256-fU0XOWdAq7xwV8iE7YcLrIhQNnY9c6rYt/1HVZPhrXE=" rel="preload stylesheet" as="style">
 
     <link rel="icon" href="/red_since.ico" sizes="any">
     <link rel="icon" href="/red_sinc.svg" type="image/svg+xml">
@@ -277,7 +277,7 @@ and old policies are allowed to be.</p>
 <p><strong>Proximal Policy Optimization (PPO)</strong></p>
 <p>Proximal Policy Optimization updates
 policies via:</p>
-$$\theta_{k+1} = \arg \max_\theta \mathcal{L}(\theta_k, \theta) = \arg \max_\theta \underset{s,a\sim\pi_{\theta_k}}{\mathbb{E}} \left[L(s, a, \theta_k, \theta)\right],$$
+$$\theta_{k+1} = \arg \max_\theta \mathcal{L}(\theta_k, \theta) = \arg \max_\theta \underset{s,a\sim\pi_{\theta_k}}{\mathbb{E}} \left[L(s, a, \theta_k, \theta)\right]$$
 <p>typically taking multiple steps of SGD to maximize the objective. Here
 $L$ is given by:</p>
 $$L(s, a, \theta_k, \theta) = \min\Bigg(\frac{\pi_\theta(a|s)}{\pi_{\theta_k}(a|s)}A_{\pi_{\theta_k}}(s,a), \text{clip}\left(\frac{\pi_\theta(a|s)}{\pi_{\theta_k}(a|s)}, 1-\epsilon, 1+\epsilon\right)A_{\pi_{\theta_k}}(s,a)\Bigg)$$
@@ -315,33 +315,32 @@ policy model itself</li>
 <h2 id="general-rl-training-setup">General RL Training Setup</h2>
 <p><strong>Objective:</strong>
 </p>
-$$J(\pi_\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^{T} \gamma^t r_t\right],$$
+$$J(\pi_\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^{T} \gamma^t r_t\right]$$
 <p>
 where $\tau = \{s_0, a_0, r_1, s_1, a_1, \dots, s_T\}$ is a trajectory.
 For LLMs, <em>actions</em> $a_t$ here are <em>tokens</em>!</p>
 <p><strong>Policy Gradient:</strong>
 </p>
-$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, Q^{\pi_\theta}(s,a)\right],$$
+$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, Q^{\pi_\theta}(s,a)\right]$$
 <p>
 or equivalently, using the advantage function $A^{\pi_\theta}(s,a)$:
 </p>
-$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, A^{\pi_\theta}(s,a)\right].$$
+$$\nabla_\theta J(\pi_\theta) = \mathbb{E}_{s,a \sim \pi_\theta}\left[\nabla_\theta \log \pi_\theta(a|s) \, A^{\pi_\theta}(s,a)\right]$$
 <p><strong>Trajectory Collection:</strong> LLM interacts with the environment (reward
 model) to sample trajectories. For each timestep:
 </p>
-$$s_t \xrightarrow{\pi_\theta} a_t \rightarrow r_{t+1},\, s_{t+1}.$$
+$$s_t \xrightarrow{\pi_\theta} a_t \rightarrow r_{t+1},\, s_{t+1}$$
 <p><strong>Return and Advantage Calculation:</strong>
 </p>
 $$G_t = \sum_{k=0}^{\infty} \gamma^k r_{t+k+1}, \quad
-    A(s_t,a_t) = Q^{\pi_\theta}(s_t,a_t) - V^{\pi_\theta}(s_t).$$
+    A(s_t,a_t) = Q^{\pi_\theta}(s_t,a_t) - V^{\pi_\theta}(s_t)$$
 <p>
 Generalized Advantage Estimation (GAE) are used to compute $A(s_t,a_t)$
 practically</p>
 <p><strong>Policy Update:</strong>
 </p>
-$$\theta_{k+1} = \theta_k + \alpha\, \nabla_\theta J(\pi_\theta),$$
-<p>
-Using the computed advantages, update the policy parameters and value
+$$\theta_{k+1} = \theta_k + \alpha\, \nabla_\theta J(\pi_\theta)$$
+<p>Using the computed advantages, update the policy parameters and value
 network by maximizing a surrogate objective (e.g., the PPO objective) to
 favor actions with higher expected returns. Repeat until agent&rsquo;s
 performance converges.</p>

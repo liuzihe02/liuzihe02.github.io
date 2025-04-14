@@ -2,13 +2,16 @@
   Common Variables
 
   Feel free to change!
+
+  I HAVE MODIFIED THE FONT TYPES AND SIZES HERE
 */
 /* Fonts */
+/* modify font-size here */
 /* 20px / 16px = 1.25em; support text resizing in all browsers */
 /*
   Color
 
-  Make sure to leave colorScheme in `config.toml` file empty for granular control
+  Make sure to leave `colorScheme` in `params.yaml` file empty for granular control
 */
 /* Ed: the minimal edition theme.
  * ___________________
@@ -50,7 +53,7 @@ html {
 
 @media (min-width: 38em) {
   html {
-    font-size: 1.25em; } }
+    font-size: 1.1em; } }
 
 body {
   color: #454545;
