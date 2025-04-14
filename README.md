@@ -178,6 +178,8 @@ Please use `{{ if .Param "math" }}` instead of `{{ if .Params.math }}` in step 3
 - The `yaml` file is a GitHub actions workflow that automates the build and deployment process to GitHub Pages
 - The `hugo.yaml` is a `CI/CD` workflow where a push to GitHub automatically triggers building and deployment
 
+Before committing, run the cleaning script above, then `hugo server`, then `hugo` before committing your changes.
+
 ### Custom Domain
 
 For using custom domains, we used the CloudFlare service and these guides [here](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/) and the GitHub Pages [guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site?platform=linux)
