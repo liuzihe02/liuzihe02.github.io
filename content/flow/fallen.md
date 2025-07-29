@@ -19,7 +19,7 @@ draft: false
 
 ---
 
-I didn't read Paradise Lost, but I found this painting somewhat soul-stirring. We see Lucifer's intense gaze as he looks *(at the viewer? slightly off centre? maybe is he angry at us?)* ahead, a mixture of angst, betrayal, remorse, anger, and other emotions up to viewer interpretation. I love how the darkness of the side of his face and his right eyebrow contrasts with that blinding gaze, accentuated by small white highlights. I could almost feel what he must have felt getting cast out from heaven.
+I didn't read Paradise Lost, but I found this painting of Lucifer that was inspired by Paradise Lost somewhat soul-stirring. We see Lucifer's intense gaze as he looks *(at the viewer? slightly off centre? maybe is he angry at us?)* ahead, a mixture of angst, betrayal, remorse, anger, and other emotions up to viewer interpretation. I love how the darkness of the side of his face and his right eyebrow contrasts with that blinding gaze, accentuated by small white highlights. I could almost feel what he must have felt getting cast out from heaven.
 
 I felt a little bit like that in 2023 and 2024. I would always stir up frustration at both my past self and the environment around me, despite knowing I probably made the best choice I could've and there was nothing I could do about it. Knowing full well I was in a very privileged situation, yet still unsatisfied with the plenty I already had. It did drive me to work harder though, which I suppose did pay off in the long run.
 
