@@ -51,7 +51,7 @@
       <link>https://liuzihe02.github.io/posts/dft-fft/</link>
       <pubDate>Fri, 28 Mar 2025 17:05:08 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/posts/dft-fft/</guid>
-      <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
+      <description>We analyze 1 the theoretical properties of both the Discrete Fourier Transform (DFT) and the optimized Fast Fourier Transform (FFT), and estimate their algorithmic complexity.&#xA;All code available on Github. Slides available here.&#xA;Discrete Fourier Transform Theory The DFT converts a finite-length time-domain signal into its frequency-domain representation. For an input signal $x[n]$ of length $N$, where $0 \le n \le N-1$, the DFT is defined as:&#xA;$$ X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{nk}, \quad 0 \le k \le N-1 \label{eq:DFT} $$ where $W_N=e^{-j\frac{2\pi}{N}}$ is the $N$-th principal root of unity, and $X[k]$ is component at frequency $kf_s/N$ with sampling frequency $f_s$.</description>
     </item>
     <item>
       <title>Unconditional</title>

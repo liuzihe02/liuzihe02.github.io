@@ -21,7 +21,7 @@ frequency-domain representation. For an input signal $x[n]$ of length
 $N$, where $0 \le n \le N-1$, the DFT is defined as:
 
 $$
-X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{kn}, \quad 0 \le k \le N-1
+X[k] = \sum_{n=0}^{N-1} x[n]\, W_N^{nk}, \quad 0 \le k \le N-1
 \label{eq:DFT}
 $$
 
