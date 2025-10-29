@@ -16,8 +16,24 @@
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
-    <updated>2025-10-16T03:51:34Z</updated>
+    <updated>2025-10-25T16:34:06Z</updated>
     <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/info/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[On Information]]></title>
+        
+        
+        
+        <published>2025-10-25T16:34:06Z</published>
+        <updated>2025-10-25T16:34:06Z</updated>
+        <id>urn:uuid:8f7444e7-76b0-5f91-c930-3d572a28253b</id>
+        
+        <summary type="html"><![CDATA[I&rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in stopping intelligence from going batshit crazy in VAE/PPO, entropy keeps cropping up. Maybe the universe is playing some kinda trick on us here. Since I&rsquo;m taking 3F7 Information Theory, I thought it&rsquo;s probably a good time to understand what these ideas really mean.
+Disclaimer: I do not claim this work to be my own; this is merely a synthesis of intuition and math across multiple resources for myself and anyone interested.]]></summary>
+    </entry>
     <entry>
         
         <category term="posts" />

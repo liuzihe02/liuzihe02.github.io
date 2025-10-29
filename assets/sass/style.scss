@@ -10,7 +10,7 @@
 $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 $heading-font: sans-serif;
 /* modify font-size here */
-$regular-font-size: 1.15em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
+$regular-font-size: 1em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
 
 /*
   Color
@@ -28,3 +28,23 @@ $link-color: #841212;
 @import "form-elements";
 @import "customize";
 @import "themes";
+
+// - - - - - - - - - - Responsive overrides
+// These come after imports to override theme defaults
+
+// Container width (content area)
+// Phone/Tablet (< 896px):  48rem = 768px max-width
+// Laptop+ (≥ 896px):       54rem = 864px max-width
+.container {
+  max-width: 40rem; // Phone: 640px
+
+  @media (min-width: 48em) {
+    // Tablet
+    max-width: 46rem; // 736px
+  }
+
+  @media (min-width: 56em) {
+    // Laptop
+    max-width: 42rem; // 672px
+  }
+}

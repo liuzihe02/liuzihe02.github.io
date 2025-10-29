@@ -15,6 +15,13 @@
   "language" : "en",
   "items": [
     {
+      "id": "8f7444e7-76b0-5f91-c930-3d572a28253b",
+      "url": "https://liuzihe02.github.io/posts/info/?utm_source=json_feed",
+      "title": "On Information",
+      "summary": "I\u0026rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in stopping intelligence from going batshit crazy in VAE/PPO, entropy keeps cropping up. Maybe the universe is playing some kinda trick on us here. Since I\u0026rsquo;m taking 3F7 Information Theory, I thought it\u0026rsquo;s probably a good time to understand what these ideas really mean.\nDisclaimer: I do not claim this work to be my own; this is merely a synthesis of intuition and math across multiple resources for myself and anyone interested.",
+      "date_published": "2025-10-25T16:34:06Z"
+    },
+    {
       "id": "8ae2474a-d471-5d23-1921-3ac30bad0906",
       "url": "https://liuzihe02.github.io/posts/dft-fft/?utm_source=json_feed",
       "title": "The Discrete Fourier Transform and Fast Fourier Transform",

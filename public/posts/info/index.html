@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" id="top-of-site">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no">
+
+    <link rel="canonical" href="https://liuzihe02.github.io/posts/info/">
+
+    <title>On Information - Liu Zihe</title>
+    <meta name="description" content="I&amp;rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in …">
+    <meta name="keywords" content="hugo, ed, hugo theme, minimal, responsive, clean">
+
+    <meta name="author" content="Serghei Iakovlev">
+    <meta name="generator" content="Hugo 0.127.0">
+
+    
+    <link crossorigin="anonymous" href="/css/stylesheet.min.9b63c65379ef0c117a8d68d3aa6d78a42aa7e61214b25be029e671e4cb512718.css" integrity="sha256-m2PGU3nvDBF6jWjTqm14pCqn5hIUslvgKeZx5MtRJxg=" rel="preload stylesheet" as="style">
+
+    <link rel="icon" href="/red_since.ico" sizes="any">
+    <link rel="icon" href="/red_sinc.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/red_sinc.png">
+    
+    <link rel="manifest" type="application/manifest+json" href="/manifest.webmanifest" title="Manifest">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" title="Sitemap">
+    <link rel="author" type="text/plain" href="/humans.txt" title="Humans">
+<link rel="alternate" hreflang="en" href="https://liuzihe02.github.io/posts/info/">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+  MathJax = {
+    tex: {
+      displayMath: [
+        ["\\[", "\\]"],
+        ["$$", "$$"],
+      ], 
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]  
+        ], 
+    },
+    loader: {
+      load: ["ui/safe"],
+    },
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+></script>
+
+
+
+
+
+    
+    <meta property="og:title" content="On Information - Liu Zihe">
+    <meta property="og:description" content="I&amp;rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in …">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://liuzihe02.github.io/posts/info/">
+    <meta property="og:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    <meta property="og:image:width" content="100">
+    <meta property="og:image:height" content="100">
+    <meta property="article:published_time" content="2025-10-25T16:34:06">
+    <meta property="article:modified_time" content="2025-10-25T16:34:06">
+    
+    <meta name="twitter:title" content="On Information - Liu Zihe">
+    <meta name="twitter:description" content="I&amp;rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in …">
+    <meta name="twitter:site" content="@egreps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://liuzihe02.github.io/img/red_sinc.png">
+    
+
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://liuzihe02.github.io/posts/info/"
+        },
+        "url": "https://liuzihe02.github.io/posts/info/",
+        "headline": "On Information - Liu Zihe",
+        "description": "I\u0026amp;rsquo;ve wondered about entropy for a long time. From thermodynamics and the arrow of time, to cross-entropy loss in ML cost functions, or KL divergence in …",
+        "keywords": ["hugo","ed","hugo theme","minimal","responsive","clean"],
+        "datePublished": "2025-10-25T16:34:06Z",
+        "dateModified": "2025-10-25T16:34:06Z",
+            "author": {
+                "@type": "Person",
+                "name": "Serghei Iakovlev",
+                "url": "https://twitter.com/egreps"
+            },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Serghei Iakovlev",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://liuzihe02.github.io/img/red_sinc_hud2b2f992c71e0cf1b31a7194e454b3b4_2840_96x96_resize_box_3.png",
+                "width": "96",
+                "height": "96"
+            }
+        }
+    }
+</script>
+
+
+
+    <script src="/js/common.js"></script>
+</head>
+
+    <body class="theme-base-">
+        <div id="top-of-site-anchor"></div>
+        
+            
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+    
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-item">
+            <p></p>
+        </div>
+    
+        <nav class="sidebar-nav">
+                <a class="sidebar-nav-item"
+                    href="/"
+                    id="menu-main-home">Home</a>
+                <a class="sidebar-nav-item active"
+                    href="/posts/"
+                    id="menu-main-posts">Posts</a>
+                <a class="sidebar-nav-item"
+                    href="/projects/"
+                    id="menu-main-projects">Projects</a>
+                <a class="sidebar-nav-item"
+                    href="/flow/"
+                    id="menu-main-flow">Flow</a>
+                <a class="sidebar-nav-item"
+                    href="https://drive.google.com/file/d/1UnVlSye-WO9GWGFWPfQjrP2rMeX5SVIX/view?usp=sharing"
+                    id="menu-main-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+            
+            
+        </nav>
+    
+        
+    <div class="sidebar-item">
+        <p>Built with <a href="https://github.com/sergeyklay/gohugo-theme-ed" target="_blank" rel="noopener noreferrer">Ed</a>. Distributed under an MIT license.</p>
+    </div>
+
+
+    </aside>
+        
+        <div class="wrap">
+            <header class="masthead">
+                <div class="container">
+                    <h3 class="masthead-title">
+                        <a href="/" title="Home">Liu Zihe</a>
+                        <br><small>Dancing in the Moonlight</small>
+                    </h3>
+                </div>
+            </header>
+
+            <main class="container content" id="main">
+                <article class="post" role="document">
+    <header>
+        <h1 class="text-title">
+            On Information
+        </h1>
+        <p class="byline">
+            
+                
+
+
+Published on
+<time datetime="2025-10-25T16:34:06Z">
+    October 25, 2025
+</time>
+
+
+
+
+            
+        </p>
+    </header>
+
+    <div class="post-body">
+        <p>I&rsquo;ve wondered about entropy for a long time. From <a href="https://en.wikipedia.org/wiki/Entropy_as_an_arrow_of_time">thermodynamics and the arrow of time</a>, to <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html">cross-entropy loss</a> in ML cost functions, or KL divergence in stopping intelligence from going batshit crazy in <a href="https://mbernste.github.io/posts/vae/">VAE</a>/<a href="https://arxiv.org/abs/1707.06347">PPO</a>, entropy keeps cropping up. Maybe the universe is playing some kinda trick on us here. Since I&rsquo;m taking <a href="https://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iia-3f7-information-theory-and-coding-2025-26" class="external" target="_blank" rel="noopener noreferrer">3F7 Information Theory</a>, I thought it&rsquo;s probably a good time to understand what these ideas <em>really</em> mean.</p>
+<blockquote>
+<p>Disclaimer: I do not claim this work to be my own; this is merely a synthesis of intuition and math across multiple resources for myself and anyone interested. In particular, we borrow the beautiful figures and analogies from Chris Olah&rsquo;s amazing post<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on Information Theory.</p>
+</blockquote>
+<h2 class="no_toc" id="contents">
+    Contents
+</h2>
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-entropy-and-self-information">1 Entropy and Self-Information</a>
+      <ul>
+        <li><a href="#11-optimal-encoding">1.1 Optimal Encoding</a></li>
+        <li><a href="#12-source-coding-theorem">1.2 Source Coding Theorem</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-cross-entropy">2 Cross-Entropy</a></li>
+    <li><a href="#3-kl-divergence">3 KL Divergence</a></li>
+    <li><a href="#4-mutual-information">4 Mutual Information</a></li>
+    <li><a href="#5-language-modelling">5 Language Modelling</a>
+      <ul>
+        <li><a href="#51-cross-entropy-maximum-likelihood-estimation-multi-class-classification">5.1 Cross-Entropy, Maximum Likelihood Estimation, Multi-class Classification</a></li>
+        <li><a href="#52-auto-regressive-language-modelling">5.2 Auto-regressive Language Modelling</a></li>
+        <li><a href="#53-information-theory-of-llms">5.3 Information Theory of LLMs</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-conclusion">6 Conclusion</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+<hr>
+<h2 id="1-entropy-and-self-information">1 Entropy and Self-Information</h2>
+<p>We introduce entropy as the fundamental limit to compressing information.</p>
+<h3 id="11-optimal-encoding">1.1 Optimal Encoding</h3>
+<p><strong>Encoding</strong></p>
+<p>Suppose my friend Jerry is at the London Zoo, while I&rsquo;m (Zach) at the Singapore Zoo. There&rsquo;s only 4 kinds of animals in both zoos: &ldquo;dog&rdquo;, &ldquo;cat&rdquo;, &ldquo;fish&rdquo; and &ldquo;bird&rdquo;. Today, he&rsquo;s telling me which animals he saw at the London Zoo - but for whatever reason he can only communicate in binary (0s and 1s).</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/binary.png"  width="150"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Jerry likes to talk in binary</figcaption>
+  
+</div>
+
+<p>To communicate, Jerry and I have a secret code mapping animals to sequences of bits. We use a simple mapping, which uses 2 bits to encode 4 animals/symbols:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonOldMap.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">A mapping between animal symbols and binary codewords</figcaption>
+  
+</div>
+
+<p>Technically, the animals are symbols $x_i$, with their collective called an alphabet $\{x_1 \dots x_i \dots x_n\}$. Their respective binary representations are called &ldquo;codewords&rdquo; and the original string message is &ldquo;encoded&rdquo; into its binary represenation.</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/terminology.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Some terminology</figcaption>
+  
+</div>
+
+<p><strong>Variable Encoding</strong></p>
+<blockquote>
+<p>All animals are equal, but some animals are more equal than others.</p>
+</blockquote>
+<p>There are different numbers for each animal type in the London Zoo. We can plot a diagram showing the probability distribution of the animals and the length of our codeword representations:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonProb2.png"  width="150"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Probability distribution of animals in the London Zoo</figcaption>
+  
+</div>
+
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonOldCode.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Vertical axis shows the probability of each animal $p(x_i)$, while the horizontal axis shows the length of the corresponding codeword $L(x_i)$</figcaption>
+  
+</div>
+
+<p>The vertical axis shows the probability $p(x_i)$ of each animal seen by Jerry, while the horizontal axis shows the length of the corresponding codeword $L(x_i)$ in our secret code mapping. <em>Notice the total area summed and normalized over all codewords $\sum_{i} p(x_i) L(x_i)$ is in fact the average length $\mathbb{E}[L(X)]$ codewords in our mapping!</em></p>
+<p>Information is expensive - we&rsquo;d like to minimize this average length $\mathbb{E}[L(X)]$. Let&rsquo;s exploit this uneven-ness in the probability distribution, and assign shorter codewords to more frequent animals:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonNewMap.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Our new codeword mapping with shorter codewords for more frequent animals (like dogs) </figcaption>
+  
+</div>
+
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonNewCode.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Visualizing $p(x_i)$ and $L(x_i)$ for our new codeword mapping</figcaption>
+  
+</div>
+
+<p>The average length of codewords (total area above) went down from 2 bits to 1.75 bits! How much further can we reduce this? Turns out there&rsquo;s a fundamental limit - we call this the <em>entropy</em> of the probability distribution. To understand why such a limit exists and how to compute it, we need to understand the tradeoffs between making some codewords short and others long.</p>
+<p><strong>Tradeoffs in the Space of Codewords, Kraft&rsquo;s Inequality</strong></p>
+<p>To understand this tradeoff, we visualize all possible codewords first on a table and then on a tree:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/spaceTable.png"  width="200"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">All possible codewords as a table</figcaption>
+  
+</div>
+
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/spaceTree.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">All possible codewords of length $L_{max}=3$, with the number of leaves on the tree as $2^{L_{max}}$</figcaption>
+  
+</div>
+
+<p>We need our code to be <em>uniquely decodable</em>, which means that given an encoded string there is only one way to decode it back to our animal symbols. (e.g. an alphabet $\{0, 1, 01\}$ as codewords is not uniquely decodable because 001 could mean $[0,0,1]$ or $[0,01]$) One way to achieve this property is to create a <em>prefix-free</em> code, which means no codeword can be the prefix of another codeword. In terms of trees, this means every codeword must be a leaf node. By enforcing this prefix-tree condition, we have to make tradeoffs whenever we use a codeword. Consider using $01$ as a codeword:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/spaceTable01.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Sacrificing $010$ and $011$</figcaption>
+  
+</div>
+
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/spaceTree01.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Pruning a tree</figcaption>
+  
+</div>
+
+<p>A quarter of codewords $\{010, 011\}$ (assuming we only used 3bit codewords) would be gone from the space of codewords. We see that a shorter codeword requires you to sacrifice more of the space of possible codewords. In fact we can quantify this tradeoff as <em>Kraft&rsquo;s inequality</em>:</p>
+<p>Consider a full binary tree of depth $L_{max}$, which has $2^{L_{max}}$ leaves. Whenever we use a codeword $x_i$ at depth $L(x_i)$, we eliminate all its descendant leaves - that&rsquo;s $2^{L_{max} - L(x_i)}$ leaves becoming unavailable. For a prefix-free code with codewords at depths $L_1, L_2, \ldots, L_n$, the total number of unusable leaves is:</p>
+$$\sum_{i=1}^{n} 2^{L_{max} - L(x_i)}$$
+<p>This sum cannot exceed the total number of leaves $2^{L_{max}}$:</p>
+$$\sum_{i=1}^{n} 2^{L_{max} - L(x_i)} \leq 2^{L_{max}}$$
+<p>Dividing both sides by $2^{L_{max}}$:</p>
+$$\sum_{i=1}^{n} 2^{-L(x_i)} \leq 1$$
+<p>This is Kraft&rsquo;s inequality. It&rsquo;s both a necessary condition (any prefix-free code must satisfy it) and a sufficient condition (if a set of lengths satisfies it, we can construct a prefix-free code with those lengths). This inequality formalizes the tradeoff in the space of codewords - shorter codewords are &ldquo;expensive&rdquo; as they eliminate more possibilities. <em>Assuming a total space of $1$, each codeword $x_i$ of length $L(x_i)$ costs $2^{-L(x_i)}$ of the total space of codewords.</em> We can think of the total space as a maximum fixed &ldquo;budget&rdquo; of $1$, and each codeword costing $2^{-L(x_i)}$ of this budget.</p>
+<p><strong>Optimal Encodings</strong></p>
+<p>We&rsquo;ve showed the cost of codewords decreases exponentially with its length. We can visualize this <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> with the cost on the vertical axis and the length on the horizontal axis of an exponential curve:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/cost.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Visualizing the cost of a codeword against its length. Both the height and right shaded area are numerically equal.</figcaption>
+  
+</div>
+
+<p>Note that since cost decays as a (natural) exponential, it is <em>both</em> the height of the right shaded area and the actual shaded area<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. We can also visualize the contribution $p(x_i) L(x_i)$ of this codeword to the average codeword length:</p>
+$$\mathbb{E}[L(X)]=\sum_{i} p(x_i) L(x_i)$$
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/lengthContri.png"  width="150"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Contribution $p(x_i) L(x_i)$ of codeword $x_i$ to the average codeword length $\mathbb{E}[L(X)]$</figcaption>
+  
+</div>
+
+<p>Visualizing both the cost and length contribution we get:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/contriCost.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">For codeword $x_i$, contribution to average codeword length is the left area, while cost of codeword space is the right area</figcaption>
+  
+</div>
+
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/contriCostTradeoff.png"  width="600"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Short codewords reduce the average message length but are expensive, while long codewords increase the average message length but are cheap.</figcaption>
+  
+</div>
+
+<p>The above diagram makes the tradeoff clear: short codewords reduce the average message length but are expensive, while long codewords increase the average message length but are cheap. So what&rsquo;s the optimal allocation of the codeword space budget to each symbol $x_i$, so that the average codeword length is minimized? <em>We propose that if a symbol (or event) $x_i$ appears with probability $p(x_i)$, then the optimal allocation is to allocate $p(x_i)$ of the codeword space budget to this symbol.</em> Here&rsquo;s a handwavy proof:<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+$$
+\text{Cost}(x_i)=2^{-L(x_i)}=p(x_i), \forall i
+$$
+$$
+\frac{d\big(\text{Length Contribution}(x_i)\big)}{dL(x_i)} = \frac{d\big(p(x_i) L(x_i)\big)}{dL(x_i)} = p(x_i)
+$$
+$$
+\frac{d\big(\text{Cost}(x_i)\big)}{dL(x_i)} = \frac{d\big(2^{-L(x_i)}\big)}{dL(x_i)} = -2^{-L(x_i)} \ln(2)
+$$
+<p>At the optimal allocation where $2^{-L(x_i)} = p(x_i)$,</p>
+$$\frac{|\text{Length Contribution}{(x_i)}|}{|\text{Cost}{(x_i)}|} = \frac{\text{Benefit from lower length contribution}}{\text{Cost increase from }{x_i}} = \frac{1}{\ln(2)}$$
+<p><em>which is constant regardless of $p(x_i)$.</em> This means at the optimal budget, it&rsquo;s equally worthwhile to invest in making any codeword shorter as all codewords have the <em>same benefit/cost ratio</em>. Note that the actual value of this hypothetical benefit/cost ratio doesn&rsquo;t matter (the top and bottom quantities don&rsquo;t have the same units so we cannot compare them meaningfully in terms of absolute values) - what matters is the relative ratios between the different symbols.</p>
+<p>If $2^{-L(x_i)} \ne p(x_i)$, then this would mean the ratio for each ${x_i}$ would in fact be dependent on both $L(x_i)$ and $p(x_i)$, and will result in uneven - hence suboptimal allocation of budgets. Any uneven-ness of this ratio means it will make more sense to spend more budget in one codeword than other codewords.</p>
+<p><strong>Calculating Entropy</strong></p>
+<p>Since the cost of an encoded message of length $L(x_i)$ is $2^{-L(x_i)}$, then $L(x_i)=\log_2\left(\frac{1}{\text{Cost}}\right)$. Since we allocated $p(x_i)$ of the budget to $L(x_i)$ for the optimum allocation, then</p>
+$$L(x_i)=\log_2\left(\frac{1}{p(x_i)}\right)$$
+$$\mathbb{E}[L(X)] = \sum_{i} p(x_i) L(x_i) = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right) $$
+<p>Kraft&rsquo;s inequality created a budget constraint on how many short codewords you can have. The optimal strategy is to spend this budget proportionally to symbol probabilities. Any other allocation either violates the constraint (making the code invalid, like not prefix-free) or wastes budget (making the average length longer). Entropy emerges because it&rsquo;s the only allocation that balances the budget constraint with minimizing average length!</p>
+<p>Hence for a probability distribution of symbols, the minimum average length across all the encoded symbols is the entropy:</p>
+$$ H(X) = \min_{\text{all encodings}} \mathbb{E}[L(X)] = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right) $$
+<p>The more concentrated the probability, the easier it is to exploit this by crafting short encodings. The more spread out the probability, the less I am able to exploit this, and I have to make all my encodings longer on average. So a distribution with higher uncertainty requires more bits to communicate information.</p>
+<h3 id="12-source-coding-theorem">1.2 Source Coding Theorem</h3>
+<p>We&rsquo;ve shown the intuition that the optimal codeword allocation follows $2^{-L(x_i)} = p(x_i)$, yielding entropy. Here&rsquo;s the actual proof for this - Shannon&rsquo;s source coding theorem. We&rsquo;ve seen that prefix-free codes obeys the budget constraint $\sum_{i} 2^{-L(x_i)} \leq 1$, and McMillan<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> proved the same constraint holds for <em>all</em> uniquely decodable codes (of which prefix-free codes are just a subset). Consider a <em>general</em> (possibly non-optimal) coding scheme giving length $L(x_i)$ for symbol $x_i$:</p>
+$$H(X) - \mathbb{E}[L(X)] = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right) - \sum_{i} p(x_i) L(x_i)$$
+$$= \sum_{i} p(x_i) \log_2\left(\frac{2^{-L(x_i)}}{p(x_i)}\right)$$
+$$= \frac{1}{\ln 2} \sum_{i} p(x_i) \ln\left(\frac{2^{-L(x_i)}}{p(x_i)}\right)$$
+<p>Note for any $x > 0$, we have $\ln(x) \leq x - 1$ (with equality only when $x = 1$). This gives us:</p>
+$$H(X) - \mathbb{E}[L(X)] \leq \frac{1}{\ln 2} \sum_{i} p(x_i) \left(\frac{2^{-L(x_i)}}{p(x_i)} - 1\right)$$
+$$\frac{1}{\ln 2} \left(\sum_{i} 2^{-L(x_i)} - 1\right) \leq 0$$
+<p>where we&rsquo;ve used McMillan&rsquo;s constraint $\sum_i 2^{-L(x_i)} \leq 1$. Therefore no encoding can beat entropy $ H(X) \leq \mathbb{E}[L(X)] $.</p>
+<p><strong>Shannon&rsquo;s Source Coding Theorem</strong></p>
+<p>For any uniquely decodable code encoding symbols (where $L(X)$ gives the length of the codeword for symbol $X$) from a distribution with entropy $H(X)$:</p>
+$$H(X) \leq \mathbb{E}[L(X)]$$
+<p>This limit explains why:</p>
+<ul>
+<li><strong>Random data doesn&rsquo;t compress</strong> — it has maximum entropy because all symbols are equally likely, we can&rsquo;t exploit shorter messages for more common events</li>
+<li><strong>English text compresses well</strong> — it has entropy $\sim 1.5$ bits per letter (much less than uniform distribution $\log_2(26) \approx 4.7$) because letter probabilities are wildly uneven</li>
+</ul>
+<h2 id="2-cross-entropy">2 Cross-Entropy</h2>
+<p>Turns out the distribution of animals is different in the London Zoo $P$ and Singapore Zoo $Q$:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/londonSG.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Animal distributions differ: London Zoo has more dogs, Singapore Zoo has more cats</figcaption>
+  
+</div>
+
+<p>What if I design my code mapping to be locally optimal for the Singapore Zoo, but Jerry is actually sending me data from the London Zoo overseas? That is, I optimize codeword lengths $L(x_i) = \log_2\left(\frac{1}{q(x_i)}\right)$ for distribution $Q$ (Singapore), but the actual data comes from distribution $P$ (London). The expected codeword length becomes:</p>
+$$H_P(Q) = \sum_i p(x_i) \log_2\left(\frac{1}{q(x_i)}\right)$$
+<p>We call this the <em>cross-entropy</em> from $P$ to $Q$. It represents the average length of encoded messages for data actually drawn from distribution $P$, using an optimal code designed for distribution $Q$. Since we have used the unoptimized code mapping on distribution $P$, we have to pay a cost through an increase in the average length of encoded messages $H_P(Q) \geq H(P)$:</p>
+$$H_P(Q) = H(P) + D_{KL}(P \| Q)$$
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/hpq.png"  width="250"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Cross Entropy measures the average length of encoded messages drawn from $P$ using the encoding of $Q$, which is longer than the encoding optimize for $P$</figcaption>
+  
+</div>
+
+<ul>
+<li><strong>$H(P)$</strong>: The irreducible minimum—the entropy of the true underlying distribution</li>
+<li><strong>$D_{KL}(P \| Q)$</strong>: The penalty for mismatch—how much extra bits we waste by optimizing for the wrong distribution</li>
+</ul>
+<p>This mismatch means we waste bits on unexpected events (where $p(x_i) > q(x_i)$) while potentially using longer-than-necessary codes for common events (where $p(x_i) < q(x_i)$), hence giving a length penalty. When $Q = P$ (our assumption is perfect), the second term vanishes and cross-entropy equals entropy—we&rsquo;re encoding optimally. When they differ, $D_{KL}(P \| Q) > 0$ quantifies exactly the penalty. In this sense, cross-entropy gives us a measure of how 2 different probability distributions are. The more different 2 distributions are, the bigger the cross-entropy $H_P(Q)$.</p>
+<p><strong>Asymmetry</strong></p>
+<p>Cross-entropy is fundamentally asymmetric $H_P{(Q)} \ne H_Q{(P)}$:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/crossAss.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Cross-entropy computed in various ways</figcaption>
+  
+</div>
+
+<p>$H_P{(Q)}$ is large because we pay a very large penalty using a long codeword (that&rsquo;s rare in $Q$ but common in $P$) for the purple symbol. On the other hand, this extra cost for using unnecessarily longer codewords when encoding real data from $Q$ is not quite as big.</p>
+<h2 id="3-kl-divergence">3 KL Divergence</h2>
+<p>Now that we understand cross-entropy, we can isolate the pure cost of mismatch. The <em>Kullback-Leibler (KL) divergence</em> is exactly this: cross-entropy minus the intrinsic entropy.</p>
+$$D_{KL}(P \| Q) = H_P(Q) - H(P) = \sum_i p(x_i) \log\left(\frac{p(x_i)}{q(x_i)}\right)$$
+<p>This is the extra bits we pay because we optimized for the wrong distribution $Q$ instead of the the distribution where samples came from $P$. Note the the following properties:</p>
+<ul>
+<li>Non-negativity: $D_{KL}(P \| Q) \geq 0 \text{, with equality iff } P = Q$</li>
+<li>Not really a metric <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></li>
+<li>Asymmetry $D_{KL}(P \| Q) \neq D_{KL}(Q \| P)$ <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
+<ul>
+<li>Forward KL: $D_{KL}(P \| Q)$ (what we usually minimize) is <em>mean-seeking</em>. If $P$ is bimodal, and we optimize $Q$ to reduce KL, then $Q$ diffuses to cover both modes</li>
+<li>Reverse KL: $D_{KL}(Q \| P)$ is <em>mode-seeking</em>. To minimize KL, $Q$ concentrates probability around the 2 modes</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-mutual-information">4 Mutual Information</h2>
+<p>Mutual information measures how much one variable reduces the uncertainty about another:</p>
+$$I(X; Y) = D_{KL}(P(X,Y) \| P(X)P(Y))$$
+<p>This compares the joint distribution $P(X,Y)$ against what we&rsquo;d expect if $X$ and $Y$ were independent: $P(X)P(Y)$. When variables are independent, the joint factorizes and the KL divergence is zero—they share no information. When they&rsquo;re dependent, $I(X; Y) > 0$ quantifies the dependence. Using the decomposition $H_P(Q) = H(P) + D_{KL}(P \| Q)$, we can also expand:</p>
+$$I(X; Y) = H(X) - H(X|Y)$$
+<p>This form says: &ldquo;mutual information is the reduction in uncertainty about $X$ when we learn $Y$.&rdquo; Since $H(X|Y)$ is the conditional entropy (uncertainty about $X$ after knowing $Y$), the difference $H(X) - H(X|Y)$ measures exactly how much information $Y$ gave us about $X$.</p>
+<p>By the chain rule of entropy $H(X,Y) = H(X) + H(Y|X) = H(Y) + H(X|Y)$ we can derive:</p>
+$$I(X; Y) = H(Y) - H(Y|X)$$
+<p>Combining both:</p>
+$$I(X; Y) = H(X) + H(Y) - H(X,Y)$$
+<p>Note the following properties:</p>
+<ul>
+<li>Symmetry: $I(X; Y) = I(Y; X)$
+<ul>
+<li>knowing $Y$ tells you as much about $X$ as knowing $X$ tells you about $Y$</li>
+</ul>
+</li>
+<li>Non-negativity: $I(X; Y) \geq 0 $
+<ul>
+<li>Due to non-negativity of $D_{KL}$</li>
+<li>With equality iff $X$ and $Y$ are independent</li>
+</ul>
+</li>
+<li>Self-Information: $I(X; X) = H(X)$
+<ul>
+<li>This is why entropy is sometimes called &ldquo;self-information&rdquo;—it&rsquo;s just mutual information of a variable with itself. Note that $P(X,X)=P(X)$.</li>
+</ul>
+</li>
+</ul>
+<p>Here&rsquo;s the full picture:</p>
+
+<div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
+  <img src="/info/all.png"  width="400"  
+  style="display: block; margin: 0 auto;">
+  
+  
+    <figcaption style="text-align: center; margin-top: 8px; margin-bottom: 8px; font-style: italic;">Diagram of entropy relationships. H(X) and H(Y) are marginal entropies, H(X,Y) is joint entropy, I(X;Y) is mutual information shown as overlap</figcaption>
+  
+</div>
+
+<p>When $X$ and $Y$ are independent, there&rsquo;s no overlap—$I(X;Y) = 0$. When they&rsquo;re perfectly correlated, they share all their information—$I(X;Y) = H(X) = H(Y)$.</p>
+<h2 id="5-language-modelling">5 Language Modelling</h2>
+<h3 id="51-cross-entropy-maximum-likelihood-estimation-multi-class-classification">5.1 Cross-Entropy, Maximum Likelihood Estimation, Multi-class Classification</h3>
+<p>The cross entropy is often used as an objective/loss function in multi-class classification, when training machine learning (ML) or large language models (LLM). This objective is essentially minimizing the distance between our model&rsquo;s distribution and the ground truth distribution:</p>
+<ul>
+<li><strong>$P$</strong> = true labels (the ground truth data distribution)</li>
+<li><strong>$Q$</strong> = predicted probabilities (our model&rsquo;s beliefs)</li>
+</ul>
+<p>Minimizing cross-entropy is equivalent to maximum likelihood estimation (MLE)! Given a sample dataset $\{x_1, \ldots, x_n\}$ (sample datapoints not the alphabet here) drawn from true distribution $P$, define the likelihood of data under our model with parameters $\theta$:</p>
+$$\mathcal{L}(\theta) = \prod_{i=1}^{n} q_\theta(x_i)$$
+<p>We seek</p>
+$$\hat{\theta} = \arg\max_\theta \mathcal{L}(\theta) = \arg\max_\theta \prod_{i=1}^{n} q_\theta(x_i) $$
+<p>Convert the product to a sum via logarithms (since logarithms are strictly increasing and do not affect argmax), then normalize by sample count:</p>
+$$\hat{\theta} = \arg\max_\theta \frac{1}{n}\sum_{i=1}^{n} \log q_\theta(x_i)$$
+<p>By the Law of Large Numbers, this <em>sample average converges to an expected value</em> as $n \to \infty$. Specifically, the expectation is with respect to the true underlying distribution $P$:</p>
+$$\frac{1}{n}\sum_{i=1}^{n} \log q_\theta(x_i) \to \mathbb{E}_{x \sim P}\left[\log q_\theta(x)\right] = \sum_{i} p(x_i) \log q_\theta(x_i)$$
+<p>Negate and minimize:</p>
+$$\hat{\theta} = \arg\min_\theta \left\{ -\sum_{i} p(x_i) \log q_\theta(x_i) \right\} = \arg\min_\theta H_P(Q_\theta)$$
+<p><em>MLE is equivalent to minimizing cross-entropy!</em></p>
+<p>Note that minimizing cross-entropy is also equivalent to minimizing the KL divergence $D_{KL}(P \| Q)$. Since $H(P)$ is the entropy of the true distribution, it&rsquo;s independent of the model parameters $\theta$.</p>
+$$\arg\min_\theta H_P(Q_\theta) = \arg\min_\theta [D_{KL}(P \| Q_\theta) + H(P)] = \arg\min_\theta D_{KL}(P \| Q_\theta)$$
+<p><strong>MLE in Practice</strong></p>
+<p>In practice, we don&rsquo;t have access to the true distribution $P$. Instead, we can approximate this by using a batch of sample data. Consider a classification batch of $n$ samples, where each sample $i$ has a true label $y_i$ (one-hot: probability 1 for the true class, 0 elsewhere) and the model predicts $q_\theta(y=k)$ for each class $k$. The batch loss is:</p>
+$${L}(\theta) = -\frac{1}{n} \sum_{i=1}^{n} \log q_\theta(y_i)$$
+<p>Note in practice we only sum the model log probabilities for the class corresponding to the true class for each sample, despite having log probs for all classes. Now regroup by class with $n_k$ samples in each class $k$, so we can rewrite the sum as:</p>
+$$ {L}(\theta) = -\frac{1}{n} \sum_{k=1}^{K} n_k \log q_\theta(y=k) = -\sum_{k=1}^{K} \frac{n_k}{n} \log q_\theta(y=k)$$
+<p>Note that $\hat{p}(y=k) = \frac{n_k}{n}$ is the empirical frequency of class $k$ in the batch</p>
+$$ {L}(\theta) = -\sum_{k=1}^{K} \hat{p}(y=k) \log q_\theta(y=k) = H_{\hat{P}}(Q_\theta)$$
+<p>This is exactly the cross-entropy formula! One-hot labels, when averaged over a batch, naturally produce an empirical distribution. With sufficient data, $\hat{p}(y=k) \to p(y=k)$ (the true class distribution), so batch averaging realizes the theoretical MLE objective.</p>
+<h3 id="52-auto-regressive-language-modelling">5.2 Auto-regressive Language Modelling</h3>
+<p>So we&rsquo;ve seen how cross-entropy applies to multi-class classification. We now extend this to LLMs that generate long sequences of text. Consider a sequence of tokens $X=(x_1, x_2, \dots, x_T)$. The objective of LLMs is to model the <em>joint probability distribution</em> of this sequence $p(x_1, x_2, \dots, x_T)$. We can use the chain rule of probability to factor this joint distribution into a product of conditional probabilities:</p>
+$$p(x_1,\ldots,x_T) = p(x_1) \cdot p(x_2 | x_1) \cdot p(x_3 | x_1, x_2) \cdots = \prod_{t=1}^T p(x_t|x_1,\ldots,x_{t-1})$$
+<p><em>An autoregressive LLM is just a sequence of simple classification tasks!</em> At each timestep $t$,</p>
+<ol>
+<li>It takes the context $x_{\lt t}$ (e.g., &ldquo;The quick brown fox&hellip;&rdquo;).</li>
+<li>It predicts a probability distribution $Q_\theta(\cdot | x_{\lt t})$ over the <em>entire vocabulary</em> (e.g., 50,000 possible next tokens). Each token is a class.</li>
+<li>The &ldquo;true label&rdquo; $P_t$ is simply the one-hot vector for the token that actually comes next in the training data (e.g., &ldquo;jumps&rdquo;).</li>
+</ol>
+<p>The total loss for one sequence ${L}_X(\theta)$ is just the sum of the cross-entropy losses across all timesteps:</p>
+$${L}_X(\theta) = \sum_{t=1}^T  -\log q_\theta(x_t | x_{\lt t}) $$
+<p>This sum of losses is equivalent to the negative log-likelihood of the entire sequence $X$:</p>
+$${L}_X(\theta) = -\sum_{t=1}^T \log q_\theta(x_t | x_{\lt t}) = -\log \left( \prod_{t=1}^T q_\theta(x_t | x_{\lt t}) \right) = -\log q_\theta(X)$$
+<p>LLMs are just doing MLE on the joint distribution of the entire sequence.</p>
+<h3 id="53-information-theory-of-llms">5.3 Information Theory of LLMs</h3>
+<p>Prediction is essentially compression.</p>
+<p><strong>Generalization</strong></p>
+<p>Information theory can help us analyze generalization in LLMs, by measuring a model&rsquo;s capacity in bits [Morris, 2025]. Morris splits learned information into &ldquo;unintended memorization&rdquo; (information specific to dataset) and &ldquo;generalization&rdquo; (underlying distribution). They then compute the total capacity of LLMs, where models in the GPT family have an approximate capacity of <em>3.6 bits-per-parameter</em>. When a model is trained on data whose information content exceeds its capacity, it must make a tradeoff between memorizing individual datapoints, or begin extracting general patterns that compress the data more efficiently. This transition point—where unintended memorization gives way to generalization—occurs precisely when the dataset&rsquo;s entropy exceeds the model&rsquo;s capacity. This explains phenomena like &ldquo;grokking&rdquo; and double descent.</p>
+<p><strong>Information in Chain-Of-Thought</strong></p>
+<p>When an LLM uses Chain-of-Thought (CoT) to solve a problem, it generates intermediate steps. But are these steps actually useful? Researchers quantify [Ton, 2025] the usefulness of each reasoning step ($X_t$) by measuring its <em>&ldquo;information gain&rdquo;</em>—the conditional mutual information it shares with the final correct answer ($Y$), given all the previous steps ($X_{\lt t}$):</p>
+$$G_t = I(Y; X_t | X_{ \lt t})$$
+<p>This metric basically answers: &ldquo;How much new and relevant information did this step provide about the final answer, given everything the model has already said?&rdquo;</p>
+<h2 id="6-conclusion">6 Conclusion</h2>
+<p>Whether we&rsquo;re designing optimal codes for data compression, training models to predict the next token, or evaluating multi-step reasoning, we return to the same fundamental question: <em>How much information is really here?</em> As we&rsquo;ve seen throughout this post, entropy—in all its forms—is often the answer.</p>
+<hr>
+<h2 id="references">References</h2>
+<p><strong>Entropy, Cross-Entropy, KL Divergence</strong></p>
+<p>Zhu, J. <a href="https://pages.cs.wisc.edu/~jerryzhu/cs769/info.pdf" class="external" target="_blank" rel="noopener noreferrer"><em>Information Theory and Machine Learning</em></a>. University of Wisconsin-Madison, CS 769 Lecture Notes.</p>
+<p>Sarang, N. (2024). <a href="https://nimasarang.com/blog/2024-08-24-information-theory/" class="external" target="_blank" rel="noopener noreferrer"><em>Entropy, Cross-Entropy, KL Divergence, and Mutual Information</em></a>.</p>
+<p>James Explains. (2024). <a href="https://www.youtube.com/watch?v=RaTe3dhiqdE" class="external" target="_blank" rel="noopener noreferrer"><em>Information Theory - Entropy, Cross Entropy, KL Divergence</em></a> [Video]. YouTube.</p>
+<p>Bendersky, E. (2025). <a href="https://eli.thegreenplace.net/2025/cross-entropy-and-kl-divergence/" class="external" target="_blank" rel="noopener noreferrer"><em>Cross-Entropy and KL Divergence</em></a>. Eli Bendersky&rsquo;s Website.</p>
+<p>Maulik, A. <a href="https://www.iitg.ac.in/cseweb/osint/slides/Anasua_Entropy.pdf" class="external" target="_blank" rel="noopener noreferrer"><em>Entropy</em></a>. Indian Institute of Technology Guwahati, CS Lecture Slides.</p>
+<p>Olah, C. (2015). <a href="https://colah.github.io/posts/2015-09-Visual-Information/" class="external" target="_blank" rel="noopener noreferrer"><em>Visual Information Theory</em></a>.</p>
+<p>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <a href="http://www.deeplearningbook.org" class="external" target="_blank" rel="noopener noreferrer"><em>Deep Learning</em></a> (Chapter 3: Probability and Information Theory). MIT Press.</p>
+<p>Tan, Z., Li, C., &amp; Huang, W. (2024). <a href="https://arxiv.org/abs/2402.03471" class="external" target="_blank" rel="noopener noreferrer"><em>The Information of Large Language Model Geometry</em></a>.</p>
+<p>Ton, J.F., Taufiq, M.F., &amp; Liu, Y. (2025). <a href="https://arxiv.org/abs/2411.11984" class="external" target="_blank" rel="noopener noreferrer"><em>Understanding Chain-of-Thought in LLMs through Information Theory</em></a>. ICML 2025</p>
+<p>Morris, J. X., Sitawarin, C., Guo, C., Kokhlikyan, N., Suh, G. E., Rush, A. M., Chaudhuri, K., &amp; Mahloujifar, S. (2025). <a href="https://arxiv.org/abs/2505.24832" class="external" target="_blank" rel="noopener noreferrer"><em>How much do language models memorize?</em></a>.</p>
+<p><strong>Source Coding Theorem</strong></p>
+<p>Wikipedia. <a href="https://en.wikipedia.org/wiki/Kraft%E2%80%93McMillan_inequality" class="external" target="_blank" rel="noopener noreferrer"><em>Kraft–McMillan Inequality</em></a>.</p>
+<p>Wikipedia <a href="https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem" class="external" target="_blank" rel="noopener noreferrer"><em>Shannon's Source Coding Theorem</em></a>.</p>
+<p>Bernstein, M. <a href="https://mbernste.github.io/posts/sourcecoding/" class="external" target="_blank" rel="noopener noreferrer"><em>Shannon's Source Coding Theorem</em></a>. Matthew Bernstein&rsquo;s Blog.</p>
+<p>Singh, A. (2015). <a href="https://www.cs.cmu.edu/~aarti/Class/10704_Spring15/lecs/lec9.pdf" class="external" target="_blank" rel="noopener noreferrer"><em>Information Theory</em></a>. Carnegie Mellon University, 10-704 Lecture Notes.</p>
+<p>Venkataramanan, R. (2025). <a href="https://teaching.eng.cam.ac.uk/content/engineering-tripos-part-iia-3f7-information-theory-and-coding-2025-26" class="external" target="_blank" rel="noopener noreferrer"><em>3F7: Information Theory and Coding - Handouts 2 & 3</em></a>. University of Cambridge, Department of Engineering.</p>
+<hr>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Olah, C. (2015). <a href="https://colah.github.io/posts/2015-09-Visual-Information/" class="external" target="_blank" rel="noopener noreferrer"><em>Visual Information Theory</em></a>. Chris Olah does an awesome job explaining the intuition behind entropy and its related concepts&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Technically the equal area math only holds if we work with natural logs instead of base 2 logs as $\int_{x'}^{\infty} 2^{-x} \, dx = \frac{2^{-x'}}{\ln 2}$ We are working with base 2 logs instead of natural logs, but we omit the constant scaling factor in our calculations if not they will look rather messy.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>I chose not to use Olah&rsquo;s visual proof exactly here because his proof suggests that we need the benefit/cost ratio to be 1. He suggests any deviation in the allocation of budget will change the ratio to not be 1, which is not exactly the right argument. The important thing is that all symbols have the same benefit/cost ratio, so the allocation of budget is optimum.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>See <a href="https://en.wikipedia.org/wiki/Kraft%E2%80%93McMillan_inequality" class="external" target="_blank" rel="noopener noreferrer"><em>Kraft–McMillan Inequality (1956)</em></a>.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>A true metric must satisfy symmetry: $d(A, B) = d(B, A)$ and the triangle inequality: $d(A, C) \leq d(A, B) + d(B, C)$. KL divergence doesn&rsquo;t satisfy either property, so it is not really a proper metric for measuring distances between distributions.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Some researchers define the <strong>Jensen-Shannon divergence</strong> as a symmetric alternative: $\text{JS}(P, Q) = \frac{1}{2}D_{KL}(P \| M) + \frac{1}{2}D_{KL}(Q \| M)$ where $M = \frac{P + Q}{2}$. This is a true metric (and $\sqrt{\text{JS}}$ is a metric), but it obscures the directed nature of the problem. For machine learning, forward KL is almost always the right choice.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>See <a href="https://nimasarang.com/blog/2024-08-24-information-theory/" class="external" target="_blank" rel="noopener noreferrer"><em>Nima Sarang's post on Information Theory</em></a>.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+    
+        
+
+<div class="tags-wrapper">
+    <ul class="post-tags">
+        
+    </ul>
+</div>
+
+    
+
+    
+</article>
+
+            </main>
+        </div>
+
+        <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+        <a href="#top-of-site" class="top-of-site-link" data-visible="false">
+            <span class="screen-reader-text" aria-label="Back to top of the page">
+                Back to top
+            </span>
+            <svg width="32" height="32" viewBox="0 0 100 100">
+                <path fill="white" d="m50 0c-13.262 0-25.98 5.2695-35.355 14.645s-14.645 22.094-14.645 35.355 5.2695 25.98 14.645 35.355 22.094 14.645 35.355 14.645 25.98-5.2695 35.355-14.645 14.645-22.094 14.645-35.355-5.2695-25.98-14.645-35.355-22.094-14.645-35.355-14.645zm20.832 62.5-20.832-22.457-20.625 22.457c-1.207 0.74219-2.7656 0.57812-3.7891-0.39844-1.0273-0.98047-1.2695-2.5273-0.58594-3.7695l22.918-25c0.60156-0.61328 1.4297-0.96094 2.2891-0.96094 0.86328 0 1.6914 0.34766 2.293 0.96094l22.918 25c0.88672 1.2891 0.6875 3.0352-0.47266 4.0898-1.1562 1.0508-2.9141 1.0859-4.1133 0.078125z"></path>
+            </svg>
+        </a>
+    </body>
+</html>
