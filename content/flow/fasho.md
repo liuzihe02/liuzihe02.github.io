@@ -17,4 +17,4 @@ draft: false
 
 {{< img src="/cortis.png" caption="Cortis." width="300">}}
 
-I may be slightly tipsy while writing this. I got kicked out for dancing too hard to this song. In my defence, I actually learnt the choreography and was on beat. I love my friends though. I recently realised maybe my family and friends really mean the world to me.
+I may be slightly tipsy while writing this. I got kicked out for dancing too hard to this song. In my defence, I actually learnt the choreography and was on beat. I love my friends though. I recently realised maybe my family and friends really mean the world to me. Its kinda my last (?) year. I'll miss yall.
