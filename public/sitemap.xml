@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
     <url>
-        <loc>https://liuzihe02.github.io/flow/fasho/</loc>
-        <lastmod>2025-10-30T03:20:06Z</lastmod>
+        <loc>https://liuzihe02.github.io/flow/</loc>
+        <lastmod>2025-10-31T04:05:50Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
-        <loc>https://liuzihe02.github.io/flow/</loc>
-        <lastmod>2025-10-30T03:20:06Z</lastmod>
+        <loc>https://liuzihe02.github.io/flow/golden/</loc>
+        <lastmod>2025-10-31T04:05:50Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>https://liuzihe02.github.io/</loc>
+        <lastmod>2025-10-31T04:05:50Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuzihe02.github.io/flow/fasho/</loc>
         <lastmod>2025-10-30T03:20:06Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
