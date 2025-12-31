@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
     <url>
-        <loc>https://liuzihe02.github.io/flow/box/</loc>
-        <lastmod>2025-11-19T20:25:51Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
         <loc>https://liuzihe02.github.io/flow/</loc>
-        <lastmod>2025-11-19T20:25:51Z</lastmod>
+        <lastmod>2025-12-31T00:05:50Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
         <loc>https://liuzihe02.github.io/</loc>
+        <lastmod>2025-12-31T00:05:50Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuzihe02.github.io/flow/transition/</loc>
+        <lastmod>2025-12-31T00:05:50Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuzihe02.github.io/flow/box/</loc>
         <lastmod>2025-11-19T20:25:51Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
