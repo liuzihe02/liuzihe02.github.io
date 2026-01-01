@@ -29,3 +29,9 @@ I just now recalled a very sweet memory of a recent conversation, that reminded 
 I thought it was so sweet that one day my kids and my friends' kids would meet during Chinese New Year, and I (unc) would be handing them angpaos and my friends would hand angpaos to mine =D I can't stop smiling and laughing inside at the thought of us being the annoying uncles and aunties one day. That scene seems so different from now.
 
 But maybe it really isn't. University has just *zoomed* by, and I'm now in my third year with one more year to go. Many of my best friends will graduate soon, and I won't be seeing many of them next academic year. I think I've experienced this before, but this time it does feel a little different. Like more real? That we are no longer are protected by the school environment and will become "proper" adults? And how I can't afford to screw around and actually need to start paying the bills and stuff idk. I can totally understand why some people do a PhD for this reason. I would too, but that's more musings for another day. And how back in Singapore I bet many of my friends have already found a life partner and probably have applied to BTO. Idk wtf I'm going to do. Idk if I'll apply for a BTO, but my ass is certainly too single to be thinking about that shit. I know life is not a sprint; I know I'll find someone eventually; I know it'll all be fine eventually. Everybody goes through this quarter-life crises phase, and I'm sure its normal. But I can't help feeling abit panicked and lonely in this. I think though, as I grow older I've learnt more about what's actually important so I know I'll be fine.
+
+---
+
+*Edit (January 1st 2026):*
+
+I think the surprise visit worked! I think I brought a lot of laughter and joy to my entire family. My heart is full. On a side note, I was taking a big fat shit when New Years happened so welp that isn't the best...
