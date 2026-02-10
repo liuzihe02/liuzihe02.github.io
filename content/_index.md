@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-{{< img src="/profile.jpeg" alt="A description" width="200" class="test">}}
+{{< img src="/profile_clear_optimize_crop.jpg" alt="A description" width="200" class="test">}}
 
 # Hey!
 
