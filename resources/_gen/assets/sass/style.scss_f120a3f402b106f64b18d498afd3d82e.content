@@ -4,6 +4,14 @@
   Feel free to change!
 
   I HAVE MODIFIED THE FONT TYPES AND SIZES HERE
+
+  **`rem`** = relative to the **root** (`<html>`) font size (usually 16px by default)
+
+  **`em`** = relative to the **parent element's** font size
+
+  So `1.5rem` is always `24px` (if root is 16px), but `1.5em` inside a div with `font-size: 20px` would be `30px`.
+
+  `rem` is more predictable since it doesn't compound. `em` is useful when you want sizing to scale relative to the element's own text size (like padding around text).
 */
 /* Fonts */
 /* modify font-size here */
@@ -53,7 +61,7 @@ html {
 
 @media (min-width: 38em) {
   html {
-    font-size: 1em; } }
+    font-size: 0.9rem; } }
 
 body {
   color: #454545;
@@ -1179,9 +1187,9 @@ ul.tags-cloud {
 
 .container {
   max-width: 40rem; }
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     .container {
       max-width: 46rem; } }
-  @media (min-width: 56em) {
+  @media (min-width: 56rem) {
     .container {
-      max-width: 42rem; } }
+      max-width: 50rem; } }

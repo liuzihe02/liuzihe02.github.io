@@ -9,8 +9,15 @@
     <managingEditor>contact@serghei.pl (Serghei Iakovlev)</managingEditor>
     <webMaster>contact@serghei.pl (Serghei Iakovlev)</webMaster>
     <copyright>© 2019-2024 Serghei Iakovlev</copyright>
-    <lastBuildDate>Wed, 31 Dec 2025 00:05:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Feb 2026 23:50:56 +0000</lastBuildDate>
     <atom:link href="https://liuzihe02.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Minority Guessing Game</title>
+      <link>https://liuzihe02.github.io/posts/minority/</link>
+      <pubDate>Sat, 14 Feb 2026 23:50:56 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
+      <guid>https://liuzihe02.github.io/posts/minority/</guid>
+      <description>I recently learnt a drinking game where you had 2 cards (red/black) for round, and people use these as answers to questions. The goal of the game is to locate who the minority answers came from, and with that came some interesting questions.&#xA;Game Rules $n$ players each hold a red card and a black card. A question is posed each round (e.g., yes/no, would-you-rather, etc.). Each player secretly plays one card to reflect their answer.</description>
+    </item>
     <item>
       <title>Transition</title>
       <link>https://liuzihe02.github.io/flow/transition/</link>

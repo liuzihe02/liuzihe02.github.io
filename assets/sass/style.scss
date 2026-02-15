@@ -4,13 +4,21 @@
   Feel free to change!
 
   I HAVE MODIFIED THE FONT TYPES AND SIZES HERE
+
+  **`rem`** = relative to the **root** (`<html>`) font size (usually 16px by default)
+
+  **`em`** = relative to the **parent element's** font size
+
+  So `1.5rem` is always `24px` (if root is 16px), but `1.5em` inside a div with `font-size: 20px` would be `30px`.
+
+  `rem` is more predictable since it doesn't compound. `em` is useful when you want sizing to scale relative to the element's own text size (like padding around text).
 */
 
 /* Fonts */
 $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 $heading-font: sans-serif;
 /* modify font-size here */
-$regular-font-size: 1em; /* 20px / 16px = 1.25em; support text resizing in all browsers */
+$regular-font-size: 0.9rem; /* 20px / 16px = 1.25em; support text resizing in all browsers */
 
 /*
   Color
@@ -36,15 +44,15 @@ $link-color: #841212;
 // Phone/Tablet (< 896px):  48rem = 768px max-width
 // Laptop+ (≥ 896px):       54rem = 864px max-width
 .container {
-  max-width: 40rem; // Phone: 640px
+  max-width: 40rem;
 
-  @media (min-width: 48em) {
+  @media (min-width: 48rem) {
     // Tablet
-    max-width: 46rem; // 736px
+    max-width: 46rem;
   }
 
-  @media (min-width: 56em) {
+  @media (min-width: 56rem) {
     // Laptop
-    max-width: 42rem; // 672px
+    max-width: 50rem;
   }
 }

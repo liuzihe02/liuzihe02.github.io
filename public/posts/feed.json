@@ -15,6 +15,14 @@
   "language" : "en",
   "items": [
     {
+      "id": "6eaf7390-5eb4-523b-49f9-0f89f7479e3c",
+      "url": "https://liuzihe02.github.io/posts/minority/?utm_source=json_feed",
+      "title": "The Minority Guessing Game",
+      "summary": "I recently learnt a drinking game where you had 2 cards (red/black) for round, and people use these as answers to questions. The goal of the game is to locate who the minority answers came from, and with that came some interesting questions.\nGame Rules $n$ players each hold a red card and a black card. A question is posed each round (e.g., yes/no, would-you-rather, etc.). Each player secretly plays one card to reflect their answer.",
+      "date_published": "2026-02-14T23:50:56Z",
+      "date_modified" : "2026-02-14T23:50:56Z"
+    },
+    {
       "id": "8f7444e7-76b0-5f91-c930-3d572a28253b",
       "url": "https://liuzihe02.github.io/posts/info/?utm_source=json_feed",
       "title": "On Information",

@@ -13,8 +13,24 @@
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
-    <updated>2025-12-31T00:05:50Z</updated>
+    <updated>2026-02-14T23:50:56Z</updated>
     <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/minority/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[The Minority Guessing Game]]></title>
+        
+        
+        
+        <published>2026-02-14T23:50:56Z</published>
+        <updated>2026-02-14T23:50:56Z</updated>
+        <id>urn:uuid:6eaf7390-5eb4-523b-49f9-0f89f7479e3c</id>
+        
+        <summary type="html"><![CDATA[I recently learnt a drinking game where you had 2 cards (red/black) for round, and people use these as answers to questions. The goal of the game is to locate who the minority answers came from, and with that came some interesting questions.
+Game Rules $n$ players each hold a red card and a black card. A question is posed each round (e.g., yes/no, would-you-rather, etc.). Each player secretly plays one card to reflect their answer.]]></summary>
+    </entry>
     <entry>
         
         <category term="posts" />

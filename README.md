@@ -49,7 +49,7 @@ Only use the `content/` folder to add new content
 
 Instead, use the `assets/`, `layouts/`,`static/` direcotry in the project root. Copy the relevant file from the github repo theme and modify it there. Hugo will use the file locally before using the online theme for files not found locally. Keep the folder structure as similar to Ed's structure as you can, and make minimum modifications.
 
-> In particular, you can modify `assets/sass/style.scss` for the styling. I'm not sure how safe this is as we override styling, but this seems to work in practice so I'm okay with it
+> In particular, you can modify `assets/sass/style.scss` for the styling. I'm not sure how safe this is as we override styling, but this seems to work in practice so I'm okay with it. Controls stuff like text fonts, page margins of the website etc.
 > For `layouts/`, we usually modify the stuff in `layouts/partials/`
 
 The `poems/` folder especially `o-captain` contains some very interesting footnotes and stylizations for the `poems` layout

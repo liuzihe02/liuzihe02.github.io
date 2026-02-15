@@ -2,14 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
     <url>
-        <loc>https://liuzihe02.github.io/flow/</loc>
-        <lastmod>2025-12-31T00:05:50Z</lastmod>
+        <loc>https://liuzihe02.github.io/</loc>
+        <lastmod>2026-02-14T23:50:56Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     
     <url>
-        <loc>https://liuzihe02.github.io/</loc>
+        <loc>https://liuzihe02.github.io/posts/</loc>
+        <lastmod>2026-02-14T23:50:56Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuzihe02.github.io/posts/minority/</loc>
+        <lastmod>2026-02-14T23:50:56Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <url>
+        <loc>https://liuzihe02.github.io/flow/</loc>
         <lastmod>2025-12-31T00:05:50Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -45,13 +59,6 @@
     
     <url>
         <loc>https://liuzihe02.github.io/posts/info/</loc>
-        <lastmod>2025-10-25T16:34:06Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <url>
-        <loc>https://liuzihe02.github.io/posts/</loc>
         <lastmod>2025-10-25T16:34:06Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
