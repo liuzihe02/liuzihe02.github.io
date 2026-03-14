@@ -15,6 +15,13 @@
   "language" : "en",
   "items": [
     {
+      "id": "a1bff705-ffbb-511a-29de-57bac0f410e6",
+      "url": "https://liuzihe02.github.io/posts/cdpo/?utm_source=json_feed",
+      "title": "Critique DPO",
+      "summary": "I chanced upon a pretty interesting idea proposed by Peter Hayes (now at Anthropic) in 2025, to more efficiently use feedback data in the standard RLHF pipeline to speed up the whole thing. Basically, given external feedback/critique/verification of generated answers, can we incorporate this feedback in an NLL term in addition to the standard DPO loss; trained on the base model? Most previous efforts either used this feedback to train a better verifier, or used other additional NLL terms in the base model training.",
+      "date_published": "2026-03-14T15:42:57Z"
+    },
+    {
       "id": "6eaf7390-5eb4-523b-49f9-0f89f7479e3c",
       "url": "https://liuzihe02.github.io/posts/minority/?utm_source=json_feed",
       "title": "The Minority Guessing Game",

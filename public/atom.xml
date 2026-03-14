@@ -16,8 +16,23 @@
         <email>contact@serghei.pl</email>
     </author>
     <generator uri="https://gohugo.io" version="0.127.0">Hugo</generator>
-    <updated>2026-02-14T23:50:56Z</updated>
+    <updated>2026-03-14T15:42:57Z</updated>
     <id>urn:uuid:bbab65d3-19f8-5864-3991-3b189ea8b264</id>
+    <entry>
+        
+        <category term="posts" />
+        
+        <link rel="alternate" type="type/html" href="https://liuzihe02.github.io/posts/cdpo/?utm_source=atom_feed" />
+        <title type="html"><![CDATA[Critique DPO]]></title>
+        
+        
+        
+        <published>2026-03-14T15:42:57Z</published>
+        <updated>2026-03-14T15:42:57Z</updated>
+        <id>urn:uuid:a1bff705-ffbb-511a-29de-57bac0f410e6</id>
+        
+        <summary type="html"><![CDATA[I chanced upon a pretty interesting idea proposed by Peter Hayes (now at Anthropic) in 2025, to more efficiently use feedback data in the standard RLHF pipeline to speed up the whole thing. Basically, given external feedback/critique/verification of generated answers, can we incorporate this feedback in an NLL term in addition to the standard DPO loss; trained on the base model? Most previous efforts either used this feedback to train a better verifier, or used other additional NLL terms in the base model training.]]></summary>
+    </entry>
     <entry>
         
         <category term="posts" />
