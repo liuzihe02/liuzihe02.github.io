@@ -28,7 +28,7 @@ To communicate, Jerry and I have a secret code mapping animals to sequences of b
 
 {{< img src="/info/londonOldMap.png" caption="A mapping between animal symbols and binary codewords" width="250">}}
 
-Technically, the animals are symbols $x_i$, with their collective called an alphabet $\{x_1 \dots x_i \dots x_n\}$. Their respective binary representations are called "codewords" and the original string message is "encoded" into its binary represenation.
+Technically, the animals are symbols $x_i$, with their collective called an alphabet $\{x_1 \dots x_i \dots x_n\}$. Their respective binary representations are called "codewords" and the original string message is "encoded" into its binary representation.
 
 {{< img src="/info/terminology.png" caption="Some terminology" width="250">}}
 
@@ -42,7 +42,7 @@ There are different numbers for each animal type in the London Zoo. We can plot 
 
 {{< img src="/info/londonOldCode.png" caption="Vertical axis shows the probability of each animal $p(x_i)$, while the horizontal axis shows the length of the corresponding codeword $L(x_i)$" width="400">}}
 
-The vertical axis shows the probability $p(x_i)$ of each animal seen by Jerry, while the horizontal axis shows the length of the corresponding codeword $L(x_i)$ in our secret code mapping. *Notice the total area summed and normalized over all codewords $\sum_{i} p(x_i) L(x_i)$ is in fact the average length $\mathbb{E}[L(X)]$ codewords in our mapping!*
+The vertical axis shows the probability $p(x_i)$ of each animal seen by Jerry, while the horizontal axis shows the length of the corresponding codeword $L(x_i)$ in our secret code mapping. *Notice the total area summed over all codewords $\sum_{i} p(x_i) L(x_i)$ is in fact the average length $\mathbb{E}[L(X)]$ of codewords in our mapping!*
 
 Information is expensive - we'd like to minimize this average length $\mathbb{E}[L(X)]$. Let's exploit this uneven-ness in the probability distribution, and assign shorter codewords to more frequent animals:
 
@@ -88,7 +88,7 @@ We've showed the cost of codewords decreases exponentially with its length. We c
 
 {{< img src="/info/cost.png" caption="Visualizing the cost of a codeword against its length. Both the height and right shaded area are numerically equal." width="400">}}
 
-Note that since cost decays as a (natural) exponential, it is *both* the height of the right shaded area and the actual shaded area[^natural]. We can also visualize the contribution $p(x_i) L(x_i)$ of this codeword to the average codeword length:
+Note that since cost decays exponentially, the height and the right shaded area are numerically equal when using natural exponentials[^natural]. We can also visualize the contribution $p(x_i) L(x_i)$ of this codeword to the average codeword length:
 
 $$\mathbb{E}[L(X)]=\sum_{i} p(x_i) L(x_i)$$
 
@@ -116,27 +116,35 @@ $$
 
 At the optimal allocation where $2^{-L(x_i)} = p(x_i)$,
 
-$$\frac{|\text{Length Contribution}{(x_i)}|}{|\text{Cost}{(x_i)}|} = \frac{\text{Benefit from lower length contribution}}{\text{Cost increase from }{x_i}} = \frac{1}{\ln(2)}$$
+$$\frac{|d(\text{Length Contribution})/dL|}{|d(\text{Cost})/dL|} = \frac{\text{Marginal benefit from shorter codeword}}{\text{Marginal cost in codeword space}} = \frac{p(x_i)}{2^{-L(x_i)}\ln(2)} = \frac{1}{\ln(2)}$$
 
-*which is constant regardless of $p(x_i)$.* This means at the optimal budget, it's equally worthwhile to invest in making any codeword shorter as all codewords have the *same benefit/cost ratio*. Note that the actual value of this hypothetical benefit/cost ratio doesn't matter (the top and bottom quantities don't have the same units so we cannot compare them meaningfully in terms of absolute values) - what matters is the relative ratios between the different symbols.
+*which is constant regardless of $p(x_i)$.* This means at the optimal budget, it's equally worthwhile to invest in making any codeword shorter as all codewords have the *same marginal benefit/cost ratio*. Note that the actual value of this ratio doesn't matter (the top and bottom quantities don't have the same units so we cannot compare them meaningfully in terms of absolute values) - what matters is the relative ratios between the different symbols.
 
 If $2^{-L(x_i)} \ne p(x_i)$, then this would mean the ratio for each ${x_i}$ would in fact be dependent on both $L(x_i)$ and $p(x_i)$, and will result in uneven - hence suboptimal allocation of budgets. Any uneven-ness of this ratio means it will make more sense to spend more budget in one codeword than other codewords.
 
 **Calculating Entropy**
 
-Since the cost of an encoded message of length $L(x_i)$ is $2^{-L(x_i)}$, then $L(x_i)=\log_2\left(\frac{1}{\text{Cost}}\right)$. Since we allocated $p(x_i)$ of the budget to $L(x_i)$ for the optimum allocation, then
+Since the cost of an encoded message of length $L(x_i)$ is $2^{-L(x_i)}$, then $L(x_i)=\log_2\left(\frac{1}{\text{Cost}}\right)$. Since for optimum allocation of budgets (to minimize average lengths), we allocated $p(x_i)$ of the budget to $L(x_i)$, then
 
 $$L(x_i)=\log_2\left(\frac{1}{p(x_i)}\right)$$
 
+The average message length under optimal allocation is
+
 $$\mathbb{E}[L(X)] = \sum_{i} p(x_i) L(x_i) = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right) $$
 
-Kraft's inequality created a budget constraint on how many short codewords you can have. The optimal strategy is to spend this budget proportionally to symbol probabilities. Any other allocation either violates the constraint (making the code invalid, like not prefix-free) or wastes budget (making the average length longer). Entropy emerges because it's the only allocation that balances the budget constraint with minimizing average length!
+Kraft's inequality created a budget constraint on how many short codewords you can have. The optimal strategy is to spend this budget proportionally to symbol probabilities. Any other allocation either violates the constraint (making the code invalid, like not prefix-free) or wastes budget (making the average length longer). Hence for a probability distribution of symbols, the minimum average length across all the encoded symbols is:
 
-Hence for a probability distribution of symbols, the minimum average length across all the encoded symbols is the entropy:
+$$\min_{\text{all encodings}} \mathbb{E}[L(X)] = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right)$$
 
-$$ H(X) = \min_{\text{all encodings}} \mathbb{E}[L(X)] = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right) $$
+Note that
 
-The more concentrated the probability, the easier it is to exploit this by crafting short encodings. The more spread out the probability, the less I am able to exploit this, and I have to make all my encodings longer on average. So a distribution with higher uncertainty requires more bits to communicate information.
+$$H(X) = \sum_{i} p(x_i) \log_2\left(\frac{1}{p(x_i)}\right)$$
+
+hence
+
+$$H(X) = \min_{\text{all encodings}} \mathbb{E}[L(X)]$$
+
+Entropy emerges because it's the only allocation that balances the budget constraint with minimizing average length! The more concentrated the probability, the easier it is to exploit this by crafting short encodings. The more spread out the probability, the less I am able to exploit this, and I have to make all my encodings longer on average. So a distribution with higher uncertainty requires more bits to communicate information.
 
 ### 1.2 Source Coding Theorem
 
@@ -154,7 +162,11 @@ $$H(X) - \mathbb{E}[L(X)] \leq \frac{1}{\ln 2} \sum_{i} p(x_i) \left(\frac{2^{-L
 
 $$\frac{1}{\ln 2} \left(\sum_{i} 2^{-L(x_i)} - 1\right) \leq 0$$
 
-where we've used McMillan's constraint $\sum_i 2^{-L(x_i)} \leq 1$. Therefore no encoding can beat entropy $ H(X) \leq \mathbb{E}[L(X)] $.
+where we've used McMillan's constraint $\sum_i 2^{-L(x_i)} \leq 1$. Therefore
+
+$$H(X) \leq \mathbb{E}[L(X)]$$
+
+no encoding can beat entropy.
 
 
 **Shannon's Source Coding Theorem**
@@ -187,7 +199,7 @@ $$H_P(Q) = H(P) + D_{KL}(P \| Q)$$
 - **$H(P)$**: The irreducible minimum—the entropy of the true underlying distribution
 - **$D_{KL}(P \| Q)$**: The penalty for mismatch—how much extra bits we waste by optimizing for the wrong distribution
 
-This mismatch means we waste bits on unexpected events (where $p(x_i) > q(x_i)$) while potentially using longer-than-necessary codes for common events (where $p(x_i) < q(x_i)$), hence giving a length penalty. When $Q = P$ (our assumption is perfect), the second term vanishes and cross-entropy equals entropy—we're encoding optimally. When they differ, $D_{KL}(P \| Q) > 0$ quantifies exactly the penalty. In this sense, cross-entropy gives us a measure of how 2 different probability distributions are. The more different 2 distributions are, the bigger the cross-entropy $H_P(Q)$.
+This mismatch means we waste bits on unexpected events (where $p(x_i) > q(x_i)$) while potentially using longer-than-necessary codes for common events (where $p(x_i) < q(x_i)$), hence giving a length penalty. When $Q = P$ (our assumption is perfect), the second term vanishes and cross-entropy equals entropy—we're encoding optimally. When they differ, $D_{KL}(P \| Q) > 0$ quantifies exactly the penalty. In this sense, cross-entropy gives us a measure of how different 2 probability distributions are. The more different 2 distributions are, the bigger the cross-entropy $H_P(Q)$.
 
 **Asymmetry**
 
@@ -210,7 +222,7 @@ This is the extra bits we pay because we optimized for the wrong distribution $Q
 - Not really a metric [^metric] [^JS]
 - Asymmetry $D_{KL}(P \| Q) \neq D_{KL}(Q \| P)$ [^nima]
   - Forward KL: $D_{KL}(P \| Q)$ (what we usually minimize) is *mean-seeking*. If $P$ is bimodal, and we optimize $Q$ to reduce KL, then $Q$ diffuses to cover both modes
-  - Reverse KL: $D_{KL}(Q \| P)$ is *mode-seeking*. To minimize KL, $Q$ concentrates probability around the 2 modes
+  - Reverse KL: $D_{KL}(Q \| P)$ is *mode-seeking*. To minimize KL, $Q$ collapses onto a single mode of $P$ rather than spreading across both
 
 
 ## 4 Mutual Information
