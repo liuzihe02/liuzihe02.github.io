@@ -156,7 +156,7 @@
       <link>https://liuzihe02.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>contact@serghei.pl (Serghei Iakovlev)</author>
       <guid>https://liuzihe02.github.io/projects/</guid>
-      <description>Fun stuff I&amp;rsquo;ve worked on, mostly on RL and robotics.&#xA;Reinforcement Learning for Spacecraft Control | GitHub | Slides Used Proximal Policy Optimization (PPO) to train a Mars lander, by controlling throttle action for descent and hovering. Integrated C++ simulation engine and OpenGL GUI with Python training scripts. Won 2nd place at the Cambridge Engineering Mars Lander Competition 2024&#xA;Fast Fourier Transform | GitHub | Post Analyzed the theoretical properties of both the Discrete Fourier Transform and the optimized Fast Fourier Transform in MATLAB, and measure their algorithmic complexity.</description>
+      <description>Fun stuff I&amp;rsquo;ve worked on.&#xA;GB3 RISC-V CPU | GitHub | CPU Notes | Report Optimized a tiny RISC-V CPU with a 2-way set-associative instruction cache, cache-hit lookaheads to shorten critical paths, and increasing the clock frequency. Won 1st place at GB3 Project Competition 2026&#xA;SF2 Image Compression | Report | Results Built JPEG-based image compression scheme with Discrete Cosine Transform, quantization, Huffman encoding, and DC intra prediction coding. Won 1st place at SF2 Project Competition 2026</description>
     </item>
     <item>
       <title>Search</title>
