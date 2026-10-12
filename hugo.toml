@@ -119,7 +119,8 @@ type = 'giscus'
 
 [params.privacy]
 [params.privacy.googleTagManager]
-disable = false
+# the theme only loads GTM since v0.8.1; kept off so the upgrade doesn't silently start tracking visitors
+disable = true
 respectDoNotTrack = true
 
 [params.services]
@@ -128,9 +129,9 @@ id = 'GTM-W8D5W642'
 
 [languages]
 [languages.en]
-languageCode = 'en'
-languageDirection = 'ltr'
-languageName = 'English'
+locale = 'en'
+direction = 'ltr'
+label = 'English'
 weight = 1
 
 # use this to managet the sidebar easily
@@ -172,8 +173,15 @@ params = { external = true }
 # hide leftover Ed theme demo pages from search engines (files kept for reference)
 [[cascade]]
 noindex = true
-[cascade._target]
+[cascade.target]
 path = '{/credits,/documentation,/about,/contact,/thanks,/search,/dramas,/narratives,/poems}'
+
+# top-level pages (Projects etc.) use the theme's dateless page template; Hugo 0.146+ stopped selecting it by type
+[[cascade]]
+layout = 'plain'
+[cascade.target]
+path = '/*'
+kind = 'page'
 
 [pagination]
 pagerSize = 10

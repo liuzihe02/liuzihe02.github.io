@@ -1,0 +1,29 @@
+{{- /* Overrides the Ed theme teaser. Hugo 0.134+ made .Summary whole HTML paragraphs;
+    this restores the old preview: plain text, ~70 words, extended to the end of the sentence. */ -}}
+{{- $words := split (.Plain | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace) " " -}}
+{{- $summary := slice -}}
+{{- range $i, $w := $words -}}
+    {{- $summary = $summary | append $w -}}
+    {{- if and (ge (add $i 1) 70) (findRE `[.?!]$` $w) }}{{ break }}{{ end -}}
+{{- end -}}
+{{- $truncated := lt (len $summary) (len $words) -}}
+<article class="post">
+    <header>
+        <h2 class="post-title">
+            <a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a>
+        </h2>
+        <p class="post-meta">
+            {{- partial "post-meta/date.html" . -}}
+        </p>
+    </header>
+    <p class="post-content">
+        {{ delimit $summary " " }}
+    </p>
+    {{ if site.Params.readmore }}
+        {{ if $truncated }}
+            <footer>
+                <a href="{{ .RelPermalink }}" class="read-more">{{ i18n "more" }}</a>
+            </footer>
+        {{ end }}
+    {{ end }}
+</article>

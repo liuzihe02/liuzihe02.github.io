@@ -44,7 +44,7 @@ cp ~/career/cv/resume.pdf static/docs/cv.pdf
 - To build your site (publish the files to the `public` directory, simply run `hugo`)
 - To develop and test your site, see [Live Preview](#live-preview)
 
-> The latest version of Hugo `v0.145.0` causes some errors so we use `dpkg` and the GitHub repo to download an older version `v0.127.0` instead
+> Hugo is pinned to `v0.167.0` (extended) in `.github/workflows/hugo.yaml`, with the Ed theme at `v0.9.0` (`go.mod`). Locally, the same binary lives in `~/.local/bin/hugo` (the old `v0.127.0` is still in `/usr/local/bin`). Upgrade both together and re-check the site before pushing.
 
 Note that the theme layout files are not present in the layout folder, only in the site layout folder. Ed provides for layouts out of the box `['posts', 'dramas', 'narratives', 'poems']`. We need to create our own layout if we wish to. Same goes for the custom stylesheet files.
 
