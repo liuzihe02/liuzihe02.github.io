@@ -55,9 +55,9 @@ feedSize = 25
 
 recentPostsSize = 5
 
-#this is the site-wide config that does auto math-rendering for every page'
-#granular control is in the page-specific frontmatter
-math = true
+#site-wide default for math rendering (MathJax); off by default to save ~1MB on pages without math
+#turned on for the whole posts section via cascade in content/posts/_index.md; per-page override in frontmatter
+math = false
 
 # the Ed theme only emits an allowing robots.txt when env is production
 env = 'production'
