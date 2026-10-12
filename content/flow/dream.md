@@ -24,7 +24,7 @@ The original version of this was written for the *Walt Disney* film *Cinderella*
 
 I find it pretty interesting how the imaginary dreams we experience when we sleep came to be associated with the concrete goals we hope to achieve in reality (We often say *"My dream is to be a pilot"*). I barely dream in my sleep at all, but I think about my goals in reality a lot. Perhaps sometimes even obsessively so. I often wonder why I place so much importance on the goal itself. It seems a bit arbitrary to me: you can always keep asking *"Why did you set this goal?"*, find a reason (usually another goal), and you just end up with another goal to pursue. I guess its [turtles all the way down](https://en.wikipedia.org/wiki/Turtles_all_the_way_down).
 
-{{< img src="/turtles.jpg" caption="Terrapins on terrapins. (Wikipedia)" width="120">}}
+{{< img src="/flow/turtles.jpg" caption="Terrapins on terrapins. (Wikipedia)" width="120">}}
 
 So maybe the solution is to pick one turtle and be happy with it. I think the top one is the cutest.
 

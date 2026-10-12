@@ -11,6 +11,6 @@ draft: false
 
 ---
 
-{{< img src="/golden.png" caption="A good boy." width="200">}}
+{{< img src="/flow/golden.png" caption="A good boy." width="200">}}
 
 Golden. Retriever. Another night... with the Singaporeans yipeeeeee :p

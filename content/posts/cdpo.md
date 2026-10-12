@@ -6,7 +6,7 @@ title: "Critique DPO"
 
 I chanced upon a pretty interesting idea proposed by Peter Hayes (now at Anthropic) in 2025, to more efficiently use feedback data in the standard RLHF pipeline to speed up the whole thing. Basically, given external feedback/critique/verification of generated answers, can we incorporate this feedback in an NLL term in addition to the standard DPO loss; trained on the base model? Most previous efforts either used this feedback to train a better verifier, or used other additional NLL terms in the base model training. I spent couple of months reading around the literature, setting up the HPC infra, and running some experiments. Unfortunately experiments (at least on smaller models) resulted in negative findings - the model was extremely prone to [reward hacking](https://lilianweng.github.io/posts/2024-11-28-reward-hacking/)...
 
-> Full [paper](https://drive.google.com/file/d/1l0JiDMXoUyYJlQXibl_9sLOu_IDx0m4Y/view?usp=drive_link) and [code](https://github.com/liuzihe02/RDPO) available =D
+> Full [paper](/docs/cdpo.pdf) and [code](https://github.com/liuzihe02/RDPO) available =D
 
 This post is a summary of the background and results. We go through DPO in quite a bit of depth, cover relevant research, and show reward hacking for our proposed method (Critique DPO).
 

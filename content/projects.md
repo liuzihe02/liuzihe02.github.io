@@ -6,13 +6,13 @@ Fun stuff I've worked on.
 
 ---
 
-### GB3 RISC-V CPU | {{< link src="https://github.com/liuzihe02/picorv32" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="https://drive.google.com/file/d/1RrM5m9PqyWIr2z9SS6d7jK4FoL8-iTXy/view?usp=sharing" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}CPU Notes{{< /link >}} | {{< link src="https://drive.google.com/file/d/1K5ax-AB8IPYnw7Td6cNPxNIHi53yxGK4/view?usp=sharing" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Report{{< /link >}}
+### GB3 RISC-V CPU | {{< link src="https://github.com/liuzihe02/picorv32" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="/docs/gb3-cpu-notes.pdf" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}CPU Notes{{< /link >}} | {{< link src="/docs/gb3-report.pdf" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Report{{< /link >}}
 
 Optimized a tiny RISC-V CPU with a 2-way set-associative instruction cache, cache-hit lookaheads to shorten critical paths, and increasing the clock frequency. _Won 1st place at GB3 Project Competition 2026_
 
 ---
 
-### SF2 Image Compression | {{< link src="https://drive.google.com/file/d/1mcac_5SH-oEMJbkNeQ6h2MlCc2ypDJf7/view?usp=sharing" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Report{{< /link >}} | {{< link src="https://sigproc-classrooms.github.io/sf2_competition_results/" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Results{{< /link >}}
+### SF2 Image Compression | {{< link src="/docs/sf2-report.pdf" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Report{{< /link >}} | {{< link src="https://sigproc-classrooms.github.io/sf2_competition_results/" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}Results{{< /link >}}
 
 Built JPEG-based image compression scheme with Discrete Cosine Transform, quantization, Huffman encoding, and DC intra prediction coding. _Won 1st place at SF2 Project Competition 2026_
 

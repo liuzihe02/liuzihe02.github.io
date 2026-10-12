@@ -4,7 +4,7 @@ date: 2025-07-22T23:44:25+00:00
 draft: false
 ---
 
-{{< img src="/fallen.jpg" caption="The Fallen Angel by Alexandre Cabanel (Wikipedia)" width="600">}}
+{{< img src="/flow/fallen.jpg" caption="The Fallen Angel by Alexandre Cabanel (Wikipedia)" width="600">}}
 
 ---
 

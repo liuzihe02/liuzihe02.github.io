@@ -75,7 +75,7 @@ thanksUrl = '/thanks'
 # Site icons, relative to ./static
 [params.assets]
 # favicon.ico for legacy browsers
-favicon = 'red_since.ico'
+favicon = 'red_sinc.ico'
 
 # A single SVG icon with a light/dark version for modern browsers
 svgicon = 'red_sinc.svg'
@@ -191,7 +191,7 @@ weight = 4
 [[menus.main]]
 identifier = 'resume'
 name = 'Resume'
-url = 'https://drive.google.com/file/d/1UnVlSye-WO9GWGFWPfQjrP2rMeX5SVIX/view?usp=sharing'
+url = '/docs/cv.pdf'
 weight = 5
 params = { external = true }
 

@@ -6,6 +6,26 @@ Zihe's personal website using the Hugo [Ed](https://themes.gohugo.io/themes/gohu
 
 This version of Ed is written with Hugo, where the documentation is available [here](https://gohugo-theme-ed.netlify.app/documentation/). An [older](https://github.com/minicomp/ed) version is written in Jekyll.
 
+## Documents
+
+Public PDFs (CV, reports, slides) live in `static/docs/` and are served at `flowingpurplecrane.com/docs/<name>.pdf`. Sources live in their own repos; this repo only hosts the built PDFs. Re-copy whenever the source changes, e.g. the CV:
+
+```bash
+cp ~/career/cv/resume.pdf static/docs/cv.pdf
+```
+
+| PDF | Source |
+|---|---|
+| `cv.pdf` | `career/cv/resume.tex` |
+| `goal-directed.pdf` | `research-notes/goal-directed/` |
+| `llm-observability.pdf` | `research-notes/llm-observability/` |
+| `r1-slides.pdf` | `research-notes/r1/` |
+| `dft-fft-slides.pdf` | `dft-fft/report/` |
+| `cdpo.pdf` | `RDPO/paper/` |
+| `gb3-cpu-notes.pdf` | `picorv32/guide/` |
+| `gb3-report.pdf` | `~/cambridge/iia/gb3/zach/` (local only, not in a repo yet) |
+| `sf2-report.pdf` | `sf2/zach/` (local only, untracked in the sf2 repo) |
+
 ## Hugo
 
 - Modify the `hugo.toml` for site settings
