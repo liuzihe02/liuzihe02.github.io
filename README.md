@@ -52,7 +52,7 @@ The Hugo [content management](https://gohugo.io/content-management/) sites espec
 
 ### Cleaning Hugo Repo
 
-Each time we build, we generate html content in `public/` and `resources/`. To reduce clutter, we use the following code to clear unneccessary stuff and just build only the core stuff.
+Each time we build, we generate html content in `public/` and `resources/`. These are build outputs and are gitignored (GitHub Actions builds the site from scratch on every push). To reduce clutter locally, we use the following code to clear unneccessary stuff and just build only the core stuff.
 
 ```bash
 #remove files in public directory that are no longer need before building
@@ -211,7 +211,7 @@ Please use `{{ if .Param "math" }}` instead of `{{ if .Params.math }}` in step 3
 - The `yaml` file is a GitHub actions workflow that automates the build and deployment process to GitHub Pages
 - The `hugo.yaml` is a `CI/CD` workflow where a push to GitHub automatically triggers building and deployment
 
-Before committing, run the cleaning script above, then `hugo server --renderToMemory`, then `hugo` before committing your changes.
+Before committing, check your changes with `hugo server --renderToMemory`. There's no need to commit `public/`; pushing to `main` triggers the build and deploy.
 
 ### Custom Domain
 

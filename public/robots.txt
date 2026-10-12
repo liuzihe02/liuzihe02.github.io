@@ -1,3 +1,0 @@
-# robots.txt file for "Liu Zihe" website, liuzihe02.github.io
-User-agent: *
-Disallow: /
