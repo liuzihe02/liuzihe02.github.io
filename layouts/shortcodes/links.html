@@ -1,0 +1,19 @@
+{{- /* Homepage link bar: icon + label. Icons live in assets/icons/ (brands from Simple Icons, CC0; Email/CV from Material Icons, Apache 2.0). */ -}}
+{{- $links := slice
+    (dict "name" "Email" "icon" "email" "url" "mailto:zl559@cam.ac.uk")
+    (dict "name" "CV" "icon" "cv" "url" "/docs/cv.pdf")
+    (dict "name" "LinkedIn" "icon" "linkedin" "url" "https://linkedin.com/in/liu-zihe")
+    (dict "name" "GitHub" "icon" "github" "url" "https://github.com/liuzihe02")
+    (dict "name" "Google Scholar" "icon" "googlescholar" "url" "https://scholar.google.com/citations?user=-Aj7agMAAAAJ")
+    (dict "name" "Instagram" "icon" "instagram" "url" "https://instagram.com/flowingpurplecrane")
+    (dict "name" "Spotify" "icon" "spotify" "url" "https://open.spotify.com/user/magnoliapotato?si=qAx5VSDLQvqv2rZg3PVZgA")
+-}}
+<span class="link-bar">
+{{- range $links }}
+    {{- $svg := (resources.Get (printf "icons/%s.svg" .icon)).Content }}
+    <a class="link-bar-item" href="{{ .url }}"
+        {{- if not (hasPrefix .url "mailto:") }} target="_blank" rel="noopener noreferrer"{{ end }}>
+        {{- replace $svg "<svg " "<svg aria-hidden=\"true\" " | safeHTML }}{{ .name -}}
+    </a>
+{{- end }}
+</span>

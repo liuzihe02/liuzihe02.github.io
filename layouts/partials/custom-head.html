@@ -6,6 +6,35 @@
     {{ partialCached "math.html" . }}
 {{ end }}
 
+{{/*  hide pages from search engines, set via cascade in hugo.toml  */}}
+{{ if .Params.noindex }}
+    <meta name="robots" content="noindex">
+{{ end }}
+
+{{/*  schema.org ProfilePage (Google's supported type for personal sites), links this site to academic profiles  */}}
+{{ if .IsHome }}
+    {{ $person := dict
+        "@type" "Person"
+        "name" "Zihe Liu"
+        "alternateName" (slice "Zach Liu" "Zihe (Zach) Liu" "Liu Zihe" "刘子赫")
+        "url" site.BaseURL
+        "image" (resources.Get site.Params.assets.logo).Permalink
+        "email" "mailto:zl559@cam.ac.uk"
+        "jobTitle" "Research Fellow"
+        "affiliation" (slice
+            (dict "@type" "CollegeOrUniversity" "name" "University of Cambridge" "url" "https://www.cam.ac.uk")
+            (dict "@type" "Organization" "name" "ERA" "url" "https://erafellowship.org"))
+        "knowsAbout" (slice "Reinforcement learning" "Reinforcement learning for LLMs" "Multi-turn reinforcement learning" "LLM post-training" "AI alignment" "Second-order optimization" "Natural policy gradients" "Gauss-Newton optimization")
+        "sameAs" (slice
+            "https://scholar.google.com/citations?user=-Aj7agMAAAAJ"
+            "https://github.com/liuzihe02"
+            "https://linkedin.com/in/liu-zihe"
+            "https://openreview.net/profile?id=~Zihe_Liu7")
+    }}
+    {{ $profile := dict "@context" "https://schema.org" "@type" "ProfilePage" "mainEntity" $person }}
+    <script type="application/ld+json">{{ $profile | jsonify | safeJS }}</script>
+{{ end }}
+
 {{/*  The original font is
 
 $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;

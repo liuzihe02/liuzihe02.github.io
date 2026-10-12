@@ -1193,3 +1193,17 @@ ul.tags-cloud {
   @media (min-width: 56rem) {
     .container {
       max-width: 50rem; } }
+.link-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem; }
+
+.link-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap; }
+  .link-bar-item svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor; }

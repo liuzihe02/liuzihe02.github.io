@@ -6,6 +6,18 @@ Zihe's personal website using the Hugo [Ed](https://themes.gohugo.io/themes/gohu
 
 This version of Ed is written with Hugo, where the documentation is available [here](https://gohugo-theme-ed.netlify.app/documentation/). An [older](https://github.com/minicomp/ed) version is written in Jekyll.
 
+## Live Preview
+
+```bash
+hugo server --renderToMemory
+```
+
+You may open http://localhost:1313 (works from the Windows browser under WSL too). The page reloads automatically on every save. Stop with `Ctrl+C`.
+
+> `--renderToMemory` matters: plain `hugo server` writes to the tracked `public/` folder with `localhost` URLs baked in
+
+> If a change doesn't show up (e.g. config or layout edits), restart with `hugo server --renderToMemory --disableFastRender`
+
 ## Documents
 
 Public PDFs (CV, reports, slides) live in `static/docs/` and are served at `flowingpurplecrane.com/docs/<name>.pdf`. Sources live in their own repos; this repo only hosts the built PDFs. Re-copy whenever the source changes, e.g. the CV:
@@ -30,7 +42,7 @@ cp ~/career/cv/resume.pdf static/docs/cv.pdf
 
 - Modify the `hugo.toml` for site settings
 - To build your site (publish the files to the `public` directory, simply run `hugo`)
-- To develop and test your site, run `hugo server` in the root directory which builds and serves our site using a minimal HTTP server
+- To develop and test your site, see [Live Preview](#live-preview)
 
 > The latest version of Hugo `v0.145.0` causes some errors so we use `dpkg` and the GitHub repo to download an older version `v0.127.0` instead
 
@@ -199,7 +211,7 @@ Please use `{{ if .Param "math" }}` instead of `{{ if .Params.math }}` in step 3
 - The `yaml` file is a GitHub actions workflow that automates the build and deployment process to GitHub Pages
 - The `hugo.yaml` is a `CI/CD` workflow where a push to GitHub automatically triggers building and deployment
 
-Before committing, run the cleaning script above, then `hugo server`, then `hugo` before committing your changes.
+Before committing, run the cleaning script above, then `hugo server --renderToMemory`, then `hugo` before committing your changes.
 
 ### Custom Domain
 

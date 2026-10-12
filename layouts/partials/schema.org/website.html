@@ -1,0 +1,19 @@
+{{- /* Overrides the Ed theme partial: site name differs from the page title so Google results don't show "Zihe Liu" twice */ -}}
+<script type="application/ld+json" id="schema-data">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "flowingpurplecrane",
+        "alternateName": "Zihe Liu",
+        "url": {{ site.BaseURL }},
+        "keywords": {{ partial "keywords.html" . }},
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": {{ printf "%s?q={search_term_string}" (ref . "search") }}
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+</script>

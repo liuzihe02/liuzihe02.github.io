@@ -4,10 +4,6 @@
 
     {{/* Toggleable sidebar */}}
     <aside class="sidebar" id="sidebar">
-        <div class="sidebar-item">
-            <p>{{ site.Params.Description }}</p>
-        </div>
-    
         <nav class="sidebar-nav">
             {{- $current := . -}}
             {{- range site.Menus.main -}}

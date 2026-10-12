@@ -8,7 +8,7 @@ title: "Home"
 
 I'm Zihe[^1] (or you can call me Zach[^2]). I do computer engineering at the **{{< link src="https://www.eng.cam.ac.uk/research/academic-divisions/information-engineering" class="external" target="_blank" rel="noopener noreferrer" >}}University of Cambridge{{< /link >}}**. Most of my time is spent thinking about how **frontier AI** systems learn, **Reinforcement Learning** (RL), how LLMs obtain {{< link src="/docs/goal-directed.pdf" class="external" target="_blank" rel="noopener noreferrer" >}}goal-directed behaviour{{< /link >}}, and addressing the practical {{< link src="/docs/llm-observability.pdf" class="external" target="_blank" rel="noopener noreferrer" >}}issues of robustness and reliability in LLMs{{< /link >}}. This is my little corner of the Internet where I talk about what I'm currently {{< link src="https://rlhfbook.com/" class="external" target="_blank" rel="noopener noreferrer" >}}obsessed{{< /link >}} with, cool [projects]({{< relref "/projects" >}}) I've worked on, stuff I've learnt, and some [thoughts]({{< relref "/flow" >}}) that have recently bubbled to the surface but refuse to pop.
 
-[Email](mailto:zl559@cam.ac.uk) | {{< link src="https://github.com/liuzihe02" class="external" target="_blank" rel="noopener noreferrer" >}}GitHub{{< /link >}} | {{< link src="https://linkedin.com/in/liu-zihe" class="external" target="_blank" rel="noopener noreferrer" >}}LinkedIn{{< /link >}} | {{< link src="https://instagram.com/flowingpurplecrane" class="external" target="_blank" rel="noopener noreferrer" >}}Instagram{{< /link >}} | {{< link src="https://open.spotify.com/user/magnoliapotato?si=qAx5VSDLQvqv2rZg3PVZgA" class="external" target="_blank" rel="noopener noreferrer" >}}Spotify{{< /link >}}
+{{< links >}}
 
 ---
 

@@ -56,3 +56,23 @@ $link-color: #841212;
     max-width: 50rem;
   }
 }
+
+// Homepage link bar (layouts/shortcodes/links.html)
+.link-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+}
+
+.link-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+  }
+}
