@@ -1,6 +1,7 @@
 <!-- the margin auto here makes the image automatically centred. we use a custom shortcode here to centre the image, and add spacing to the top and bottom -->
 {{/*  serve a resized copy of large JPG/PNGs: 2x the display width (retina), or 1600px if no pixel width is given.
-      static/ is mounted into assets (hugo.toml), so the originals in static/ stay the single source.  */}}
+      static/ is mounted into assets (hugo.toml), so the originals in static/ stay the single source.
+      images lazy-load by default; pass loading="eager" for images visible on first load (e.g. the homepage photo).  */}}
 {{ $src := .Get "src" }}
 {{ with resources.Get (strings.TrimPrefix "/" $src) }}
   {{ if in (slice "image/jpeg" "image/png") .MediaType.Type }}
@@ -16,7 +17,7 @@
   {{ end }}
 {{ end }}
 <div style="display: block; width: 100%; margin-top: 15px; margin-bottom: 15px;">
-  <img src="{{ $src }}" loading="lazy" decoding="async" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{
+  <img src="{{ $src }}" loading="{{ .Get "loading" | default "lazy" }}" decoding="async" {{ with .Get "alt" }}alt="{{ . }}"{{ end }} {{
   with .Get "width" }}width="{{ . }}"{{ end }} {{ with .Get "height"
   }}height="{{ . }}"{{ end }} {{ with .Get "class" }}class="{{ . }}"{{ end }}
   style="display: block; margin: 0 auto;">

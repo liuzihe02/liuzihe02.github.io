@@ -13,7 +13,7 @@ A game tree is a tree data structure, where every node represents a distinct *st
 
 > We use "action" and "move" interchangeably in the context of games
 
-<img src=tree.png width=400>
+{{< img src="/mcts/figures/tree.png" width="400">}}
 
 - The *root* of the game tree represents the initial state of the game
 - Any transition from one state to another consists a *move*
