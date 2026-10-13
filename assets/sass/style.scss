@@ -89,6 +89,7 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 0.4rem 1.1rem;
 
   + hr { margin-top: 1.2rem; }
@@ -109,7 +110,7 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
 
 // Phones: icons only so the link bar stays on one line (names remain as aria-label/title)
 @media (max-width: 47.99rem) {
-  .link-bar { flex-wrap: nowrap; justify-content: space-between; max-width: 22rem; }
+  .link-bar { flex-wrap: nowrap; }
   .link-bar-label { display: none; }
   .link-bar-item svg { width: 1.35em; height: 1.35em; }
 }
@@ -121,9 +122,11 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
   div:has(> img.profile) {
     float: right;
     width: auto !important; // overrides the img shortcode's inline full-width wrapper
-    margin: .4rem 0 1.5rem 2.5rem !important;
+    margin: .4rem 0 1.5rem 2rem !important;
   }
   img.profile { width: 170px; height: auto; }
+
+  .link-bar { padding: 0 1.5rem; } // spread evenly, stopping just short of the column edges
 }
 
 // Post lists (Posts, Flow): the theme's 60px top margin per post left ~110px between entries
