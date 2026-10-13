@@ -1,7 +1,7 @@
-{{- /* Homepage link bar: icon + label. Icons live in assets/icons/ (brands from Simple Icons, CC0; Email/CV from Material Icons, Apache 2.0). */ -}}
+{{- /* Homepage link bar: icon + label. Icons live in assets/icons/ (brands from Simple Icons, CC0; Email/Resume from Material Icons, Apache 2.0). */ -}}
 {{- $links := slice
     (dict "name" "Email" "icon" "email" "url" "mailto:zl559@cam.ac.uk")
-    (dict "name" "CV" "icon" "cv" "url" "/docs/cv.pdf")
+    (dict "name" "Resume" "icon" "resume" "url" "/docs/cv.pdf")
     (dict "name" "LinkedIn" "icon" "linkedin" "url" "https://linkedin.com/in/liu-zihe")
     (dict "name" "GitHub" "icon" "github" "url" "https://github.com/liuzihe02")
     (dict "name" "Google Scholar" "icon" "googlescholar" "url" "https://scholar.google.com/citations?user=-Aj7agMAAAAJ")
@@ -11,9 +11,9 @@
 <span class="link-bar">
 {{- range $links }}
     {{- $svg := (resources.Get (printf "icons/%s.svg" .icon)).Content }}
-    <a class="link-bar-item" href="{{ .url }}"
+    <a class="link-bar-item" href="{{ .url }}" aria-label="{{ .name }}" title="{{ .name }}"
         {{- if not (hasPrefix .url "mailto:") }} target="_blank" rel="noopener noreferrer"{{ end }}>
-        {{- replace $svg "<svg " "<svg aria-hidden=\"true\" " | safeHTML }}{{ .name -}}
+        {{- replace $svg "<svg " "<svg aria-hidden=\"true\" " | safeHTML }}<span class="link-bar-label">{{ .name }}</span>
     </a>
 {{- end }}
 </span>

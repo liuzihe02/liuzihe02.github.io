@@ -16,7 +16,7 @@
 
 /* Fonts */
 $main-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-$heading-font: sans-serif;
+$heading-font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 /* modify font-size here */
 $regular-font-size: 0.9rem; /* 20px / 16px = 1.25em; support text resizing in all browsers */
 
@@ -57,11 +57,41 @@ $link-color: #841212;
   }
 }
 
+// Hover underline spacing, in px so it doesn't grow with font size (e.g. the large site title)
+a { text-underline-offset: 2px; }  // links in text and the link bar
+.masthead-title a,
+.masthead-nav a { text-underline-offset: 3px; }  // site title and nav
+
+// No external-link arrows inside running text (they stay on headings and lists, e.g. Projects)
+.content p a.external::after { display: none; }
+
+// Top nav under the site title (layouts/_default/baseof.html)
+.masthead-nav {
+  margin-top: .6rem;
+  margin-bottom: -.1rem; // with the masthead's padding, centres the nav between tagline and divider
+  font-size: .95rem;
+  letter-spacing: .02em;
+
+  a { margin: 0 .5rem; text-decoration: none; }
+  a.active { text-decoration: underline; }
+  span { color: #bbb; }
+}
+
+// Homepage intro
+.introduction {
+  margin-bottom: 0;    // the theme's 60px stacked on the divider's margin (~100px gap)
+  display: flow-root;  // keeps the footnotes' margin from merging into the divider's
+}
+
 // Homepage link bar (layouts/shortcodes/links.html)
 .link-bar {
+  clear: both; // starts below the floated photo, so it stays on one line
+  margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 1.1rem;
+
+  + hr { margin-top: 1.2rem; }
 }
 
 .link-bar-item {
@@ -76,3 +106,25 @@ $link-color: #841212;
     fill: currentColor;
   }
 }
+
+// Phones: icons only so the link bar stays on one line (names remain as aria-label/title)
+@media (max-width: 47.99rem) {
+  .link-bar { flex-wrap: nowrap; justify-content: space-between; max-width: 22rem; }
+  .link-bar-label { display: none; }
+  .link-bar-item svg { width: 1.35em; height: 1.35em; }
+}
+
+// Wider screens: the top nav replaces the hamburger, and the homepage photo floats beside the intro
+@media (min-width: 48rem) {
+  .sidebar-toggle { display: none; }
+
+  div:has(> img.profile) {
+    float: right;
+    width: auto !important; // overrides the img shortcode's inline full-width wrapper
+    margin: .4rem 0 1.5rem 2.5rem !important;
+  }
+  img.profile { width: 170px; height: auto; }
+}
+
+// Post lists (Posts, Flow): the theme's 60px top margin per post left ~110px between entries
+.post { margin-top: 2.5rem; }
