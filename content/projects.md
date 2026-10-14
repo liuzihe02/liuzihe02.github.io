@@ -36,7 +36,7 @@ Built self-guided mechanical robot for package delivery, and implement the contr
 
 ---
 
-### Monte Carlo Tree Search for 2 Player Games | {{< link src="https://github.com/liuzihe02/mcts" class="external" target="_blank" hreflang="en" rel="noopener noreferrer" >}}GitHub{{< /link >}} | [Post]({{< relref "/posts/mcts" >}})
+### Monte Carlo Tree Search for 2 Player Games | [Post]({{< relref "/posts/mcts" >}})
 
 Lightweight implementation of Monte Carlo Tree Search for deterministic 2 player games.
 

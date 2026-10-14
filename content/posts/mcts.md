@@ -3,7 +3,7 @@ date: 2024-12-07T17:05:08.000Z
 title: Breaking Down Monte Carlo Tree Search
 ---
 
-We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from [int8's website](https://int8.io/monte-carlo-tree-search-beginners-guide/) and the [MCTS Wikipedia page](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search). I wrote a lightweight implementation for tic-tac-toe available [here](https://github.com/liuzihe02/mcts) and a super lightweight implementation available [here](https://github.com/liuzihe02/microMCTS).
+We explain how Monte Carlo Tree Search works and introduce its pseudocode. We borrow notes and figures from [int8's website](https://int8.io/monte-carlo-tree-search-beginners-guide/) and the [MCTS Wikipedia page](https://en.wikipedia.org/wiki/Monte_Carlo_tree_search).
 
 ---
 
