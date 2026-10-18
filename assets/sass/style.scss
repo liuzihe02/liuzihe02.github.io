@@ -90,6 +90,7 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0 1.5rem; // spread evenly, stopping just short of the column edges
   gap: 0.4rem 1.1rem;
 
   + hr { margin-top: 1.2rem; }
@@ -125,8 +126,6 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
     margin: .4rem 0 1.5rem 2rem !important;
   }
   img.profile { width: 170px; height: auto; }
-
-  .link-bar { padding: 0 1.5rem; } // spread evenly, stopping just short of the column edges
 }
 
 // Post lists (Posts, Flow): the theme's 60px top margin per post left ~110px between entries

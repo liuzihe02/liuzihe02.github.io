@@ -165,7 +165,7 @@ weight = 4
 [[menus.main]]
 identifier = 'resume'
 name = 'Resume'
-url = '/docs/cv.pdf'
+url = '/docs/resume.pdf'
 weight = 5
 params = { external = true }
 

@@ -23,12 +23,12 @@ You may open http://localhost:1313 (works from the Windows browser under WSL too
 Public PDFs (CV, reports, slides) live in `static/docs/` and are served at `flowingpurplecrane.com/docs/<name>.pdf`. Sources live in their own repos; this repo only hosts the built PDFs. Re-copy whenever the source changes, e.g. the CV:
 
 ```bash
-cp ~/career/cv/resume.pdf static/docs/cv.pdf
+cp ~/career/cv/resume.pdf static/docs/resume.pdf
 ```
 
 | PDF | Source |
 |---|---|
-| `cv.pdf` | `career/cv/resume.tex` |
+| `resume.pdf` | `career/cv/resume.tex` |
 | `goal-directed.pdf` | `research-notes/goal-directed/` |
 | `llm-observability.pdf` | `research-notes/llm-observability/` |
 | `r1-slides.pdf` | `research-notes/r1/` |
