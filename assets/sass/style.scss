@@ -109,11 +109,20 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
   }
 }
 
-// Phones: icons only so the link bar stays on one line (names remain as aria-label/title)
-@media (max-width: 47.99rem) {
-  .link-bar { flex-wrap: nowrap; }
+// Phones and portrait tablets: icons only, so the link bar never wraps (names remain as aria-label/title).
+// The labelled bar needs the wider column the theme only gives from 56rem up.
+@media (max-width: 55.99rem) {
+  .link-bar { flex-wrap: nowrap; max-width: 26rem; margin-left: auto; margin-right: auto; }
   .link-bar-label { display: none; }
   .link-bar-item svg { width: 1.35em; height: 1.35em; }
+}
+
+// Phones
+@media (max-width: 47.99rem) {
+  // homepage intro: an even 28px between header line, photo, text, icons and divider
+  .masthead { margin-bottom: 1.75rem; }
+  div:has(> img.profile) { margin: 0 0 1.625rem !important; }
+  .link-bar + hr { margin-top: 1.75rem; }
 }
 
 // Wider screens: the top nav replaces the hamburger, and the homepage photo floats beside the intro
