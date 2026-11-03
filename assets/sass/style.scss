@@ -65,7 +65,9 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
 // No external-link arrows inside running text (they stay on headings and lists, e.g. Projects)
 .content p a.external::after { display: none; }
 
-// Top nav under the site title (layouts/_default/baseof.html)
+// Top nav under the site title (layouts/_default/baseof.html); it replaces the theme's hamburger menu everywhere
+.sidebar-toggle { display: none; }
+
 .masthead-nav {
   margin-top: .6rem;
   margin-bottom: -.1rem; // with the masthead's padding, centres the nav between tagline and divider
@@ -125,10 +127,8 @@ a { text-underline-offset: 2px; }  // links in text and the link bar
   .link-bar + hr { margin-top: 1.75rem; }
 }
 
-// Wider screens: the top nav replaces the hamburger, and the homepage photo floats beside the intro
+// Wider screens: the homepage photo floats beside the intro
 @media (min-width: 48rem) {
-  .sidebar-toggle { display: none; }
-
   div:has(> img.profile) {
     float: right;
     width: auto !important; // overrides the img shortcode's inline full-width wrapper
